@@ -12,10 +12,14 @@ Marco Alarcon
 Jhens Tenorio
 Roberto Pineda
 
+Kener Cotrina
+
+
 
 Tony Odar
 
 
 
 Jonatnan Pacompia 
+
 
