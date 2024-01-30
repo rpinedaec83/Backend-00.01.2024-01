@@ -2,6 +2,9 @@
 
 Roberto Pineda
 
+Alvaro Escalante
+
+
 Gina Sanchez
 
 
@@ -38,6 +41,7 @@ Tony Odar
 
 
 Jonatnan Pacompia 
+
 
 
 
