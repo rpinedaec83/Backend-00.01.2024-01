@@ -11,7 +11,7 @@ Proceso SUMA
 	Leer numero2
 	
 	resultado = numero1+numero2
-	Escribir "El resultado es  " resultado
+	Escribir "El resultado es:  " resultado
 	
 	
 FinProceso
