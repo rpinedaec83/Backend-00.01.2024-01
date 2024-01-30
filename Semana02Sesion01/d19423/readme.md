@@ -26,6 +26,9 @@ Marco Alarcon
 Jhens Tenorio
 Roberto Pineda
 
+
+Cristhian Gutierrez
+
 Kener Cotrina
 
 
@@ -35,5 +38,6 @@ Tony Odar
 
 
 Jonatnan Pacompia 
+
 
 
