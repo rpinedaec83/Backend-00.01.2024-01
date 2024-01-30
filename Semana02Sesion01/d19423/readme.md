@@ -2,6 +2,9 @@
 
 Roberto Pineda
 
+Henry Gómez
+
+
 Alvaro Escalante
 
 
@@ -14,6 +17,7 @@ Gina Sanchez
 
 
 willy zender
+
 Stefanno Rossel
 Helmut Pacheco
 Roberto Pineda 
@@ -27,6 +31,7 @@ Jaime Choque
 Raul Mendizabal
 Marco Alarcon
 Jhens Tenorio
+
 Roberto Pineda
 
 Joaquin Orihuela
