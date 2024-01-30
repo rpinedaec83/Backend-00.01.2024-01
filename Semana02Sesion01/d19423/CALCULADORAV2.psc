@@ -1,4 +1,4 @@
-Proceso CALCULADORA
+Proceso CALCULADORAV2
 	
 	numero1 = 0
 	numero2 = 0
@@ -15,24 +15,18 @@ Proceso CALCULADORA
 	
 	Leer operacion
 	
-	Si operacion == 1 Entonces
-		resultado = numero1 + numero2
-	SiNo
-		Si operacion == 2 Entonces
+	Segun operacion Hacer
+		1:
+			resultado = numero1 + numero2
+		2:
 			resultado = numero1 - numero2
-			
-		SiNo
-			Si operacion == 3 Entonces
-				resultado = numero1 * numero2
-			SiNo
-				Si operacion == 4 Entonces
-					resultado = numero1 / numero2
-				SiNo
-					Escribir "Escogiste " operacion
-				FinSi
-			FinSi
-		FinSi	
-	Fin Si
+		3:
+			resultado = numero1 * numero2
+		4:
+			resultado = numero1 / numero2
+		De Otro Modo:
+			Escribir "Escoga una opcion valida "
+	Fin Segun
 	
 	Escribir "El resultado es " resultado
 	
