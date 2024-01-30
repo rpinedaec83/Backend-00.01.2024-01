@@ -7,3 +7,6 @@ Roberto Pineda
 Brian Nevado
 Patrick Ramos
 Marco Alarcon
+Jhens Tenorio
+Roberto Pineda
+
