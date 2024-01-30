@@ -5,10 +5,10 @@ Proceso SUMA
 	numero3 = 0
 	resultado = 0
 	
-	Escribir "Escribe el primer número a sumar"
+	Escribir "Escribe el primer numero a sumar"
 	Leer numero1
 	
-	Escribir "Escribe el segundo número a sumar"
+	Escribir "Escribe el segundo numero a sumar"
 	Leer numero2
 	
 	Escribir "Escribe el tercer número a sumar"
