@@ -29,6 +29,9 @@ Marco Alarcon
 Jhens Tenorio
 Roberto Pineda
 
+Joaquin Orihuela
+
+
 
 Cristhian Gutierrez
 
@@ -41,7 +44,6 @@ Tony Odar
 
 
 Jonatnan Pacompia 
-
 
 
 
