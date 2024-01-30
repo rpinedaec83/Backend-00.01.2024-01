@@ -17,6 +17,10 @@ Roberto Pineda
 Brian Nevado
 Patrick Ramos
 
+
+
+Jaime Choque
+
 Raul Mendizabal
 Marco Alarcon
 Jhens Tenorio
