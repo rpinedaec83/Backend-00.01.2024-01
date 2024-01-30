@@ -7,23 +7,3 @@ Roberto Pineda
 Brian Nevado
 Patrick Ramos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Jonathan Pacompia 
