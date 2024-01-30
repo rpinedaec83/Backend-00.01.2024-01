@@ -7,3 +7,5 @@ Roberto Pineda
 Brian Nevado
 Patrick Ramos
 
+
+Jaime Choque
