@@ -1,6 +1,14 @@
 # Semana 02 Sesion 01
 
 Roberto Pineda
+
+
+
+
+
+
+
+willy zender
 Stefanno Rossel
 Helmut Pacheco
 Roberto Pineda 
