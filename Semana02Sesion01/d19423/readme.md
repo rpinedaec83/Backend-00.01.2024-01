@@ -34,6 +34,16 @@ Jhens Tenorio
 
 Roberto Pineda
 
+Jhak flores
+
+
+Helmut Pacheco v2
+Helmut Pacheco v3
+
+
+Juan Pisfil
+
+
 Joaquin Orihuela
 
 
@@ -49,6 +59,7 @@ Tony Odar
 
 
 Jonatnan Pacompia 
+
 
 
 
