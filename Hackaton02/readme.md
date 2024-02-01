@@ -1,1 +1,0 @@
-nombre: Stefanno Ismael Rossel Pin
