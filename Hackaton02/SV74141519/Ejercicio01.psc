@@ -1,14 +1,14 @@
 Proceso Ejercicio01
 	
 	
-    Escribir("Ingrese un número: ")
-    Leer numero01
+    Escribir("Ingrese un nï¿½mero: ")
+    Leer num1
 	
     
-    Si numero01 >= 100 Y numero01 <= 999 Entonces
-        Escribir("El número tiene 3 dígitos.")
+    Si num1 >= 100 Y numero01 <= 999 Entonces
+        Escribir("El nï¿½mero tiene 3 dï¿½gitos.")
     Sino
-        Escribir("El número NO tiene 3 dígitos.")
+        Escribir("El nï¿½mero NO tiene 3 dï¿½gitos.")
     FinSi
 	
 FinProceso
