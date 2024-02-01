@@ -11,7 +11,7 @@ Proceso SUMA
 	Escribir "Escribe el segundo numero a sumar"
 	Leer numero2
 	
-	Escribir "Escribe el tercer número a sumar"
+	Escribir "Escribe el tercer nï¿½mero a sumar"
 	Leer numero3
 	
 	resultado = numero1+numero2+numero3
