@@ -1,0 +1,15 @@
+//Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
+
+Proceso Ejercicio03
+	numero1 = 0
+	Escribir "Escriba un numero "
+	leer numero1 
+	
+	si numero1 % 10 = 4 Entonces
+		Escribir "El numero ingresado Termina en 4 "
+	sino 
+		Escribir "El numero ingresado NO termina en 4 "
+	FinSi
+	
+	
+FinProceso

@@ -1,0 +1,36 @@
+
+Proceso Ejercicio08
+	Definir nota1, nota2, nota3 Como Real
+	
+	Escribir "Escribir la primer nota"
+	leer nota1 
+	si nota1 > 20 o nota1 < 0 Entonces
+		escribir "Elija una nota valida"
+	FinSi
+	Escribir "Escriba la segunda nota"
+	leer nota2
+	si nota2 > 20 o nota2 < 0 Entonces
+		Escribir "Elija una nota valida"
+	FinSi
+	Escribir "Escribir la tercer nota"
+	leer nota3
+	si nota3 > 20 o nota3 < 0 Entonces
+		escribir "Elija una nota valida"
+	FinSi
+	
+	promedio = (nota1 + nota2 + nota3) / 3
+	
+	
+	si promedio > 10 Entonces
+		escribir "Usted ha APROBADO :D"
+	sino  
+		si promedio < 10 Entonces
+			Escribir "Usted ha DESAPROBADO :c" 
+		FinSi
+	FinSi
+	Escribir "NOTA: ", promedio 
+
+
+FinProceso
+
+

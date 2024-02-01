@@ -1,0 +1,22 @@
+
+Proceso Ejercicio12
+	
+	definir numero1, numero2, mayornumero como real 
+	
+	Escribir "Escriba el primer numero "
+    Leer numero1
+    
+    Escribir "Escriba el segundo número "
+    Leer numero2
+    
+	si numero1 >= numero2 Entonces
+		mayornumero = numero1
+	sino 
+		si numero2 >= numero1 Entonces
+			mayornumero = numero2
+		FinSi
+	FinSi
+    
+    Escribir "El numero mayor es :", mayornumero
+    
+FinProceso
