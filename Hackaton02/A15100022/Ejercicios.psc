@@ -643,44 +643,465 @@ FinProceso
 
 21. Hacer un algoritmo en Pseint que permita calcular el factorial de un número.
 
+Proceso Ejercicio21
+
+    Definir numero, factorial Como Entero
+	
+    Escribir "Ingrese un número para calcular su factorial: "
+    Leer numero
+    factorial = 1
+	
+    
+    Si numero >= 0 Entonces
+        Para i = 1 Hasta numero
+            factorial = factorial * i
+        FinPara
+        Escribir "El factorial de ", numero, " es: ", factorial
+    Sino
+        Escribir "Por favor, ingrese un número no negativo para calcular el factorial."
+    FinSi
+FinProceso
+
+
 22. Hacer un algoritmo en Pseint para calcular la suma de los n primeros números.
+Proceso Ejercicio22
+	n=0
+	suma = 0
+
+    Escribir "Ingrese el valor de n para calcular la suma de los primeros n números: "
+    Leer n
+	
+    Si n > 0 Entonces
+        Para i = 1 Hasta n
+            suma = suma + i
+        FinPara
+		
+        Escribir "La suma de los primeros ", n, " números es: ", suma
+    Sino
+        Escribir "Por favor, ingrese un valor de n mayor que 0 para calcular la suma."
+    FinSi
+	
+FinProceso
 
 23. Hacer un algoritmo en Pseint para calcular la suma de los números impares menores o iguales a n.
+Proceso Ejercicio23
+	
+    n=0
+	suma = 0
+    
+    Escribir "Ingrese el valor de n para calcular la suma de los números impares menores o iguales a n: "
+    Leer n
+	
+    Si n > 0 Entonces
+        Para i = 1 Hasta n
+            Si i MOD 2 <> 0 Entonces
+                suma <- suma + i
+            FinSi
+        FinPara
+		
+        Escribir "La suma de los números impares menores o iguales a ", n, " es: ", suma
+    Sino
+        Escribir "Por favor, ingrese un valor de n mayor que 0 para calcular la suma."
+    FinSi
+FinProceso
 
 24. Hacer un algoritmo en Pseint para realizar la suma de todos los números pares hasta el 1000.
+Proceso Ejercicio23
+	
+	i=0
+	suma=0
+    
+	Para i=2 Hasta 1000 Con Paso 2 Hacer
+		suma = suma + i
+	Fin Para
+    
+    Escribir "La suma de todos los números pares hasta 1000 es: ", suma
+
+FinProceso
 
 25. Hacer un algoritmo en Pseint para calcular el factorial de un número de una forma distinta.
 
+Proceso Ejercicio24
+	
+	factorial = 1
+    i = 1
+	
+    Escribir "Ingrese un número para calcular su factorial: "
+    Leer numero
+	
+    Mientras i <= numero
+        factorial <- factorial * i
+        i <- i + 1
+    FinMientras
+	
+    Escribir "El factorial de ", numero, " es: ", factorial 
+
+
+FinProceso
+
 26. Hacer un algoritmo en Pseint para calcular el resto y cociente por medio de restas sucesivas.
+Proceso Ejercicio26
+	
+    Definir dividendo, divisor, cociente, resto Como Entero
+	cociente = 0
+    resto = 0
+    Escribir "Ingrese el dividendo: "
+    Leer dividendo
+	
+    Escribir "Ingrese el divisor: "
+    Leer divisor
+	
+    Mientras dividendo >= divisor
+        dividendo = dividendo - divisor
+        cociente = cociente + 1
+    FinMientras
+	
+    resto = dividendo
+	
+    Escribir "El cociente es: ", cociente
+    Escribir "El resto es: ", resto
+
+FinProceso
+
+
 
 27. Hacer un algoritmo en Pseint para determinar la media de una lista indefinida de números positivos, se debe acabar el programa al ingresar un número negativo.
 
+Proceso Ejercicio27
+	
+    Definir numero, suma, cantidad, media Como Real
+	
+     media=0
+     suma = 0
+    cantidad = 0
+	
+    Mientras numero >= 0
+        Escribir "Ingrese un número (ingrese un número negativo para finalizar): "
+        Leer numero
+		
+        Si numero >= 0 Entonces
+           
+            suma = suma + numero
+            cantidad = cantidad + 1
+        FinSi
+    FinMientras
+	
+    Si cantidad > 0 Entonces
+        media = suma / cantidad
+        Escribir "La media de los números positivos ingresados es: ", media
+    Sino
+        Escribir "No se ingresaron números positivos."
+    FinSi
+
+FinProceso
+
 28. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo repetir.
+
+Proceso Ejercicio28
+	
+    Definir suma, contador Como Entero
+	
+    suma = 0
+    contador = 1
+	
+    Repetir
+        suma = suma + contador
+        contador = contador + 1
+		Hasta  Que contador > 100
+		
+		// Mostrar el resultado
+		Escribir "La suma de los primeros cien números es: ", suma
+		
+FinProceso
+
 
 29. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo mientras.
 
+Proceso Ejercicio29
+	
+    Definir suma, contador Como Entero
+    suma = 0
+    contador = 1
+	
+    Mientras contador <= 100
+        suma = suma + contador
+        contador = contador + 1
+    FinMientras
+	
+		Escribir "La suma de los primeros cien números es: ", suma
+		
+FinProceso
+
 30. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo para.
+
+Proceso Ejercicio30
+	
+    Definir suma, contador Como Entero
+    suma = 0
+    contador = 1
+	
+	Para contador = 1 Hasta 100
+        suma = suma + contador
+    FinPara
+		Escribir "La suma de los primeros cien números es: ", suma
+		
+FinProceso
+
 
 31. Hacer un algoritmo en Pseint parar calcular la media de los números pares e impares, sólo se ingresará diez números.
 
+Proceso Ejercicio31
+	
+    Definir numero, sumaPares, sumaImpares, contadorPares, contadorImpares, mediaPares, mediaImpares Como Real
+    sumaPares = 0
+    sumaImpares = 0
+    contadorPares = 0
+    contadorImpares = 0
+	
+    Para i = 1 Hasta 10
+        Escribir "Ingrese el número ", i, ": "
+        Leer numero
+		
+        Si numero MOD 2 = 0 Entonces
+            sumaPares = sumaPares + numero
+            contadorPares = contadorPares + 1
+        Sino
+            sumaImpares =sumaImpares + numero
+            contadorImpares = contadorImpares + 1
+        FinSi
+    FinPara
+	
+    Si contadorPares > 0 Entonces
+        mediaPares = sumaPares / contadorPares
+        Escribir "La media de los números pares es: ", mediaPares
+    Sino
+        Escribir "No se ingresaron números pares."
+    FinSi
+	
+    Si contadorImpares > 0 Entonces
+        mediaImpares = sumaImpares / contadorImpares
+        Escribir "La media de los números impares es: ", mediaImpares
+    Sino
+        Escribir "No se ingresaron números impares."
+    FinSi
+		
+FinProceso
+
+
 32. Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades, hacer un algoritmo en Pseint que nos permita saber eso. (NO HAY DATOS SUFICIENTES)
+
+Proceso Ejercicio32
+	
+    Definir poblacion, maxPoblacion Como Entero
+    Definir provinciaMaxPoblacion, ciudadMaxPoblacion Como Cadena
+	
+    maxPoblacion = 0
+	
+    Para provincia = 1 Hasta 3
+        Para ciudad = 1 Hasta 11
+            Escribir "Ingrese la población de la ciudad ", ciudad, " en la provincia ", provincia, ": "
+            Leer poblacion
+			
+            Si poblacion > maxPoblacion Entonces
+                maxPoblacion = poblacion
+                provinciaMaxPoblacion <- "Provincia " + ConvertirATexto(provincia)
+                ciudadMaxPoblacion = "Ciudad " + ConvertirATexto(ciudad)
+            FinSi
+        FinPara
+    FinPara
+	
+    Escribir "La ciudad con la población más alta es: ", ciudadMaxPoblacion, " en la ", provinciaMaxPoblacion, " con una población de ", maxPoblacion
+
+FinProceso
+
 
 33. Hacer un algoritmo en Pseint que permita al usuario continuar con el programa.
 
+Proceso Ejercicio33
+	
+    Definir continuar Como Caracter
+	
+    Repetir
+        
+        Escribir "¿Desea continuar con el programa? (S/N): "
+        Leer continuar
+		
+        continuar = Mayusculas(continuar)
+		
+		Hasta Que continuar = "N"
+
+
+FinProceso
+
 34. Hacer un algoritmo en Pseint que imprima la tabla de multiplicar de los números del uno nueve.
+
+Proceso Ejercicio34
+	
+	
+    Definir numero, multiplicador, resultado Como Entero
+	
+    
+    Para numero = 1 Hasta 9
+        Escribir "Tabla de multiplicar del ", numero, ":"
+		
+       
+        Para multiplicador = 1 Hasta 10
+            resultado = numero * multiplicador
+            Escribir numero, " x ", multiplicador, " = ", resultado
+        FinPara
+		
+        Escribir "---------------------------"
+    FinPara
+
+FinProceso
 
 35. Hacer un algoritmo en Pseint que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
 
+Proceso Ejercicio35
+	
+    Definir numero, mayor, menor Como Real
+    Definir i Como Entero
+	
+    Escribir "Ingrese el primer número: "
+    Leer numero
+    mayor = numero
+    menor = numero
+	
+    Para i <- 2 Hasta 20
+        Escribir "Ingrese el número ", i, ": "
+        Leer numero
+		
+        Si numero > mayor Entonces
+            mayor = numero
+        FinSi
+		
+        Si numero < menor Entonces
+            menor = numero
+        FinSi
+    FinPara
+	
+    Escribir "El número mayor es: ", mayor
+    Escribir "El número menor es: ", menor
+
+FinProceso
+
+
 36. Hacer un algoritmo en Pseint para calcular la serie de Fibonacci.
+
+Proceso Ejercicio36
+	
+    Definir limite, a, b, c, i Como Entero
+	
+    a = 0
+    b = 1
+	
+    Escribir "Ingrese el límite de la serie de Fibonacci: "
+    Leer limite
+	
+    Escribir a
+    Escribir b
+	
+    Para i <- 3 Hasta limite
+        c <- a + b
+        Escribir c
+        a <- b
+        b <- c
+    FinPara
+
+
+FinProceso
 
 37. Hacer un algoritmo en Pseint para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
 
+Proceso Ejercicio37
+	
+    Definir num1, num2, resto Como Entero
+	
+   
+    Escribir "Ingrese el primer número: "
+    Leer num1
+    Escribir "Ingrese el segundo número: "
+    Leer num2
+	
+    Mientras num2 <> 0
+        resto = num1 MOD num2
+        num1 = num2
+        num2 = resto
+    FinMientras
+	
+    Escribir "El MCD de los dos números es: ", num1
+
+FinProceso
+
 38. Hacer un algoritmo en Pseint que nos permita saber si un número es un número perfecto.
+
+
+Proceso Ejercicio37
+	
+    Definir numero, sumaDivisores, divisor Como Entero
+	
+    Escribir "Ingrese un número para verificar si es perfecto: "
+    Leer numero
+	sumaDivisores  = 0
+ 
+    Para divisor = 1 Hasta (numero / 2)
+        Si numero MOD divisor = 0 Entonces
+            sumaDivisores = sumaDivisores + divisor
+        FinSi
+    FinPara
+	
+   
+    Si sumaDivisores = numero Entonces
+        Escribir "El número ", numero, " es un número perfecto."
+    Sino
+        Escribir "El número ", numero, " no es un número perfecto."
+    FinSi
+
+FinProceso
 
 39. Hacer un algoritmo en Pseint que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. La formula que se debe aplicar es:
 
     Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...
 
+	Proceso Ejercicio39
+	
+    Definir n Como Entero
+    Definir piAproximado Como Real
+	
+    Escribir "Ingrese el número de términos para la aproximación de pi: "
+    Leer n
+	
+    piAproximado = 0
+	
+    //utilizando la serie de Gregory-Leibniz
+    Para i = 0 Hasta n - 1
+        piAproximado = piAproximado + ((-1)^i) * (4 / (2 * i + 1))
+    FinPara
+	
+    Escribir "La aproximación de pi con ", n, " términos es: ", piAproximado
+
+FinProceso
+
 40. Hacer un algoritmo en Pseint que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es:
 
     Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
+
+	Proceso Ejercicio40
+	
+    Definir n Como Entero
+    Definir piAproximado Como Real
+	
+    Escribir "Ingrese el número de términos para la aproximación de pi: "
+    Leer n
+	
+    piAproximado = 3.0
+	
+    // utilizando la serie de Nilakantha
+    Para i = 1 Hasta n
+        piAproximado = piAproximado + ((-1)^i) * (4 / ((2 * i) * (2 * i + 1) * (2 * i + 2)))
+    FinPara
+	
+    Escribir "La aproximación de pi con ", n, " términos es: ", piAproximado
+
+
+FinProceso
