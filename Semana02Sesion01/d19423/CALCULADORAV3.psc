@@ -3,14 +3,18 @@ Proceso CalculadoraV3
 	numero2 = 0
 	resultado =0
 	operacion = 0
-	
+Proceso CALCULADORAV3
+
 	Repetir
 		Escribir "Escribe el primer numero a calcular"
 		Leer numero1
-		Escribir "Escribe el segundo numero a calcular"
 		Leer numero2
 		
 		Escribir "Escoge una operacion: 1 para SUMAR, 2 para RESTAR, 3 para MULTIPLICAR, 4 para DIVIDIR o 5 para SALIR"
+		Escribir "Escribe el segundo numero a calcular"
+		Leer numero2
+		
+		Escribir "Escoge una operacion: 1 para SUMAR, 2 para RESTAR, 3 para MULTIPLICAR, 4 para DIVIDIR o 5 para salir"
 		
 		Leer operacion
 		
@@ -29,4 +33,10 @@ Proceso CalculadoraV3
 		
 		Escribir "El resultado es " resultado
 	Hasta que operacion == 5
+				Escribir "Escoga una opcion valida "
+		Fin Segun
+		
+		Escribir "El resultado es " resultado
+	Hasta Que operacion == 5
+		
 FinProceso
