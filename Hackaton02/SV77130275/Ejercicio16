@@ -1,0 +1,29 @@
+
+Proceso Ejercicio16
+	
+	Escribir "Elija un numero entre: "
+	escribir "1 y 7"
+	leer Numero1
+	
+	si Numero1 >= 8 Entonces
+		Escribir "La semana solo trae 7 dias"
+	FinSi
+	
+	segun Numero1 Hacer
+		1: 
+			Escribir "Es Lunes"
+		2:
+			Escribir  "Es Martes"
+		3:
+			Escribir "Es Miercoles"
+		4: 
+			Escribir "Es Jueves"
+		5: 
+			Escribir "Es Viernes"
+		6: 
+			Escribir "Es Sabado"
+		7: 
+			Escribir "Es Domingo"
+	FinSegun
+FinProceso
+	
