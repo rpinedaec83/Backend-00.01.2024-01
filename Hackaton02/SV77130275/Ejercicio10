@@ -1,0 +1,11 @@
+
+proceso Ejercicio10	
+	Escribir "Escriba un numero"
+	leer numero1
+	
+	si numero1 % 2 = 0 Entonces
+		Escribir "El numero es PAR"
+	SiNo
+		Escribir "El numero es IMPAR"
+	FinSi
+FinProceso

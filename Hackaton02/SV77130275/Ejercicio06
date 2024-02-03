@@ -1,0 +1,19 @@
+
+Proceso Ejercicio06
+    DefinirhorasTrabajadas = 0
+	sueldo = 0 
+	horasExtras = 0
+	
+    Escribir "Ingrese la cantidad de horas trabajadas en la semana:"
+    Leer horasTrabajadas
+	
+    Si horasTrabajadas <= 40 Entonces
+        sueldo = horasTrabajadas * 20  // $20 por hora
+    Sino
+        horasExtras = horasTrabajadas - 40
+        sueldo = (40 * 20) + (horasExtras * 25)  // $20 por las primeras 40 horas, $25 por las horas extras
+    FinSi
+	
+    Escribir "El sueldo semanal es: $", sueldo
+FinProceso
+
