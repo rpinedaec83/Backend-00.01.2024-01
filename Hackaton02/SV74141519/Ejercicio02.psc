@@ -1,14 +1,19 @@
 Proceso Ejercicio02
 	
 
-    Escribir("Ingrese un n�mero entero: ")
+	Escribir "-------------------- BIENVENIDO AL SISTEMA VERIFICADOR DE NEGATIVOS --------------------"
+	
+    Escribir("Ingrese un numero entero: ")
+
 	
     Leer num1
     
     Si num1 < 0 Entonces
-        Escribir("El n�mero es negativo.")
+
+        Escribir("El numero es negativo.")
     Sino
-        Escribir("El n�mero NO es negativo.")
+        Escribir("El numero NO es negativo.")
+
     FinSi
 	
 FinProceso
