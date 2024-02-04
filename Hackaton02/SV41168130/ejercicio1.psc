@@ -1,6 +1,8 @@
 // 1. Hacer un algoritmo en Pseint que lea un número por el teclado y determinar si tiene tres dígitos.
+
 Proceso ejercicio_1
-	numero1 = 0
+	Definir numero_1 Como Entero
+	numero1 <- 0
 	Escribir "Escriba un número"
 	Leer  numero1
 	
