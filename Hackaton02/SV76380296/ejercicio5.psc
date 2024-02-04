@@ -1,35 +1,35 @@
 Proceso ejercicio5
 	
-	Definir cantidad Como Entero
-	Definir preciofinal Como Real
-	preciozapato = 80
-	descuento = 0
+	Definir cantidad Como Entero;
+	Definir preciofinal Como Real;
+	preciozapato = 80;
+	descuento = 0;
 	
-	Escribir "Ingrese el numero de zapatos comprados."
-	Escribir "Recibira un descuento por las siguentes cantidades:"
-	Escribir "11-20: 10%"
-	Escribir "21-30: 20%"
-	Escribir "30+: 40%"
-	Leer cantidad
+	Escribir "Ingrese el numero de zapatos comprados.";
+	Escribir "Recibira un descuento por las siguentes cantidades:";
+	Escribir "11-20: 10%";
+	Escribir "21-30: 20%";
+	Escribir "30+: 40%";
+	Leer cantidad;
 	
 	Si cantidad < 10 Entonces
-		preciofinal = preciozapato*cantidad
+		preciofinal = preciozapato*cantidad;
 	SiNo
 		Si cantidad > 10 y cantidad < 21 Entonces
-			preciofinal = (preciozapato*(1-0.10))*cantidad
-			descuento = 10
+			preciofinal = (preciozapato*(1-0.10))*cantidad;
+			descuento = 10;
 		SiNo 
 			Si cantidad > 20 y cantidad < 31 Entonces
-				preciofinal = (preciozapato*(1-0.20))*cantidad
-				descuento = 20
+				preciofinal = (preciozapato*(1-0.20))*cantidad;
+				descuento = 20;
 			SiNo
-				preciofinal = (preciozapato*(1-0.40))*cantidad
-				descuento = 40
+				preciofinal = (preciozapato*(1-0.40))*cantidad;
+				descuento = 40;
 			FinSi
 		FinSi
 	FinSi
 	
-	Escribir "El precio final es de " preciofinal ", con un " descuento "% de descuento."
+	Escribir "El precio final es de " preciofinal ", con un " descuento "% de descuento.";
 	
 FinProceso
 
