@@ -103,8 +103,8 @@
 34. Hacer un algoritmo en Pseint que imprima la tabla de multiplicar de los números del uno nueve.
 
 35. Hacer un algoritmo en Pseint que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
-
-36. Hacer un algoritmo en Pseint para calcular la serie de Fibonacci.
+i
+36. Hacer un algoritmo en Pseint para calcular la serie de Fibonacc.
 
 37. Hacer un algoritmo en Pseint para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
 
