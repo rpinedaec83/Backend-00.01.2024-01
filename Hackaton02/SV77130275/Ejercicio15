@@ -1,0 +1,25 @@
+
+proceso Ejercicio15
+	Definir kilogramos, pulgadas, libras, centimetros como Real
+	
+	Definir operacion1 Como Caracter
+	
+	Escribir "Elija la operacion a realizar: "
+	escribir "A centimetros a pulgadas"
+	Escribir "B libras a kilogramos"
+	leer operacion1
+	
+	si operacion1 = "A" Entonces
+		Escribir "Escriba la longitud en centimetros"
+		leer centimetros
+		pulgadas = centimetros / 2.54
+		Escribir "Centimetros a pulgadas es: ", pulgadas
+	SiNo
+		si operacion1 = "B" Entonces
+			Escribir "Escriba la longitud en libras: "
+			leer libras
+			kilogramos = libras * 0.453592
+			Escribir "Libras a Kilogramos es: ", kilogramos
+		FinSi
+	FinSi
+FinProceso
