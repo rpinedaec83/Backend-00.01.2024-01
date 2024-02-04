@@ -1,10 +1,10 @@
-//Hacer un algoritmo en Pseint que que lea 4 números enteros positivos y verifique y realice las siguientes operaciones:
+//Hacer un algoritmo en Pseint que que lea 4 nï¿½meros enteros positivos y verifique y realice las siguientes operaciones:
 
-//¿Cuántos números son Pares?
-//¿Cuál es el mayor de todos?
+//ï¿½Cuï¿½ntos nï¿½meros son Pares?
+//ï¿½Cuï¿½l es el mayor de todos?
 //Si el tercero es par, calcular el cuadrado del segundo.
-//Si el primero es menor que el cuarto, calcular la media de los 4 números.
-//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números.
+//Si el primero es menor que el cuarto, calcular la media de los 4 nï¿½meros.
+//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condiciï¿½n, calcular la suma de los 4 nï¿½meros.
 
 
 Proceso Ejercicio20
@@ -12,16 +12,16 @@ Proceso Ejercicio20
 	Definir num1, num2, num3, num4, cantidadPares, mayor, sumaTotal Como Entero
 	definir media como real
 	
-    Escribir "Ingrese el primer número:"
+    Escribir "Ingrese el primer numero:"
     Leer num1
 	
-    Escribir "Ingrese el segundo número:"
+    Escribir "Ingrese el segundo numero:"
     Leer num2
 	
-    Escribir "Ingrese el tercer número:"
+    Escribir "Ingrese el tercer numero:"
     Leer num3
 	
-    Escribir "Ingrese el cuarto número:"
+    Escribir "Ingrese el cuarto numero:"
     Leer num4
 	
     cantidadPares = 0
@@ -71,19 +71,19 @@ Proceso Ejercicio20
         sumaTotal = num1 + num2 + num3 + num4
     FinSi
 	
-    Escribir "Cantidad de números pares:", cantidadPares
-    Escribir "Número mayor:", mayor
+    Escribir "Cantidad de numeros pares:", cantidadPares
+    Escribir "Numero mayor:", mayor
 	
     Si num3 % 2 = 0 Entonces
-        Escribir "Cuadrado del segundo número:", num2
+        Escribir "Cuadrado del segundo numero:", num2
     FinSi
 	
     Si num1 < num4 Entonces
-        Escribir "Media de los 4 números:", media
+        Escribir "Media de los 4 numeros:", media
     FinSi
 	
     Si num2 > num3 y num3 >= 50 y num3 <= 700 Entonces
-        Escribir "Suma de los 4 números:", sumaTotal
+        Escribir "Suma de los 4 numeros:", sumaTotal
     FinSi
 	
 FinProceso

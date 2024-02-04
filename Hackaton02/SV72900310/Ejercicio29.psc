@@ -1,12 +1,13 @@
-//29. Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo mientras.
+// Hacer un algoritmo en Pseint para calcular la suma de los primeros cien números con un ciclo mientras.
+
+
 Proceso Ejercicio29
-	definir suma,acumulado Como Entero;
-	suma = 0;
-	acumulado =0;
+	Definir i,suma Como Entero
+	i=1
 	
-	Mientras suma <=100 Hacer
-		acumulado = suma + acumulado
-		suma = suma + 1	
+	Mientras i<=100 Hacer
+		suma=suma+i
+		i=i+1
 	FinMientras
-	escribir acumulado;
+	Escribir suma
 FinProceso

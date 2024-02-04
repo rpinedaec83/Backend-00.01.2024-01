@@ -1,15 +1,15 @@
-//14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
+//14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un nï¿½mero primo.
 
 
 Proceso Ejercicio14
 	
 	Definir numero, i, contador Como Entero
 	
-    Escribir "Ingrese un número entre 1 y 10:"
+    Escribir "Ingrese un numero entre 1 y 10:"
     Leer numero
 	
     Mientras numero < 1 o numero > 10 Hacer
-        Escribir "El número debe estar entre 1 y 10. Por favor, vuelva a intentar:"
+        Escribir "El numero debe estar entre 1 y 10. Por favor, vuelva a intentar:"
         Leer numero
     FinMientras
 	
@@ -22,9 +22,9 @@ Proceso Ejercicio14
 	FinPara
 
 	Si contador <= 2 Entonces
-		Escribir "El número ", numero, " es primo."
+		Escribir "El numero ", numero, " es primo."
 	Sino
-		Escribir "El número ", numero, " no es primo."
+		Escribir "El numero ", numero, " no es primo."
 		FinSi
 	
 FinProceso

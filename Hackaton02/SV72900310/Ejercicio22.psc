@@ -1,11 +1,11 @@
-//22. Hacer un algoritmo en Pseint para calcular la suma de los n primeros números.
+//22. Hacer un algoritmo en Pseint para calcular la suma de los n primeros nï¿½meros.
 
 
 Proceso Ejercicio22
 	
 	Definir n, suma Como Entero
 	
-    Escribir "Ingrese el valor de n para calcular la suma de los primeros n números:"
+    Escribir "Ingrese el valor de n para calcular la suma de los primeros n numeros:"
     Leer n
 	
     suma = 0
@@ -14,6 +14,6 @@ Proceso Ejercicio22
         suma = suma + i
     FinPara
 	
-    Escribir "La suma de los primeros ", n, " números es:", suma
+    Escribir "La suma de los primeros ", n, " numeros es:", suma
 	
 FinProceso

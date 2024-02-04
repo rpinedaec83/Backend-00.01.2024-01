@@ -1,7 +1,7 @@
-//Hacer un algoritmo en Pseint para una heladería se tienen 4 tipos de empleados ordenados de la siguiente forma con su número identificador y salario diario correspondiente:
-//Cajero (56$/día).//Servidor (64$/día). //Preparador de mezclas (80$/día). //Mantenimiento (48$/día).
-//El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen al número identificador del empleado y la cantidad 
-//de días que trabajó en la semana (6 días máximos). Y el programa le mostrará por pantalla la cantidad de dinero que el dueño le debe pagar al empleado que ingresó
+//19. Hacer un algoritmo en Pseint para una heladerï¿½a se tienen 4 tipos de empleados ordenados de la siguiente forma con su nï¿½mero identificador y salario diario correspondiente:
+//Cajero (56$/dï¿½a).//Servidor (64$/dï¿½a). //Preparador de mezclas (80$/dï¿½a). //Mantenimiento (48$/dï¿½a).
+//El dueï¿½o de la tienda desea tener un programa donde sï¿½lo ingrese dos nï¿½meros enteros que representen al nï¿½mero identificador del empleado y la cantidad 
+//de dï¿½as que trabajï¿½ en la semana (6 dï¿½as mï¿½ximos). Y el programa le mostrarï¿½ por pantalla la cantidad de dinero que el dueï¿½o le debe pagar al empleado que ingresï¿½
 
 
 Proceso Ejercicio19
@@ -10,7 +10,7 @@ Proceso Ejercicio19
     Definir salarioDiario, salarioTotal Como Real
 	
 		
-    Escribir "Ingrese el número identificador del empleado: Cajero=1 / Servidor=2 / Preparador=3 / Mantenimiento=4"
+    Escribir "Ingrese el numero identificador del empleado: Cajero=1 / Servidor=2 / Preparador=3 / Mantenimiento=4"
     Leer idEmpleado
 	Mientras idEmpleado < 1 o idEmpleado > 4
 		Escribir "Ingrese un numero entre 1 al 4"
@@ -18,10 +18,10 @@ Proceso Ejercicio19
 	FinMientras
 	
 	
-    Escribir "Ingrese la cantidad de días trabajados en la semana (máximo 6 días):"
+    Escribir "Ingrese la cantidad de dias trabajados en la semana (maximo 6 dias):"
     Leer diasTrabajados
 	Mientras diasTrabajados < 1 o diasTrabajados > 6
-		Escribir "Ingrese un numero entre 1 al 6 (máximo 6 días):"
+		Escribir "Ingrese un numero entre 1 al 6 (maximo 6 dias):"
 		Leer diasTrabajados
 	FinMientras
 	

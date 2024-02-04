@@ -1,3 +1,5 @@
+//
+
 Proceso sin_titulo
 	numero = 0
 	Escribir "Escriba un numero"

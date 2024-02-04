@@ -1,4 +1,4 @@
-//8. Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
+//8. Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobï¿½ o no.
 
 
 Proceso Ejercicio8
@@ -16,9 +16,9 @@ Proceso Ejercicio8
     promedio = (nota1 + nota2 + nota3) / 3
 	
     Si promedio > 10.5 Entonces
-        Escribir "El estudiante aprobó con un promedio de:", promedio
+        Escribir "El estudiante aprobo con un promedio de:", promedio
     Sino
-        Escribir "El estudiante no aprobó con un promedio de:", promedio
+        Escribir "El estudiante no aprobo con un promedio de:", promedio
     FinSi
 	
 FinProceso

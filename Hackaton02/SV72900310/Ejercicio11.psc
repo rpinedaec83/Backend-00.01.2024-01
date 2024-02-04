@@ -1,17 +1,17 @@
-//11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+//11. Hacer un algoritmo en Pseint que lea tres nï¿½meros y diga cuï¿½l es el mayor.
 
 
 Proceso Ejercicio11
 	
 	Definir num1, num2, num3, mayor Como Real
 	
-    Escribir "Ingrese el primer número:"
+    Escribir "Ingrese el primer numero:"
     Leer num1
 	
-    Escribir "Ingrese el segundo número:"
+    Escribir "Ingrese el segundo numero:"
     Leer num2
 	
-    Escribir "Ingrese el tercer número:"
+    Escribir "Ingrese el tercer numero:"
     Leer num3
 	
     Si num1 >= num2 y num1 >= num3 Entonces
@@ -24,6 +24,6 @@ Proceso Ejercicio11
         FinSi
     FinSi
 	
-    Escribir "El número mayor es:", mayor
+    Escribir "El numero mayor es:", mayor
 	
 FinProceso

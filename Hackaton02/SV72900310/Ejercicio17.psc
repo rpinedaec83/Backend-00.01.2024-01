@@ -43,6 +43,6 @@ Proceso Ejercicio17
 		FinSi
 FinSi
 
-Escribir "La hora después de un segundo es:", hora, ":", minuto, ":", segundo
+Escribir "La hora despues de un segundo es:", hora, ":", minuto, ":", segundo
 	
 FinProceso

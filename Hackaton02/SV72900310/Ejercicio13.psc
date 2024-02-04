@@ -1,4 +1,6 @@
-//Hacer un algoritmo en Pseint que lea una letra y diga si es una vocal.
+//13.Hacer un algoritmo en Pseint que lea una letra y diga si es una vocal.
+
+
 Proceso Ejercicio13
 	definir letra Como Caracter
 	Escribir  "escriba una letra"

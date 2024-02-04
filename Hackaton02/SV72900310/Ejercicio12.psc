@@ -1,14 +1,14 @@
-//12. Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
+//12. Hacer un algoritmo en Pseint que lea dos nï¿½meros y diga cuï¿½l es el mayor.
 
 
 Proceso Ejercicio12
 	
 	Definir num1, num2, mayor Como Real
 	
-    Escribir "Ingrese el primer número:"
+    Escribir "Ingrese el primer numero:"
     Leer num1
 	
-    Escribir "Ingrese el segundo número:"
+    Escribir "Ingrese el segundo numero:"
     Leer num2
 	
     Si num1 >= num2 Entonces
@@ -17,6 +17,6 @@ Proceso Ejercicio12
         mayor = num2
     FinSi
 	
-    Escribir "El número mayor es:", mayor
+    Escribir "El numero mayor es:", mayor
 	
 FinProceso

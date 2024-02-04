@@ -1,5 +1,5 @@
-//18. Hacer un algoritmo en Pseint para una empresa se encarga de la venta y distribución de CD vírgenes. Los clientes pueden adquirir los artículos 
-// (supongamos un único producto de una única marca) por cantidad. Los precios son:
+//18. Hacer un algoritmo en Pseint para una empresa se encarga de la venta y distribuciï¿½n de CD vï¿½rgenes. Los clientes pueden adquirir los artï¿½culos 
+// (supongamos un ï¿½nico producto de una ï¿½nica marca) por cantidad. Los precios son:
 
 //$10. Si se compran unidades separadas hasta 9.
 	
@@ -9,7 +9,7 @@
 		
 //$6. Para mas de 500 unidades.
 			
-//La ganancia para el vendedor es de 8,25 % de la venta. Realizar un algoritmo en Pseint que dado un número de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.
+//La ganancia para el vendedor es de 8,25 % de la venta. Realizar un algoritmo en Pseint que dado un nï¿½mero de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.
 
 
 Proceso Ejercicio18
