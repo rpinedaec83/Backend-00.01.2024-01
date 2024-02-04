@@ -1,5 +1,7 @@
 Proceso Ejercicio03
 	
+	Escribir "-------------------- BIENVENIDO AL SISTEMA VERIFICADOR DE DIGITO 4 --------------------"
+	
 	Escribir("Ingrese un número: ")
     Leer num1
 	
