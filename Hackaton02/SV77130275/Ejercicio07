@@ -1,0 +1,27 @@
+
+Proceso Ejercicio07
+	
+	A = 0
+	B = 0
+	C = 0
+	
+	Escribir "Elije tu tipo tu tipo de membresia: A, B o C"
+	leer membresia 
+	
+	si membresia = "A" Entonces
+		Escribir "Tienes un descuento del 10% en tus compras"
+		
+	SiNo
+		si membresia = "B" Entonces
+			Escribir "Tienes un descuento del 15% en tus compras"
+			
+		sino 
+			si membresia = "C" Entonces
+				Escribir "Tienes un descuento del 20% en tus compras"
+			SiNo
+				Escribir "OPS! Elija un tipo de membresia valida"
+			FinSi
+		FinSi
+	FinSi
+
+FinProceso

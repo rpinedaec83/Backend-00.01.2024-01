@@ -1,0 +1,29 @@
+
+Proceso  Ejercicio14
+	
+    Definir numero1, i, contador Como Entero
+	
+    Escribir "Escribir un número entre 1 y 10 "
+    Leer numero1
+	
+    Si numero1 >= 1 Y numero1 <= 10 Entonces
+        Si numero1 = 1 Entonces
+            Escribir "El número 1 no es primo."
+        Sino
+            contador = 0
+            Para i = 2 Hasta numero1 / 2 Hacer
+                Si numero1 MOD i = 0 Entonces
+                    contador = contador + 1
+                FinSi
+            FinPara
+			
+            Si contador = 0 Entonces
+                Escribir "El número ", numero1, " es primo."
+            Sino
+                Escribir "El número ", numero1, " no es primo."
+            FinSi
+        FinSi
+    Sino
+        Escribir "El número ingresado no está en el rango permitido."
+    FinSi
+FinProceso

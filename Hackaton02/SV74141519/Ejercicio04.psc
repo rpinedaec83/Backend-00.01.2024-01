@@ -1,16 +1,18 @@
 Proceso Ejercicio04
 	
+
 	Escribir "-------------------- BIENVENIDO AL SISTEMA ORDENADOR DE NUMEROS --------------------"
-	
+
 	Definir num1, num2, num3, temp Como Entero
 	
-    Escribir "Ingrese el primer n�mero: "
+    Escribir "Ingrese el primer número: "
     Leer num1
 	
-    Escribir "Ingrese el segundo n�mero: "
+    Escribir "Ingrese el segundo número: "
     Leer num2
 	
-    Escribir "Ingrese el tercer n�mero: "
+    Escribir "Ingrese el tercer número: "
+
     Leer num3
 	
     Si (num1 > num2) Entonces
@@ -31,6 +33,8 @@ Proceso Ejercicio04
         num2 <- temp
     FinSi
 	
-    Escribir "Los n�meros ordenados de menor a mayor son: ", num1, ", ", num2, ", ", num3
+
+    Escribir "Los números ordenados de menor a mayor son: ", num1, ", ", num2, ", ", num3
+
 	
 FinProceso

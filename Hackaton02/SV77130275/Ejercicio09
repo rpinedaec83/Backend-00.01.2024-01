@@ -1,0 +1,18 @@
+
+proceso Ejercicio09	
+	Escribir "Escribir tu Sueldo Actual"
+	leer SueldoActual
+	si SueldoActual > 2000 Entonces
+		
+		aumento = SueldoActual + (SueldoActual * 5)
+		Escribir "Tienes un aumento del 5%"
+		Escribir "Tu sueldo ahora seria de :", aumento 
+		
+	FinSi
+	Si SueldoActual < 2000 Entonces
+			aumento = SueldoActual + (SueldoActual * 0.10)
+			Escribir "Tienes un aumento del 10%"
+			Escribir "Tu sueldo ahora seria de :", aumento 
+			
+	FinSi
+FinProceso
