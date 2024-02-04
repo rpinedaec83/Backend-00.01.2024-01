@@ -1,14 +1,18 @@
 Proceso Ejercicio01
+
+	Escribir "-------------------- BIENVENIDO AL SISTEMA VERIFICACION DE DIGITOS --------------------"
 	
-	
-    Escribir("Ingrese un n�mero: ")
+    Escribir("Ingrese un numero: ")
+
     Leer num1
 	
     
     Si num1 >= 100 Y numero01 <= 999 Entonces
-        Escribir("El n�mero tiene 3 d�gitos.")
+
+        Escribir("El numero tiene 3 digitos.")
     Sino
-        Escribir("El n�mero NO tiene 3 d�gitos.")
+        Escribir("El numero NO tiene 3 digitos.")
+
     FinSi
 	
 FinProceso
