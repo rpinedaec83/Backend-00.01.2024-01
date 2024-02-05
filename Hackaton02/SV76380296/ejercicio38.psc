@@ -1,4 +1,4 @@
-Proceso ejercicio_38
+Proceso ejercicio38
 	
 	Definir numero1,sumadivision Como Entero
 	
@@ -19,4 +19,4 @@ Proceso ejercicio_38
 	
 FinProceso
 
-//38. Hacer un algoritmo en Pseint que nos permita saber si un número es un número perfecto.
+//38. Hacer un algoritmo en Pseint que nos permita saber si un nï¿½mero es un nï¿½mero perfecto.
