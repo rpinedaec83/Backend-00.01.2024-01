@@ -1,7 +1,7 @@
-Proceso Repetirv1
+Proceso REPETIRV1
 	operacion = 0
 	Repetir
-		Escribir "Escribe una opción"
+		Escribir "Escribe una opcion"
 		Leer operacion
 	Hasta Que operacion == 5
 	
