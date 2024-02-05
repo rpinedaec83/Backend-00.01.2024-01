@@ -1,12 +1,12 @@
 Proceso Ejercicio10
 	Definir num Como Entero
-	Escribir "Escriba un número"
+	Escribir "Escriba un nï¿½mero"
 	Leer num
 	
 	Si num%2 = 0 Entonces
-		Escribir num, "es un número par"
+		Escribir num, "es un nï¿½mero par"
 	SiNo 
-		Escribir num, "es un número impar"
+		Escribir num, "es un nï¿½mero impar"
 	FinSi
 	
 	
