@@ -1,0 +1,21 @@
+
+Proceso Ejercicio21
+    Definir numero1, factorial Como Entero
+	
+    Escribir "Escriba un número para calcular su factorial: "
+    Leer numero1
+	
+    // Verificar si el número es negativo
+    Si numero1 < 0 Entonces
+        Escribir "El factorial no está definido para números negativos."
+    Sino
+        factorial = 1
+		
+        // Calcular el factorial
+        Para i Desde 1 Hasta numero1 Hacer
+            factorial = factorial * i
+        FinPara
+		
+        Escribir "El factorial de ", numero1, " es: ", factorial
+    FinSi
+FinProceso

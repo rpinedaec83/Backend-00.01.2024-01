@@ -1,0 +1,34 @@
+
+Proceso Ejercicio19
+	
+    Definir identificador, diasTrabajados Como Entero
+    Definir salarioDiario, salarioTotal Como Real
+	
+    Escribir "Escriba el número identificador del empleado: "
+    Leer identificador
+	
+    Escribir "Escriba la cantidad de días trabajados en la semana (máximo 6 días): "
+    Leer diasTrabajados
+	
+    Si diasTrabajados > 6 Entonces
+        Escribir "Error: La cantidad de días trabajados no puede ser mayor a 6."
+    Sino
+        Segun identificador
+            1:
+                salarioDiario = 56
+            2:
+                salarioDiario = 64
+            3:
+                salarioDiario = 80
+            4:
+                salarioDiario = 48
+            De Otro Modo:
+                Escribir "Error: Número identificador de empleado no válido."
+        FinSegun
+		
+        salarioTotal = diasTrabajados * salarioDiario
+		
+        Escribir "El salario total a pagar al empleado es: $", salarioTotal
+    FinSi
+FinProceso
+

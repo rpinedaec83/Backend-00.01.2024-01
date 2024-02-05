@@ -1,0 +1,20 @@
+
+Proceso Ejercicio36
+	
+    Definir n, a, b, c, i Como Entero
+	
+    Escribir "Escriba el número de términos de la serie de Fibonacci a mostrar: "
+    Leer n
+	
+    a = 0
+    b = 1
+	
+    Escribir "Los primeros ", n, " términos de la serie de Fibonacci son:"
+	
+    Para i Desde 1 Hasta n Hacer
+        Escribir a
+        c = a + b
+        a = b
+        b = c
+    FinPara
+FinProceso

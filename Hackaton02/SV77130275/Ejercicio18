@@ -1,0 +1,27 @@
+
+Proceso Ejercicio18
+    Definir cantidad, precioUnitario, precioTotal, gananciaVendedor Como Real
+	
+    Escribir "Escribir la cantidad de CDs a vender: "
+    Leer cantidad
+	
+    Si cantidad <= 9 Entonces
+        precioUnitario = 10
+    Sino
+        Si cantidad <= 99 Entonces
+            precioUnitario = 8
+        Sino
+            Si cantidad <= 499 Entonces
+                precioUnitario = 7
+            Sino
+                precioUnitario = 6
+            FinSi
+        FinSi
+    FinSi
+	
+    precioTotal = cantidad * precioUnitario
+    gananciaVendedor = precioTotal * 0.0825
+	
+    Escribir "Precio total para el cliente: $", precioTotal
+    Escribir "Ganancia para el vendedor: $", gananciaVendedor
+FinProceso
