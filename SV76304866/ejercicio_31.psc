@@ -1,4 +1,4 @@
-//Hacer un algoritmo en Pseint parar calcular la media de los números pares e impares, sólo se ingresará diez números.
+//Hacer un algoritmo en Pseint parar calcular la media de los nï¿½meros pares e impares, sï¿½lo se ingresarï¿½ diez nï¿½meros.
 Algoritmo ejeercicio_31
 
     Definir num, contador, sumaPares, sumaImpares Como Entero
@@ -9,7 +9,7 @@ Algoritmo ejeercicio_31
     contador = 0
 
     Repetir
-        Escribir 'Ingrese un número:'
+        Escribir 'Ingrese un nï¿½mero:'
         Leer num
 
         Si num MOD 2 = 0 Entonces
@@ -26,7 +26,7 @@ Algoritmo ejeercicio_31
     mediaPares = sumaPares / 10
     mediaImpares = sumaImpares / 10
 
-    Escribir 'La media de los números pares es:', mediaPares
-    Escribir 'La media de los números impares es:', mediaImpares
+    Escribir 'La media de los nï¿½meros pares es:', mediaPares
+    Escribir 'La media de los nï¿½meros impares es:', mediaImpares
 	
 FinAlgoritmo
