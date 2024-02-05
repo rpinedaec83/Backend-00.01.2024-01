@@ -1,10 +1,15 @@
 // 3. Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
+
 Proceso ejercicio_3
+	Definir n Como Real
+	Definir cont Como Entero
+	Definir aux Como Entero
+	
 	Escribir "Ingrese un numero:"
 	Leer n
 	
 	//Obtenemos el valor absoluto, en caso se ingrese un negativo
-	n = abs(n)
+	n <- trunc(abs(n))
 	
 	// primero, contar cuantos digitos
 	cont <- 0 
