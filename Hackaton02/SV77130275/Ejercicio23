@@ -1,0 +1,20 @@
+
+Proceso Ejercicio24
+	
+    Definir n, suma Como Entero
+	
+    Escribir "Ingrese un número para calcular la suma de los impares menores o iguales a n: "
+    Leer n
+	
+    Si n < 0 Entonces
+        Escribir "Ingrese un valor positivo para n."
+    Sino
+        suma = 0
+		
+        Para i Desde 1 Hasta n Hacer
+            suma = suma + i
+        FinPara
+		
+        Escribir "La suma de los impares menores o iguales a ", n, " es: ", suma
+    FinSi
+FinProceso

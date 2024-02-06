@@ -1,0 +1,27 @@
+
+Proceso Ejercicio35
+	
+    Definir numero1, mayor1, menor1 Como Real
+    Definir i Como Entero
+	
+    Escribir "Ingrese el primer número: "
+    Leer numero1
+    mayor1 = numero1
+    menor1 = numero1
+	
+    Para i Desde 2 Hasta 20 Hacer
+        Escribir "Ingrese el número ", i, ": "
+        Leer numero1
+		
+        Si numero1 > mayor1 Entonces
+            mayor1 = numero1
+        FinSi
+		
+        Si numero1 < menor1 Entonces
+            menor1 = numero1
+        FinSi
+    FinPara
+	
+    Escribir "El número mayor es: ", mayor1
+    Escribir "El número menor es: ", menor1
+FinProceso

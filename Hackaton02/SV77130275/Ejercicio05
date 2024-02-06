@@ -1,0 +1,31 @@
+
+Proceso  Ejercicio05
+    Definir cantidad, precioZapato, total, descuento Como Real
+	
+    precioZapato = 80  
+	
+    Escribir "Ingrese la cantidad de zapatos a comprar:"
+    Leer cantidad
+	
+    Si cantidad > 0 Entonces
+        total = cantidad * precioZapato  
+        
+        Si cantidad > 30 Entonces
+            descuento = 0.4  // Descuento del 40% para más de 30 zapatos
+        Sino
+            Si cantidad > 20 Entonces
+                descuento = 0.2  // Descuento del 20% para más de 20 pero menos de 30 zapatos
+            Sino
+                Si cantidad > 10 Entonces
+                    descuento = 0.1  // Descuento del 10% para más de 10 pero menos de 20 zapatos
+                FinSi
+            FinSi
+        FinSi
+		
+        total = total - (total * descuento)  
+		
+        Escribir "El total a pagar con descuento es: $", total
+    Sino
+        Escribir "La cantidad de zapatos debe ser mayor que cero"
+    FinSi
+FinProceso

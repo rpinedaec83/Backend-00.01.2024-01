@@ -1,0 +1,27 @@
+
+Proceso Ejercicio27
+	
+    Definir suma, contador, numero1 Como Real
+	
+    suma = 0
+    contador = 0
+	
+    Escribir "Escriba números positivos para calcular la media. Ingrese un número negativo para finalizar."
+
+    Repetir
+        Escribir "Escriba un número: "
+        Leer numero1
+		
+        Si numero >= 0 Entonces
+            suma = suma + numero1
+            contador = contador + 1
+        FinSi
+    Hasta Que numero1 < 0
+	
+    Si contador > 0 Entonces
+        media = suma / contador
+        Escribir "La media de los números positivos ingresados es: ", media
+    Sino
+        Escribir "No se ingresaron números positivos."
+    FinSi
+FinProceso
