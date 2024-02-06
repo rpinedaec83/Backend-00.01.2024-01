@@ -1,4 +1,4 @@
-//Haceer un algoritmo en Pseint parar calcular la media de los n�meros pares e impares, s�lo se ingresar� diez n�meros.
+//Hacer un algoritmo en Pseint parar calcular la media de los n�meros pares e impares, s�lo se ingresar� diez n�meros.
 Algoritmo ejeercicio_31
 
     Definir num, contador, sumaPares, sumaImpares Como Entero
