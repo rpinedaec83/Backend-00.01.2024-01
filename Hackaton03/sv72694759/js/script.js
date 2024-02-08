@@ -18,3 +18,13 @@ function ejecicio2(){
         alert("El nùmero es negativo");
     }
 }
+
+function ejecicio3(){
+    let numero = prompt("Escriba su numero");
+    if(numero>0){
+        alert("El nùmero es positivo")
+    }
+    else{
+        console.log("El nùmero es negativo");
+    }
+}
