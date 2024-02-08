@@ -28,3 +28,12 @@ function ejecicio3(){
         alert("El nùmero no termina en 4");
     }
 }
+
+function ejecicio4(){
+    let numero1 = prompt("Escriba el primer numero");
+    let numero2 = prompt("Escriba el segundo numero");
+    let numero3 = prompt("Escriba el tercer numero");
+    const numerosOrdenados = [numero1, numero2, numero3].sort((a, b) => a - b);
+
+    alert('Números de menor a mayor:', numerosOrdenados);
+}
