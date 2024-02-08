@@ -15,7 +15,7 @@ function ejecicio2(){
         alert("El nùmero es positivo")
     }
     else{
-        alert("El nùmero es negativo");
+        console.log("El nùmero es negativo");
     }
 }
 
