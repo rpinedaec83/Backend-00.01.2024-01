@@ -84,5 +84,5 @@ console.log(añod);
 console.log(mesd);
 console.log(diad);
 
-
-
+let random = Math.random();
+console.log(random);
