@@ -35,5 +35,5 @@ function ejecicio4(){
     let numero3 = prompt("Escriba el tercer numero");
     const numeros = [numero1, numero2, numero3].sort((a, b) => a - b);
 
-    alert('Números de menor a mayor:', numeros);
+    alert('Números de menor a mayor:', + numeros.join(', '));
 }
