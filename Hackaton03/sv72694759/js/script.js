@@ -21,10 +21,10 @@ function ejecicio2(){
 
 function ejecicio3(){
     let numero = prompt("Escriba su numero");
-    if(numero>0){
-        alert("El nùmero es positivo")
+    if(numero%10===4){
+        alert("El nùmero termina en 4")
     }
     else{
-        alert("El nùmero es negativo");
+        alert("El nùmero no termina en 4");
     }
 }
