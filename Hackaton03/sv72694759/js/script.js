@@ -50,5 +50,5 @@ function ejecicio5(){
         descuento=0.1;
     }
     const montoFinal = total*(1-descuento);
-    alert('Se debe pagar:  $${montoFinal}');
+    alert('Se debe pagar: '  +montoFinal);
 }
