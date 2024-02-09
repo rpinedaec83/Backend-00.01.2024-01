@@ -66,5 +66,5 @@ function ejecicio6(){
         sueldoSemana = (horasNormales * tarifaNormal) + (horasExtras * tarifaExtra);
       }
 
-    alert('Se debe pagar: '  +horasExtras);
+    alert('Se debe pagar: '  +sueldoSemana);
 }
