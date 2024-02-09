@@ -5,7 +5,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 15px;
+  margin: 16px;
 }
 button:active {
   background-color: #3e8e41;
