@@ -37,3 +37,20 @@ function ejecicio4(){
 
     alert('Números de menor a mayor: ' +numeros.join(' , '));
 }
+
+function ejecicio5(){
+    let Cantzap = prompt("Ingrese la cantidad de zapatos que desea comrpar");
+    precioUnitario = 80;
+    total= Cantzap*precioUnitario;
+    if(Cantzap > 30){
+        descuento=0.4;
+    }
+    else if(Cantzap > 20){
+        descuento=0.2;
+    }
+    else if(Cantzap > 10){
+        descuento=0.1;
+    }
+    const montoFinal = total*(1-descuento);
+    alert('Se debe pagar: ' {montoFinal});
+}
