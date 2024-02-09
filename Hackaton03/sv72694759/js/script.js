@@ -52,3 +52,19 @@ function ejecicio5(){
     const montoFinal = total*(1-descuento);
     alert('Se debe pagar: '  +montoFinal);
 }
+
+function ejecicio6(){
+    let horasTrabajadas = prompt("Ingrese la cantidad de horas trabajadas en la semana");
+    tarifanormal = 20;
+    tarifaExtra = 25;
+    
+    if(horasTrabajadas <= 40) {
+        sueldoSemana = horasTrabajadas * tarifaNormal;
+    } else {
+        const horasNormales = 40;
+        const horasExtras = horasTrabajadas - horasNormales;
+        sueldoSemana = (horasNormales * tarifaNormal) + (horasExtras * tarifaExtra);
+      }
+
+    alert('Se debe pagar: '  +horasExtras);
+}
