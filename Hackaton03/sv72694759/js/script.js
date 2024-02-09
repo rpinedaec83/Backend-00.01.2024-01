@@ -59,12 +59,12 @@ function ejecicio6(){
     tarifaExtra = 25;
     
     if(horasTrabajadas <= 40) {
-        sueldoSemana = horasTrabajadas * tarifaNormal;
+        sueldoSemana = horasTrabajadas * tarifanormal;
     } else {
         const horasNormales = 40;
         const horasExtras = horasTrabajadas - horasNormales;
-        sueldoSemana = (horasNormales * tarifaNormal) + (horasExtras * tarifaExtra);
+        sueldoSemana = (horasNormales * tarifanormal) + (horasExtras * tarifaExtra);
       }
 
-    alert('Se debe pagar: '  +sueldoSemana);
+    alert('El sueldo es: '  +sueldoSemana);
 }
