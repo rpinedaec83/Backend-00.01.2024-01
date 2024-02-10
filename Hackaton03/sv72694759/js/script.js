@@ -215,5 +215,34 @@ function ejecicio16(){
 
 function ejecicio17(){
     let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
+}
 
+function ejecicio18(){
+    let cantidadCDs = prompt("Ingrese la cantidad de CDs a vender:");
+
+    // Calcular el precio total para el cliente y la ganancia para el vendedor
+    let precioTotal;
+    let gananciaVendedor;
+    
+    if (cantidadCDs >= 1 && cantidadCDs <= 9) {
+      precioTotal = cantidadCDs * 10;
+    } else if (cantidadCDs >= 10 && cantidadCDs <= 99) {
+      precioTotal = cantidadCDs * 8;
+    } else if (cantidadCDs >= 100 && cantidadCDs <= 499) {
+      precioTotal = cantidadCDs * 7;
+    } else if (cantidadCDs >= 500) {
+      precioTotal = cantidadCDs * 6;
+    } else {
+      // Si la cantidad ingresada no es válida
+      alert("Cantidad de CDs no válida. Por favor, ingrese una cantidad válida.");
+    }
+    
+    // Calcular la ganancia para el vendedor (8.25% de la venta)
+    gananciaVendedor = precioTotal * 0.0825;
+    
+    // Mostrar los resultados mediante alert
+    if (precioTotal !== undefined) {
+      alert(`Precio total para el cliente: $${precioTotal.toFixed(2)}`);
+      alert(`Ganancia para el vendedor: $${gananciaVendedor.toFixed(2)}`);
+    }
 }
