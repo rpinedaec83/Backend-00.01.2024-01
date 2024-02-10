@@ -93,3 +93,14 @@ function ejecicio8(){
         alert('El estudiante desaprobò con: ' +notapromedio);
     } 
     }
+
+    function ejecicio9(){
+        let sueldo = prompt("Ingrese su sueldo actual en $");
+        porcentaje1=0.05;
+        porcentaje2=0.10;
+        if(sueldo>2000){
+            alert('Su aumento serà de ' +sueldo*porcentaje1);
+        }    else{
+            alert('Su aumento serà de ' +sueldo*porcentaje2);
+        } 
+        }
