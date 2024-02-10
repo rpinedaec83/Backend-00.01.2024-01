@@ -180,9 +180,9 @@ function ejecicio16(){
     let numero = prompt("Ingrese un nùmero del 1 al 7: ");
     switch (numero) {
         case 1:
-            alert ("Lunes");
+            alert("Lunes");
         case 2:
-            alert ("Martes");
+            alert("Martes");
         case 3:
             alert("Miércoles");
         case 4:
