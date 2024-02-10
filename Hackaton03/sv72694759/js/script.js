@@ -215,35 +215,32 @@ function ejecicio16(){
 
 function ejecicio17(){
 
-  // Parsear la hora ingresada en formato HH:mm:ss
-  let partesHora = horaActual.split(':');
-  let horas = parseInt(partesHora[0]);
-  let minutos = parseInt(partesHora[1]);
-  let segundos = parseInt(partesHora[2]);
-
-  // Crear un objeto Date con la hora ingresada
-  let fecha = new Date();
-  fecha.setHours(horas, minutos, segundos);
-
-  // Sumar un segundo a la hora
-  fecha.setSeconds(fecha.getSeconds() + 1);
-
-  // Obtener la nueva hora
-  let nuevaHora = `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
-
-  return nuevaHora;
-
-
-// Solicitar al usuario que ingrese la hora
-let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
-
-// Validar si la hora ingresada tiene un formato válido (opcional)
-let formatoValido = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/.test(horaIngresada);
-
-if (formatoValido) {
+    let partesHora = horaActual.split(':');
+    let horas = parseInt(partesHora[0]);
+    let minutos = parseInt(partesHora[1]);
+    let segundos = parseInt(partesHora[2]);
+  
+    // Validar si la hora ingresada tiene un formato válido
+    if (horas >= 0 && horas <= 23 && minutos >= 0 && minutos <= 59 && segundos >= 0 && segundos <= 59) {
+      // Crear un objeto Date con la hora ingresada
+      let fecha = new Date();
+      fecha.setHours(horas, minutos, segundos);
+  
+      // Sumar un segundo a la hora
+      fecha.setSeconds(fecha.getSeconds() + 1);
+  
+      // Obtener la nueva hora
+      let nuevaHora = `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+  
+      return nuevaHora;
+    } else {
+      return "Formato de hora inválido.";
+    }
+  }
+  
+  // Solicitar al usuario que ingrese la hora
+  let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
+  
+  // Calcular la siguiente hora después de un segundo y mostrar el resultado mediante alert
   let siguienteHora = calcularSiguienteSegundo(horaIngresada);
   alert(`La siguiente hora después de un segundo será: ${siguienteHora}`);
-} else {
-  alert("Formato de hora inválido. Por favor, ingrese en el formato HH:mm:ss.");
-}
-}
