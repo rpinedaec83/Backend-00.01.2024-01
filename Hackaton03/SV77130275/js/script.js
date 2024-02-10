@@ -148,3 +148,37 @@ function ejercicio5() {
         if (promedio > 11)
         console.log("Usted ha aprobadado")
     }
+    /*Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, 
+    se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, 
+    si generaba menos de $2000 su aumento será de un 10%./** */
+
+    function ejercicio9() {
+
+        let sueldoActual = parseInt(prompt("Escriba su sueldo actual"));
+        console.log("sualseldoActual")
+        
+        if (sueldoActual < 2000){
+            console.log("Usted tiene un aumento del 10%")
+            console.log(sueldoActual + (sueldoActual * 0.10))
+        }
+            else if (sueldoActual > 2000)
+
+            console.log ("Usted tiene un aumento del 5%")
+            console.log(sueldoActual + (sueldoActual * 0.05))
+    }
+/*Hacer un algoritmo en JavaScript que diga si un número es par o impar./** */
+ function ejercicio10() {
+
+        let numero = parseInt(prompt("Escriba un numero"));
+
+        if (numero % 2 == 0) {
+            console.log("El numero es par")
+        } else {
+            console.log("El numero es impar")
+        }
+    }
+  // Hacer un algoritmo en JavaScript que diga si un número es par o impar.
+
+function ejercicio11(){
+    
+}
