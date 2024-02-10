@@ -79,5 +79,5 @@ if(tipocliente=A){
 }    else if(tipocliente=C){
     totalpagar=0.8*monto;
 }
-alert('Total a pagar:' +totalpagar)
+alert('Total a pagar:' +totalpagar);
 }
