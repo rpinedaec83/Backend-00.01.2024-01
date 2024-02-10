@@ -41,3 +41,4 @@ Renzo Romero
 Jonatnan Pacompia 
 
 Omar Lobo
+Clever Paredes
