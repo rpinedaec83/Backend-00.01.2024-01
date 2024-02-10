@@ -129,3 +129,15 @@ function ejecicio11(){
     }
     alert("El mayor nùmero es: " +mayor);
 }
+
+function ejecicio12(){
+    let numero1 = prompt("Ingrese el primer nùmero");
+    let numero2 = prompt("Ingrese el segundo nùmero");
+    let mayor;
+    if (numero1 >= numero2) {
+        mayor = numero1;
+    } else {
+        mayor = numero2;
+    }
+    alert("El mayor nùmero es: " +mayor);
+}
