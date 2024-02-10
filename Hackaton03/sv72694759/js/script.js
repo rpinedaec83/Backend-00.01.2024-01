@@ -154,13 +154,11 @@ function ejecicio13(){
 
 function ejecicio14(){
     let numero = prompt("Ingrese un nùmero entero del 1 al 10");
-    if(10>=numero){
+   
     if (numero === 2||numero === 3||numero === 5||numero === 7) {
         alert("El nùmero es primo");
-    } else {
+    } else{
         alert("El nùmero no es primo");
     }
     }
-    else{
-    alert("El nùmero es mayor a 10, ingrese un nùmero entero del 1 al 10")}
-}
+
