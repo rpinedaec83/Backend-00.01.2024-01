@@ -141,3 +141,13 @@ function ejecicio12(){
     }
     alert("El mayor nùmero es: " +mayor);
 }
+
+function ejecicio13(){
+    let letra = prompt("Ingrese una letra en minùscula");
+    if (letra === 'a'||letra === 'e'||letra === 'i'||letra === 'o'||letra === 'u') {
+        alert("El caracter es una vocal");
+    } else {
+        alert("El caracter es una consonante");
+    }
+
+}
