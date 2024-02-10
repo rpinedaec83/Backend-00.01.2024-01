@@ -175,3 +175,26 @@ function ejecicio15(){
     peso2= peso*0.453592
     alert("El peso en kilogramos es: " +peso2);
 }
+
+function ejecicio16(){
+    let numero = prompt("Ingrese un nùmero del 1 al 7: ");
+    switch (numero) {
+        case 1:
+            alert ("Lunes");
+        case 2:
+            alert ("Martes");
+        case 3:
+            alert("Miércoles");
+        case 4:
+            alert("Jueves");
+        case 5:
+            alert("Viernes");
+        case 6:
+            alert("Sábado");
+        case 7:
+            alert("Domingo");
+        default:
+            alert("Número inválido. Debe estar entre 1 y 7.");
+    }
+
+   }
