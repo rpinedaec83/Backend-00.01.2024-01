@@ -207,5 +207,7 @@ function ejecicio16(){
     alert("El dìa es domingo");
     break;
 
+    default :
+    alert("Ingrese un nùmero del 1 al 7");
     }
 }
