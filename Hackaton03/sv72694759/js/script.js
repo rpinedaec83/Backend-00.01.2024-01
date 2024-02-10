@@ -211,3 +211,36 @@ function ejecicio16(){
     alert("Ingrese un nùmero del 1 al 7");
     }
 }
+
+
+function ejecicio17(){
+    let partesHora = horaActual.split(':');
+    let horas = parseInt(partesHora[0]);
+    let minutos = parseInt(partesHora[1]);
+    let segundos = parseInt(partesHora[2]);
+  
+    // Crear un objeto Date con la hora ingresada
+    let fecha = new Date();
+    fecha.setHours(horas, minutos, segundos);
+  
+    // Sumar un segundo a la hora
+    fecha.setSeconds(fecha.getSeconds() + 1);
+  
+    // Obtener la nueva hora
+    let nuevaHora = `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
+  
+    return nuevaHora;
+  }
+  
+  // Solicitar al usuario que ingrese la hora
+  let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
+  
+  // Validar si la hora ingresada tiene un formato válido (opcional)
+  let formatoValido = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/.test(horaIngresada);
+  
+  if (formatoValido) {
+    let nuevaHora = calcularSiguienteSegundo(horaIngresada);
+    alert(`La hora dentro de un segundo será: ${nuevaHora}`);
+  } else {
+    alert("Formato de hora inválido. Por favor, ingrese en el formato HH:mm:ss.");
+}
