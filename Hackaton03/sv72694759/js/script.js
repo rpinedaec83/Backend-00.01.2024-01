@@ -68,3 +68,43 @@ function ejecicio6(){
 
     alert('El sueldo es: '  +sueldoSemana);
 }
+function ejecicio7(){
+    const descuentoTipoA = 0.10;
+    const descuentoTipoB = 0.15;
+    const descuentoTipoC = 0.20;
+
+    // Verificar el tipo de membresía y calcular el descuento correspondiente
+    let descuento = 0;
+    switch (membresia.toUpperCase()) {
+        case 'A':
+            descuento = totalCompra * descuentoTipoA;
+            break;
+        case 'B':
+            descuento = totalCompra * descuentoTipoB;
+            break;
+        case 'C':
+            descuento = totalCompra * descuentoTipoC;
+            break;
+        default:
+            console.log('Tipo de membresía no válido');
+            break;
+    }
+
+    // Devolver el monto del descuento
+    return descuento;
+}
+
+// Ejemplo de uso
+const tipoMembresiaCliente = 'B'; // Puedes cambiar el tipo de membresía aquí
+const totalCompraCliente = 100; // Puedes cambiar el monto de la compra aquí
+
+const descuentoCliente = calcularDescuento(tipoMembresiaCliente, totalCompraCliente);
+
+// Mostrar el resultado
+if (descuentoCliente > 0) {
+    console.log(`El cliente con membresía tipo ${tipoMembresiaCliente} tiene un descuento del ${descuentoCliente.toFixed(2)} en su compra de $${totalCompraCliente}.`);
+    console.log(`El total a pagar es: $${(totalCompraCliente - descuentoCliente).toFixed(2)}`);
+} else {
+    console.log('No se pudo calcular el descuento. Verifica el tipo de membresía.');
+
+}
