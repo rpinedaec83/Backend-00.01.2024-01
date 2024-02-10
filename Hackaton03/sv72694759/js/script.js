@@ -200,7 +200,6 @@ function ejecicio16(){
         alert("El dìa es domingo")
     }
     if(numero>=8){
-        alert("Ingrese un nùmero entero del 1 al 7")
-    
-       }
+        alert("Ingrese un nùmero entero del 1 al 7")       
+    }
     }
