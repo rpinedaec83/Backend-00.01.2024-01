@@ -173,5 +173,5 @@ function ejecicio15(){
     
     let peso = prompt("Ingrese el peso en libras: ");
     peso2= peso*0.453592
-    alert("El peso en kilogramos es: " +centi2);
+    alert("El peso en kilogramos es: " +peso2);
 }
