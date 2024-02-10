@@ -94,13 +94,23 @@ function ejecicio8(){
     } 
     }
 
-    function ejecicio9(){
-        let sueldo = prompt("Ingrese su sueldo actual en $");
-        porcentaje1=0.05;
-        porcentaje2=0.10;
-        if(sueldo>2000){
-            alert('Su aumento serà de ' +sueldo*porcentaje1);
-        }    else{
-            alert('Su aumento serà de ' +sueldo*porcentaje2);
-        } 
-        }
+function ejecicio9(){
+    let sueldo = prompt("Ingrese su sueldo actual en $");
+    porcentaje1=0.05;
+    porcentaje2=0.10;
+    if(sueldo>2000){
+        alert('Su aumento serà de ' +sueldo*porcentaje1);
+    }    else{
+        alert('Su aumento serà de ' +sueldo*porcentaje2);
+    } 
+    }
+
+function ejecicio10(){
+    let numero = prompt("Escriba su numero");
+    if(numero%2===0){
+        alert("El nùmero ingresado es par")
+    }
+    else{
+        alert("El nùmero ingresado es impar");
+    }
+}
