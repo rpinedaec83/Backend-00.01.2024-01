@@ -114,3 +114,18 @@ function ejecicio10(){
         alert("El nùmero ingresado es impar");
     }
 }
+
+function ejecicio11(){
+    let numero1 = prompt("Ingrese el primer nùmero");
+    let numero2 = prompt("Ingrese el segundo nùmero");
+    let numero3 = prompt("Ingrese el tercer nùmero");
+    let mayor
+    if (numero1 >= numero2 && numero1 >= numero3) {
+        mayor = numero1;
+    } else if (numero2 >= numero1 && numero2 >= numero3) {
+        mayor = numero2;
+    } else {
+        mayor = numero3;
+    }
+    alert("El mayor nùmero es: " +mayor)
+}
