@@ -230,10 +230,8 @@ function ejecicio17(){
     let nuevaHora = `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
   
     return nuevaHora;
-  }
-  
-  // Solicitar al usuario que ingrese la hora
-  let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
+    
+   let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
   
   // Validar si la hora ingresada tiene un formato válido (opcional)
   let formatoValido = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/.test(horaIngresada);
@@ -243,4 +241,5 @@ function ejecicio17(){
     alert(`La hora dentro de un segundo será: ${nuevaHora}`);
   } else {
     alert("Formato de hora inválido. Por favor, ingrese en el formato HH:mm:ss.");
+}
 }
