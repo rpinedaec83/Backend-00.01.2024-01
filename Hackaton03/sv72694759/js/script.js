@@ -246,3 +246,41 @@ function ejecicio18(){
       alert(`Ganancia para el vendedor: $${gananciaVendedor.toFixed(2)}`);
     }
 }
+
+function ejecicio19(){
+    let numeroIdentificador = prompt("Ingrese el número identificador del empleado:");
+
+// Solicitar al usuario que ingrese la cantidad de días trabajados en la semana
+let diasTrabajados = parseInt(prompt("Ingrese la cantidad de días trabajados en la semana (máximo 6 días):"));
+
+// Definir salarios diarios para cada tipo de empleado
+const salarioCajero = 56;
+const salarioServidor = 64;
+const salarioPreparador = 80;
+const salarioMantenimiento = 48;
+
+// Calcular el salario total según el tipo de empleado y la cantidad de días trabajados
+let salarioTotal;
+
+switch (numeroIdentificador) {
+  case 1:
+    salarioTotal = salarioCajero * diasTrabajados;
+    break;
+  case 2:
+    salarioTotal = salarioServidor * diasTrabajados;
+    break;
+  case 3:
+    salarioTotal = salarioPreparador * diasTrabajados;
+    break;
+  case 4:
+    salarioTotal = salarioMantenimiento * diasTrabajados;
+    break;
+  default:
+    alert("Número identificador de empleado no válido.");
+}
+
+// Mostrar el salario total mediante alert
+if (!isNaN(salarioTotal)) {
+  alert(`El salario total para el empleado es: $${salarioTotal}`);
+}
+}
