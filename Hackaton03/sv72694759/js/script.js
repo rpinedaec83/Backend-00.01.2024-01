@@ -248,7 +248,7 @@ function ejecicio18(){
 }
 
 function ejecicio19(){
-    let numeroIdentificador = prompt("Ingrese el número identificador del empleado:");
+    let numeroIdentificador = prompt("Ingrese el número identificador del empleado(1=cajero, 2=servidor, 3=preparador, 4=mantenimiento):");
 
 // Solicitar al usuario que ingrese la cantidad de días trabajados en la semana
 let diasTrabajados = parseInt(prompt("Ingrese la cantidad de días trabajados en la semana (máximo 6 días):"));
@@ -263,16 +263,16 @@ const salarioMantenimiento = 48;
 let salarioTotal;
 
 switch (numeroIdentificador) {
-  case 1:
+  case '1':
     salarioTotal = salarioCajero * diasTrabajados;
     break;
-  case 2:
+  case '2':
     salarioTotal = salarioServidor * diasTrabajados;
     break;
-  case 3:
+  case '3':
     salarioTotal = salarioPreparador * diasTrabajados;
     break;
-  case 4:
+  case '4':
     salarioTotal = salarioMantenimiento * diasTrabajados;
     break;
   default:
