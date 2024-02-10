@@ -1,11 +1,13 @@
 
  console.log("Bienvenido a la tienda de zapatos")
 
- const numerozapatos = prompt("Ingrese la cantidad de zapatos que desea")
- 
+ let numerozapatos = prompt("Ingrese la cantidad de zapatos que desea");
+ numerozapatos = parseInt(numerozapatos)
+
  const costoporzapato = 80;
 
- const preciototal = numerozapatos+costoporzapato;
+
+ let preciototal = numerozapatos*costoporzapato;
 
 
  if (numerozapatos > 30) 
@@ -13,16 +15,14 @@
     preciototal = preciototal * 0.6; 
 } 
 
-else if (cantidadZapatos > 20) 
+else if (numerozapatos > 20) 
 {
     preciototal = preciototal * 0.8; 
 } 
 
-else if (cantidadZapatos > 10) 
+else if (numerozapatos > 10) 
 {
     preciototal = preciototal * 0.9;
 }
 
-console.log(precioTotal);
-
- 
+console.log("El precio total es de: " + preciototal);
