@@ -214,7 +214,7 @@ function ejecicio16(){
 
 
 function ejecicio17(){
-    
+
   // Parsear la hora ingresada en formato HH:mm:ss
   let partesHora = horaActual.split(':');
   let horas = parseInt(partesHora[0]);
@@ -232,7 +232,7 @@ function ejecicio17(){
   let nuevaHora = `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`;
 
   return nuevaHora;
-}
+
 
 // Solicitar al usuario que ingrese la hora
 let horaIngresada = prompt("Ingrese la hora en formato HH:mm:ss");
@@ -245,5 +245,5 @@ if (formatoValido) {
   alert(`La siguiente hora después de un segundo será: ${siguienteHora}`);
 } else {
   alert("Formato de hora inválido. Por favor, ingrese en el formato HH:mm:ss.");
-
+}
 }
