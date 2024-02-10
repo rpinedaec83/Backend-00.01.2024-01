@@ -72,11 +72,11 @@ function ejecicio6(){
 function ejecicio7(){
 let tipocliente = prompt("Ingrese el tipo de membresìa (A,B o C)");
 let monto= prompt("Ingrese el tipo de la compra");
-if(tipocliente=A){
+if(tipocliente==='A'){
     totalpagar=0.9*monto;
-}    else if(tipocliente=B){
+}    else if(tipocliente==='B'){
     totalpagar=0.85*monto;
-}    else if(tipocliente=C){
+}    else if(tipocliente==='C'){
     totalpagar=0.8*monto;
 }
 alert('Total a pagar:' +totalpagar);
