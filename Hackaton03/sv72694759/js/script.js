@@ -193,8 +193,6 @@ function ejecicio16(){
             alert("Sábado");
         case 7:
             alert("Domingo");
-        default:
-            alert("Número inválido. Debe estar entre 1 y 7.");
     }
 
    }
