@@ -180,28 +180,32 @@ function ejecicio16(){
     let numero = prompt("Ingrese un nùmero del 1 al 7: ");
    switch(numero){
     case 1:
-        alert("El dìa es lunes");
+    alert("El dìa es lunes");
     break;
+
     case 2:
     alert("El dìa es martes");
     break;
+
     case 3:
-        alert("El dìa es miercoles");
+    alert("El dìa es miercoles");
     break;
+
     case 4:
     alert("El dìa es jueves");
     break;
+
     case 5:
     alert("El dìa es viernes");
     break;
+
     case 6:
     alert("El dìa es sabado");
     break;
+
     case 7:
     alert("El dìa es domingo");
     break;
-    default:
-    alert("Ingrese un nùmero del 1 al 7");            
-    break;
+
     }
 }
