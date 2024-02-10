@@ -86,10 +86,10 @@ function ejecicio8(){
     let nota1 = prompt("Ingrese la primera nota");
     let nota2 = prompt("Ingrese la segunda nota");
     let nota3 = prompt("Ingrese la tercera nota");
-    notapromedio=(1/3)*(nota1+nota2+nota3)
+    notapromedio=(nota1+nota2+nota3)/3
     if(notapromedio>=12){
-        alert('El estudiante aprobò con:' +notapromedio);
+        alert('El estudiante aprobò con: ' +notapromedio);
     }    else{
-        alert('El estudiante desaprobò con:' +notapromedio);
+        alert('El estudiante desaprobò con: ' +notapromedio);
     } 
     }
