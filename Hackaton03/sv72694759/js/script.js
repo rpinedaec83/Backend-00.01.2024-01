@@ -124,7 +124,7 @@ function ejecicio11(){
         mayor = numero1;
     } else if (numero2 >= numero1 && numero2 >= numero3) {
         mayor = numero2;
-    } else if(numero3 >= numero1 && numero3 >= numero2){
+    } else if (numero3 >= numero1 && numero3 >= numero2){
         mayor = numero3;
     }
     alert("El mayor nùmero es: " +mayor);
