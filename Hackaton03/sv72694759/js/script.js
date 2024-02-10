@@ -166,3 +166,12 @@ function ejecicio14(){
     }
 }
 
+function ejecicio15(){
+    let centi = prompt("Ingrese una longitud en centimetros: ");
+    centi2= centi/2.54;
+    alert("La longitud en pulgadas es: " +centi2);
+    
+    let peso = prompt("Ingrese el peso en libras: ");
+    peso2= peso*0.453592
+    alert("El peso en kilogramos es: " +centi2);
+}
