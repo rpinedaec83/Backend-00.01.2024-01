@@ -179,27 +179,27 @@ function ejecicio15(){
 function ejecicio16(){
     let numero = prompt("Ingrese un nùmero del 1 al 7: ");
     if(numero===1){
-        alert("El dìa es lunes")
+        alert("El dìa es lunes");
     }
     if(numero===2){
-        alert("El dìa es martes")
+        alert("El dìa es martes");
     }
     if(numero===3){
-        alert("El dìa es mièrcoles")
+        alert("El dìa es mièrcoles");
     }
     if(numero===4){
-        alert("El dìa es jueves")
+        alert("El dìa es jueves");
     }
     if(numero===5){
-        alert("El dìa es viernes")
+        alert("El dìa es viernes");
     }
     if(numero===6){
-        alert("El dìa es sàbado")
+        alert("El dìa es sàbado");
     }
     if(numero===7){
-        alert("El dìa es domingo")
+        alert("El dìa es domingo");
     }
     if(numero>=8){
-        alert("Ingrese un nùmero entero del 1 al 7")       
+        alert("Ingrese un nùmero entero del 1 al 7");       
     }
     }
