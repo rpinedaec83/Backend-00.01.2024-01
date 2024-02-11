@@ -1,14 +1,117 @@
 <!DOCTYPE html>
 <html>
+<!-- Mantendremos páginas HTML específicas para aplicar técnicas SEO en el futuro. -->
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <title>Roadmaps DIO: Carreira Back-end</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- https://stackoverflow.com/a/61583095/3072570 -->
+  <meta property='og:title' content='Roadmaps DIO: Carreira Back-end' />
+  <meta property='og:image' content='assets/bddio.png' />
+  <meta property='og:description' content='Roadmap DIO com conteúdos educacionais relevantes para uma Carreira Back-end de sucesso.' />
+  <meta property='og:url' content='https://digitalinnovationone.github.io/roadmaps/careers/backend' />
+
+  <link rel="stylesheet" href="roadmaps.css">
+  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <link rel="icon" href="https://www.dio.me/favicon.ico" type="image/x-icon">
+  <script src='script.js'></script>
 </head>
+
 <body>
-    <button onclick="ejercicio1();">Ejercicio 1</button>
-    <script src='script.js'></script>
+  <header>
+    <a href="https://digitalinnovationone.github.io/roadmaps">
+      <img class="logo-dio" src="assets/logo-dio.svg" alt="Logo DIO">
+    </a>
+    <nav class="menu-principal">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://digitalinnovationone.github.io/roadmaps/careers/backend/" target="_blank">
+        <button class="button-share">
+          <span>Compartilhar</span>
+          <i class="fa-brands fa-linkedin-in"></i>
+        </button>
+      </a>
+    </nav>
+  </header>
+
+  <div class="wrapper content-header animate">
+    <h1>Hackaton 03</h1>
+    <p>
+      <br>
+      <strong>Implementar en Javascript los 40 ejercicios definidos en:</strong>
+    </p>
+    <p>
+      <a href="https://github.com/rpinedaec83/Backend-00.01.2024-01/blob/main/Hackaton03/readme.md" target="_blank">https://github.com/rpinedaec83/Backend-00.01.2024-01/blob/main/Hackaton03/readme.md</a>
+    </p>
+  </div>
+
+  <div class="wrapper roadmap-steps">
+    <div class="center-line">
+      <a href="#" class="scroll-icon"><i class="fa-solid fa-caret-up"></i></a>
+    </div>
+    <!-- Otros elementos se crean dinámicamente a partir de los archivos JSON que representan nuestros Roadmaps. -->
+  </div>
+
+  <footer class="animate">
+    <div class="footer__content1">
+      <div class="container-info">
+        <h3>Contribua com o Projeto</h3>
+        <p>Esta solução é open-source e está disponível no GitHub da DIO. Entra lá e colabore através de uma Issue ou um Pull Request (PR) 😉</p>
+        <a href='https://github.com/digitalinnovationone/roadmaps' target='_blank'>
+          <i class="fa-brands fa-github"></i>
+          <span>digitalinnovationone/roadmaps</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer__content2">
+      <span>    
+        2023. <a href="https://www.dio.me" target="_blank">Digital Innovation One</a>. 
+        Todos os direitos reservados.
+      </span>
+  
+      <nav class="menu-social">
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/company/digitalinnovation-one/"target="_blank" 
+              title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@diomakethechange"target="_blank" 
+              title="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/dio_makethechange/" target="_blank"
+              title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/diomakethechange"target="_blank" 
+              title="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/dio_me_"target="_blank"
+              title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>   
+  </footer>
+
+  <script src="roadmaps.js"></script>
+
 </body>
+
 </html>

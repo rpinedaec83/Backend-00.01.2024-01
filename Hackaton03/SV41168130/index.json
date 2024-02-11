@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Ejercicio 1",
+        "description": "Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.",
+        "type": "Ejecutar",
+        "link": "ejercicio1();",
+        "iconClasses": "fa-brands fa-git",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 2",
+        "description": "Hacer un algoritmo en JavaScript que lea un número entero por el teclado y determinar si es negativo.",
+        "type": "Ejecutar",
+        "link": "ejercicio2();",
+        "iconClasses": "fa-solid fa-layer-group",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 3",
+        "description": "Hacer un algoritmo en JavaScript que lea un número y determinar si termina en 4.",
+        "type": "Ejecutar",
+        "link": "ejercicio3();",
+        "iconClasses": "fa-solid fa-database",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 4",
+        "description": "Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor.",
+        "type": "Ejecutar",
+        "link": "ejercicio4();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 5",
+        "description": "Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento, esta dependerá del número de zapatos que se compren. 10% por mas de 10 zapatos, 20% por mas de 20 hasta 30 zapatos, 40% por mas de 30 zapatos. El precio de cada zapato es de $80.",
+        "type": "Ejecutar",
+        "link": "ejercicio5();",
+        "iconClasses": "fa-brands fa-git",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 6",
+        "description": "Hacer un algoritmo en Javascript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas, entonces las horas extras se le pagarán a $25 por hora.",
+        "type": "Ejecutar",
+        "link": "ejercicio6();",
+        "iconClasses": "fa-solid fa-layer-group",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 7",
+        "description": "Hacer un algoritmo en Javascript para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, solo existen tres tipos de membresías, tipo A, tipo B y tipo C. Los descuentos son los siguientes: Tipo A 10% de descuento, Tipo B 15% de descuento, Tipo C 20% de descuento.",
+        "type": "Ejecutar",
+        "link": "ejercicio7();",
+        "iconClasses": "fa-solid fa-database",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 8",
+        "description": "Hacer un algoritmo en Javascript para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.",
+        "type": "Ejecutar",
+        "link": "ejercicio8();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    }
+]
