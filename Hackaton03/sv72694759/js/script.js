@@ -789,7 +789,6 @@ function ejecicio40(){
       alert("Por favor, ingrese un número entero positivo.");
     }
     
-    // Función para calcular la aproximación de π con la serie de Nilakantha
     function calcularAproximacionPi(terminos) {
       let aproximacion = 3;
     
