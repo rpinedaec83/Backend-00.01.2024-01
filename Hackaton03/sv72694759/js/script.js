@@ -332,7 +332,7 @@ function ejecicio20(){
 }
 
 
-function ejecicio20(){
+function ejecicio21(){
     let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
 
     // Validar si el número es un entero positivo
