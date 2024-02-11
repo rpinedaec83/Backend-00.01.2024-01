@@ -1,4 +1,4 @@
-Proceso ejercicio28
+nodeProceso ejercicio28
 	// Variables
     Definir suma, i Como Entero
 	
@@ -6,13 +6,13 @@ Proceso ejercicio28
     suma <- 0
     i <- 1
 	
-    // Calcular la suma de los primeros cien números con un ciclo Repetir
+    // Calcular la suma de los primeros cien nï¿½meros con un ciclo Repetir
     Repetir
         suma <- suma + i
         i <- i + 1
     Hasta Que i > 100
 	
     // Mostrar resultado
-    Escribir "La suma de los primeros cien números es: ", suma
+    Escribir "La suma de los primeros cien nï¿½meros es: ", suma
 
 FinProceso
