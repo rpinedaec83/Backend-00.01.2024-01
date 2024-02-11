@@ -686,3 +686,30 @@ function ejecicio36(){
       alert("Por favor, ingrese un número válido mayor a 0.");
     }
 }
+
+function ejecicio37(){
+    let numero1 = parseInt(prompt("Ingrese el primer número:"));
+    let numero2 = parseInt(prompt("Ingrese el segundo número:"));
+    
+    // Validar si los números ingresados son válidos
+    if (!isNaN(numero1) && !isNaN(numero2) && numero1 > 0 && numero2 > 0) {
+      // Calcular el M.C.D utilizando el algoritmo de Euclides
+      let mcd = calcularMCD(numero1, numero2);
+    
+      // Mostrar el resultado mediante alert
+      alert(`El M.C.D de ${numero1} y ${numero2} es: ${mcd}`);
+    } else {
+      // Mostrar mensaje de error si los números no son válidos
+      alert("Por favor, ingrese números enteros válidos mayores a 0.");
+    }
+    
+    // Función para calcular el M.C.D utilizando el algoritmo de Euclides
+    function calcularMCD(a, b) {
+      while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+      }
+      return a;
+    }
+}
