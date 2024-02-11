@@ -1,6 +1,6 @@
 Proceso Ejercicio_4
 	Definir n1, n2, n3, p, s, t Como Entero 
-	Escribir "Ingrese el tres números"
+	Escribir "Ingrese el tres nï¿½meros"
 	Leer n1, n2, n3
 	Si n1 > n2 y n1 > n3 Entonces
 		p <- n1

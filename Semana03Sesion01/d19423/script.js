@@ -165,3 +165,11 @@ console.log(arrFecha);
 text = "Please locate where 'locate' occurs!";
 let index = text.indexOf("locate");
 console.log(index);
+
+const date = new Date
+console.log(date);
+const time = new Date
+console.log(time);
+const tiemp = new Date
+console.log(tiemp);
+
