@@ -354,21 +354,21 @@ function ejecicio21(){
 }
 
 function ejecicio22(){
-    let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
+    let n = parseInt(prompt("Ingrese un número para calcular la suma de los primeros n números:"));
 
-    // Validar si el número es un entero positivo
-    if (!isNaN(numero) && numero >= 0) {
-      // Calcular el factorial
-      let factorial = 1;
+    // Validar si el número ingresado es válido
+    if (!isNaN(n) && n >= 1) {
+      // Calcular la suma de los primeros n números
+      let suma = 0;
     
-      for (let i = 1; i <= numero; i++) {
-        factorial *= i;
+      for (let i = 1; i <= n; i++) {
+        suma += i;
       }
     
       // Mostrar el resultado mediante alert
-      alert(`El factorial de ${numero} es: ${factorial}`);
+      alert(`La suma de los primeros ${n} números es: ${suma}`);
     } else {
       // Mostrar mensaje de error si el número no es válido
-      alert("Por favor, ingrese un número entero positivo.");
+      alert("Por favor, ingrese un número entero positivo mayor o igual a 1.");
     }
 }
