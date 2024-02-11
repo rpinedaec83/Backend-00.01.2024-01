@@ -352,3 +352,23 @@ function ejecicio21(){
     }
 
 }
+
+function ejecicio22(){
+    let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
+
+    // Validar si el número es un entero positivo
+    if (!isNaN(numero) && numero >= 0) {
+      // Calcular el factorial
+      let factorial = 1;
+    
+      for (let i = 1; i <= numero; i++) {
+        factorial *= i;
+      }
+    
+      // Mostrar el resultado mediante alert
+      alert(`El factorial de ${numero} es: ${factorial}`);
+    } else {
+      // Mostrar mensaje de error si el número no es válido
+      alert("Por favor, ingrese un número entero positivo.");
+    }
+}
