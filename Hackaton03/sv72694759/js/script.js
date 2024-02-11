@@ -658,3 +658,31 @@ function ejecicio35(){
     // Mostrar el número mayor y menor mediante alert
     alert(`El número mayor es: ${numeroMayor}\nEl número menor es: ${numeroMenor}`);
 }
+
+function ejecicio36(){
+    let n = parseInt(prompt("Ingrese el número de términos de la serie de Fibonacci:"));
+
+    // Validar si el número ingresado es válido
+    if (!isNaN(n) && n > 0) {
+      // Inicializar las variables para los dos primeros términos
+      let a = 0;
+      let b = 1;
+    
+      // Mostrar el primer término
+      let resultado = `Serie de Fibonacci (${n} términos):\n${a}`;
+    
+      // Calcular y mostrar los términos restantes de la serie
+      for (let i = 1; i < n; i++) {
+        let temp = a + b;
+        resultado += `, ${temp}`;
+        a = b;
+        b = temp;
+      }
+    
+      // Mostrar la serie mediante alert
+      alert(resultado);
+    } else {
+      // Mostrar mensaje de error si el número ingresado no es válido
+      alert("Por favor, ingrese un número válido mayor a 0.");
+    }
+}
