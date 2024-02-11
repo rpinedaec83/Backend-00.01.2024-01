@@ -286,43 +286,47 @@ if (!isNaN(salarioTotal)) {
 }
 
 function ejecicio20(){
-let num1 = parseInt(prompt("Ingrese el primer número:"));
-let num2 = parseInt(prompt("Ingrese el segundo número:"));
-let num3 = parseInt(prompt("Ingrese el tercer número:"));
-let num4 = parseInt(prompt("Ingrese el cuarto número:"));
-
-// Verificar si los números son pares
-let numerosPares = 0;
-
-if (num1 % 2 === 0) {
-  numerosPares++;
-}
-if (num2 % 2 === 0) {
-  numerosPares++;
-}
-if (num3 % 2 === 0) {
-  numerosPares++;
-}
-if (num4 % 2 === 0) {
-  numerosPares++;
-}
-
-// Encontrar el mayor de los números
-let mayor = Math.max(num1, num2, num3, num4);
-
-// Realizar operaciones condicionales
-if (num3 % 2 === 0) {
-  let cuadradoSegundo = num2 * num2;
-  alert(`El cuadrado del segundo número es: ${cuadradoSegundo}`);
-}
-
-if (num1 < num4) {
-  let media = (num1 + num2 + num3 + num4) / 4;
-  alert(`La media de los 4 números es: ${media}`);
-}
-
-if (num2 > num3 && num3 >= 50 && num3 <= 700) {
-  let sumaTotal = num1 + num2 + num3 + num4;
-  alert(`La suma de los 4 números es: ${sumaTotal}`);
-}
+    let num1 = parseInt(prompt("Ingrese el primer número:"));
+    let num2 = parseInt(prompt("Ingrese el segundo número:"));
+    let num3 = parseInt(prompt("Ingrese el tercer número:"));
+    let num4 = parseInt(prompt("Ingrese el cuarto número:"));
+    
+    // Inicializar el contador de números pares
+    let numerosPares = 0;
+    
+    // Verificar si los números son pares y contarlos
+    if (num1 % 2 === 0) {
+      numerosPares++;
+    }
+    if (num2 % 2 === 0) {
+      numerosPares++;
+    }
+    if (num3 % 2 === 0) {
+      numerosPares++;
+    }
+    if (num4 % 2 === 0) {
+      numerosPares++;
+    }
+    
+    // Mostrar la cantidad de números pares mediante alert
+    alert(`Cantidad de números pares: ${numerosPares}`);
+    
+    // Encontrar el mayor de los números
+    let mayor = Math.max(num1, num2, num3, num4);
+    
+    // Realizar operaciones condicionales
+    if (num3 % 2 === 0) {
+      let cuadradoSegundo = num2 * num2;
+      alert(`El cuadrado del segundo número es: ${cuadradoSegundo}`);
+    }
+    
+    if (num1 < num4) {
+      let media = (num1 + num2 + num3 + num4) / 4;
+      alert(`La media de los 4 números es: ${media}`);
+    }
+    
+    if (num2 > num3 && num3 >= 50 && num3 <= 700) {
+      let sumaTotal = num1 + num2 + num3 + num4;
+      alert(`La suma de los 4 números es: ${sumaTotal}`);
+    }
 }
