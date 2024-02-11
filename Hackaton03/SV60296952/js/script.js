@@ -419,29 +419,26 @@ incrementarTiempo();
 
 //EJERCICIO 18
 function ejercicio18 () {
-function calcularPrecioYGanancia() {
-    var cantidad, p, pt, gv;
-
-    var cantidad = parseInt(prompt("¿Cuántos CDs desea comprar?"));
-
-    if (cantidad <= 9) {
-        p = 10;
-    } else if (cantidad >= 10 && cantidad <= 99) {
-        p = 8;
-    } else if (cantidad >= 100 && cantidad <= 499) {
-        p = 7;
-    } else {
-        p = 6;
+    function calcularPrecioYGanancia() {
+        var cantidad = parseInt(prompt("¿Cuántos CDs desea comprar?"));
+        var p, pt, gv;
+        if (cantidad <= 9) {
+            p = 10;
+        } else if (cantidad >= 10 && cantidad <= 99) {
+            p = 8;
+        } else if (cantidad >= 100 && cantidad <= 499) {
+            p = 7;
+        } else {
+            p = 6;
+        }
+        var pt = cantidad * p;
+        var gv = pt * 0.0825;
+        var resultado = "El precio total para el cliente es: $" + pt + "\n";
+        resultado += "La ganancia para el vendedor es: $" + gv.toFixed(2);
+    
+        alert(resultado);
     }
-
-    var pt = cantidad * p;
-
-    var gv = pt * 0.0825;
-
-    alert("El precio total para el cliente es: $" + pt);
-    alert("La ganancia para el vendedor es: $" + gv.toFixed(2));
-}
-calcularPrecioYGanancia();
+    calcularPrecioYGanancia();    
 }
 
 //EJERCICIO 19
@@ -482,53 +479,56 @@ calcularPago();
 
 //EJERCICIO 20
 function ejercicio20 () {
-function operacionesConNumeros() {
-    var num1, num2, num3, num4;
-    var contar_pares = 0;
-    var maximo;
-    var num1 = parseFloat(prompt("Ingrese el primer número:"));
-    var num2 = parseFloat(prompt("Ingrese el segundo número:"));
-    var num3 = parseFloat(prompt("Ingrese el tercer número:"));
-    var num4 = parseFloat(prompt("Ingrese el cuarto número:"));
-
-    var maximo = num1;
-    if (num2 > maximo) {
-        maximo = num2;
+    function operacionesConNumeros() {
+        var num1 = parseFloat(prompt("Ingrese el primer número:"));
+        var num2 = parseFloat(prompt("Ingrese el segundo número:"));
+        var num3 = parseFloat(prompt("Ingrese el tercer número:"));
+        var num4 = parseFloat(prompt("Ingrese el cuarto número:"));
+        var contar_pares = 0;
+        var maximo = num1;
+        if (num2 > maximo) {
+            maximo = num2;
+        }
+        if (num3 > maximo) {
+            maximo = num3;
+        }
+        if (num4 > maximo) {
+            maximo = num4;
+        }
+        if (num1 % 2 === 0) {
+            contar_pares++;
+        }
+        if (num2 % 2 === 0) {
+            contar_pares++;
+        }
+        if (num3 % 2 === 0) {
+            contar_pares++;
+        }
+        if (num4 % 2 === 0) {
+            contar_pares++;
+        }
+    
+        var resultado = "Cantidad de números pares: " + contar_pares + "\n";
+        resultado += "El máximo es: " + maximo + "\n";
+    
+        if (num3 % 2 === 0) {
+            var cuadrado_segundo = num2 * num2;
+            resultado += "El cuadrado del segundo número es: " + cuadrado_segundo + "\n";
+        }
+    
+        if (num1 < num4) {
+            var media = (num1 + num2 + num3 + num4) / 4;
+            resultado += "La media de los cuatro números es: " + media + "\n";
+        }
+    
+        if (num2 > num3 && num3 >= 50 && num3 <= 700) {
+            var suma = num1 + num2 + num3 + num4;
+            resultado += "La suma de los cuatro números es: " + suma + "\n";
+        }
+    
+        alert(resultado);
     }
-    if (num3 > maximo) {
-        maximo = num3;
-    }
-    if (num4 > maximo) {
-        maximo = num4;
-    }
-    if (num1 % 2 === 0) {
-        contar_pares++;
-    }
-    if (num2 % 2 === 0) {
-        contar_pares++;
-    }
-    if (num3 % 2 === 0) {
-        contar_pares++;
-    }
-    if (num4 % 2 === 0) {
-        contar_pares++;
-    }
-    alert("Cantidad de números pares: " + contar_pares);
-    alert("El máximo es: " + maximo);
-    if (num3 % 2 === 0) {
-        var cuadrado_segundo = num2 * num2;
-        alert("El cuadrado del segundo número es: " + cuadrado_segundo);
-    }
-    if (num1 < num4) {
-        var media = (num1 + num2 + num3 + num4) / 4;
-        alert("La media de los cuatro números es: " + media);
-    }
-    if (num2 > num3 && num3 >= 50 && num3 <= 700) {
-        var suma = num1 + num2 + num3 + num4;
-        alert("La suma de los cuatro números es: " + suma);
-    }
-}
-operacionesConNumeros();
+    operacionesConNumeros();
 }
 
 //EJERCICIO 21
@@ -568,17 +568,24 @@ calcularSumaMenoresAN();
 
 //EJERCICIO 23
 function ejercicio23 () {
-    // Función principal para mostrar una tabla de multiplicar hasta un número dado
-function mostrarTablaMultiplicar() {
-    var t, num, i, res;
-    var t = parseInt(prompt("Ingrese la tabla a mostrar:"));
-    var num = parseInt(prompt("Ingrese hasta qué número desea ver la tabla:"));
-    for (var i = 0; i <= num; i++) {
-        res = t * i;
-        alert(t + " X " + i + " = " + res);
+    function ejercicio23() {
+        // Función principal para mostrar una tabla de multiplicar hasta un número dado
+        function mostrarTablaMultiplicar() {
+            var t, num, i, res;
+            var t = parseInt(prompt("Ingrese la tabla a mostrar:"));
+            var num = parseInt(prompt("Ingrese hasta qué número desea ver la tabla:"));
+            var resultados = ""; // Variable para almacenar todos los resultados
+            for (var i = 0; i <= num; i++) {
+                res = t * i;
+                resultados += t + " X " + i + " = " + res + "\n"; // Agregar cada resultado a la cadena
+            }
+            alert(resultados); // Mostrar todos los resultados en una sola alerta
+        }
+        mostrarTablaMultiplicar();
     }
-}
-mostrarTablaMultiplicar();
+    
+    ejercicio23();
+    
 }
 
 //EJERCICIO 24
@@ -702,3 +709,222 @@ function sumarNumeros() {
 }
 sumarNumeros();
 }
+
+//EJERCICIO 31
+
+function ejercicio31() {
+function calcularMedias() {
+    var sumaPares = 0;
+    var sumaImpares = 0;
+    var numPares = 0;
+    var numImpares = 0;
+
+    for (var contador = 1; contador <= 10; contador++) {
+        var num = parseInt(prompt("Ingrese un número " + contador + ":"));
+        if (num % 2 === 0) {
+            sumaPares += num;
+            numPares++;
+        } else {
+            sumaImpares += num;
+            numImpares++;
+        }
+    }
+    if (numPares > 0) {
+        var mediaPares = sumaPares / numPares;
+        alert("La media de los números pares es: " + mediaPares);
+    } else {
+        alert("No se encontraron números pares.");
+    }
+
+    if (numImpares > 0) {
+        var mediaImpares = sumaImpares / numImpares;
+        alert("La media de los números impares es: " + mediaImpares);
+    } else {
+        alert("No se encontraron números impares.");
+    }
+}
+calcularMedias();
+}
+
+//EJERCICIO 32 
+function ejercicio32 () {
+    function tarea32() {
+        var poblacionMaxima = 0;
+        var maxCiudad = 0;
+        var maxProvincia = 0;
+        var mensajeAlerta = "";
+    
+        for (var provincia = 1; provincia <= 3; provincia++) {
+            for (var ciudad = 1; ciudad <= 11; ciudad++) {
+                var poblacion = Math.floor(Math.random() * 1000) + 1;
+                mensajeAlerta += "Ingrese la población de la ciudad " + ciudad + " en la provincia " + provincia + ": " + poblacion + "\n";
+                if (poblacion > poblacionMaxima) {
+                    poblacionMaxima = poblacion;
+                    maxCiudad = ciudad;
+                    maxProvincia = provincia;
+                }
+            }
+        }
+        
+        mensajeAlerta += "La ciudad con la población más alta tiene " + poblacionMaxima + " habitantes.\n";
+        mensajeAlerta += "Provincia: " + maxProvincia + ", Ciudad: " + maxCiudad + "\n";
+    
+        alert(mensajeAlerta);
+    
+        // Mostrar el resultado nuevamente utilizando una única alerta
+        alert("La ciudad con la población más alta tiene " + poblacionMaxima + " habitantes.\nProvincia: " + maxProvincia + ", Ciudad: " + maxCiudad);
+    }
+    tarea32();   
+}
+
+//EJERCICIO 33
+function ejercicio33 () {
+    function tarea33() {
+        var rspta = "S";
+        while (rspta === "S") {
+            var mensaje = "¿Desea continuar con el programa? S/N";
+            rspta = prompt(mensaje).toUpperCase();
+            if (rspta !== "S" && rspta !== "N") {
+                alert("Respuesta inválida. Por favor, ingrese S o N.");
+            }
+        }
+        alert("Sesión terminada");
+    }
+    
+    tarea33();    
+}
+
+//EJERCICIO 34
+function ejercicio34 () {
+function tarea34() {
+    var multiplicando, multiplicador, resultado;
+    for (multiplicando = 1; multiplicando <= 9; multiplicando++) {
+        var tabla = "Tabla de multiplicar del " + multiplicando + ":\n";
+        for (multiplicador = 1; multiplicador <= 10; multiplicador++) {
+            resultado = multiplicando * multiplicador;
+            tabla += multiplicando + " x " + multiplicador + " = " + resultado + "\n";
+        }
+        alert(tabla);
+    }
+}
+tarea34();
+}
+
+//EJERCICIO 35
+function ejercicio35 () {
+    function tarea35() {
+        var numero, mayor, menor;
+        var x;
+        alert("Ingrese el número 1:");
+        numero = parseFloat(prompt());
+        mayor = numero;
+        menor = numero;
+        for (x = 2; x <= 20; x++) {
+            alert("Ingrese el número " + x + ":");
+            numero = parseFloat(prompt()); 
+            if (numero > mayor) {
+                mayor = numero;
+            }
+            
+            if (numero < menor) {
+                menor = numero;
+            }
+        }
+        
+        alert("El número mayor es: " + mayor);
+        alert("El número menor es: " + menor);
+    }
+    
+    tarea35(); 
+}
+
+//EJERCICIO 36
+function ejercicio36 () {
+    function FibonacciSecuencial(n) {
+        var i, f, n1, n2;
+        var resultados = ""; // Inicializar una cadena vacía para almacenar los resultados
+        n1 = 0;
+        n2 = 1;
+        for (i = 1; i <= n; i++) {
+            resultados += n1 + ", "; // Agregar el número actual seguido de una coma y un espacio
+            f = n1 + n2;
+            n1 = n2;
+            n2 = f;
+        }
+        // Eliminar la coma y el espacio extra al final de la cadena
+        resultados = resultados.slice(0, -2);
+        alert(resultados); // Mostrar todos los resultados en una sola alerta
+    }
+    
+    function tarea36() {
+        // Invocar el subproceso FibonacciSecuencial con un argumento de 5
+        FibonacciSecuencial(5);
+    }
+    
+    // Llamar al proceso tarea36
+    tarea36();    
+}
+// EJERCICIO 37
+function ejercicio37 () {
+    var num1, num2, residuo;
+    var entrada1 = prompt("Ingrese el primer número:");
+    num1 = parseInt(entrada1);
+    var entrada2 = prompt("Ingrese el segundo número:");
+    num2 = parseInt(entrada2);
+    
+    while (num2 !== 0) {
+        residuo = num1 % num2;
+        num1 = num2;
+        num2 = residuo;
+    }
+    
+    alert("El Máximo Común Divisor (MCD) es: " + num1); 
+}
+
+//EJERCICIO 38
+function ejercicio38 () {
+    var x, perfecto;
+    var n = parseInt(prompt("Escribe un número:"));
+    x = 2;
+    perfecto = 0;
+    
+    while (x <= n) {
+        if (n % x == 0) {
+            perfecto = perfecto + (n / x);
+        }
+        x = x + 1;
+    }
+    
+    if (perfecto == n) {
+        alert("El número " + n + " es un número perfecto");
+    } else {
+        alert("El número " + n + " no es un número perfecto");
+    }       
+}
+//EJERCICIO 39
+function ejercicio39 () {
+    var n, piAproximado;
+    var entrada = parseInt(prompt("Ingrese la cantidad de términos para la aproximación de Pi:"));
+    n = entrada;
+    
+    piAproximado = 0;
+    for (var i = 0; i < n; i++) {
+        piAproximado += Math.pow(-1, i) * (4 / (2 * i + 1));
+    }
+    alert("La aproximación de Pi con " + n + " términos es: " + piAproximado);
+}
+
+//EJERCICIO 40
+function ejercicio40 (){
+    var n, piAproximado;
+    var entrada = parseInt(prompt("Ingrese la cantidad de términos para la aproximación de Pi según la serie de Nilakantha:"));
+    n = entrada;
+    
+    piAproximado = 3.0;
+    for (var i = 1; i <= n; i++) {
+        piAproximado += Math.pow(-1, i) * (4 / ((2 * i) * (2 * i + 1) * (2 * i + 2)));
+    }
+    
+    alert("La aproximación de Pi según la serie de Nilakantha con " + n + " términos es: " + piAproximado);
+}
+//------------------------------------------------------------------------------------------------------------------------------------------
