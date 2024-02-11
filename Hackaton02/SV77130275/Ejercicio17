@@ -1,0 +1,34 @@
+
+Proceso  Ejercicio17
+	
+    Definir hora, minutos, segundos Como Entero
+	
+    Escribir "Escriba la hora (formato 24 horas): "
+    Leer hora
+	
+    Escribir "Escriba los minutos: "
+    Leer minutos
+	
+    Escribir "Escriba los segundos: "
+    Leer segundos
+	
+    Si segundos < 59 Entonces
+        segundos = segundos + 1
+    Sino
+        segundos = 0
+		
+        Si minutos < 59 Entonces
+            minutos = minutos + 1
+        Sino
+            minutos = 0
+			
+            Si hora < 23 Entonces
+                hora = hora + 1
+            Sino
+                hora = 0
+            FinSi
+        FinSi
+    FinSi
+	
+    Escribir "La hora después de un segundo es: ", hora, ":", minutos, ":", segundos
+FinProceso
