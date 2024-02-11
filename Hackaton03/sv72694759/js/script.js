@@ -770,6 +770,6 @@ function ejecicio39(){
         aproximacion += numerador / denominador;
       }
     
-      return aproximacion.toFixed(10); // Ajustar la precisión a 10 decimales
+      return aproximacion.toFixed(15); // Ajustar la precisión a 15 decimales
     }
 }
