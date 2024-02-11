@@ -730,14 +730,17 @@ function ejecicio38(){
       alert("Por favor, ingrese un número entero positivo.");
     }
     
-    // Función para verificar si un número es perfecto
     function esNumeroPerfecto(num) {
-      let sumaDivisores = 0;
-    
-      // Iterar sobre los posibles divisores hasta la mitad del número
-      for (let i = 1; i <= num / 2; i++) {
-        if (num % i === 0) {
-          sumaDivisores += i;
+        let sumaDivisores = 0;
+      
+        // Iterar sobre los posibles divisores hasta la mitad del número
+        for (let i = 1; i <= num / 2; i++) {
+          if (num % i === 0) {
+            sumaDivisores += i;
+          }
         }
-    }
-}}
+      
+        // Verificar si la suma de divisores es igual al número
+        return sumaDivisores === num;
+      }
+}
