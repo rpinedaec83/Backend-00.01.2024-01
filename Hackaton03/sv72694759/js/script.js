@@ -713,3 +713,31 @@ function ejecicio37(){
       return a;
     }
 }
+
+function ejecicio38(){
+    let numero = parseInt(prompt("Ingrese un número para verificar si es perfecto:"));
+
+    // Validar si el número ingresado es válido
+    if (!isNaN(numero) && numero > 0) {
+      // Verificar si el número es perfecto
+      if (esNumeroPerfecto(numero)) {
+        alert(`${numero} es un número perfecto.`);
+      } else {
+        alert(`${numero} no es un número perfecto.`);
+      }
+    } else {
+      // Mostrar mensaje de error si el número no es válido
+      alert("Por favor, ingrese un número entero positivo.");
+    }
+    
+    // Función para verificar si un número es perfecto
+    function esNumeroPerfecto(num) {
+      let sumaDivisores = 0;
+    
+      // Iterar sobre los posibles divisores hasta la mitad del número
+      for (let i = 1; i <= num / 2; i++) {
+        if (num % i === 0) {
+          sumaDivisores += i;
+        }
+    }
+}}
