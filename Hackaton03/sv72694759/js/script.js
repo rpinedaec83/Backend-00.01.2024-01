@@ -511,3 +511,15 @@ function ejecicio29(){
     // Mostrar el resultado mediante alert
     alert(`La suma de los primeros cien números es: ${suma}`);
 }
+
+function ejecicio30(){
+    let suma = 0;
+
+    // Utilizar un ciclo for para sumar los primeros cien números
+    for (let contador = 1; contador <= 100; contador++) {
+      suma += contador;
+    }
+    
+    // Mostrar el resultado mediante alert
+    alert(`La suma de los primeros cien números es: ${suma}`);
+}
