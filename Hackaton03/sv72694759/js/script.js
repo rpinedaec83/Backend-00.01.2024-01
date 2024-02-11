@@ -615,3 +615,17 @@ function ejecicio33(){
     // Mostrar un mensaje de despedida al finalizar
     alert("¡Hasta luego!");
 }
+
+function ejecicio34(){
+    for (let i = 1; i <= 9; i++) {
+        let tablaMultiplicar = "";
+      
+        // Generar la tabla de multiplicar para el número actual
+        for (let j = 1; j <= 10; j++) {
+          tablaMultiplicar += `${i} x ${j} = ${i * j}\n`;
+        }
+      
+        // Mostrar la tabla de multiplicar mediante alert
+        alert(`Tabla de multiplicar del ${i}:\n\n${tablaMultiplicar}`);
+      }
+}
