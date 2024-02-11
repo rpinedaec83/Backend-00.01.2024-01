@@ -425,3 +425,29 @@ function ejecicio25(){
     }
 
 }
+
+function ejecicio26(){
+    let dividendo = parseInt(prompt("Ingrese el dividendo:"));
+
+    // Solicitar al usuario que ingrese el divisor
+    let divisor = parseInt(prompt("Ingrese el divisor:"));
+    
+    // Validar si los números ingresados son válidos
+    if (!isNaN(dividendo) && !isNaN(divisor) && divisor !== 0) {
+      // Inicializar variables para almacenar el cociente y el resto
+      let cociente = 0;
+      let resto = dividendo;
+    
+      // Calcular el cociente y el resto por medio de restas sucesivas
+      while (resto >= divisor) {
+        resto -= divisor;
+        cociente++;
+      }
+    
+      // Mostrar el resultado mediante alert
+      alert(`El cociente es: ${cociente}\nEl resto es: ${resto}`);
+    } else {
+      // Mostrar mensaje de error si los números no son válidos
+      alert("Por favor, ingrese números enteros y asegúrese de que el divisor no sea cero.");
+    }
+}
