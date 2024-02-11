@@ -588,3 +588,30 @@ function ejecicio32(){
     // Mostrar la ciudad con la población más alta mediante alert
     alert(`La ciudad con la población más alta es: ${ciudadMasPoblada} con una población de ${poblacionMasAlta}`);
 }
+
+function ejecicio33(){
+    let continuar = true;
+
+    while (continuar) {
+      // Coloca aquí el código que deseas que se repita
+    
+      // Por ejemplo, solicitar al usuario algún dato
+      let nombre = prompt("Ingrese su nombre:");
+    
+      // Mostrar un mensaje con el dato ingresado
+      alert(`Hola, ${nombre}!`);
+    
+      // Preguntar al usuario si desea continuar
+      let respuesta = prompt("¿Desea continuar? (Ingrese 'si' para continuar, cualquier otra cosa para detener)");
+    
+      // Verificar la respuesta para decidir si continuar o detener
+      if (respuesta.toLowerCase() !== 'si') {
+        continuar = false;
+      } else {
+        alert("Continuemos...");
+      }
+    }
+    
+    // Mostrar un mensaje de despedida al finalizar
+    alert("¡Hasta luego!");
+}
