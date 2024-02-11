@@ -629,3 +629,32 @@ function ejecicio34(){
         alert(`Tabla de multiplicar del ${i}:\n\n${tablaMultiplicar}`);
       }
 }
+
+function ejecicio35(){
+    let numeroMayor = Number.MIN_VALUE;
+    let numeroMenor = Number.MAX_VALUE;
+    
+    // Iterar para ingresar veinte números
+    for (let i = 1; i <= 20; i++) {
+      // Solicitar al usuario ingresar un número
+      let numero = parseFloat(prompt(`Ingrese el número ${i}:`));
+    
+      // Validar si el número ingresado es válido
+      if (!isNaN(numero)) {
+        // Actualizar el número mayor y menor
+        if (numero > numeroMayor) {
+          numeroMayor = numero;
+        }
+        if (numero < numeroMenor) {
+          numeroMenor = numero;
+        }
+      } else {
+        // Mostrar mensaje de error si no se ingresa un número válido
+        alert("Por favor, ingrese un número válido.");
+        i--;  // Decrementar i para repetir la iteración con el mismo valor de i
+      }
+    }
+    
+    // Mostrar el número mayor y menor mediante alert
+    alert(`El número mayor es: ${numeroMayor}\nEl número menor es: ${numeroMenor}`);
+}
