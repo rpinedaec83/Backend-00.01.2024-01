@@ -497,3 +497,17 @@ function ejecicio28(){
     alert(`La suma de los primeros cien números es: ${suma}`);
 
 }
+
+function ejecicio29(){
+    let suma = 0;
+    let contador = 1;
+    
+    // Utilizar un ciclo while para sumar los primeros cien números
+    while (contador <= 100) {
+      suma += contador;
+      contador++;
+    }
+    
+    // Mostrar el resultado mediante alert
+    alert(`La suma de los primeros cien números es: ${suma}`);
+}
