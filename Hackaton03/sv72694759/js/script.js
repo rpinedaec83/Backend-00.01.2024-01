@@ -794,15 +794,12 @@ function ejecicio40(){
       let aproximacion = 3;
     
       for (let i = 1; i <= terminos; i++) {
+        let numerador = (i % 2 === 0) ? -4 : 4;
         let denominador1 = 2 * i;
         let denominador2 = 2 * i + 1;
-        let termino = 4 / (denominador1 * denominador2 * (denominador2 + 1));
+        let termino = numerador / (denominador1 * denominador2 * (denominador2 + 1));
         
-        if (i % 2 === 0) {
-          aproximacion += termino;
-        } else {
-          aproximacion -= termino;
-        }
+        aproximacion += termino;
       }
     
       return aproximacion.toFixed(15); // Ajustar la precisión a 15 decimales
