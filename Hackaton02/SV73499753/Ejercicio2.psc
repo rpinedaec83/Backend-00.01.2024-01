@@ -1,15 +1,16 @@
-// Hacer un algoritmo en Pseint que lea un número entero por el teclado y determinar si es negativo.
+// Hacer un algoritmo en Pseint que lea
+ un nï¿½mero entero por el teclado y determinar si es negativo.
 Proceso Ejercicio2
 	numero1 = 0
-	Escribir  "Ingrese número"
+	Escribir  "Ingrese nï¿½mero"
 	leer numero1
 	si numero1<0 Entonces
-		Escribir  "El número es Negativo"
+		Escribir  "El nï¿½mero es Negativo"
 	SiNo
 		si numero1>0 Entonces
-			Escribir "El número no es Negativo"
+			Escribir "El nï¿½mero no es Negativo"
 		SiNo
-			Escribir  "EL número es cero"
+			Escribir  "EL nï¿½mero es cero"
 		FinSi
 	FinSi
 	
