@@ -746,7 +746,7 @@ function ejecicio38(){
 }
 
 function ejecicio39(){
-    let n = parseInt(prompt("Ingrese el número de términos para la aproximación de π:"));
+    let n = parseInt(prompt("Ingrese el número de términos para la aproximación de π(recordar que esta serie es lenta asì que deberà poner nùmero de terminos grandes para mayor precisiòn):"));
 
     // Validar si el número ingresado es válido
     if (!isNaN(n) && n > 0) {
