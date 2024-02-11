@@ -530,3 +530,175 @@ function operacionesConNumeros() {
 }
 operacionesConNumeros();
 }
+
+//EJERCICIO 21
+function ejercicio21 () {
+function calcularFactorial() {
+
+    var num, contador, factorial;
+
+    var num = parseInt(prompt("Por favor digite un número entero:"));
+
+    var contador = 1;
+    var factorial = 1;
+
+    for (var contador = 1; contador <= num; contador++) {
+        factorial *= contador;
+    }
+    alert("El factorial del número ingresado es: " + factorial);
+}
+calcularFactorial();
+}    
+
+//EJERCICIO 22
+function ejercicio22 () {
+function calcularSumaMenoresAN() {
+    var n, contador, suma;
+    var n = parseInt(prompt("Ingrese un número para evaluar:"));
+    var contador = 0;
+    var suma = 0;
+    for (var num = 1; num < n; num++) {
+        suma += num;
+    }
+    alert("La suma de los primeros números menores a " + n + " es: " + suma);
+}
+
+calcularSumaMenoresAN();
+}
+
+//EJERCICIO 23
+function ejercicio23 () {
+    // Función principal para mostrar una tabla de multiplicar hasta un número dado
+function mostrarTablaMultiplicar() {
+    var t, num, i, res;
+    var t = parseInt(prompt("Ingrese la tabla a mostrar:"));
+    var num = parseInt(prompt("Ingrese hasta qué número desea ver la tabla:"));
+    for (var i = 0; i <= num; i++) {
+        res = t * i;
+        alert(t + " X " + i + " = " + res);
+    }
+}
+mostrarTablaMultiplicar();
+}
+
+//EJERCICIO 24
+function ejercicio24 () {
+function sumarNumerosPares() {
+    var suma = 0;
+    for (var i = 2; i <= 1000; i += 2) {
+        suma += i;
+    }
+    alert("La suma de los números pares es: " + suma);
+}
+sumarNumerosPares();
+}
+
+//EJERCICIO 25
+function ejercicio25 () {
+    // Función principal para calcular el factorial de un número de forma distinta
+function calcularFactorialDistinto() {
+    var numero, factorial, x;
+    var numero = parseInt(prompt("Ingrese un número:"));
+
+    if (numero < 0) {
+        alert("Número inválido");
+    } else {
+        var x = 1;
+        var factorial = 1;
+        while (x <= numero) {
+            factorial *= x;
+            x++;
+        }
+
+        alert("El factorial del número " + numero + " = " + factorial);
+    }
+}
+calcularFactorialDistinto();
+}
+
+//EJERCICIO 26
+function ejercicio26 () { 
+function calcularCocienteResto() {
+    var A, B, cociente, resto;
+
+    var A = parseInt(prompt("Ingrese A:"));
+
+    var B = parseInt(prompt("Ingrese B:"));
+
+    var cociente = 0;
+
+    while (A >= B) {
+        A -= B;
+        cociente++;
+    }
+
+    var resto = A;
+
+    alert("El cociente es: " + cociente);
+    alert("El resto es: " + resto);
+}
+calcularCocienteResto();
+}
+
+//EJERCICIO 27
+function ejercicio27 () {
+function calcularMedia() {
+    var c = 0;
+    var x = 1;
+    var suma = 0;
+    while (x >= 0) {
+        x = parseFloat(prompt("Escribe un número"));
+        if (x >= 0) {
+            suma += x;
+            c++;
+        }
+    }
+    if (c > 0) {
+        var media = suma / c;
+        alert("La media de los números es: " + media);
+    }
+}
+calcularMedia();
+}
+
+//EJERCICIO 28
+function ejercicio28 () {
+function sumarPrimerosCienNumeros() {
+    var suma = 0;
+    var contador = 1;
+    do {
+        suma += contador;
+        contador++;
+    } while (contador <= 100);
+    alert("La suma de los primeros cien números es: " + suma);
+}
+sumarPrimerosCienNumeros();
+}
+
+//EJERCICIO 29
+function ejercicio29 () {
+function sumarNumeros() {
+    var suma = 0;
+    var cont = 0;
+    while (cont <= 100) {
+        suma += cont;
+        cont++;
+    }
+    alert("La suma es: " + suma);
+}
+sumarNumeros();
+}
+
+//EJERCICIO 30 
+function ejercicio30 () {
+function sumarNumeros() {
+    var suma = 0;
+
+    for (var x = 1; x <= 100; x++) {
+        suma += x;
+    }
+
+    alert("La suma del 1 al 100 es: " + suma);
+}
+sumarNumeros();
+}
