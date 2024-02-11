@@ -815,13 +815,16 @@ function ejercicio35 () {
     function tarea35() {
         var numero, mayor, menor;
         var x;
-        alert("Ingrese el número 1:");
-        numero = parseFloat(prompt());
-        mayor = numero;
-        menor = numero;
-        for (x = 2; x <= 20; x++) {
-            alert("Ingrese el número " + x + ":");
-            numero = parseFloat(prompt()); 
+        var mensaje = "Ingrese los 20 números separados por coma (,):";
+    
+        var numeros = prompt(mensaje).split(',');
+    
+        mayor = parseFloat(numeros[0]);
+        menor = parseFloat(numeros[0]);
+    
+        for (x = 1; x < numeros.length; x++) {
+            numero = parseFloat(numeros[x]); 
+    
             if (numero > mayor) {
                 mayor = numero;
             }
@@ -830,12 +833,17 @@ function ejercicio35 () {
                 menor = numero;
             }
         }
-        
-        alert("El número mayor es: " + mayor);
-        alert("El número menor es: " + menor);
+    
+        mensaje = "Resultados:\n";
+        mensaje += "El número mayor es: " + mayor + "\n";
+        mensaje += "El número menor es: " + menor;
+    
+        alert(mensaje);
     }
     
-    tarea35(); 
+    tarea35();
+    
+    
 }
 
 //EJERCICIO 36
@@ -927,4 +935,4 @@ function ejercicio40 (){
     
     alert("La aproximación de Pi según la serie de Nilakantha con " + n + " términos es: " + piAproximado);
 }
-//------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------------------
