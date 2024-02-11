@@ -451,3 +451,34 @@ function ejecicio26(){
       alert("Por favor, ingrese números enteros y asegúrese de que el divisor no sea cero.");
     }
 }
+
+function ejecicio27(){
+    let suma = 0;
+    let cantidad = 0;
+    
+    // Solicitar al usuario ingresar números positivos hasta que se ingrese un número negativo
+    let numero = parseFloat(prompt("Ingrese un número positivo (o un número negativo para finalizar):"));
+    
+    while (numero >= 0 || isNaN(numero)) {
+      if (isNaN(numero)) {
+        // Mostrar mensaje de error si no se ingresa un número válido
+        alert("Por favor, ingrese un número válido.");
+      } else {
+        // Actualizar la suma y la cantidad de números
+        suma += numero;
+        cantidad++;
+      }
+    
+      // Solicitar el siguiente número
+      numero = parseFloat(prompt("Ingrese otro número positivo (o un número negativo para finalizar):"));
+    }
+    
+    // Calcular la media si se ingresaron números positivos
+    if (cantidad > 0) {
+      let media = suma / cantidad;
+      alert(`La media de los números positivos ingresados es: ${media.toFixed(2)}`);
+    } else {
+      // Mostrar mensaje si no se ingresaron números positivos
+      alert("No se ingresaron números positivos.");
+    }
+}
