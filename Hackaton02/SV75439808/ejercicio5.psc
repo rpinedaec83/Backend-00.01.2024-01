@@ -19,6 +19,8 @@ Proceso Ejercicio_5
 		FinSi
 	FinSi
 	tot <- amt - desc
+	Escribir "Valor compra: $",amt,"."
+	Escribir "Descuento: $",desc,"."
 	Escribir "Total: $",tot,"."
 	
 FinProceso
