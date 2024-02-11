@@ -313,16 +313,16 @@ let mayor = Math.max(num1, num2, num3, num4);
 // Realizar operaciones condicionales
 if (num3 % 2 === 0) {
   let cuadradoSegundo = num2 * num2;
-  console.log(`El cuadrado del segundo número es: ${cuadradoSegundo}`);
+  alert(`El cuadrado del segundo número es: ${cuadradoSegundo}`);
 }
 
 if (num1 < num4) {
   let media = (num1 + num2 + num3 + num4) / 4;
-  console.log(`La media de los 4 números es: ${media}`);
+  alert(`La media de los 4 números es: ${media}`);
 }
 
 if (num2 > num3 && num3 >= 50 && num3 <= 700) {
   let sumaTotal = num1 + num2 + num3 + num4;
-  console.log(`La suma de los 4 números es: ${sumaTotal}`);
+  alert(`La suma de los 4 números es: ${sumaTotal}`);
 }
 }
