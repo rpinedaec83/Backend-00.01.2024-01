@@ -523,3 +523,39 @@ function ejecicio30(){
     // Mostrar el resultado mediante alert
     alert(`La suma de los primeros cien números es: ${suma}`);
 }
+
+function ejecicio31(){
+    let sumaPares = 0;
+    let contadorPares = 0;
+    let sumaImpares = 0;
+    let contadorImpares = 0;
+    
+    // Solicitar al usuario ingresar diez números
+    for (let i = 1; i <= 10; i++) {
+      let numero = parseFloat(prompt(`Ingrese el número ${i}:`));
+    
+      if (!isNaN(numero)) {
+        if (numero % 2 === 0) {
+          // Sumar al total de pares
+          sumaPares += numero;
+          contadorPares++;
+        } else {
+          // Sumar al total de impares
+          sumaImpares += numero;
+          contadorImpares++;
+        }
+      } else {
+        // Mostrar mensaje de error si no se ingresa un número válido
+        alert("Por favor, ingrese un número válido.");
+        i--;  // Decrementar i para repetir la iteración con el mismo valor de i
+      }
+    }
+    
+    // Calcular la media de los números pares e impares
+    let mediaPares = contadorPares > 0 ? sumaPares / contadorPares : 0;
+    let mediaImpares = contadorImpares > 0 ? sumaImpares / contadorImpares : 0;
+    
+    // Mostrar los resultados mediante alert
+    alert(`La media de los números pares es: ${mediaPares.toFixed(2)}`);
+    alert(`La media de los números impares es: ${mediaImpares.toFixed(2)}`);
+}
