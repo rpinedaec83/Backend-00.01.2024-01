@@ -372,3 +372,23 @@ function ejecicio22(){
       alert("Por favor, ingrese un número entero positivo mayor o igual a 1.");
     }
 }
+
+function ejecicio23(){
+    let n = parseInt(prompt("Ingrese un número para calcular la suma de los números impares menores o iguales a n:"));
+
+    // Validar si el número ingresado es válido
+    if (!isNaN(n) && n >= 1) {
+      // Calcular la suma de los números impares menores o iguales a n
+      let sumaImpares = 0;
+    
+      for (let i = 1; i <= n; i += 2) {
+        sumaImpares += i;
+      }
+    
+      // Mostrar el resultado mediante alert
+      alert(`La suma de los números impares menores o iguales a ${n} es: ${sumaImpares}`);
+    } else {
+      // Mostrar mensaje de error si el número no es válido
+      alert("Por favor, ingrese un número entero positivo mayor o igual a 1.");
+    }
+}
