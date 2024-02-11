@@ -773,3 +773,38 @@ function ejecicio39(){
       return aproximacion.toFixed(15); // Ajustar la precisión a 15 decimales
     }
 }
+
+function ejecicio40(){
+    let n = parseInt(prompt("Ingrese el número de términos para la aproximación de π:"));
+
+    // Validar si el número ingresado es válido
+    if (!isNaN(n) && n > 0) {
+      // Calcular la aproximación de π utilizando la serie de Nilakantha
+      let resultado = calcularAproximacionPi(n);
+    
+      // Mostrar el resultado mediante alert
+      alert(`La aproximación de π con ${n} términos es: ${resultado}`);
+    } else {
+      // Mostrar mensaje de error si el número no es válido
+      alert("Por favor, ingrese un número entero positivo.");
+    }
+    
+    // Función para calcular la aproximación de π con la serie de Nilakantha
+    function calcularAproximacionPi(terminos) {
+      let aproximacion = 3;
+    
+      for (let i = 1; i <= terminos; i++) {
+        let denominador1 = 2 * i;
+        let denominador2 = 2 * i + 1;
+        let termino = 4 / (denominador1 * denominador2 * (denominador2 + 1));
+        
+        if (i % 2 === 0) {
+          aproximacion += termino;
+        } else {
+          aproximacion -= termino;
+        }
+      }
+    
+      return aproximacion.toFixed(15); // Ajustar la precisión a 15 decimales
+    }
+}
