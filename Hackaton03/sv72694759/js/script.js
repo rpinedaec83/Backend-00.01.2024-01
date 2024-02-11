@@ -559,3 +559,32 @@ function ejecicio31(){
     alert(`La media de los números pares es: ${mediaPares.toFixed(2)}`);
     alert(`La media de los números impares es: ${mediaImpares.toFixed(2)}`);
 }
+
+function ejecicio32(){
+    let ciudadMasPoblada = "";
+    let poblacionMasAlta = 0;
+    
+    // Iterar sobre las provincias y ciudades
+    for (let provincia = 1; provincia <= 3; provincia++) {
+      for (let ciudad = 1; ciudad <= 11; ciudad++) {
+        // Solicitar al usuario ingresar la población de la ciudad
+        let poblacion = parseInt(prompt(`Ingrese la población de la ciudad ${ciudad} en la provincia ${provincia}:`));
+    
+        // Validar si la población ingresada es válida
+        if (!isNaN(poblacion)) {
+          // Verificar si la población actual es mayor a la población más alta registrada
+          if (poblacion > poblacionMasAlta) {
+            poblacionMasAlta = poblacion;
+            ciudadMasPoblada = `Ciudad ${ciudad} (Provincia ${provincia})`;
+          }
+        } else {
+          // Mostrar mensaje de error si no se ingresa un número válido
+          alert("Por favor, ingrese una población válida.");
+          ciudad--;  // Decrementar la variable de la ciudad para repetir la iteración con el mismo valor
+        }
+      }
+    }
+    
+    // Mostrar la ciudad con la población más alta mediante alert
+    alert(`La ciudad con la población más alta es: ${ciudadMasPoblada} con una población de ${poblacionMasAlta}`);
+}
