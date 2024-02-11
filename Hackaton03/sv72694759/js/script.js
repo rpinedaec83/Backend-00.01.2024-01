@@ -392,3 +392,15 @@ function ejecicio23(){
       alert("Por favor, ingrese un número entero positivo mayor o igual a 1.");
     }
 }
+
+function ejecicio24(){
+    let sumaPares = 0;
+
+    // Calcular la suma de los números pares hasta 1000
+    for (let i = 2; i <= 1000; i += 2) {
+      sumaPares += i;
+    }
+    
+    // Mostrar el resultado mediante alert
+    alert(`La suma de todos los números pares hasta 1000 es: ${sumaPares}`);
+}
