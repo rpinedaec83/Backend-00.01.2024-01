@@ -482,3 +482,18 @@ function ejecicio27(){
       alert("No se ingresaron números positivos.");
     }
 }
+
+function ejecicio28(){
+    let suma = 0;
+
+    // Utilizar un ciclo repetitivo para sumar los primeros cien números
+    let contador = 1;
+    do {
+      suma += contador;
+      contador++;
+    } while (contador <= 100);
+    
+    // Mostrar el resultado mediante alert
+    alert(`La suma de los primeros cien números es: ${suma}`);
+
+}
