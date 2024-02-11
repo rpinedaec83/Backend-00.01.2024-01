@@ -744,3 +744,32 @@ function ejecicio38(){
         return sumaDivisores === num;
       }
 }
+
+function ejecicio39(){
+    let n = parseInt(prompt("Ingrese el número de términos para la aproximación de π:"));
+
+    // Validar si el número ingresado es válido
+    if (!isNaN(n) && n > 0) {
+      // Calcular la aproximación de π utilizando la serie de Gregory-Leibniz
+      let resultado = calcularAproximacionPi(n);
+    
+      // Mostrar el resultado mediante alert
+      alert(`La aproximación de π con ${n} términos es: ${resultado}`);
+    } else {
+      // Mostrar mensaje de error si el número no es válido
+      alert("Por favor, ingrese un número entero positivo.");
+    }
+    
+    // Función para calcular la aproximación de π con la serie de Gregory-Leibniz
+    function calcularAproximacionPi(terminos) {
+      let aproximacion = 0;
+    
+      for (let i = 0; i < terminos; i++) {
+        let numerador = 4 * ((i % 2 === 0) ? 1 : -1);
+        let denominador = (2 * i) + 1;
+        aproximacion += numerador / denominador;
+      }
+    
+      return aproximacion;
+    }
+}
