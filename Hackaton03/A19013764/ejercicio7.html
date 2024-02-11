@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuento de Membresía</title>
+</head>
+<body>
+    <h1>Calculadora de Descuento de Membresía</h1>
+    
+    <label for="tipoMembresia">Selecciona tu tipo de membresía:</label>
+    <select id="tipoMembresia">
+        <option value="A">Tipo A</option>
+        <option value="B">Tipo B</option>
+        <option value="C">Tipo C</option>
+    </select>
+
+    <label for="precio">Precio del helado:</label>
+    <input type="number" id="precio" placeholder="Ingrese el precio del helado">
+
+    <button onclick="calcularDescuento()">Calcular Descuento</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDescuento() {
+            const tipoMembresia = document.getElementById("tipoMembresia").value;
+            const precio = parseFloat(document.getElementById("precio").value);
+
+            let descuento = 0;
+
+            switch (tipoMembresia) {
+                case "A":
+                    descuento = 0.1;
+                    break;
+                case "B":
+                    descuento = 0.15;
+                    break;
+                case "C":
+                    descuento = 0.2;
+                    break;
+                default:
+                    descuento = 0;
+            }
+
+            const precioConDescuento = precio - (precio * descuento);
+            const mensaje = `Con la membresía de tipo ${tipoMembresia}, tu precio final es: $${precioConDescuento.toFixed(2)}`;
+
+            document.getElementById("resultado").textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

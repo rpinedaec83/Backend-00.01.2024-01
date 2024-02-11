@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedio de Notas</title>
+</head>
+<body>
+    <h1>Calculadora de Promedio de Notas</h1>
+    
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1">
+
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2">
+
+    <label for="nota3">Nota 3:</label>
+    <input type="number" id="nota3">
+
+    <button onclick="calcularPromedio()">Calcular Promedio</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPromedio() {
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            const nota3 = parseFloat(document.getElementById("nota3").value);
+
+            const promedio = (nota1 + nota2 + nota3) / 3;
+
+            const resultadoElement = document.getElementById("resultado");
+            if (!isNaN(promedio)) {
+                if (promedio >= 11) {
+                    resultadoElement.textContent = "El estudiante aprobó con un promedio de: " + promedio.toFixed(2);
+                } else {
+                    resultadoElement.textContent = "El estudiante no aprobó con un promedio de: " + promedio.toFixed(2);
+                }
+            } else {
+                resultadoElement.textContent = "Por favor, ingresa números válidos en todas las notas.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Sueldo Semanal</title>
+</head>
+<body>
+    <h1>Calcular Sueldo Semanal</h1>
+    <script>
+        const tarifaNormal = 20;
+        const tarifaExtra = 25;
+
+        const horasTrabajadas = parseFloat(prompt("Por favor, ingresa el número de horas trabajadas en la semana:"));
+
+        let sueldoSemana = 0;
+
+        if (horasTrabajadas <= 40) {
+            sueldoSemana = horasTrabajadas * tarifaNormal;
+        } else {
+            const horasNormales = 40;
+            const horasExtras = horasTrabajadas - 40;
+            sueldoSemana = (horasNormales * tarifaNormal) + (horasExtras * tarifaExtra);
+        }
+
+        alert("El sueldo semanal del trabajador es: $" + sueldoSemana.toFixed(2));
+    </script>
+</body>
+</html>
