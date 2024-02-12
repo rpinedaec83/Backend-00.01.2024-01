@@ -1,39 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verificación de aprobación de estudiante</title>
-</head>
-<body>
-<h2>Verificación de aprobación de estudiante</h2>
-<form id="formNotas" onsubmit="calcularPromedio(); return false;">
-    <label for="nombre">Ingrese el nombre del estudiante:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br>
-    <label for="nota1">Ingrese la primera nota:</label><br>
-    <input type="number" id="nota1" name="nota1" required><br>
-    <label for="nota2">Ingrese la segunda nota:</label><br>
-    <input type="number" id="nota2" name="nota2" required><br>
-    <label for="nota3">Ingrese la tercera nota:</label><br>
-    <input type="number" id="nota3" name="nota3" required><br>
-    <button type="submit">Calcular promedio</button>
-</form>
-<p id="resultado"></p>
+var Nombre = "";
+var Nota1 = 0;
+var Nota2 = 0;
+var Nota3 = 0;
+var Promedio = 0;
 
-<script>
-function calcularPromedio() {
-    var nombre = document.getElementById("nombre").value;
-    var nota1 = parseInt(document.getElementById("nota1").value);
-    var nota2 = parseInt(document.getElementById("nota2").value);
-    var nota3 = parseInt(document.getElementById("nota3").value);
-    var promedio = (nota1 + nota2 + nota3) / 3;
+// Pedir al usuario que ingrese el nombre del estudiante
+console.log("Ingrese el nombre del estudiante:");
+// Leer el nombre del estudiante ingresado por el usuario
+Nombre = prompt("Nombre del estudiante:");
 
-    if (promedio <= 12) {
-        document.getElementById("resultado").innerText = "El estudiante " + nombre + " está desaprobado";
-    } else {
-        document.getElementById("resultado").innerText = "El estudiante " + nombre + " está aprobado";
-    }
+// Pedir al usuario que ingrese la primera nota
+console.log("Ingresar la primera nota:");
+// Leer la primera nota ingresada por el usuario
+Nota1 = parseFloat(prompt("Nota 1:"));
+
+// Pedir al usuario que ingrese la segunda nota
+console.log("Ingresar la segunda nota:");
+// Leer la segunda nota ingresada por el usuario
+Nota2 = parseFloat(prompt("Nota 2:"));
+
+// Pedir al usuario que ingrese la tercera nota
+console.log("Ingresar la tercera nota:");
+// Leer la tercera nota ingresada por el usuario
+Nota3 = parseFloat(prompt("Nota 3:"));
+
+// Calcular el promedio de las notas
+Promedio = (Nota1 + Nota2 + Nota3) / 3;
+
+// Verificar el promedio y determinar si el estudiante está aprobado o desaprobado
+if (Promedio <= 12) {
+    console.log("El estudiante " + Nombre + " está desaprobado");
+} else {
+    console.log("El estudiante " + Nombre + " está aprobado");
 }
-</script>
-</body>
-</html>
