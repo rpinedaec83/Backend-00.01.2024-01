@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let sueldo = prompt("Ingrese su sueldo:");
+sueldo = parseInt(sueldo)
+
+let aumento =0
+
+
+let nuevosueldo=0
+
+
+if (sueldo>2000)
+{
+    aumento = 0.05*sueldo
+   
+    
+
+    nuevosueldo = sueldo+aumento
+   
+    
+
+    console.log("Su sueldo ahora es: "+ nuevosueldo)
+}
+else if (sueldo <2000)
+{
+    aumento =0.1*sueldo
+    
+    nuevosueldo = sueldo+aumento
+   
+
+    console.log("Su sueldo ahora es: "+nuevosueldo)
+}
+else
+{
+ console.log("Usted no ha recibido ningun aumento")
+}
+    </script>
+</body>
+</html>

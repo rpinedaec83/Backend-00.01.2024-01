@@ -1,4 +1,4 @@
-# Resolver los siguientes ejercicios
+Ñ# Resolver los siguientes ejercicios
 
 1. Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.
 
