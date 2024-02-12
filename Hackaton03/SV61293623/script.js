@@ -30,6 +30,7 @@ const ejercicio3=()=>{
         alert("no termina en 4")
     }
 }
+
 const ejercicio4=()=>{
     let num1=parseInt(prompt("escribe un numero 1 : "))
  let num2=parseInt(prompt("escribe un numero 2 : "))
@@ -55,7 +56,34 @@ if (num1 > num2) {
 
     alert("Números ordenados de menor a mayor: " + num1 + ", " + num2 + ", " + num3);
 }
+    
 const ejercicio5=()=>{
+let zapatos = parseInt(prompt("¿Cantidad de zapatos a comprar"))
+let precio = zapatos * 80;
+
+if (zapatos > 10 && zapatos <= 20) {
+    document.write(`Cantidad de zapatos es ${zapatos};
+    El costo es "  ${precio};
+    Su descuento es de 10%;
+    Total a pagar es  + ${(precio - (precio * 0.1))}`);
+} else {
+    if (zapatos > 20 && zapatos <= 30) {
+        document.write(`Cantidad de zapatos es ${zapatos};
+    El costo es "  ${precio};
+    Su descuento es de 20%;
+    Total a pagar es  + ${(precio - (precio * 0.2))}`);
+    } else {
+        if (zapatos > 30) {
+            document.write(`Cantidad de zapatos es ${zapatos};
+    El costo es "  ${precio};
+    Su descuento es de 40%;
+    Total a pagar es  + ${(precio - (precio * 0.4))}`);
+        }
+    }
+}
+}
+
+const ejercicio6=()=>{
     let sueldo, extra, nSueldo, eSueldo, total;
     
    
@@ -76,7 +104,7 @@ const ejercicio5=()=>{
         }
     }   
 }
-const ejercicio6=()=>{
+const ejercicio7=()=>{
     let tipo = parseInt(prompt("¿Qué membresía tiene? 1-TipoA 2-TipoB 3-TipoC"));
 
     if (tipo === 1) {
@@ -91,7 +119,7 @@ const ejercicio6=()=>{
         }
     }
 }
-const ejercicio7=()=>{
+const ejercicio8=()=>{
     let nota1 = parseFloat(prompt("La nota 1 es: "));
 
    
@@ -108,7 +136,7 @@ const ejercicio7=()=>{
         alert("Alumno reprobado con : "+promedio);
     } 
 }
-const ejercicio8=()=>{
+const ejercicio9=()=>{
     let sueldo = parseFloat(prompt("¿Cuánto gana el trabajador?"));
 
     if (sueldo > 2000) {
@@ -117,7 +145,7 @@ const ejercicio8=()=>{
         alert("Su aumento es del 10%: " + (sueldo + (sueldo * 0.1)));
     }  
 }
-const ejercicio9=()=>{
+const ejercicio10=()=>{
     let numero = parseInt(prompt("Escriba el número"));
 
     let resto = numero % 2;
@@ -128,7 +156,7 @@ const ejercicio9=()=>{
         alert("El número es impar");
     }  
 }
-const ejercicio10=()=>{
+const ejercicio11=()=>{
     let numero1 = parseInt(prompt("Escriba el primer número"));
     let numero2 = parseInt(prompt("Escriba el segundo número"));
     let  numero3 = parseInt(prompt("Escriba el tercer número"));
@@ -147,7 +175,7 @@ const ejercicio10=()=>{
 
     alert("El mayor es " + mayor);  
 }
-const ejercicio11=()=>{
+const ejercicio12=()=>{
     let numero1 = parseInt(prompt("Escriba el primer número"));
     let numero2 = parseInt(prompt("Escriba el segundo número"));
 
@@ -160,7 +188,7 @@ const ejercicio11=()=>{
     }
     alert("El mayor es " + mayor);  
 }
-const ejercicio12=()=>{
+const ejercicio13=()=>{
     let letra;
 
     
@@ -174,7 +202,7 @@ const ejercicio12=()=>{
         alert("No es una vocal");
     }   
 }
-const ejercicio13=()=>{
+const ejercicio14=()=>{
     let numero;
 
   
@@ -188,7 +216,7 @@ const ejercicio13=()=>{
         }
     }  
 }
-const ejercicio14=()=>{
+const ejercicio15=()=>{
     let numero1, numero2, pulgadas, kilogramos;
 
    
@@ -203,7 +231,7 @@ const ejercicio14=()=>{
       alert (numero1 + " cm a pulgadas son " + pulgadas); 
       alert (numero2 + " libras a kilogramos son " + kilogramos)   
 }
-const ejercicio15=()=>{
+const ejercicio16=()=>{
     let dia;
 
     
@@ -225,9 +253,7 @@ const ejercicio15=()=>{
         alert("Hoy es domingo");
     } 
 }
-const ejercicio16=()=>{
-    
-}
+
 const ejercicio17=()=>{
     let horas, minutos, segundos;
 
@@ -581,7 +607,24 @@ const ejercicio37=()=>{
     alert("El M.C.D de "+ numero1+ " y "+ numero2+ " es: "+ mcd); 
 }
 const ejercicio38=()=>{
+    let numero = parseInt(prompt("digite un numero")); 
+
+    let sumaDivisores = 0;
     
+    
+    for (let i = 1; i <= numero / 2; i++) {
+        if (numero % i === 0) { 
+            sumaDivisores += i;
+        }
+    }
+    
+    
+    if (sumaDivisores === numero) {
+        alert(numero + " es un número perfecto.");
+    } else {
+        alert(numero + " no es un número perfecto.");
+    }
+      
 }
 const ejercicio39=()=>{
   
