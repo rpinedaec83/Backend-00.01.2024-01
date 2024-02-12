@@ -738,12 +738,292 @@ function ejercicio30() {
 //31. Hacer un algoritmo en JavaScript parar calcular la media de los números pares e impares, sólo se ingresará diez números.
 function ejercicio31() {
     let numeros = new Array(10);
-    let impares = 0;
-    let pares = 0;
+    let impares = 0, pares = 0, sumaimpares = 0, sumapares = 0;
 
     for (let i = 0; i < numeros.length; i++) {
         numeros[i] = parseInt(prompt("Eliga 10 numeros. El sistema promediara los pares e impares por separado.\n " + (i+1) + " de 10."));
+        if(numeros[i] % 2 == 0 && !isNaN(numeros[i])){
+            pares ++;
+            sumapares += numeros[i]
+        } else if (numeros[i] % 2 == 1 && !isNaN(numeros[i])){
+            sumaimpares += numeros[i]
+            impares ++;
+        } else {
+            alert("Por favor ingrese un numero valido.");
+            numeros[i] = undefined;
+            i--;
+        };
+    };
+
+    alert("El promedio de los " + impares + " numeros impares es de " + (sumaimpares/impares) + ".");
+    alert("El promedio de los " + pares + " numeros pares es de " + (sumapares/pares) + ".");
+};
+
+//32. Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias 
+//y once ciudades, hacer un algoritmo en JavaScript que nos permita saber eso. (NO HAY DATOS SUFICIENTES)
+function ejercicio32() {
+    let poblacion = 0, poblacionMaxima = 0, provinciaMayor = 1, ciudadMayor = 1;
+    let provinciaArray = new Array(3), ciudadArray = new Array(11);
+
+    for (let provincia = 0; provincia < provinciaArray.length; provincia++) {
+        console.log(provincia)
+        for (let ciudad = 0; ciudad < ciudadArray.length; ciudad++) {
+
+            console.log(ciudad)
+            do {
+                poblacion = prompt("Poblacion sussy baka. " + (provincia+1) + " " + (ciudad+1) + "." );
+                if (poblacion < 0 || isNaN(poblacion)) {
+                    alert("Por favor ingrese un valor valido.");
+                };
+            } while (poblacion < 0 || isNaN(poblacion));
+
+            if (poblacion > poblacionMaxima) {
+                poblacionMaxima = poblacion;
+                provinciaMayor = provincia+1;
+                ciudadMayor = ciudad+1;
+            };
+
+        };
         
-        
+    };
+
+    alert("La mayor poblacion se encuentra en la ciudad " + ciudadMayor + " de la provincia " + provinciaMayor + ", con " + poblacionMaxima + " de poblacion.");
+};
+
+//33. Hacer un algoritmo en JavaScript que permita al usuario continuar con el programa.
+function ejercicio33() {
+    let procede = "SI";
+
+    do {
+        procede = prompt("Desea continuar con el programa?\nEliga SI o NO").toUpperCase();
+
+        if (procede == "NO") {
+            break;
+        } else if (procede == "SI"){
+            alert("Se continua el programa.");
+        } else {
+            alert("Elija una opcion valida.")
+        };
+
+    } while (procede == "SI" || procede != "NO");
+
+    alert("Se ha acabado el programa.")
+};
+
+//34. Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno nueve.
+function ejercicio34(){
+    alert("Algoritmo de tabla de multiplicar de 9.");
+
+
+    for (let numero1 = 1; numero1 <= 9; numero1++){
+        for (let numero2 = 1; numero2 <= 9; numero2++){
+            alert(numero1 + " multiplicado por " + numero2 + " es igual a " + numero1*numero2 + ".");
+        };
+    };
+};
+
+//35. Hacer un algoritmo en JavaScript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
+function ejercicio35(){
+    let numeromayor = -Infinity, numeromenor = Infinity, numeronuevo = 0;
+
+    alert("Bienvenido, este algoritmo te permitira ingresar 20 numeros para determinar el menor y el mayor.")
+
+    for (let i = 0; i < 20; i++){
+        numeronuevo = parseInt(prompt("Ingrese un nuevo numero para la lista. " + (i+1) + " de 20."));
+        if(isNaN(numeronuevo)){
+            alert("Escriba un numero valido.");
+            i--;
+        } else {
+            if (numeronuevo > numeromayor){
+                console.log("Numeromayor")
+                numeromayor = numeronuevo;
+                if (i == 0) {
+                    numeromenor = numeronuevo;
+                }
+            } else if (numeronuevo < numeromenor){
+                console.log("Numeromenor")
+                numeromenor = numeronuevo;
+                if (i == 0) {
+                    numeromayor = numeronuevo;
+                }
+            };
+        };
+    };
+
+    alert("El numero mayor es " + numeromayor + ".\nEl numero menor es " + numeromenor + ".");
+};
+
+//36. Hacer un algoritmo en JavaScript para calcular la serie de Fibonacci.
+function ejercicio36() {
+    let numero1 = 0, numero2 = 1, numeronuevo, repeticiones = 0, repeticioncant = 0;
+
+    do {
+        repeticiones = parseInt(prompt("Bienvenido al algoritmo de la serie de Fibonacci.\n ¿Cuantas repeticiones desea realizar?\nIngresa un numero positivo (0 para terminar)."));
+        if (repeticiones < 0 || isNaN(repeticiones)) {
+            alert("Por favor ingrese un numero valido.")
+        };
+    } while (repeticiones < 0 || isNaN(repeticiones));
+
+    do {
+        console.log(repeticiones)
+        console.log("Numero 1: " + numero1 + ". Numero 2: " + numero2 + ". Numero Nuevo: " + (numero1+numero2) + ".")
+        numeronuevo = numero1+numero2;
+        numero1 = numeronuevo-numero1;
+        numero2 = numeronuevo;
+        repeticiones--;
+        repeticioncant++;
+
+        if(repeticiones==0){
+            do {
+                repeticiones = prompt("Los dos numeros actualmente en la series son " + numero1 + " y " + numero2 + ".\nDesea realizar mas repeticiones?\nIngresa un numero positivo (0 para terminar).");
+                if (repeticiones < 0 || isNaN(repeticiones)) {
+                    alert("Por favor ingrese un numero valido.")
+                }
+            } while (repeticiones < 0 || isNaN(repeticiones));
+        };
+
+    } while (repeticiones > 0);
+  
+    console.log(repeticioncant + " repeticiones.")
+
+    if (repeticioncant == 1 || isNaN(repeticioncant)) {
+        alert("Luego de 1 repeticion, los numeros en la serie son " + numero1 + " y " + numero2 + ".\nFin del proceso.")
+    } else {
+        alert("Luego de " + repeticioncant + " repeticiones, los numeros en la serie son " + numero1 + " y " + numero2 + ".\nFin del proceso.") 
     }
 };
+
+//37. Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
+function ejercicio37() {
+    let repetir = true;
+    let numero1 = 0, numero2 = 0, nmayor, nmenor, residuo, cociente = 0;
+
+    alert("Bienvenido a la calculadora de M.C.D. en base al algoritmo de Euclides.")
+    
+    do {
+        numero1 = parseInt(prompt("Eliga el primer numero para el calculo."))
+    } while (numero1 <= 0 || isNaN(numero1));
+    do {
+        numero2 = parseInt(prompt("Eliga el segundo numero para el calculo."))
+    } while (numero2 <= 0 || isNaN(numero2));
+
+    if (numero1 > numero2) {
+        nmayor = numero1;
+        nmenor = numero2;
+    } else {
+        nmayor = numero2;
+        nmenor = numero1;
+    }
+
+    do {
+        residuo = nmayor
+        do {
+            residuo -= nmenor
+            cociente += 1
+        } while (residuo >= nmenor);
+
+        console.log("Resultado:\nResiduo: " + residuo + ". Cociente: " + cociente + ".")
+
+        if (nmayor % nmenor == 0) {
+            console.log("Ya no se puede dividir mas.")
+            repetir = false;
+        } else {
+            cociente = 0;
+            console.log("Mas division es posible.")
+            nmayor = nmenor
+            nmenor = residuo
+        }
+    } while (repetir == true);
+
+    alert("El MCD de " + numero1 + " y " + numero2 + " es " + nmenor + ".")
+};
+
+//38. Hacer un algoritmo en JavaScript que nos permita saber si un número es un número perfecto.
+function ejercicio38(){
+    let numero = 0, sumadivisores = 0;
+
+    alert("Este algoritmo demostrara si el numero ingresado es perfecto o no.\nUn numero perfecto esta compuesto por la suma de sus divisores.")
+
+    do {
+        numero = parseInt(prompt("Eliga el numero a probar."))
+        if (numero < 0 || isNaN(numero)) {
+            alert("Por favor ingrese un numero valido.")
+        }
+    } while (numero < 0 || isNaN(numero));
+
+    for (let i = 1; i <= numero/2; i++) {
+        if (numero % i == 0){
+            sumadivisores += i
+            console.log("Numero divisble hallado! Es " + i + ".");
+        };
+    };
+
+    if (sumadivisores == numero) {
+        alert("El numero " + numero + " es perfecto!")
+    } else {
+        alert("El numero " + numero + " no es perfecto. La suma de sus divisores resulta en " + sumadivisores + ".")
+    }
+};
+
+//39. Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. 
+//La formula que se debe aplicar es:
+    //Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...
+function ejercicio39(){
+    let valorpi = 0, division = 0, operaciones = 0;
+
+    alert("Bienvenido. Este algoritmo usara la series de Gregory-Leibniz para aproximarse al valor de pi.")
+
+    do {
+        operaciones = parseInt(prompt("Eliga la cantidad de repeticiones a realizar."))
+        if (operaciones < 0 || isNaN(operaciones)) {
+            alert("Por favor ingrese una cantidad valida.")
+        }
+    } while (operaciones < 0 || isNaN(operaciones));
+
+    for (let i = 0; i < operaciones ; i++) {
+        division = 4/(1 + 2 * i);
+
+        if (i % 2 == 0) {
+            console.log((i+1) + " valor suma")
+            valorpi += division
+        } else if (i % 2 == 1) {
+            console.log((i+1) + " valor resta")
+            valorpi -= division
+        }
+    }
+
+    alert("La aproximacion de pi con la serie de Gregory-Leibniz a lo largo de " + operaciones + " repeticiones es de " + valorpi + ".")
+}
+
+
+//40. Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Nilakantha. 
+//La formula que se debe aplicar es:
+    //Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
+function ejercicio40(){
+    let valorpi = 3, division1 = 0, division2 = 2, operaciones = 0;
+
+    alert("Bienvenido. Este algoritmo usara la series de Nilakantha para aproximarse al valor de pi.")
+
+    do {
+        operaciones = parseInt(prompt("Eliga la cantidad de repeticiones a realizar."))
+        if (operaciones < 0 || isNaN(operaciones)) {
+            alert("Por favor ingrese una cantidad valida.")
+        }
+    } while (operaciones < 0 || isNaN(operaciones));
+
+    for (let i = 1; i <= operaciones ; i++) {
+        division1 = 4/(division2*(division2+1)*(division2+2));
+
+        if (i % 2 == 1) {
+            console.log(i + " valor suma")
+            valorpi += division1
+        } else if (i % 2 == 0) {
+            console.log(i + " valor resta")
+            valorpi -= division1
+        }
+
+        division2 += 2;
+    }
+    
+    alert("La aproximacion de pi con la serie de Nilakantha a lo largo de " + operaciones + " repeticiones es de " + valorpi + ".")
+}
