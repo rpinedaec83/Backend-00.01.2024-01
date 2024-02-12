@@ -1,0 +1,27 @@
+h1 {
+    color: #085726;
+    text-align: center;
+    
+}
+body {
+    background-color: rgb(33, 32, 32);
+}
+/* Agrega este bloque de código al final de tu archivo CSS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 30%; /* Cada celda ocupa el 25% del ancho */
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
+    color: #085726;
+    background-color: transparent;
+    border: 0.2rem solid white;
+}
+
