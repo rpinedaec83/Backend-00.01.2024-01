@@ -493,25 +493,227 @@ ejercicio19();
     function ejercicio21(){
         // Hacer un algoritmo en JavaScript que permita calcular el factorial de un número.
 
-        if (numero === 0 || numero === 1) {
-            return 1; // El factorial de 0 y 1 es 1
-        } else {
-            var resultado = 1;
-            for (var i = 2; i <= numero; i++) {
-                resultado *= i;
-            }
-            return resultado;
+        let numero = 4
+
+        if (numero < 0) {
+            console.log ( "El factorial no está definido para números negativos" );
         }
-    }
+        
+        // Inicializar el factorial como 1
+        let factorial = 1;
     
-    // Ejemplo de uso
-    var numero = 5
+        // Calcular el factorial
+        for ( let i = 2; i <= numero; i++) {
+            factorial *= i;
+        }
     
-    // Verificar si el número es válido
-    if (numero >= 0) {
-        var resultadoFactorial = factorial(numero);
-        console.log("El factorial de " + numero + " es: " + resultadoFactorial);
-    } else {
-        console.log("El número ingresado no es válido.");
+        console.log( " El factorial de " +numero, " es " +factorial );
     }
     ejercicio21();
+
+    function ejercicio22(){
+        // Hacer un algoritmo en JavaScript para calcular la suma de los n primeros número.
+
+        const n = 5;
+        // Verificar si n es un número entero positivo
+        if (typeof n !== 'number' || n < 1 || !Number.isInteger(n)) {
+            console.log( "Por favor, introduce un número entero positivo." );
+        }
+
+        // Inicializar la suma
+        let suma = 0;
+
+        // Calcular la suma de los primeros n números
+        for (let i = 1; i <= n; i++) {
+            suma += i;
+        }
+
+        console.log( " La suma de los " +n, " primeros numeros es: " +suma);
+    }
+    ejercicio22();
+
+    function ejercicio23(){
+        // Hacer un algoritmo en JavaScript para calcular la suma de los números impares menores o iguales a n.
+
+        let n = 4;
+
+        // Verificar si n es un número entero positivo
+        if (typeof n !== 'number' || n < 1 || !Number.isInteger(n)) {
+            return "Por favor, introduce un número entero positivo.";
+        }
+
+        // Inicializar la suma
+        let suma = 0;
+
+        // Calcular la suma de los números impares menores o iguales a n
+        for (let i = 1; i <= n; i += 2) {
+            suma += i;
+        }
+            console.log( " La suma de los números impares menores a " +n, " es igual a: " +suma);
+    }
+    ejercicio23();
+
+    function ejercicio24(){
+        // Hacer un algoritmo en JavaScript para realizar la suma de todos los números pares hasta el 1000.
+
+        let suma = 0;
+    for (let i = 2; i <= 1000; i += 2) {
+        suma += i;
+    }
+    console.log("La suma de todos los números pares hasta 1000 es:", +suma );
+    }
+    ejercicio24();
+
+    function ejercicio25(){
+        // Hacer un algoritmo en JavaScript para calcular el factorial de un número de una forma distinta.
+
+        const numero = 3;
+
+        // Caso base: factorial de 0 o 1 es 1
+        if (numero === 0 || numero === 1) {
+            console.log( " El factorial es " +1);
+        }
+        // Caso recursivo: factorial de n es n * factorial(n - 1)
+         resultado = numero * (numero - 1);
+        console.log( "El factorial de " +numero, " es: " +resultado );
+    }
+    ejercicio25();
+
+    function ejercicio26(){
+        // Hacer un algoritmo en JavaScript para calcular el resto y cociente por medio de restas sucesivas.
+
+        const dividendo = 20;
+        const divisor = 3;
+
+        if (divisor === 0) {
+            console.log( "Error: no se puede dividir por cero." );
+        }
+    
+        let cociente = 0;
+        let resto = dividendo;
+    
+        // Restas sucesivas para calcular el cociente y el resto
+        while (resto >= divisor) {
+            resto -= divisor;
+            cociente++;
+        }
+        console.log( " El cociente de " +dividendo, " dividido por " +divisor, " es " +cociente, " con resto " +resto );
+    }
+    ejercicio26();
+
+    function ejercicio28(){
+        // Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo repetir.
+
+        let suma = 0;
+        let contador = 1;
+
+        // Usar un ciclo repetir para sumar los primeros cien números
+        do {
+            suma += contador;
+            contador++;
+        } while (contador <= 100);
+
+        console.log("La suma de los primeros cien números es:", suma);
+    }    
+    ejercicio28();
+
+    function ejercicio29(){
+        // Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo mientras.
+
+        let suma = 0;
+        let contador = 1;
+
+        // Usar un ciclo while para sumar los primeros cien números
+        while (contador <= 100) {
+        suma += contador;
+        contador++;
+        }
+
+        console.log( " La suma de los primeros cien números es: " +suma);
+    }
+    ejercicio29();
+
+    function ejercicio30(){
+        // Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo para.
+
+        let suma = 0;
+
+        // Usar un bucle for para sumar los primeros cien números
+        for (let i = 1; i <= 100; i++) {
+        suma += i;
+        }
+
+        console.log( " La suma de los primeros cien números es: " +suma);
+    }
+    ejercicio30();
+
+    function ejercicio32(){
+        // Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades,
+        // hacer un algoritmo en JavaScript que nos permita saber eso. (NO HAY DATOS SUFICIENTES)
+
+
+        const ciudades = {
+            "Provincia A": {
+                "Ciudad 1": 100000,
+                "Ciudad 2": 150000,
+                "Ciudad 3": 120000
+            },
+            "Provincia B": {
+                "Ciudad 4": 80000,
+                "Ciudad 5": 110000,
+                "Ciudad 6": 90000
+            },
+            "Provincia C": {
+                "Ciudad 7": 200000,
+                "Ciudad 8": 180000,
+                "Ciudad 9": 160000,
+                "Ciudad 10": 220000,
+                "Ciudad 11": 190000
+            }
+        };
+        
+        // Función para encontrar la ciudad con la población más alta
+        function ciudadConMasPoblacion(ciudades) {
+            let ciudadMasPoblada = "";
+            let maxPoblacion = 0;
+        
+            // Iterar sobre el objeto de ciudades
+            for (let provincia in ciudades) {
+                for (let ciudad in ciudades[provincia]) {
+                    if (ciudades[provincia][ciudad] > maxPoblacion) {
+                        maxPoblacion = ciudades[provincia][ciudad];
+                        ciudadMasPoblada = ciudad + " (" + provincia + ")";
+                    }
+                }
+            }
+            console.log("La ciudad con la población más alta es:", ciudadMasPoblada);
+        }
+}
+ejercicio32();
+
+function ejercicio33(){
+    // 
+
+    do {
+        
+        var continuar = 1;
+    
+    } while (continuar === 's');
+}
+ejercicio33();
+
+function ejercicio34(){
+    // Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno nueve.
+
+    for (let i = 1; i <= 9; i++) {
+        console.log( " Tabla de multiplicar del " +i );
+        
+        // Bucle interno para la tabla de multiplicar de cada número del 1 al 9
+        for (let j = 1; j <= 10; j++) {
+            console.log( +i, "x" +j,  "=" +i * j);
+        }
+    
+        console.log(); // Agregar una línea en blanco entre cada tabla de multiplicar
+    }
+}
+ejercicio34();
