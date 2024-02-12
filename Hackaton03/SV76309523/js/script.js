@@ -55,7 +55,6 @@ function ejercicio4() {
         num2 = parseInt(num2);
         num3 = parseInt(num3);
 
-        // Algoritmo para ordenar los números de menor a mayor
         let numerosOrdenados = [num1, num2, num3];
         numerosOrdenados.sort(function(a, b) {
             return a - b;
@@ -405,35 +404,25 @@ function ejercicio25() {
 }
 
 function ejercicio26() {
-    const dividendo = parseInt(prompt("Ingrese el dividendo:"));
-    const divisor = parseInt(prompt("Ingrese el divisor:"));
+    let dividendo = parseInt(prompt("Ingrese el dividendo:"));
+    let divisor = parseInt(prompt("Ingrese el divisor:"));
+    let cociente, resto;
 
     if (divisor === 0) {
-        alert("Error: No se puede dividir por cero.");
-        return;
+        alert("Error: El divisor no puede ser cero.");
+    } else {
+        cociente = 0;
+        resto = dividendo;
+
+        while (resto >= divisor) {
+            resto = resto - divisor;
+            cociente = cociente + 1;
+        }
+
+        alert("Cociente: " + cociente + "\nResto: " + resto);
     }
-
-    const resultado = divisionRestasSucesivas(dividendo, divisor);
-
-    alert(`Resultado de la división:
-        - Cociente: ${resultado.cociente}
-        - Resto: ${resultado.resto}`);
 }
 
-// Función auxiliar para el Ejercicio 26
-function divisionRestasSucesivas(dividendo, divisor) {
-    let cociente = 0;
-    let resto = dividendo;
-
-    while (resto >= divisor) {
-        resto -= divisor;
-        cociente++;
-    }
-
-    return { cociente, resto };
-}
-
-// Ejercicio 27
 function ejercicio27() {
     let suma = 0;
     let cantidadNumeros = 0;
@@ -457,7 +446,6 @@ function ejercicio27() {
     }
 }
 
-// Ejercicio 28
 function ejercicio28() {
     let suma = 0;
 
@@ -468,7 +456,6 @@ function ejercicio28() {
     alert(`La suma de los primeros cien números con un ciclo repetir es: ${suma}`);
 }
 
-// Ejercicio 29
 function ejercicio29() {
     let suma = 0;
     let i = 1;
@@ -481,7 +468,6 @@ function ejercicio29() {
     alert(`La suma de los primeros cien números con un ciclo mientras es: ${suma}`);
 }
 
-// Ejercicio 30
 function ejercicio30() {
     let suma = 0;
 
@@ -492,7 +478,6 @@ function ejercicio30() {
     alert(`La suma de los primeros cien números con un ciclo para es: ${suma}`);
 }
 
-// Ejercicio 31
 function ejercicio31() {
     let sumaPares = 0;
     let sumaImpares = 0;
@@ -513,6 +498,66 @@ function ejercicio31() {
     alert(`Media de números pares: ${mediaPares}\nMedia de números impares: ${mediaImpares}`);
 }
 
+function ejercicio32() {
+    
+    const poblacionPorCiudad = {
+        "Cañete": {
+            "San Luis": 50000,
+            "San Vicente": 75000,
+            "Chilca": 60000,
+            "Asia": 70000,
+            "Coayllo": 55000,
+            "Mala": 80000,
+            "Pacarán": 60000,
+            "Quilmaná": 90000,
+            "San Antonio": 65000,
+            "Calango": 72000,
+            "Imperial": 80000
+        },
+        "Barranca": {
+            "San Luis": 60000,
+            "San Vicente": 82000,
+            "Chilca": 75000,
+            "Asia": 78000,
+            "Coayllo": 62000,
+            "Mala": 86000,
+            "Pacarán": 67000,
+            "Quilmaná": 95000,
+            "San Antonio": 72000,
+            "Calango": 68000,
+            "Imperial": 89000
+        },
+        "Yauyos": {
+            "San Luis": 55000,
+            "San Vicente": 78000,
+            "Chilca": 68000,
+            "Asia": 72000,
+            "Coayllo": 59000,
+            "Mala": 83000,
+            "Pacarán": 63000,
+            "Quilmaná": 92000,
+            "San Antonio": 70000,
+            "Calango": 67000,
+            "Imperial": 86000
+        }
+    };
+
+    let ciudadMaxPoblacion = "";
+    let maxPoblacion = 0;
+
+    for (const provincia in poblacionPorCiudad) {
+        for (const ciudad in poblacionPorCiudad[provincia]) {
+            const poblacion = poblacionPorCiudad[provincia][ciudad];
+
+            if (poblacion > maxPoblacion) {
+                maxPoblacion = poblacion;
+                ciudadMaxPoblacion = ciudad;
+            }
+        }
+    }
+
+    alert(`La ciudad con mayor población es: ${ciudadMaxPoblacion}`);
+}
 
 function ejercicio33() {
     let continuar = true;
@@ -527,7 +572,6 @@ function ejercicio33() {
     alert("El programa ha sido detenido.");
 }
 
-// Ejercicio 34
 function ejercicio34() {
     let tablaMultiplicar = "";
 
@@ -541,7 +585,6 @@ function ejercicio34() {
     alert("Tabla de multiplicar del 1 al 9:\n\n" + tablaMultiplicar);
 }
 
-// Ejercicio 35
 function ejercicio35() {
     let numeros = [];
 
@@ -556,7 +599,6 @@ function ejercicio35() {
     alert(`Número mayor: ${mayor}\nNúmero menor: ${menor}`);
 }
 
-// Ejercicio 36
 function ejercicio36() {
     const limite = parseInt(prompt("Ingrese el límite para la serie de Fibonacci:"));
 
@@ -572,4 +614,69 @@ function ejercicio36() {
     }
 
     alert(`Serie de Fibonacci hasta ${limite}:\n${serieFibonacci}`);
+}
+
+function ejercicio37() {
+    let num1 = parseInt(prompt("Ingrese el primer número:"));
+    let num2 = parseInt(prompt("Ingrese el segundo número:"));
+    let residuo;
+
+    while (num2 !== 0) {
+        residuo = num1 % num2;
+        num1 = num2;
+        num2 = residuo;
+    }
+
+    alert("El M.C.D. de los dos números es: " + num1);
+}
+
+function ejercicio38() {
+    let numero = parseInt(prompt("Ingrese un número para verificar si es un número perfecto:"));
+    let sumaDivisores = 0;
+
+    for (let i = 1; i <= numero / 2; i++) {
+        if (numero % i === 0) {
+            sumaDivisores += i;
+        }
+    }
+
+    if (sumaDivisores === numero) {
+        alert("Es un número perfecto.");
+    } else {
+        alert("No es un número perfecto.");
+    }
+}
+
+function ejercicio39() {
+    let n = parseInt(prompt("Ingrese la cantidad de términos para la aproximación de pi: "));
+    let suma = 0;
+    let signo = 1;
+
+    for (let i = 0; i < n; i++) {
+        let terminos = 2 * i + 1;
+        suma += signo / terminos;
+        signo *= -1;
+    }
+
+    let piAproximado = 4 * suma;
+
+    alert(`La aproximación de pi con ${n} términos es: ${piAproximado}`);
+}
+
+function ejercicio40() {
+    let n = parseInt(prompt("Ingrese la cantidad de términos para la aproximación de pi: "));
+    let suma = 3;
+
+    for (let i = 1; i <= n; i++) {
+        let denominador = (2 * i) * (2 * i + 1) * (2 * i + 2);
+        let termino = 4 / denominador;
+
+        if (i % 2 === 1) {
+            suma += termino;
+        } else {
+            suma -= termino;
+        }
+    }
+
+    alert(`La aproximación de pi con ${n} términos es: ${suma}`);
 }

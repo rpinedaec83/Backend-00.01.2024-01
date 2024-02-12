@@ -4,7 +4,7 @@ h1 {
     
 }
 body {
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(33, 32, 32);
 }
 /* Agrega este bloque de código al final de tu archivo CSS */
 table {
@@ -13,7 +13,7 @@ table {
 }
 
 td {
-    width: 25%; /* Cada celda ocupa el 25% del ancho */
+    width: 30%; /* Cada celda ocupa el 25% del ancho */
 }
 
 button {
