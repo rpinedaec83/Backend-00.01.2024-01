@@ -1,4 +1,8 @@
 button {
-    background-color: rgb(38, 39, 38);
-    color: beige;
+    padding: 10px 40px;
+    background-color: blueviolet;
+    border: 2px solid rgb(239, 234, 244);
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 40px blueviolet ;
 }

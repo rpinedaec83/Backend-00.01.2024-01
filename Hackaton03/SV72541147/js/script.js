@@ -403,22 +403,101 @@ function ejercicio4(){
     alert(`El factorial de ${numero} es: ${factorial(numero)}`);
  }
  function ejercicio26(){
-
+    function calcularCocienteYResto(dividendo, divisor) {
+        let cociente = 0;
+        let resto = dividendo;
+    
+        while (resto >= divisor) {
+            resto -= divisor;
+            cociente++;
+        }
+    
+        return {
+            cociente,
+            resto
+        };
+    }
+    const dividendo = 20;
+    const divisor = 3;
+    const { cociente, resto } = calcularCocienteYResto(dividendo, divisor);
+    alert(`Cociente: ${cociente}`);
+    alert(`Resto: ${resto}`);
  }
  function ejercicio27(){
-
+    function calcularMedia() {
+        let suma = 0;
+        let contador = 0;
+        let numero;
+    
+        while ((numero = parseInt(prompt("Ingrese un número positivo (ingrese un número negativo para terminar):"))) >= 0) {
+            suma += numero;
+            contador++;
+        }
+    
+        return contador === 0 ? "No se ingresaron números positivos." : suma / contador;
+    }
+    const media = calcularMedia();
+    alert(typeof media === "number" ? `La media de los números ingresados es: ${media}` : media);
  }
  function ejercicio28(){
+    let suma = 0;
+    let contador = 1;
 
+    repetir(100, () => {
+        suma += contador;
+        contador++;
+     });
+
+    alert(`La suma de los primeros cien números es: ${suma}`);
+
+function repetir(veces, accion) {
+    let contador = 0;
+    while (contador < veces) {
+        accion();
+        contador++;
+    }
+}
  }
  function ejercicio29(){
-
+    let suma = 0;
+    let contador = 1;
+    
+    while (contador <= 100) {
+        suma += contador;
+        contador++;
+    }
+    
+    alert(`La suma de los primeros cien números es: ${suma}`);
  }
  function ejercicio30(){
-
+    let suma = 0;
+    for (let i = 1; i <= 100; i++) {
+      suma += i;
+}
+    alert(`La suma de los primeros cien números es: ${suma}`);
  }
  function ejercicio31(){
+    let sumaPares = 0;
+    let sumaImpares = 0;
+    let contadorPares = 0;
+    let contadorImpares = 0;
 
+    for (let i = 0; i < 10; i++) {
+       const numero = parseInt(prompt(`Ingrese el número ${i + 1}:`));
+    
+    if (numero % 2 === 0) {
+        sumaPares += numero;
+        contadorPares++;
+    } else {
+        sumaImpares += numero;
+        contadorImpares++;
+    }
+}
+    const mediaPares = contadorPares === 0 ? 0 : sumaPares / contadorPares;
+    const mediaImpares = contadorImpares === 0 ? 0 : sumaImpares / contadorImpares;
+
+    alert(`La media de los números pares es: ${mediaPares}`);
+    alert(`La media de los números impares es: ${mediaImpares}`);
  }
  function ejercicio32(){
 
