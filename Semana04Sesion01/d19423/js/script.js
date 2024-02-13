@@ -107,3 +107,53 @@ console.log(promedio(2,3,4,5,77,88,99))
 const w = (x, y) => x * y;
 console.log(x(2, 4));
  
+
+
+let obj={
+    nombre:"Roberto",
+    apellido:"Pineda",
+    edad:40
+}
+
+let tv ={
+    marca: "LG",
+    tamaño: 55,
+    pantalla: "4K",
+    SO:"webtv",
+    tipo:"SmartTV",
+    enceder(){
+        console.log("La tv se esta prendiendo")
+    },
+    apagar(){
+        console.log("la tv se esta apagando")
+    },
+    cambiarCanal(canal){
+        console.log("Se esta cambiando el canal al "+canal)
+    }
+}
+
+console.log(tv.marca)
+tv.enceder();
+
+let taza ={
+    material:"ceramica",
+    color: "negro",
+    capacidad:"400 ml",
+    marca: "generica",
+    resistencia:"200C",
+    costo:200,
+    precio:300,
+    vender(){
+        console.log("se esta veindiendo esta taza")
+    },
+    comprar(){
+        console.log("se esta comprando esta taza")
+    }
+}
+
+for (const propiedad in taza) {
+    const element = taza[propiedad];
+    console.log(element)
+}
+
+console.log(taza["resistencia"])
