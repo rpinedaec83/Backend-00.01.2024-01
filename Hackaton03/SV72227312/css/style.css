@@ -1,0 +1,36 @@
+button {
+    width: 120px; /* Ancho deseado */
+    height: 40px; /* Alto deseado */
+    margin: 5px; /* Margen opcional entre botones */
+}
+
+.ventana {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 2px solid black;
+    z-index: 1000;
+}
+
+.tabla-multiplicar {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla-multiplicar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-multiplicar tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla-multiplicar tr:hover {
+    background-color: #ddd;
+}

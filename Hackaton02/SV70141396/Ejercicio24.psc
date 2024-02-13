@@ -4,7 +4,7 @@ Proceso ejercicio_24
 	Definir i Como Entero
 	
 	suma = 0
-	Para i = 0 Hasta 100 Con Paso 2 Hacer
+	Para i = 0 Hasta 1000 Con Paso 2 Hacer
 		suma = suma + i
 	FinPara
 	
