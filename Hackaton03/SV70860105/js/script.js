@@ -313,3 +313,181 @@ function ejercicio_27(){
         alert("FIN");
     }
 }
+
+function ejercicio_28()
+{
+    let n = 0;
+    let suma = 0;
+    do{
+        suma = suma + n;
+        n += 1;
+    }while(n <= 100);
+    alert("La suma de los 100 primeros numero usando ciclo repetir es : " + suma);
+}
+
+function ejercicio_29(){
+    let n = 0;
+    let suma = 0;
+    while(n<= 100){
+        suma += n;
+        n += 1;
+    }
+    alert("La suma de los 100 primeros numero usando ciclo mientras es : " + suma);
+}
+
+function ejercicio_30(){
+    let suma = 0;
+    for(let i = 0; i <= 100; i++){
+        suma += i;
+    }
+    alert("La suma de los 100 primeros numero usando ciclo para es : " + suma);
+}
+
+function ejercicio_31(){
+    let pares = [];
+    let impares = []
+    for(let i = 0; i < 10; i++){
+        let num = parseInt(prompt("Ingrese numero " + (i+1)))
+        num % 2 == 0 ? pares.push(num) : impares.push(num);
+    }
+
+    let sumpares = 0;
+    let sumimpares = 0;
+
+    for(par of pares){
+        sumpares += par;
+    }
+    for(impar of impares){
+        sumimpares += impar;
+    }
+
+
+    alert("La media de los numeros pares es : " + (sumpares/pares.length) + "\nLa media de los impares es : " + sumimpares/impares.length);
+}
+
+function ejercicio_32(){
+    alert("EJERCICIO 32");
+}
+
+function ejercicio_33(){
+    let u = prompt("DESEA CONTINUAR (S/N)");
+    if(u.toUpperCase() == 'S')
+    {
+        ejercicio_33();
+    }
+    else{
+        alert("FIN");
+    }
+}
+
+function ejercicio_34(){
+    for(let i = 1; i < 10; i++){
+        console.log("Tabla Multiplicar del " + i);
+        for(let n = 1; n < 10; n++){
+            console.log(i*n);
+        }
+    }
+}
+
+function ejercicio_35(){
+    let mayor = 0;
+    let menor = 999;
+    for(let i = 0; i< 20; i++){
+        let numero = parseInt(prompt("Ingrese Numero " + (i+1)));
+
+        if(numero > mayor){
+            mayor = numero;
+        }
+        if(numero < menor){
+            menor = numero;
+        }
+    }
+
+    alert("El numero mayor es : " + mayor + "\nEl numero menor es : " + menor);
+}
+
+function ejercicio_36(){
+    let fibonacci = [];
+    fibonacci[0] = 0;
+    fibonacci[1] = 1;
+    let n = parseInt(prompt("Ingrese n para serie de fibonacci : "));
+
+    for(let i = 2; i < n; i++){
+        fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+    }
+    alert(fibonacci);
+}
+
+function ejercicio_37(){
+    let a = parseInt(prompt("Ingrese primer numero :"));
+    let b = parseInt(prompt("Ingrese segundo numero :"));
+    let mcd = 0;
+    let num1 = a;
+    let num2 = b;
+
+    while (num2 !== 0) {
+        let temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
+    }
+    mcd = num1;
+
+    alert("El MCD de " + a + " y " + b + " es " + mcd);
+
+}
+
+function ejercicio_38(){
+    let numero = parseInt(prompt("Ingrese numero :"));
+
+    if (numero <= 1) {
+        console.log(numero +  " no es un número perfecto");
+    } else {
+        let sumaDivisores = 1;
+
+        for (let i = 2; i * i <= numero; i++) {
+            if (numero % i === 0) {
+                sumaDivisores += i;
+
+                if (i !== numero / i) {
+                    sumaDivisores += numero / i;
+                }
+            }
+        }
+
+    if (sumaDivisores == numero) {
+        alert(numero +  " es un numero perfecto");
+    } else {
+        alert(numero + " no es un numero perfecto");
+    }
+    }
+}
+
+function ejercicio_39(){
+    let n = prompt("Ingrese n");
+    n = parseInt(n);
+    let pi = 0;
+    for (let i = 0; i < n; i++) {
+        let der = 2 * i + 1;
+    if (i % 2 === 0) {
+      pi += 4 / der;
+    } else {
+      pi -= 4 / der;
+    }
+  }
+  alert("El valor aproximado de pi con la serie de Gregory-Leibniz es : " + pi);
+}
+
+function ejercicio_40(){
+    let suma = 3;
+    let signo = 1;
+    let fin = parseInt(prompt("Ingrese cantidad de valores : "));
+    const iteraciones = 1000; 
+
+    for (let n = 1; n <= fin; n++) {
+        let termino = (4 * signo) / (2 * n * (2 * n + 1) * (2 * n + 2));
+        suma += termino;
+        signo *= -1;
+    }
+
+    alert("El valor aproximado de pi con la serie de Nilakantha es :" + suma);
+}
