@@ -135,7 +135,7 @@ let tv ={
 console.log(tv.marca)
 tv.enceder();
 
-let taza ={
+let taza = {
     material:"ceramica",
     color: "negro",
     capacidad:"400 ml",
