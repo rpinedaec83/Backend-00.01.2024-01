@@ -15,9 +15,9 @@ function ejercicio2() {
     let numero = parseInt(prompt("Ingrese un número entero:"));
 
     if (numero < 0) {
-        console.log("El número ingresado es negativo.");
+        alert("El número ingresado es negativo.");
     } else {
-        console.log("El número ingresado no es negativo.");
+        alert("El número ingresado no es negativo.");
     }
 }
 
@@ -26,9 +26,9 @@ function ejercicio3() {
     let numero = prompt("Ingrese un número:");
 
     if (numero.charAt(numero.length - 1) === '4') {
-        console.log("El número termina en 4.");
+        alert("El número termina en 4.");
     } else {
-        console.log("El número no termina en 4.");
+        alert("El número no termina en 4.");
     }
 }
 
@@ -41,9 +41,9 @@ function ejercicio4() {
 
     numeros.sort((a, b) => a - b);
 
-    console.log("Los números ordenados de menor a mayor son:");
+    alert("Los números ordenados de menor a mayor son:");
     for (let numero of numeros) {
-        console.log(numero);
+        alert(numero);
     }
 
 }
@@ -70,7 +70,7 @@ function ejercicio5() {
     let precioTotalConDescuento = precioTotalSinDescuento * (1 - descuento);
 
 
-    console.log("El precio total con descuento es: $" + precioTotalConDescuento.toFixed(2));
+    alert("El precio total con descuento es: $" + precioTotalConDescuento.toFixed(2));
 
 }
 
@@ -92,7 +92,7 @@ function ejercicio6(params) {
         sueldoSemana = (horasNormalesSemanales * tarifaNormal) + (horasExtras * tarifaExtra);
     }
 
-    console.log("El sueldo semanal del trabajador es: $" + sueldoSemana.toFixed(2));
+    alert("El sueldo semanal del trabajador es: $" + sueldoSemana.toFixed(2));
 
 }
 
@@ -115,12 +115,12 @@ function ejercicio7() {
             descuento = montoCompra * descuentoTipoC;
             break;
         default:
-            console.log("Tipo de membresía inválido.");
+            alert("Tipo de membresía inválido.");
     }
 
     let montoAPagar = montoCompra - descuento;
 
-    console.log("El monto a pagar después del descuento es: $" + montoAPagar.toFixed(2));
+    alert("El monto a pagar después del descuento es: $" + montoAPagar.toFixed(2));
 
 }
 
@@ -132,9 +132,9 @@ function ejercicio8() {
     let promedio = (nota1 + nota2 + nota3) / 3;
 
     if (promedio >= 6) {
-        console.log("El estudiante aprobó con un promedio de " + promedio.toFixed(2));
+        alert("El estudiante aprobó con un promedio de " + promedio.toFixed(2));
     } else {
-        console.log("El estudiante reprobó con un promedio de " + promedio.toFixed(2));
+        alert("El estudiante reprobó con un promedio de " + promedio.toFixed(2));
     }
 
 }
@@ -154,7 +154,7 @@ function ejercicio9() {
 
     let nuevoSalario = salarioActual + aumento;
 
-    console.log("El nuevo salario del trabajador es: $" + nuevoSalario.toFixed(2));
+    alert("El nuevo salario del trabajador es: $" + nuevoSalario.toFixed(2));
 
 }
 
@@ -162,9 +162,9 @@ function ejercicio10() {
     let n = prompt("Ingresar un número");
     n = parseInt(n);
     if (n % 2 === 0) {
-        console.log("El número ", n, " es par.");
+        alert("El número ingresado es par.");
     } else {
-        console.log("El número ", n, " es impar.");
+        alert("El número ingresado es impar.");
     }
 }
 
@@ -182,7 +182,7 @@ function ejercicio11() {
         mayor = numero3;
     }
 
-    console.log("El mayor de los tres números es: " + mayor);
+    alert("El mayor de los tres números es: " + mayor);
 
 }
 
@@ -198,11 +198,11 @@ function ejercicio12() {
     } else if (numero2 > numero1) {
         mayor = numero2;
     } else {
-        console.log("Los números son iguales.");
+        alert("Los números son iguales.");
         process.exit();
     }
 
-    console.log("El número mayor es: " + mayor);
+    alert("El número mayor es: " + mayor);
 
 }
 
@@ -212,9 +212,9 @@ function ejercicio13() {
     letra = letra.toLowerCase();
 
     if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
-        console.log("La letra ingresada es una vocal.");
+        alert("La letra ingresada es una vocal.");
     } else {
-        console.log("La letra ingresada no es una vocal.");
+        alert("La letra ingresada no es una vocal.");
     }
 
 }
@@ -225,52 +225,42 @@ function ejercicio14() {
 
     if (numero >= 1 && numero <= 10) {
         if (numero === 1) {
-            console.log("El número 1 no es primo.");
+            alert("El número 1 no es primo.");
         } else if (numero === 2 || numero === 3 || numero === 5 || numero === 7) {
-            console.log("El número " + numero + " es primo.");
+            alert("El número " + numero + " es primo.");
         } else if (numero % 2 !== 0 && numero % 3 !== 0 && numero % 5 !== 0 && numero % 7 !== 0) {
-            console.log("El número " + numero + " es primo.");
+            alert("El número " + numero + " es primo.");
         } else {
-            console.log("El número " + numero + " no es primo.");
+            alert("El número " + numero + " no es primo.");
         }
     } else {
-        console.log("El número ingresado está fuera del rango válido.");
+        alert("El número ingresado está fuera del rango válido.");
     }
 
 }
 
 function ejercicio15() {
-    let tc = prompt(
-        "Ingrese un tipo de conversión: \n(A) centímetros a pulgadas \n(B) libras a kilogramos"
-    );
-    tc = tc.toUpperCase();
-    let n = prompt("Ingrese un número a convertir");
-    n = parseFloat(n);
-    switch (tc) {
-        case "A":
-            let pl = n / 2.54;
-            console.log(
-                "La conversión de ",
-                n,
-                " cm. a in. es ",
-                pl.toFixed(2),
-                " in."
-            );
-            break;
-        case "B":
-            let kg = n / 2.205;
-            console.log(
-                "La conversión de ",
-                n,
-                " lb. a kg. es ",
-                kg.toFixed(2),
-                " kg."
-            );
-            break;
-        default:
-            console.log("No es un tipo de conversión válido.");
-            break;
+    let centimetros = parseFloat(prompt("Ingrese la longitud en centímetros:"));
+
+    if (isNaN(centimetros) || centimetros < 0) {
+        alert("Por favor, ingrese una longitud válida en centímetros.");
+        return;
     }
+
+    let pulgadas = centimetros / 2.54;
+
+    alert(centimetros.toFixed(2) + " centímetros equivalen a " + pulgadas.toFixed(2) + " pulgadas.");
+
+    let libras = parseFloat(prompt("Ingrese el peso en libras:"));
+
+    if (isNaN(libras) || libras < 0) {
+        alert("Por favor, ingrese un peso válido en libras.");
+        return;
+    }
+
+    let kilogramos = libras / 2.20462;
+
+    alert(libras.toFixed(2) + " libras equivalen a " + kilogramos.toFixed(2) + " kilogramos.");
 }
 function ejercicio16() {
     let numero = parseInt(prompt("Ingrese un número del 1 al 7 para indicar el día de la semana:"));
@@ -303,7 +293,7 @@ function ejercicio16() {
             dia = "Número inválido. Por favor ingrese un número del 1 al 7.";
     }
 
-    console.log("El número " + numero + " corresponde al día de la semana: " + dia);
+    alert("El número " + numero + " corresponde al día de la semana: " + dia);
 
 }
 
@@ -336,7 +326,7 @@ function ejercicio17() {
 
     let horaActual = prompt("Ingrese la hora en formato HH:MM:SS:");
     let horaSiguiente = calcularHoraSiguiente(horaActual);
-    console.log("La hora un segundo después es: " + horaSiguiente);
+    alert("La hora un segundo después es: " + horaSiguiente);
 
 }
 
@@ -367,8 +357,8 @@ function ejercicio18() {
 
     let cantidadCDs = parseInt(prompt("Ingrese la cantidad de CDs a vender:"));
     let resultado = calcularPrecioYGanancia(cantidadCDs);
-    console.log("Precio total para el cliente: $" + resultado.precioTotalCliente.toFixed(2));
-    console.log("Ganancia para el vendedor: $" + resultado.gananciaPorVenta.toFixed(2));
+    alert("Precio total para el cliente: $" + resultado.precioTotalCliente.toFixed(2));
+    alert("Ganancia para el vendedor: $" + resultado.gananciaPorVenta.toFixed(2));
 
 }
 
@@ -400,7 +390,7 @@ function ejercicio19() {
     let identificadorEmpleado = parseInt(prompt("Ingrese el número identificador del empleado (1: Cajero, 2: Servidor, 3: Preparador de mezclas, 4: Mantenimiento):"));
     let diasTrabajados = parseInt(prompt("Ingrese la cantidad de días trabajados en la semana (máximo 6 días):"));
 
-    console.log(calcularSalario(identificadorEmpleado, diasTrabajados));
+    alert(calcularSalario(identificadorEmpleado, diasTrabajados));
 
 }
 
@@ -445,12 +435,12 @@ function ejercicio20() {
         if (num >= 0) {
             numeros.push(num);
         } else {
-            console.log("Debe ingresar un número entero positivo.");
+            alert("Debe ingresar un número entero positivo.");
             break;
         }
     }
 
-    console.log(realizarOperaciones(numeros));
+    alert(realizarOperaciones(numeros));
 
 }
 
@@ -471,7 +461,7 @@ function ejercicio21() {
 
     let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
     let resultado = calcularFactorial(numero);
-    console.log("El factorial de " + numero + " es: " + resultado);
+    alert("El factorial de " + numero + " es: " + resultado);
 
 }
 
@@ -486,7 +476,7 @@ function ejercicio22() {
 
     let n = parseInt(prompt("Ingrese un número para calcular la suma de los primeros n números:"));
     let resultado = sumaPrimerosNNumeros(n);
-    console.log("La suma de los primeros " + n + " números es: " + resultado);
+    alert("La suma de los primeros " + n + " números es: " + resultado);
 
 }
 
@@ -505,7 +495,7 @@ function ejercicio23() {
 
     let n = parseInt(prompt("Ingrese un número para calcular la suma de los números impares menores o iguales a n:"));
     let resultado = sumaNumerosImpares(n);
-    console.log("La suma de los números impares menores o iguales a " + n + " es: " + resultado);
+    alert("La suma de los números impares menores o iguales a " + n + " es: " + resultado);
 
 }
 
@@ -519,7 +509,7 @@ function ejercicio24() {
     }
 
     let resultado = sumaNumerosParesHastaMil();
-    console.log("La suma de todos los números pares hasta 1000 es: " + resultado);
+    alert("La suma de todos los números pares hasta 1000 es: " + resultado);
 
 }
 
@@ -535,7 +525,7 @@ function ejercicio25() {
 
     let numero = parseInt(prompt("Ingrese un número para calcular su factorial:"));
     let resultado = factorial(numero);
-    console.log("El factorial de " + numero + " es: " + resultado);
+    alert("El factorial de " + numero + " es: " + resultado);
 
 }
 
@@ -556,8 +546,8 @@ function ejercicio26() {
     let divisor = parseInt(prompt("Ingrese el divisor:"));
 
     let resultado = divisionRestasSucesivas(dividendo, divisor);
-    console.log("Cociente: " + resultado.cociente);
-    console.log("Resto: " + resultado.resto);
+    alert("Cociente: " + resultado.cociente);
+    alert("Resto: " + resultado.resto);
 
 }
 
@@ -585,7 +575,7 @@ function ejercicio27() {
         }
     }
 
-    console.log(calcularMedia());
+    alert(calcularMedia());
 
 }
 
@@ -598,7 +588,7 @@ function ejercicio28() {
         contador++;
     }
 
-    console.log("La suma de los primeros cien números es: " + suma);
+    alert("La suma de los primeros cien números es: " + suma);
 
 }
 
@@ -611,7 +601,7 @@ function ejercicio29() {
         contador++;
     }
 
-    console.log("La suma de los primeros cien números es: " + suma);
+    alert("La suma de los primeros cien números es: " + suma);
 
 }
 
@@ -622,7 +612,7 @@ function ejercicio30() {
         suma += i;
     }
 
-    console.log("La suma de los primeros cien números es: " + suma);
+    alert("La suma de los primeros cien números es: " + suma);
 }
 
 function ejercicio31() {
@@ -654,8 +644,8 @@ function ejercicio31() {
     }
 
     let medias = calcularMediaParesImpares();
-    console.log("La media de los números pares es: " + medias.mediaPares.toFixed(2));
-    console.log("La media de los números impares es: " + medias.mediaImpares.toFixed(2));
+    alert("La media de los números pares es: " + medias.mediaPares.toFixed(2));
+    alert("La media de los números impares es: " + medias.mediaImpares.toFixed(2));
 
 }
 
@@ -680,7 +670,7 @@ function ejercicio32() {
     }
 
     let ciudadMayor = ciudadConMayorPoblacion();
-    console.log("La ciudad con la población más grande es: " + ciudadMayor);
+    alert("La ciudad con la población más grande es: " + ciudadMayor);
 
 }
 
@@ -694,14 +684,14 @@ function ejercicio33() {
 
 function ejercicio34() {
     for (let i = 1; i <= 9; i++) {
-        console.log("Tabla de multiplicar del " + i + ":");
+        alerte("Tabla de multiplicar del " + i + ":");
 
         for (let j = 1; j <= 10; j++) {
             let resultado = i * j;
-            console.log(i + " x " + j + " = " + resultado);
+            alert(i + " x " + j + " = " + resultado);
         }
 
-        console.log("");
+        alert("");
     }
 
 }
@@ -723,8 +713,8 @@ function ejercicio35() {
         }
     }
 
-    console.log("El número mayor ingresado es: " + numeroMayor);
-    console.log("El número menor ingresado es: " + numeroMenor);
+    alert("El número mayor ingresado es: " + numeroMayor);
+    alert("El número menor ingresado es: " + numeroMenor);
 
 }
 
@@ -741,7 +731,7 @@ function ejercicio36() {
 
     let n = parseInt(prompt("Ingrese el número de términos de la serie de Fibonacci que desea generar:"));
     let serieFibonacci = fibonacci(n);
-    console.log("La serie de Fibonacci con " + n + " términos es: " + serieFibonacci.join(', '));
+    alert("La serie de Fibonacci con " + n + " términos es: " + serieFibonacci.join(', '));
 
 }
 
@@ -760,7 +750,7 @@ function ejercicio37() {
     let num2 = parseInt(prompt("Ingrese el segundo número:"));
 
     let mcd = mcdEuclides(num1, num2);
-    console.log("El MCD de " + num1 + " y " + num2 + " es: " + mcd);
+    alert("El MCD de " + num1 + " y " + num2 + " es: " + mcd);
 
 }
 
@@ -779,9 +769,9 @@ function ejercicio38() {
 
     let num = parseInt(prompt("Ingrese un número para verificar si es un número perfecto:"));
     if (esNumeroPerfecto(num)) {
-        console.log(num + " es un número perfecto.");
+        alert(num + " es un número perfecto.");
     } else {
-        console.log(num + " no es un número perfecto.");
+        alert(num + " no es un número perfecto.");
     }
 
 }
@@ -801,7 +791,7 @@ function ejercicio39() {
 
 
     let aproximacionPi = calcularAproximacionPi(10000);
-    console.log("Aproximación de π con la serie de Gregory-Leibniz:", aproximacionPi);
+    alert("Aproximación de π con la serie de Gregory-Leibniz:", aproximacionPi);
 
 
 }
@@ -820,6 +810,6 @@ function ejercicio40() {
     }
 
     let aproximacionPi = calcularAproximacionPi(10000);
-    console.log("Aproximación de π con la serie de Nilakantha:", aproximacionPi);
+    alert("Aproximación de π con la serie de Nilakantha:", aproximacionPi);
 
 }
