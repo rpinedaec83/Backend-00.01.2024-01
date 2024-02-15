@@ -54,5 +54,7 @@ let helado = {
 }
 
 let maquinaReg = {
-    alert(`Se ingresa ${producto*precio}`)
+    tipo: "Digital",
+    modelo: "americanTools",
+    capacidad "2000$"
 }
