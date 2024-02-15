@@ -53,6 +53,3 @@ let helado = {
     Sabor: "Fresa",
 }
 
-let maquinaReg = {
-    alert(`Se ingresa ${producto*precio}`)
-}
