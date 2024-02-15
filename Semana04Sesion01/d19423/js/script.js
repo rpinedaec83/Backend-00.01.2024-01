@@ -157,3 +157,41 @@ for (const propiedad in taza) {
 }
 
 console.log(taza["resistencia"])
+<<<<<<< HEAD
+=======
+
+
+/*
+cliente
+proveedor
+armario
+celular
+aspiradora
+helado
+maquina registradora
+*/
+
+let cliente = {
+    numeroIdentificacion: "001575291",
+    tipoIdentificacion: "CE",
+    nombre:"Roberto",
+    apellido:"Pineda",
+    fechaNacimiento: Date("1983-08-28"),
+    sexo:"Masculino",
+
+
+    comprar(taza){
+        console.log(`El cliente ${this.nombre} esta comprando una taza de ${taza.capacidad}`)
+    },
+    devolver(){
+
+    }
+}
+
+for (const key in cliente) {
+        const element = cliente[key];
+        console.log(`${key} ---> ${element}`)
+}
+
+cliente.comprar(taza)
+>>>>>>> fuentes/main
