@@ -1,4 +1,4 @@
-# Resolver los siguientes ejercicios
+Ñ# Resolver los siguientes ejercicios
 
 1. Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.
 
@@ -26,7 +26,7 @@
 
 11. Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
 
-12. Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor.
+12. Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el menor.
 
 13. Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal.
 

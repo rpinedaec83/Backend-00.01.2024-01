@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+    background-image: url(/Hackaton03/A15100022/img/img2.wallspic.com-2001_monolito-monolito-la_ciencia_ficcion-arte-cuerpo_de_agua-2560x1440.png);
+  }
+  
+
+  .boton {
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #3db36e; /* Puedes cambiar este color si lo deseas */
+  }
+  .boton:hover{
+     background-color: rgb(59, 59, 59);
+     cursor: pointer;
+  }
+  h1{
+    color: rgb(48, 11, 4);
+  }

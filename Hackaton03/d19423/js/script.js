@@ -8,3 +8,4 @@ function ejecicio1(){
         alert("No tiene 3 caracteres");
     }
 }
+console.log(length)
