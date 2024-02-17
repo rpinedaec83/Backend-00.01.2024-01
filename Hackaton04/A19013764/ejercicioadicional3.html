@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Valor</title>
+</head>
+<body>
+    <label for="valorInput">Valor:</label>
+    <input type="text" id="valorInput" placeholder="Ingrese un valor"><br><br>
+
+    <button id="verificarBtn">Verificar Tipo de Valor</button>
+
+    <script>
+        const tipoDeValor = (valor) => {
+            return typeof valor;
+        };
+
+        document.getElementById("verificarBtn").addEventListener("click", function() {
+            const valor = document.getElementById("valorInput").value;
+
+            const tipo = tipoDeValor(valor);
+            alert("El tipo de valor entregado es: " + tipo);
+        });
+    </script>
+</body>
+</html>
