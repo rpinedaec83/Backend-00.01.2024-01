@@ -157,8 +157,6 @@ for (const propiedad in taza) {
 }
 
 console.log(taza["resistencia"])
-<<<<<<< HEAD
-=======
 
 
 /*
@@ -194,4 +192,3 @@ for (const key in cliente) {
 }
 
 cliente.comprar(taza)
->>>>>>> fuentes/main
