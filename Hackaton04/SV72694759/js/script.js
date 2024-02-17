@@ -1,6 +1,12 @@
 function ejercicio1(num1, num2) {
-    return num1 + num2;
-}
-let resultado = ejercicio1(5, 3);
-console.log(resultado); 
-alert(resultado); 
+    var suma = num1 + num2;
+    return suma;
+  }
+  
+  // Ejemplo de uso
+  var numero1 = parseFloat(prompt("Ingresa el primer número:"));
+  var numero2 = parseFloat(prompt("Ingresa el segundo número:"));
+  
+  var resultado = sumarNumeros(numero1, numero2);
+  
+  alert("La suma de los dos números es: " + resultado);
