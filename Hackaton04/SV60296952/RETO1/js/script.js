@@ -24,13 +24,10 @@ function ejercicio2() {
     
         const resultado = potencia(base, exponente);
         alert("El resultado de " + base + " elevado a la " + exponente + " es: " + resultado);
-    
-        // se muestra en la consola
         console.log("El resultado de " + base + " elevado a la " + exponente + " es: " + resultado);
     }
     
     mostrarResultado();
-    
 }
 //-------------------------------------------------------------------------------------------
 // Ejercicio 3
@@ -43,17 +40,13 @@ function ejercicio3() {
         return sumaCubos;
     };
     const resultado = sumOfCubes(1, 5, 9);
-    // se muestra en la consola
     console.log("La suma de los cubos es: " + resultado);
-    // se muestra con una alerta
     alert("La suma de los cubos es: " + resultado);  
 }
 //-------------------------------------------------------------------------------------------
 //EJERCICIO 4
 function ejercicio4() {
     const triArea = (base, altura) => (base * altura) / 2;
-
-    // Ejemplo de uso:
     const area = triArea(3, 2);
     console.log(area); // Imprimirá 3
     alert("El area del triangulo es: " + area);
@@ -66,8 +59,6 @@ function ejercicio5() {
         const num1 = parseFloat(prompt("Ingrese el primer número:"));
         const num2 = parseFloat(prompt("Ingrese el segundo número:"));
         const operacion = prompt("Ingrese la operación matemática (+, -, /, x, %):");
-
-        // Realizar la operación correspondiente
         let resultado;
         switch (operacion) {
             case '+':
@@ -93,9 +84,6 @@ function ejercicio5() {
         alert("El resultado de la operación es: " + resultado);
         console.log("El resultado de la operación es: " + resultado);
     }
-    
-    // Ejemplo de uso:
-    calculator();
-    
+    calculator(); 
 }
 
