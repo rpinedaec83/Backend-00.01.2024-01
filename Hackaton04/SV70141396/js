@@ -1,0 +1,395 @@
+// ejercicio1
+// Crea una función que retorne la suma de dos números.
+
+const suma = function(n, j){return n + j};
+console.log(suma(20,23));
+
+// ejercicio2
+// Crea una función que retorne la potencia de un número dado,
+// esta función deberá recibir la potencia y el número a potenciar.
+
+const potencia=(base, exponente)=> base ** exponente;
+
+const result = potencia(20, 23);
+
+console.log(result);
+
+// ejercicio3
+// Crea una función que tome números y devuelva la suma de sus cubos.
+// sumOfCubes(1, 5, 9) ➞ 855
+
+const sumOfCubes = (n, v, f) => (n ** 3) + (v ** 3) + (f ** 3);
+
+const resultsumofCubes = sumOfCubes(20, 10, 14);
+
+console.log(resultsumofCubes)
+
+// ejericio4
+// Escribe una función que tome la base y la altura de un triángulo
+// y devuelva su área. triArea(3, 2) ➞ 3
+
+const areaTriangulo =(base, altura) => (base * altura) / 2;
+
+const resultTriangulo = areaTriangulo(20, 23);
+
+console.log(resultTriangulo)
+
+// ejercicio5
+// Crea una función llamada calculator que recibe 3 parámetros,
+// dos números y una operación matemática (+,-,/,x,%),
+// y si la operación no es correcta que envié un mensaje “El parámetro no es reconocido”
+// calculator(2,"+", 2) ➞ 4
+
+const calculator =(parametro1, operacionmatematica, parametro2) => (parametro1 + parametro2);
+
+const resultcalculator = calculator(20, "+", 23);
+
+console.log(resultcalculator)
+
+// PREGUNTAS: 
+// ¿Cómo defines una función?
+
+// RESPUESTA : 
+
+// 1. function nombre(){
+
+// }
+
+// 2. const nombre =() => {
+
+// }
+
+// ¿Hasta cuantos argumentos puedes declarar en una función?
+
+// REPUESTA :
+// Se puede declarar n argumentos.
+
+// const datos =(...argumentos) =>{
+
+//        console.log(argumentos)
+// }
+
+// RETO 2 :
+
+// ejercicio1
+// Utilizando función arrow, crear una función que reciba como parámetros un nombre, 
+// apellido y edad y los retorne en un string concatenado “Hola mi nombre es sebastián 
+// yabiku y mi edad 33”
+
+const concatenarDatos = (nombre, apellido, edad) => {
+    return `Hola, mi nombre es ${nombre} ${apellido} y mi edad ${edad}`;
+};
+
+// Ejemplo de uso de la función
+const nombre = "Sebastián";
+const apellido = "Yabiku";
+const edad = 33;
+const resultado = concatenarDatos(nombre, apellido, edad);
+console.log(resultado);
+
+// ejercicio2
+// Cree una función que tome números y devuelva la suma de sus cubos. sumOfCubes(1, 5, 9) ➞ 855
+// // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
+
+const sumOfcubes = (j, e, m) => (j ** 3) + (e ** 3) + (m ** 3);
+
+const resultsumofcubes = sumOfcubes(23, 2, 15);
+
+console.log(resultsumofcubes)
+
+// ejercicio3
+// Crear una funcion que me retorne el tipo de valor entregado, 
+// invocar la función para los distintos tipos de js
+
+const getType =(valor) => typeof valor;
+
+console.log(getType("hola"));
+console.log(getType(23));
+
+// ejercicio4
+// Crear una función que reciba n cantidad de argumentos y los sume 
+// ( utilizar parametros rest)
+
+function sum(...args) {
+    let sum = 0;
+    for (let arg of args) sum += arg;
+    return sum;
+}
+let n = sum(3, 4, 16, 23, 20,);
+
+console.log(n);
+
+//ejercicio5
+// Crear una función que reciba un array de valores y filtre los valores que no son string
+
+const filtrarStrings = (valor) => {
+    return valor.filter(elemento => typeof elemento === 'string');
+};
+
+const valores = [3, 'GOD', true, 'cure', 23, 'N'];
+const arrayFiltrado = filtrarStrings(valores);
+console.log(arrayFiltrado);
+
+// ejercicio6
+// Cree una función que tome una matriz de números y devuelva los números mínimos y 
+// máximos, en ese orden. minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+
+const minMax = (numeros) => {
+    const minimo = Math.min(...numeros);
+    const maximo = Math.max(...numeros);
+    return [minimo, maximo];
+};
+const numeros = [3, 4, 16, 23, 20];
+const funcion = minMax(numeros);
+console.log(funcion);
+
+// ejercicio7
+// Escriba una función que tome una matriz de 10 enteros (entre 0 y 9) y devuelva una 
+// cadena en forma de un número de teléfono.
+// formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞ "(123) 456-7890"
+
+const formatPhoneNumber = (numeros) => {
+    const numeroString = numeros.join('');
+    return `(${numeroString.substring(0, 3)}) ${numeroString.substring(4, 7)}-${numeroString.substring(4)}`;
+};
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const format = formatPhoneNumber(numeros);
+console.log(format);
+
+// ejercicio8
+// Cree una función que tome una matriz de matrices con números.
+// Devuelve una nueva matriz (única) con el mayor número de cada uno.
+// findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 2]
+
+const findLargestNums = (matrices) => {
+    return matrices.map(submatriz => Math.max(...submatriz));
+};
+
+const matriz = [
+  [4, 2, 7, 1],
+  [20, 70, 40, 90],
+  [1, 2, 0]
+];
+const matrizmay = findLargestNums(matriz);
+console.log(matrizmay);
+
+// ejercicio9
+// Dada una palabra, escriba una función que devuelva el primer índice y el último índice de un carácter.
+// charIndex("hello", "l") ➞ [2, 3]
+// The first "l" has index 2, the last "l" has index 3.
+// charIndex("circumlocution", "c") ➞ [0, 8]
+// The first "c" has index 0, the last "c" has index 8.
+
+const charIndex = (palabra, caracter) => { 
+const primerIndice = palabra.indexOf(caracter);
+    const ultimoIndice = palabra.lastIndexOf(caracter);
+    return [primerIndice, ultimoIndice];
+};
+const palabra = "hello";
+const caracter = "l";
+const puIndice = charIndex(palabra, caracter);
+console.log(puIndice);
+
+// ejercicio10
+// Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.
+// toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+
+const toArray = (objeto={}) => {
+
+    const matriz = [];
+    for(const clave in objeto){ 
+        if(objeto.hasOwnProperty(clave)){
+        matriz.push([clave, objeto[clave]]);
+        }
+    }
+    return matriz;
+};
+const data = { a: 1, b: 2};
+const re = toArray(data);
+
+console.log(Object.entries(data));
+
+// ejercicio11
+// Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas.
+// getBudgets([
+// { name: "John", age: 21, budget: 23000 },
+// { name: "Steve",  age: 32, budget: 40000 },
+// { name: "Martin",  age: 16, budget: 2700 }
+// ]) ➞ 65700
+
+const getBudgets = (personas) => {
+    return personas.reduce((total, persona) => total + persona.budget, 0);
+};
+const personas = [
+  { name: "John", age: 21, budget: 23000 },
+  { name: "Steve",  age: 32, budget: 40000 },
+  { name: "Martin",  age: 16, budget: 2700 }
+];
+const r = getBudgets(personas);
+console.log(r);
+
+// ejercicio12
+// Cree una función que tome una matriz de estudiantes y devuelva una matriz de nombres de estudiantes.
+// getStudentNames([
+// { name: "Steve" },
+// { name: "Mike" },
+// { name: "John" }
+// ]) ➞ ["Becky", "John", "Steve"]
+
+const getStudentNames = (student={}) => {
+    return student.map(student => student.name);
+};
+const estudiantes = [
+                    { name: "Steve" },
+                    { name: "Mike" },
+                    { name: "John" }
+];
+const resultado12 = getStudentNames(estudiantes);
+
+console.log(resultado12); 
+
+// ejercicio13
+// Escriba una función que convierta un objeto en una matriz de claves y valores.
+// objectToArray({
+// likes: 2,
+// dislikes: 3,
+// followers: 10
+// }) ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+
+function objectToArray(obj) {
+    return Object.entries(obj);
+}
+const obj = ({
+    likes: 2, 
+    dislikes: 3, 
+    followers: 10
+});
+console.log(objectToArray(obj));
+
+// ejercicio14
+// Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados  incluyendo n.
+// squaresSum(3) ➞ 14
+// 1² + 2² + 3² =
+// 1 + 4 + 9 =
+// 14
+
+function squaresSum(...args) {
+    let sum = 0;
+    for (let num of args) {
+        sum += num * num;
+    }
+    return sum;
+}
+console.log(squaresSum(16, 20, 23));
+
+// ejercicio15
+// Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada
+// multiplyByLength([2, 3, 1, 0]) ➞ [8, 12, 4, 0]
+
+function multiplyByLength(arr) {
+    
+    return arr.map(num => num * arr.length);
+}
+console.log(multiplyByLength([2, 3, 1, 0]));
+
+// ejercicio16
+// Cree una función que tome un número como argumento y devuelva una matriz de números contando desde este número a cero.
+// countdown(5) ➞ [5, 4, 3, 2, 1, 0]
+
+function countdown(n) {
+    const result = [];
+    for (let i = n; i >= 0; i--) {
+        result.push(i);
+    }
+    return result;
+}
+console.log(countdown(5));
+
+// ejercicio17
+// Cree una función que tome una matriz y devuelva la diferencia entre los números más grandes y más pequeños.
+// diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
+// Smallest number is -50, biggest is 32.
+
+function diffMaxMin(arr) {
+    
+    const minimo = Math.min(...arr);
+    const maximo = Math.max(...arr);
+    const diff = maximo - minimo;
+    return diff;
+}
+console.log(diffMaxMin([10, 4, 1, 4, -10, -50, 32, 21]));
+
+// ejericicio18
+// Cree una función que filtre las cadenas de una matriz y devuelva una nueva matriz que solo contenga enteros.
+// filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+
+function filterList(arr) {
+    return arr.filter(item => typeof item === 'number' && Number.isInteger(item));
+}
+console.log(filterList([1, 2, 3, "x", "y", 10]));
+
+// ejercicio19
+// Cree una función que tome dos argumentos (elemento, tiempos). El primer argumento (elemento) es el elemento que necesita repetirse, 
+// mientras que el segundo argumento (veces) es la cantidad de veces que se debe repetir el elemento. Devuelve el resultado en una matriz.
+// repeat(13, 5) ➞ [13, 13, 13, 13, 13]
+
+function repeat(element, times) {
+    const result = [];
+    for (let i = 0; i < times; i++) {
+        result.push(element);
+    }
+    return result;
+}
+console.log(repeat(13, 5));
+
+// ejercicio20
+// Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas las vocales en una cadena con una vocal especificada.
+// "apples and bananas".vreplace("u") ➞ "upplus und bununus"
+
+String.prototype.vreplace = function(vowel) {
+    return this.replace(/[aeiou]/gi, vowel);
+};
+
+console.log("apples and bananas".vreplace("u"));
+
+// ejercicio21
+// Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta: "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+// findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+
+function findNemo(sentence) {
+    const words = sentence.split(" ");
+    
+    // Iterar sobre las palabras para encontrar "Nemo"
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] === "Nemo") {
+            // Si se encuentra "Nemo", devolver el mensaje con la posición
+            return `I found Nemo at ${i + 1}!`;
+        }
+    }
+  
+    // Si no se encuentra "Nemo", devolver un mensaje indicando que no se encontró
+    return "Nemo not found";
+};
+console.log(findNemo("I am fiding Nemo !"));
+
+// ejericicio22
+// Cree una función que capitalice la última letra de cada palabra.
+// capLast("hello") ➞ "hellO"
+
+function capLast(str) {
+    // Dividir la cadena en palabras
+    const words = str.split(" ");
+    
+    // Iterar sobre las palabras y capitalizar la última letra de cada una
+    const capitalizedWords = words.map(word => {
+        // Capitalizar la última letra de la palabra
+        return word.slice(0, -1) + word.slice(-1).toUpperCase();
+    });
+    
+    // Unir las palabras capitalizadas en una sola cadena
+    return capitalizedWords.join(" ");
+}
+console.log(capLast("hello"));
+
+
+
