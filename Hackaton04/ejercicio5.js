@@ -1,7 +1,7 @@
 
-let num1;
-let num2;
-let operacion;
+let num1=0;
+let num2=0;
+let operacion=0;
 
 function calculator(num1,num2,operacion)
 
