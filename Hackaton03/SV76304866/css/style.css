@@ -1,0 +1,88 @@
+h1{
+    color: #fff;
+    position: center;
+    margin-bottom: 625px;
+    position: fixed;
+}
+
+h3 {
+    color: #c0b9b9;
+    position: center;
+    margin-bottom: 555px;
+    position: fixed;
+}
+
+button {
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  background: green;
+  box-shadow: 0 4px 4px rgba(26, 22, 22, 22.1);
+  width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: green;
+    transition: background-color 0.3s ease;
+
+}
+
+body {
+    
+    margin: 8px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .65), rgb(9, 3, 3)), url(/SV76304866/code.webp) center/cover fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div {
+    position: center;
+    justify-content: center;
+    margin-top: 310px;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  td {
+    padding: 14px;
+  }
+
+
+
+  button:hover {
+    background-color: #b51111;
+  }
+
+   #miBoton{
+  box-shadow: 0 4px 4px rgba(26, 22, 22, 22.1);
+  width: 18%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    background-color: #b51111;
+    margin-bottom: 457px;
+    position: fixed;
+  }
+  #miBoton:hover{
+    background-color: green;
+  }
+  table{
+    position: relative;
+    margin-top: -162px;
+  }
+  .container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  }

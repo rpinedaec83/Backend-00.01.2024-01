@@ -1,0 +1,362 @@
+[
+    {
+        "name": "Ejercicio 1",
+        "description": "Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.",
+        "type": "Ejecutar",
+        "link": "ejercicio1();",
+        "iconClasses": "fa-brands fa-git",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 2",
+        "description": "Hacer un algoritmo en JavaScript que lea un número entero por el teclado y determinar si es negativo.",
+        "type": "Ejecutar",
+        "link": "ejercicio2();",
+        "iconClasses": "fa-solid fa-layer-group",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 3",
+        "description": "Hacer un algoritmo en JavaScript que lea un número y determinar si termina en 4.",
+        "type": "Ejecutar",
+        "link": "ejercicio3();",
+        "iconClasses": "fa-solid fa-database",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 4",
+        "description": "Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor.",
+        "type": "Ejecutar",
+        "link": "ejercicio4();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 5",
+        "description": "Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento, esta dependerá del número de zapatos que se compren. 10% por mas de 10 zapatos, 20% por mas de 20 hasta 30 zapatos, 40% por mas de 30 zapatos. El precio de cada zapato es de $80.",
+        "type": "Ejecutar",
+        "link": "ejercicio5();",
+        "iconClasses": "fa-brands fa-git",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 6",
+        "description": "Hacer un algoritmo en Javascript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas, entonces las horas extras se le pagarán a $25 por hora.",
+        "type": "Ejecutar",
+        "link": "ejercicio6();",
+        "iconClasses": "fa-solid fa-layer-group",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 7",
+        "description": "Hacer un algoritmo en Javascript para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, solo existen tres tipos de membresías, tipo A, tipo B y tipo C. Los descuentos son los siguientes: Tipo A 10% de descuento, Tipo B 15% de descuento, Tipo C 20% de descuento.",
+        "type": "Ejecutar",
+        "link": "ejercicio7();",
+        "iconClasses": "fa-solid fa-database",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 8",
+        "description": "Hacer un algoritmo en Javascript para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.",
+        "type": "Ejecutar",
+        "link": "ejercicio8();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 9",
+        "description": "Hacer un algoritmo en Javascript para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.",
+        "type": "Ejecutar",
+        "link": "ejercicio9();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 10",
+        "description": "Hacer un algoritmo en Javascript que diga si un número es par o impar.",
+        "type": "Ejecutar",
+        "link": "ejercicio10();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 11",
+        "description": "Hacer un algoritmo en Javascript que lea tres números y diga cuál es el mayor.",
+        "type": "Ejecutar",
+        "link": "ejercicio11();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 12",
+        "description": "Hacer un algoritmo en Javascript que lea dos números y diga cuál es el mayor.",
+        "type": "Ejecutar",
+        "link": "ejercicio12();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 13",
+        "description": "Hacer un algoritmo en Javascript que lea una letra y diga si es una vocal.",
+        "type": "Ejecutar",
+        "link": "ejercicio13();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 14",
+        "description": "Hacer un algoritmo en Javascript que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.",
+        "type": "Ejecutar",
+        "link": "ejercicio14();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 15",
+        "description": "Hacer un algoritmo en Javascript que convierta centímetros a pulgadas y libras a kilogramos.",
+        "type": "Ejecutar",
+        "link": "ejercicio15();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 16",
+        "description": "Hacer un algoritmo en Javascript que lea un número y según ese número, indique el día que corresponde.",
+        "type": "Ejecutar",
+        "link": "ejercicio16();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 17",
+        "description": "Hacer un algoritmo en Javascript donde se ingrese una hora y nos calcule la hora dentro de un segundo.",
+        "type": "Ejecutar",
+        "link": "ejercicio17();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 18",
+        "description": "Hacer un algoritmo en Javascript para la venta de CDs. Los precios son: $10 si se compran unidades separadas hasta 9. $8 si se compran entre 10 unidades hasta 99. $7 entre 100 y 499 unidades. $6 para mas de 500 unidades. La ganancia del vendedor es 8,25 % de la venta. Realizar un algoritmo en Javascript que dado un número de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor.",
+        "type": "Ejecutar",
+        "link": "ejercicio18();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 19",
+        "description": "Hacer un algoritmo en Javascript, se tienen 4 tipos de empleados ordenados con su número identificador y salario diario correspondiente: Cajero (56$/día), Servidor (64$/día), Preparador de mezclas (80$/día), Mantenimiento (48$/día). Ingrese dos números enteros que representen el identificador y la cantidad de díaas que trabajó en la semana (6 días máximos). Mostrar por pantalla la cantidad de dinero a pagar al empleado.",
+        "type": "Ejecutar",
+        "link": "ejercicio19();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 20",
+        "description": "Hacer un algoritmo en Javascript que que lea 4 números enteros positivos y realice: ¿Cuántos números son Pares? ¿Cuál es el mayor de todos? Si el tercero es par, calcular el cuadrado del segundo. Si el primero es menor que el cuarto, calcular la media de los 4 números. Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números",
+        "type": "Ejecutar",
+        "link": "ejercicio20();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 21",
+        "description": "Hacer un algoritmo en Javascript que permita calcular el factorial de un número.",
+        "type": "Ejecutar",
+        "link": "ejercicio21();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 22",
+        "description": "Hacer un algoritmo en Javascript para calcular la suma de los n primeros números.",
+        "type": "Ejecutar",
+        "link": "ejercicio22();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 23",
+        "description": "Hacer un algoritmo en Javascript para calcular la suma de los números impares menores o iguales a n.",
+        "type": "Ejecutar",
+        "link": "ejercicio23();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 24",
+        "description": "Hacer un algoritmo en Javascript para realizar la suma de todos los números pares hasta el 1000.",
+        "type": "Ejecutar",
+        "link": "ejercicio24();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 25",
+        "description": "Hacer un algoritmo en Javascript para calcular el factorial de un número de una forma distinta.",
+        "type": "Ejecutar",
+        "link": "ejercicio25();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 26",
+        "description": "Hacer un algoritmo en Javascript para calcular el resto y cociente por medio de restas sucesivas.",
+        "type": "Ejecutar",
+        "link": "ejercicio26();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 27",
+        "description": "Hacer un algoritmo en Javascript para determinar la media de una lista indefinida de números positivos, se debe acabar el programa al ingresar un número negativo.",
+        "type": "Ejecutar",
+        "link": "ejercicio27();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 28",
+        "description": "Hacer un algoritmo en Javascript para calcular la suma de los primeros cien números con un ciclo repetir.",
+        "type": "Ejecutar",
+        "link": "ejercicio28();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 29",
+        "description": "Hacer un algoritmo en Javascript para calcular la suma de los primeros cien números con un ciclo mientras.",
+        "type": "Ejecutar",
+        "link": "ejercicio29();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 30",
+        "description": "Hacer un algoritmo en Javascript para calcular la suma de los primeros cien números con un ciclo para.",
+        "type": "Ejecutar",
+        "link": "ejercicio30();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 31",
+        "description": "Hacer un algoritmo en Javascript parar calcular la media de los números pares e impares, sólo se ingresará diez números.",
+        "type": "Ejecutar",
+        "link": "ejercicio31();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 32",
+        "description": "Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades, hacer un algoritmo en Pseint que nos permita saber eso. (NO HAY DATOS SUFICIENTES)",
+        "type": "Ejecutar",
+        "link": "ejercicio32();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 33",
+        "description": "Hacer un algoritmo en Javascript que permita al usuario continuar con el programa.",
+        "type": "Ejecutar",
+        "link": "ejercicio33();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 34",
+        "description": "Hacer un algoritmo en Javascript que imprima la tabla de multiplicar de los números del uno hasta el nueve.",
+        "type": "Ejecutar",
+        "link": "ejercicio34();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 35",
+        "description": "Hacer un algoritmo en Javascript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.",
+        "type": "Ejecutar",
+        "link": "ejercicio35();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 36",
+        "description": "Hacer un algoritmo en Javascript para calcular la serie de Fibonacci.",
+        "type": "Ejecutar",
+        "link": "ejercicio36();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 37",
+        "description": "Hacer un algoritmo en Javascript para conseguir el M.C.D de un número por medio del algoritmo de Euclides.",
+        "type": "Ejecutar",
+        "link": "ejercicio37();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 38",
+        "description": "Hacer un algoritmo en Javascript que nos permita saber si un número es un número perfecto.",
+        "type": "Ejecutar",
+        "link": "ejercicio38();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 39",
+        "description": "Hacer un algoritmo en Javascript que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. La formula que se debe aplicar es: Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...",
+        "type": "Ejecutar",
+        "link": "ejercicio39();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    },
+    {
+        "name": "Ejercicio 40",
+        "description": "Hacer un algoritmo en Javascript que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es: Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...",
+        "type": "Ejecutar",
+        "link": "ejercicio40();",
+        "iconClasses": "fa-solid fa-book",
+        "additionalContents": [           
+        ]
+    }
+]
