@@ -55,6 +55,13 @@ function ejercicio5(){
         }
     }
 
+    function consola() {
+        console.clear(); 
+    }
+    function refresh() {
+        location.reload();
+    }
+
 let ejercicio01 = (nombre, apellido, edad) => `Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`;
 let resultado01 = ejercicio01("Jorge", "Zegarra", 32);
 console.log(`Ejercicio 1: ${resultado01}`);
