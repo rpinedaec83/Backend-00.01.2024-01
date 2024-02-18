@@ -1,3 +1,6 @@
+
+//RETO 1
+
 const suma = (a, b) => {return a + b};
 
 const potencia = (num, pot) => {
@@ -36,6 +39,9 @@ const operacion = (dato1, signo, dato2) =>{
         return console.log("El parametro no es reconocido");
     }
 }
+
+
+//RETO 2
 
 const nombre_completo = (nombre, apellido, edad) => {return `Hola mi nombre es ${nombre + " " + apellido} y mi edad es ${edad}`}
 
@@ -130,3 +136,47 @@ const objectToArray = (objeto) =>{
     }
     return array;
 }
+
+const squaresSum = (n) => {
+    let sum = 0;
+    for(let i = 1; i <= n; i++){
+        sum += Math.pow(i, 2);
+    }
+    return sum;
+}
+
+const multiplyByLength = (matriz) =>{
+    return matriz.map(x => x * matriz.length);
+}
+
+const countdown = (num) =>{
+    let matriz = [];
+    for(let i = num; i >= 0; i--){
+        matriz.push(i);
+    }
+    return matriz;
+}
+
+const repeat = (num, veces) =>{
+    return Array(veces).fill(num);
+}
+
+const findNemo = (cadena) =>{
+    let palabras = cadena.split(" ");
+    console.log(palabras);
+    return palabras.indexOf("Nemo") + 1;
+}
+
+const capLast = (palabra) =>{
+    let letras = palabra.split("");
+    letras[letras.length - 1] = letras[letras.length - 1].toUpperCase();
+    let text = letras.join("");
+    return text;
+}
+
+String.prototype.vreplace = function(nuevaVocal) {
+    return this.replace(/[aeiou]/g, nuevaVocal);
+};
+
+const palabra = "apples and bananas".vreplace("u");
+console.log(palabra);
