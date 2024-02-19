@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índices de Carácter</title>
+</head>
+<body>
+    <label for="palabraInput">Palabra:</label>
+    <input type="text" id="palabraInput" placeholder="Ingrese una palabra"><br><br>
+
+    <label for="caracterInput">Carácter:</label>
+    <input type="text" id="caracterInput" placeholder="Ingrese un carácter"><br><br>
+
+    <button id="buscarBtn">Buscar Índices del Carácter</button>
+
+    <script>
+        const charIndex = (palabra, caracter) => {
+            const primerIndice = palabra.indexOf(caracter);
+            const ultimoIndice = palabra.lastIndexOf(caracter);
+            return [primerIndice, ultimoIndice];
+        };
+
+        document.getElementById("buscarBtn").addEventListener("click", function() {
+            const palabra = document.getElementById("palabraInput").value;
+            const caracter = document.getElementById("caracterInput").value;
+
+            const indices = charIndex(palabra, caracter);
+            alert("El primer índice del carácter es: " + indices[0] + ", y el último índice es: " + indices[1]);
+        });
+    </script>
+</body>
+</html>

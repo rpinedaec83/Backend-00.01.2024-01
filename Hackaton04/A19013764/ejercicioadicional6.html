@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mínimo y Máximo</title>
+</head>
+<body>
+    <label for="numerosInput">Números:</label>
+    <input type="text" id="numerosInput" placeholder="Ingrese los números separados por comas"><br><br>
+
+    <button id="calcularBtn">Calcular Mínimo y Máximo</button>
+
+    <script>
+        const minMax = (numeros) => {
+            const minimo = Math.min(...numeros);
+            const maximo = Math.max(...numeros);
+            return [minimo, maximo];
+        };
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const numerosString = document.getElementById("numerosInput").value;
+            const numeros = numerosString.split(",").map(numero => parseInt(numero.trim(), 10));
+
+            const resultado = minMax(numeros);
+            alert("El número mínimo es: " + resultado[0] + ", y el número máximo es: " + resultado[1]);
+        });
+    </script>
+</body>
+</html>

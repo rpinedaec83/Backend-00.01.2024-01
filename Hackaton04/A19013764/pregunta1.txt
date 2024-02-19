@@ -1,0 +1,25 @@
+¿Cómo defines una función?
+
+Para definir una función en cualquier lenguaje de programación, incluyendo JavaScript, sigues una estructura básica:
+
+1. Nombre de la función: Debes elegir un nombre descriptivo para tu 
+función que indique lo que hace. Este nombre debe seguir las reglas
+ de nomenclatura del lenguaje de programación que estés utilizando.
+
+2. Parámetros (si los hay): Los parámetros son valores que la función 
+espera recibir para realizar sus operaciones. Estos parámetros se colocan 
+entre paréntesis después del nombre de la función. Puedes tener cero o más parámetros.
+
+3. Cuerpo de la función: El cuerpo de la función contiene el código que quieres
+ que la función ejecute cuando se llama. Aquí es donde escribes las operaciones 
+ que deseas que la función realice. Puedes usar los parámetros que recibió la
+  función y declarar variables internas según sea necesario.
+
+4. Valor de retorno (opcional): Si tu función debe devolver un resultado, 
+utilizas la palabra clave "return" seguida del valor que deseas devolver. 
+Esto es opcional; no todas las funciones necesitan devolver un valor.
+
+En resumen, defines una función especificando su nombre, los parámetros que espera recibir,
+ el código que ejecutará y, opcionalmente, el valor que devolverá.
+  Una vez que la función está definida, puedes llamarla desde otras partes de tu programa 
+  para ejecutar su código y, si es necesario, obtener el resultado que devuelve.

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazar Vocales</title>
+</head>
+<body>
+    <label for="cadenaInput">Cadena:</label>
+    <input type="text" id="cadenaInput" placeholder="Ingrese una cadena"><br><br>
+
+    <label for="vocalInput">Vocal a reemplazar:</label>
+    <input type="text" id="vocalInput" placeholder="Ingrese una vocal"><br><br>
+
+    <button id="reemplazarBtn">Reemplazar Vocales</button>
+
+    <script>
+        String.prototype.vreplace = function(vocal) {
+           
+            return this.replace(/[aeiou]/g, vocal);
+        };
+
+        document.getElementById("reemplazarBtn").addEventListener("click", function() {
+            const cadena = document.getElementById("cadenaInput").value;
+            const vocal = document.getElementById("vocalInput").value;
+
+            const resultado = cadena.vreplace(vocal);
+            alert("El resultado de reemplazar las vocales en la cadena es: " + resultado);
+        });
+    </script>
+</body>
+</html>
