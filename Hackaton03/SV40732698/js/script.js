@@ -474,8 +474,22 @@ if (num2 > num3 && num3 >= 50 && num3 <= 700) {
 
 function ejecicio21(){
     prompt ("Calcule el factorial de un numero (oprima Enter para continuar)");
+    let age = prompt ('¿Cuántos años tienes?', 100);
+    switch (true) {
+      case age >= 20 && age <= 40:
+        recomendacion = "Hacer ejercicio regularmente y mantener una dieta balanceada.";
+        break;
+      case age >= 41 && age <= 60:
+        recomendacion = "Hacer chequeos médicos regulares y mantenerse activo físicamente.";
+        break;
+      case age >= 61 && age <= 90:
+        recomendacion = "Mantener una vida social activa y dedicar tiempo a actividades relajantes.";
+        break;
+      default:
+        recomendacion = "No hay recomendación disponible para esta edad.";
+    }
 
-
+alert("Tienes que hacer lo siguiente: "+recomendacion); 
 }
 function ejecicio22(){
     prompt ("Calcula la suma de n numeros (oprima Enter para continuar)");
