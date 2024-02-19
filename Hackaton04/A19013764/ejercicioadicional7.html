@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato de Número de Teléfono</title>
+</head>
+<body>
+    <label for="numerosInput">Números:</label>
+    <input type="text" id="numerosInput" placeholder="Ingrese separar por comas"><br><br>
+
+    <button id="formatearBtn">Formatear Número de Teléfono</button>
+
+    <script>
+        const formatPhoneNumber = (numeros) => {
+            const areaCode = numeros.slice(0, 3).join('');
+            const prefix = numeros.slice(3, 6).join('');
+            const lineNumber = numeros.slice(6).join('');
+            return `(${areaCode}) ${prefix}-${lineNumber}`;
+        };
+
+        document.getElementById("formatearBtn").addEventListener("click", function() {
+            const numerosString = document.getElementById("numerosInput").value;
+            const numeros = numerosString.split(",").map(numero => parseInt(numero.trim(), 10));
+
+            const resultado = formatPhoneNumber(numeros);
+            alert("El número de teléfono formateado es: " + resultado);
+        });
+    </script>
+</body>
+</html>

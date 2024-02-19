@@ -15,6 +15,25 @@ let msg = saludar("Roberto");
 console.log(msg)
 let mensaje = despedir();
 
+
+console.log(mensaje)
+function antencionAlCliente(){
+    let option = promtp("Que deseas: 1 -> Cafe, 2 -> Postre")
+    switch (option) {
+    
+        case 1:
+            let azucar = prompt("Deseas Azucar");
+            let tipoCafe = prompt("Que tipo de ")
+    }
+
+}
+const promedio = (... args) => {
+    let sum = 0;
+
+
+}
+
+=======
 console.log(mensaje);
 
 
@@ -135,7 +154,7 @@ let tv ={
 console.log(tv.marca)
 tv.enceder();
 
-let taza ={
+let taza = {
     material:"ceramica",
     color: "negro",
     capacidad:"400 ml",
@@ -192,3 +211,4 @@ for (const key in cliente) {
 }
 
 cliente.comprar(taza)
+

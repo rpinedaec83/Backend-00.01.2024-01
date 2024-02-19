@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetir Elemento</title>
+</head>
+<body>
+    <label for="elementoInput">Elemento:</label>
+    <input type="number" id="elementoInput" placeholder="Ingrese el elemento"><br><br>
+
+    <label for="vecesInput">Veces:</label>
+    <input type="number" id="vecesInput" placeholder="Ingrese la cantidad de veces"><br><br>
+
+    <button id="repeatBtn">Repetir Elemento</button>
+
+    <script>
+        const repeat = (elemento, veces) => {
+            const resultado = [];
+            for (let i = 0; i < veces; i++) {
+                resultado.push(elemento);
+            }
+            return resultado;
+        };
+
+        document.getElementById("repeatBtn").addEventListener("click", function() {
+            const elemento = parseInt(document.getElementById("elementoInput").value);
+            const veces = parseInt(document.getElementById("vecesInput").value);
+
+            const resultado = repeat(elemento, veces);
+            alert("La matriz resultante es: " + JSON.stringify(resultado));
+        });
+    </script>
+</body>
+</html>
