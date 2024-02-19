@@ -15,7 +15,7 @@ TÍTULO: JavaScript y HTTP
 Utilizar Javascript para definir algoritmos
 EL PROBLEMA:
 En este caso, definiremos una serie de problemas para resolverlos utilizando el lenguaje javascript, definiremos algoritmos por cada problema.
-1. Crea una función que retorne la suma de dos números.  
+1. Crea una función que retorne la suma de dos números.
 2. Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el número a potenciar.
 3. Crea una función que tome números y devuelva la suma de sus cubos. sumOfCubes(1, 5, 9) ➞ 855
 // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
