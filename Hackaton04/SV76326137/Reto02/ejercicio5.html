@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Valores no String</title>
+</head>
+<body>
+    <h1>Ingrese valores para filtrar:</h1>
+
+    <form onsubmit="filtrarValores(); return false;">
+        <label for="valores">Valores (separados por coma):</label>
+        <input type="text" id="valores" required>
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    <script src="js/script5.js"></script>
+</body>
+</html>
