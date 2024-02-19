@@ -12,7 +12,7 @@ cada vez que iniciamos clase
 
 git fetch fuentes
 
-git merge fuentes/main main
+git merge fuentes/main main (CLASE)
 
 
 para crear ramas
