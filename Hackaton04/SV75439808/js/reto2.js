@@ -2,18 +2,20 @@ const e1 = () => {
   let name     = prompt("Ingrese un nombre"),
       lastname = prompt("Ingrese un apellido"),
       age      = parseInt(prompt("Ingrese una edad"));
-  console.log(`Hola mi nombre es ${name} ${lastname} y mi edad ${age}.`);
+  console.log(`Hola mi nombre es ${name} ${lastname} y mi edad es ${age}.`);
 };
 
 const e2 = () => {
   let num = parseInt(prompt("Ingrese una cantidad de números")),
-      res = 0;
+      res = 0,
+      n   = [];
   for (let i = 1; i <= num; i++) {
-    let x    = prompt(`Ingrese el número ${i}`);
-        x    = parseInt(x);
-        res += x ** 3;
+    let x = prompt(`Ingrese el número ${i}`);
+    x = parseInt(x);
+    n.push(x);
+    res += x ** 3;
   }
-  console.log("La suma de sus cubos es: ", res);
+  console.log(`sumOfCubes(${n}) ➞ ${res}`);
 };
 
 const e3 = () => {
@@ -30,7 +32,7 @@ const e3 = () => {
   } else {
     res = typeof x;
   }
-  console.log(res);
+  console.log(`El tipo del valor de "${x}" es un ${res}.`);
 };
 
 const e4 = () => {
@@ -65,13 +67,13 @@ const e5 = () => {
 const e6 = () => {
   const cant = parseInt(prompt("Ingrese una cantidad de números:")),
         nums = [];
-  for (let i = 1; i < cant; i++) {
+  for (let i = 1; i <= cant; i++) {
     const num = parseInt(prompt(`Ingrese el número ${i}:`));
     nums.push(num);
   }
   const men = Math.min(...nums),
         may = Math.max(...nums);
-  console.log(`[${men}, ${may}]`);
+  console.log(`minMax([${nums}]) ➞ [${men}, ${may}]`);
 };
 
 const e7 = () => {
@@ -84,7 +86,7 @@ const e7 = () => {
         fp  = nums.slice(3, 6).join(""),
         sp  = nums.slice(6).join(""),
         res = `(${ac}) ${fp}-${sp}`;
-  console.log(res);
+  console.log(`formatPhoneNumber([${nums}])  ➞ ${res}`);
 };
 
 const e8 = () => {
@@ -106,7 +108,7 @@ const e8 = () => {
   }
   const res1 = JSON.stringify(allmats).replace(/\),/g, "]").replace(/,/g, ", "),
         res  = JSON.stringify(mats).replace(/,/g, ", ");
-  console.log(`(${res1}) ➞ ${res}`);
+  console.log(`findLargestNums(${res1}) ➞ ${res}`);
 };
 
 const e9 = () => {
@@ -114,36 +116,29 @@ const e9 = () => {
         ix   = prompt("Ingrese un índice"),
         find = wd.indexOf(ix),
         lind = wd.lastIndexOf(ix);
-  console.log(`("${wd}", "${ix}") ➞ [${find}, ${lind}]`);
+  console.log(`charIndex("${wd}", "${ix}") ➞ [${find}, ${lind}]`);
 };
 
 const e10 = () => {
-  const no  = parseInt(prompt("Ingrese la cantidad de objetos a ingresar:"));
   const at  = "abcdefghijklmnopqrstuvwxyz",
-        res = [];
-  for (let n = 1; n <= no; n++) {
-    const nl = parseInt(
-        prompt(`Ingrese la cantidad de letras en el objeto ${n} a ingresar:`)
-      ),
-      obj = {};
-    for (let j = 0; j < nl; j++) {
-      const [lt, val] = [
-        at[j],
-        parseInt(prompt(`Ingrese el valor para la letra "${at[j]}"`)),
-      ];
-      if (isNaN(val)) {
-        console.log(
-          `Valor no válido para la letra "${at[j]}" en el objeto ${n}, este debe ser un número.`
-        );
-        return;
-      }
-      obj[lt] = val;
+        res = [],
+        nl  = parseInt(prompt(`Ingrese la cantidad de valores a ingresar`)),
+        obj = {};
+  for (let j = 0; j < nl; j++) {
+    const lt  = at[j],
+          val = parseInt(prompt(`Ingrese el valor de la letra "${at[j]}"`));
+    if (isNaN(val)) {
+      console.log(
+        `Valor no válido para la letra "${at[j]}" en el objeto ${nl}, este debe ser un número.`
+      );
+      return;
     }
-    res.push(...Object.entries(obj));
+    obj[lt] = val;
   }
+  res.push(...Object.entries(obj));
   const x = res.map(([key, value]) => `${key}: ${value}`).join(", "),
         y = JSON.stringify(res).replace(/,/g, ", ");
-  console.log(`{${x}} ➞ ${y}`);
+  console.log(`toArray({ ${x} }) ➞ ${y}`);
 };
 
 const e11 = () => {
@@ -156,66 +151,68 @@ const e11 = () => {
           obj  = { name, age, bud };
     objs.push(obj);
   }
-  const person = objs
-      .map((obj) => `{"${obj.name}", ${obj.age}, ${obj.bud}}`)
-      .join(", ")
-      .replace("\n"),
-    res = objs.reduce((tot, obj) => tot + obj.bud, 0);
-  console.log(`${person} ➞ ${res}`);
+  const person = objs.map((obj) => `{name: "${obj.name}", age: ${obj.age}, budget: ${obj.bud}}`).join(",\n  "),
+        res    = objs.reduce((tot, obj) => tot + obj.bud, 0);
+  console.log(`getBudgets([\n  ${person}\n]) ➞ ${res}`);
 };
 
 const e12 = () => {
   const getStudentNames = () => {
-    const students         = [];
-    const numberOfStudents = parseInt(
+    const students         = [],
+          numberOfStudents = parseInt(
       prompt("Ingrese la cantidad de estudiantes:")
     );
     for (let i = 1; i <= numberOfStudents; i++) {
       const studentName = prompt(`Ingrese el nombre del estudiante ${i}:`);
       students.push({ name: studentName });
     }
-    students.forEach((student) => console.log(`{name: "${student.name}"}`));
-    return students.map((student) => student.name).join(", ");
+    return students.map((student) => student.name);
   };
-  const studentNames = getStudentNames();
-  console.log(`➞ [${studentNames}]`);
+  const studentNames = getStudentNames(),
+        res          = studentNames.map((student) => `"${student}"`).join(", ");
+  console.log(
+    `getStudentNames([\n${studentNames
+      .map((name) => `{ name: "${name}" }`)
+      .join(",\n")}\n]) ➞ [${res}]`
+  );
 };
 
 const e13 = () => {
-  const obj  = {};
-  const keys = ["likes", "dislikes", "followers"];
-  const res  = [];
-
-  for (const key of keys) {
-    const value = parseInt(prompt(`Ingrese el valor para la clave "${key}":`));
-    obj  [key]  = value;
-    res.push([key, value]);
-  }
-
-  const output = JSON.stringify(res).replace(/,/g, ", ");
-  console.log(`➞ ${output}`);
+  const obj = {
+    likes: parseInt(prompt("Ingrese el valor para la clave 'likes':")),
+    dislikes: parseInt(prompt("Ingrese el valor para la clave 'dislikes':")),
+    followers: parseInt(prompt("Ingrese el valor para la clave 'followers':")),
+  };
+  const res = Object.entries(obj).map(([key, value]) => [`"${key}", ${value}`]);
+  console.log(
+    `objectToArray({\n  likes: ${obj.likes},\n  dislikes: ${
+      obj.dislikes
+    },\n  followers: ${obj.followers}\n}) ➞ [${res
+      .map((pair) => `[${pair.map((item) => `${item}`).join(", ")}]`)
+      .join(", ")}]`
+  );
 };
 
 const e14 = () => {
-  const n   = parseInt(prompt("Ingrese una cantidad de números"));
-  let   sum = 0;
+  const n = parseInt(prompt("Ingrese una cantidad de números"));
+  let sum = 0;
   for (let i = 1; i <= n; i++) {
     sum += i * i;
   }
-  console.log(sum);
+  console.log(`squaresSum(${n}) ➞ ${sum}`);
 };
 
 const e15 = () => {
-  const cant = parseInt(prompt("Ingrese una cantidad de valores:"));
-  const nums = [];
-  const arr  = [];
-  for (let i = 0; i < cant; i++) {
-    const num = parseInt(prompt(`Ingrese el número ${i + 1}:`));
-    const res = num * cant;
+  const cant = parseInt(prompt("Ingrese una cantidad de valores:")),
+        nums = [],
+        arr  = [];
+  for (let i = 1; i <= cant; i++) {
+    const num = parseInt(prompt(`Ingrese el número ${i}:`)),
+          res = num * cant;
     nums.push(num);
     arr.push(res);
   }
-  console.log(`[${nums.join(", ")}] ➞ [${arr.join(", ")}]`);
+  console.log(`multiplyByLength([${nums.join(", ")}]) ➞ [${arr.join(", ")}]`);
 };
 
 const e16 = () => {
@@ -224,7 +221,7 @@ const e16 = () => {
   for (let i = n; i >= 0; i--) {
     res.push(i);
   }
-  console.log(`[${res.join(", ")}]`);
+  console.log(`countdown(${n}) ➞ [${res.join(", ")}]`);
 };
 
 const e17 = () => {
@@ -235,9 +232,9 @@ const e17 = () => {
     arr.push(num);
   }
   const max = Math.max(...arr),
-        min = Math.min(...arr),
-        res = max - min;
-  console.log(`[${arr.join(", ")}] ➞ ${res}`);
+    min = Math.min(...arr),
+    res = max - min;
+  console.log(`diffMaxMin([${arr.join(", ")}]) ➞ ${res}`);
 };
 
 const e18 = () => {
@@ -248,46 +245,48 @@ const e18 = () => {
     arr.push(isNaN(input) ? `"${input}"` : parseFloat(input));
   }
   const res = arr.filter((num) => typeof num === "number" && !isNaN(num));
-  console.log(`[${arr.join(", ")}] ➞ [${res.join(", ")}]`);
+  console.log(`filterList([${arr.join(", ")}]) ➞ [${res.join(", ")}]`);
 };
 
 const e19 = () => {
   const ele = parseInt(prompt("Ingrese un número:")),
         rep = parseInt(prompt("Ingrese n veces a repetir:")),
         res = Array.from({ length: rep }, () => ele);
-  console.log(`(${ele}, ${rep}) ➞ [${res.join(", ")}]`);
+  console.log(`repeat(${ele}, ${rep}) ➞ [${res.join(", ")}]`);
 };
 
 const e20 = () => {
-  String.prototype.vreplace = function (vowel) {
-    return this.replace(/[aeiou]/gi, vowel);
+  String.prototype.vreplace = function (v) {
+    return this.replace(/[aeiou]/gi, v);
   };
-  const or  = prompt("Ingrese una oración:");
-  const res = or.vreplace(
-    prompt("Ingrese la vocal que reemplazará todas las vocales:")
-  );
-  console.log(`"${or}" ➞ "${res}"`);
+  const or  = prompt("Ingrese una oración:"),
+        v   = prompt("Ingrese la vocal que reemplazará todas las vocales:"),
+        res = or.vreplace(v);
+  console.log(`"${or}".vreplace("${v}") ➞ "${res}"`);
 };
 
 const e21 = () => {
-  const sent    = prompt("Ingrese una oración:"),
-        words   = sent.split(" "),
-        index   = words.indexOf("Nemo");
-        res     = 
-        index !== -1
-      ? `Enconctre a nemo en orden de la palabra ${index + 1} de la oración!`
-      :  "No encontre a nemo :(";
-  console.log(res);
+  const or = prompt("Ingrese una oración:"),
+    pal = or.split(" "),
+    i =
+      pal.indexOf("Nemo") !== -1
+        ? pal.indexOf("Nemo") + 1
+        : pal.indexOf("nemo") + 1;
+  res =
+    i !== 0
+      ? `Encontré la palabra nemo en la posición ${i} de la oración!`
+      : "No encontré a Nemo :(";
+  console.log(`findNemo("${or}") ➞ "${res}"`);
 };
 
 const e22 = () => {
-  const str              = prompt("Ingrese una palabra:"),
-        words            = str.split(" ");
-  const capitalizedWords = words.map((word) => {
-    const lastLetter = word.slice(-1).toUpperCase(),
-          restOfWord = word.slice(0, -1);
-    return restOfWord + lastLetter;
+  const str  = prompt("Ingrese una palabra:"),
+        pals = str.split(" "),
+        cap  = pals.map((pal) => {
+          const last = pal.slice(-1).toUpperCase(),
+                resp = pal.slice(0, -1);
+    return resp + last;
   });
-  const res = capitalizedWords.join(" ");
-  console.log(`"${str}" ➞ "${res}"`);
+  const res = cap.join(" ");
+  console.log(`capLast("${str}") ➞ "${res}"`);
 };
