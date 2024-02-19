@@ -14,6 +14,27 @@ function despedir() {
 }
 
 let mensaje = despedir();
+
+
+
+console.log(mensaje)
+function antencionAlCliente(){
+    let option = promtp("Que deseas: 1 -> Cafe, 2 -> Postre")
+    switch (option) {
+    
+        case 1:
+            let azucar = prompt("Deseas Azucar");
+            let tipoCafe = prompt("Que tipo de ")
+    }
+
+}
+const promedio = (... args) => {
+    let sum = 0;
+
+
+}
+
+
 console.log(mensaje);
 
 function prepararCafe(azucar = true, tipoCafe, tamaño, leche) {
@@ -133,6 +154,7 @@ console.log(tv.marca);
 tv.enceder();
 
 let taza = {
+
   material: "ceramica",
   color: "negro",
   capacidad: "400 ml",
@@ -147,6 +169,7 @@ let taza = {
     console.log("se esta comprando esta taza");
   },
 };
+
 
 for (const propiedad in taza) {
   const element = taza[propiedad];
@@ -186,4 +209,6 @@ for (const key in cliente) {
   console.log(`${key} ---> ${element}`);
 }
 
+
 cliente.comprar(taza);
+

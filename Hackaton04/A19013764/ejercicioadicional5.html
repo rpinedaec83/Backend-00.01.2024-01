@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Strings</title>
+</head>
+<body>
+    <label for="valoresInput">Valores:</label>
+    <input type="text" id="valoresInput" placeholder="Ingrese los valores del array separados por comas"><br><br>
+
+    <button id="filtrarBtn">Filtrar Strings</button>
+
+    <script>
+        const filtrarStrings = (valores) => {
+            return valores.filter(valor => typeof valor === 'string');
+        };
+
+        document.getElementById("filtrarBtn").addEventListener("click", function() {
+            const valoresString = document.getElementById("valoresInput").value;
+            const valores = valoresString.split(",").map(valor => valor.trim());
+
+            const resultado = filtrarStrings(valores);
+            alert("Los strings filtrados son: " + resultado);
+        });
+    </script>
+</body>
+</html>

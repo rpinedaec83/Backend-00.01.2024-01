@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Presupuestos</title>
+</head>
+<body>
+    <label for="personasInput">Personas:</label>
+    <input type="text" id="personasInput" placeholder='Ingrese la matriz de objetos JSON'><br><br>
+
+    <button id="sumarBtn">Obtener Suma de Presupuestos</button>
+
+    <script>
+        const getBudgets = (personas) => {
+            return personas.reduce((total, persona) => total + persona.budget, 0);
+        };
+
+        document.getElementById("sumarBtn").addEventListener("click", function() {
+            const personasString = document.getElementById("personasInput").value;
+            const personas = JSON.parse(personasString);
+
+            const sumaPresupuestos = getBudgets(personas);
+            alert("La suma de los presupuestos es: " + sumaPresupuestos);
+        });
+        
+    </script>
+</body>
+</html>
+<!-- ejemplo:[
+{ "name": "John", "age": 21, "budget": 23000 },
+{ "name": "Steve", "age": 32, "budget": 40000 },
+{ "name": "Martin", "age": 16, "budget": 2700 }
+] -->
