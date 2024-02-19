@@ -15,7 +15,7 @@ let msg = saludar("Roberto");
 console.log(msg)
 let mensaje = despedir();
 
-<<<<<<< HEAD
+
 console.log(mensaje)
 function antencionAlCliente(){
     let option = promtp("Que deseas: 1 -> Cafe, 2 -> Postre")
@@ -154,7 +154,7 @@ let tv ={
 console.log(tv.marca)
 tv.enceder();
 
-let taza ={
+let taza = {
     material:"ceramica",
     color: "negro",
     capacidad:"400 ml",
@@ -211,4 +211,4 @@ for (const key in cliente) {
 }
 
 cliente.comprar(taza)
->>>>>>> 897bc6e3fb6976188d66892662e822406f2ff0b2
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia entre el Máximo y el Mínimo</title>
+</head>
+<body>
+    <label for="matrizInput">Matriz:</label>
+    <input type="text" id="matrizInput" placeholder='Ingrese la matriz como un array JSON'><br><br>
+
+    <button id="calcularBtn">Calcular Diferencia Máximo-Mínimo</button>
+
+    <script>
+        const diffMaxMin = (matriz) => {
+            const maximo = Math.max(...matriz);
+            const minimo = Math.min(...matriz);
+            return maximo - minimo;
+        };
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const matrizString = document.getElementById("matrizInput").value;
+            const matriz = JSON.parse(matrizString);
+
+            const diferencia = diffMaxMin(matriz);
+            alert("La diferencia entre el número más grande y el más pequeño es: " + diferencia);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números</title>
+</head>
+<body>
+    <label for="numerosInput">Números:</label>
+    <input type="text" id="numerosInput" placeholder="Ingrese los números separados por comas"><br><br>
+
+    <button id="sumarBtn">Sumar Números</button>
+
+    <script>
+        const sumarNumeros = (...numeros) => {
+            return numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+        };
+
+        document.getElementById("sumarBtn").addEventListener("click", function() {
+            const numerosString = document.getElementById("numerosInput").value;
+            const numeros = numerosString.split(",").map(numero => parseInt(numero.trim()));
+
+            const resultado = sumarNumeros(...numeros);
+            alert("La suma de los números es: " + resultado);
+        });
+    </script>
+</body>
+</html>

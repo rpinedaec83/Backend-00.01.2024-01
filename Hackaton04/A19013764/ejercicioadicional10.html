@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertir Objeto a Matriz</title>
+</head>
+<body>
+    <label for="objetoInput">Objeto:</label>
+    <input type="text" id="objetoInput" placeholder="Ingrese un objeto JSON"><br><br>
+
+    <button id="convertirBtn">Convertir a Matriz</button>
+
+    <script>
+        const toArray = (objeto) => {
+            return Object.entries(objeto);
+        };
+
+        document.getElementById("convertirBtn").addEventListener("click", function() {
+            const objetoString = document.getElementById("objetoInput").value;
+            const objeto = JSON.parse(objetoString);
+
+            const matriz = toArray(objeto);
+            alert("La matriz resultante es: " + JSON.stringify(matriz));
+        });
+    </script>
+</body>
+</html>

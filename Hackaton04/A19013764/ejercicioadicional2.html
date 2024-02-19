@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Cubos</title>
+</head>
+<body>
+    <label for="numerosInput">Números:</label>
+    <input type="text" id="numerosInput" placeholder="Ingrese los números separados por comas"><br><br>
+
+    <button id="calcularBtn">Calcular Suma de Cubos</button>
+
+    <script>
+        const sumOfCubes = (...numeros) => {
+            let sumaCubos = 0;
+            for (let numero of numeros) {
+                sumaCubos += Math.pow(numero, 3);
+            }
+            return sumaCubos;
+        };
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const numerosString = document.getElementById("numerosInput").value;
+            const numeros = numerosString.split(",").map(numero => parseInt(numero.trim()));
+
+            const suma = sumOfCubes(...numeros);
+            alert("La suma de los cubos de los números es: " + suma);
+        });
+    </script>
+</body>
+</html>
