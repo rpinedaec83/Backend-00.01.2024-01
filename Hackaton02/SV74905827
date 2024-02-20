@@ -1,0 +1,961 @@
+Proceso ejecicio01
+
+	Definir num1 Como Real	
+    Escribir "escrbie un numero de 3 digitos"
+	Leer num1
+	
+	Escribir num1
+	si num1 >=99 Y num1<=999 Entonces
+		Escribir "su numero es: " num1
+	SiNo
+		Escribir "Error"
+	FinSi
+	
+FinProceso
+	
+------------------------------------------------------------------------------------------------------------------
+
+
+Proceso ejercicio02
+Definir numero como Entero
+
+Escribir "Ingrese un número entero:"
+Leer numero
+
+Si numero < 0 Entonces
+	Escribir "El número ingresado es negativo."
+Sino
+	Escribir "El número ingresado no es negativo."
+FinSi
+
+FinProceso
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio03
+	Definir numero, ultimoDigito como Entero
+    
+    Escribir "Ingrese un número:"
+    Leer numero
+    
+    ultimoDigito <- numero % 10
+    
+    Si ultimoDigito = 4 Entonces
+        Escribir "El número termina en 4."
+    Sino
+        Escribir "El número no termina en 4."
+    FinSi
+	
+FinProceso
+
+------------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio04
+	Definir num1, num2, num3, menor, medio, mayor como Entero
+    
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Escribir "Ingrese el tercer número:"
+    Leer num3
+    
+    menor <- num1
+    Si num2 < menor Entonces
+        menor <- num2
+    FinSi
+    Si num3 < menor Entonces
+        menor <- num3
+    FinSi
+    
+    mayor <- num1
+    Si num2 > mayor Entonces
+        mayor <- num2
+    FinSi
+    Si num3 > mayor Entonces
+        mayor <- num3
+    FinSi
+
+    medio <- num1 + num2 + num3 - menor - mayor
+    
+    Escribir "Los números ordenados de menor a mayor son:", menor, ",", medio, ",", mayor
+    
+FinProceso
+
+------------------------------------------------------------------------------------------------
+
+Proceso ejercicio05
+	Definir precioZapato, cantidadZapatos, total, descuento Como Real 
+	PRECIO_ZAPATO <- 80
+    
+    Escribir "Ingrese la cantidad de zapatos comprados:"
+    Leer cantidadZapatos
+    
+    total <- cantidadZapatos * PRECIO_ZAPATO
+    
+    Si cantidadZapatos > 30 Entonces
+        descuento <- total * 0.4
+    Sino
+        Si cantidadZapatos > 20 Entonces
+            descuento <- total * 0.2
+        Sino
+            Si cantidadZapatos > 10 Entonces
+                descuento <- total * 0.1
+            Sino
+                descuento <- 0
+            FinSi
+        FinSi
+    FinSi
+    
+    totalConDescuento <- total - descuento
+    
+    Escribir "El total a pagar es:", totalConDescuento, "con un descuento de:", descuento
+    
+FinProceso
+
+-----------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio06
+	Definir horasTrabajadas, sueldoSemanal Como Real 
+	TARIFA_NORMAL <- 20
+	TARIFA_EXTRA <- 25
+	HORAS_REGULARES <- 40
+    
+    Escribir "Ingrese las horas trabajadas en la semana:"
+    Leer horasTrabajadas
+    
+    Si horasTrabajadas <= HORAS_REGULARES Entonces
+        sueldoSemanal <- horasTrabajadas * TARIFA_NORMAL
+    Sino
+        sueldoSemanal <- (HORAS_REGULARES * TARIFA_NORMAL) + ((horasTrabajadas - HORAS_REGULARES) * TARIFA_EXTRA)
+    FinSi
+    
+    Escribir "El sueldo semanal es:", sueldoSemanal
+	
+FinProceso
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio07
+	Definir precioTotal, descuento, precioFinal Como Real
+    Definir tipoMembresia Como Caracter
+    
+     DESCUENTO_A <- 0.15
+     DESCUENTO_B <- 0.10
+     DESCUENTO_C <- 0.05
+    
+    Escribir "Ingrese el precio total de la compra:"
+    Leer precioTotal
+    Escribir "Ingrese el tipo de membresía (A, B o C):"
+    Leer tipoMembresia
+    
+    Segun tipoMembresia Hacer
+        Caso "A":
+            descuento <- precioTotal * DESCUENTO_A
+        Caso "B":
+            descuento <- precioTotal * DESCUENTO_B
+        Caso "C":
+            descuento <- precioTotal * DESCUENTO_C
+        De Otro Modo:
+            Escribir "Tipo de membresía inválido."
+            
+    FinSegun
+    
+    precioFinal <- precioTotal - descuento
+    
+    Escribir "El precio final después del descuento es:", precioFinal
+	
+FinProceso
+
+---------------------------------------------------------------------------------------------------
+
+Proceso ejercicio08
+	Definir nota1, nota2, nota3, promedio Como Real
+    
+    Escribir "Ingrese la primera nota:"
+    Leer nota1
+    Escribir "Ingrese la segunda nota:"
+    Leer nota2
+    Escribir "Ingrese la tercera nota:"
+    Leer nota3
+
+    promedio <- (nota1 + nota2 + nota3) / 3
+    
+    Escribir "El promedio de las tres notas es:", promedio
+
+    Si promedio >= 60 Entonces
+        Escribir "El estudiante ha aprobado."
+    Sino
+        Escribir "El estudiante ha reprobado."
+    FinSi
+    
+FinProceso
+
+------------------------------------------------------------------------------------------------------
+Proceso ejercicio09
+	Definir salarioActual, salarioConAumento Como Real
+    
+    Escribir "Ingrese el salario actual del trabajador:"
+    Leer salarioActual
+    
+    Si salarioActual > 2000 Entonces
+        salarioConAumento <- salarioActual * 1.05
+    Sino
+        salarioConAumento <- salarioActual * 1.10
+    FinSi
+
+    Escribir "El nuevo salario con aumento es:", salarioConAumento
+    
+FinProceso
+
+-------------------------------------------------------------------------------------------------------------------
+Proceso ejercicio10
+	Definir numero Como Entero
+
+    Escribir "Ingrese un número:"
+    Leer numero
+
+    Si numero % 2 = 0 Entonces
+        Escribir "El número", numero, "es par."
+    Sino
+        Escribir "El número", numero, "es impar."
+    FinSi
+	
+FinProceso
+
+-------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio11
+	Definir num1, num2, num3, mayor Como Entero
+
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Escribir "Ingrese el tercer número:"
+    Leer num3
+ 
+    mayor <- num1
+
+    Si num2 > mayor Entonces
+        mayor <- num2
+    FinSi
+
+    Si num3 > mayor Entonces
+        mayor <- num3
+    FinSi
+
+    Escribir "El mayor número es:", mayor
+	
+FinProceso
+
+---------------------------------------------------------------------------------------------------
+
+Proceso ejercicio12
+	Definir num1, num2, mayor Como Entero
+
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    
+    Si num1 > num2 Entonces
+        mayor <- num1
+    Sino
+        mayor <- num2
+    FinSi
+ 
+    Escribir "El mayor número es:", mayor
+	
+FinProceso
+
+---------------------------------------------------------------------------------------------------
+
+Proceso ejercicio13
+	Definir letra Como Caracter
+    
+    Escribir "Ingrese una letra:"
+    Leer letra
+    
+    letra <- Minusculas((letra))
+    
+    Si letra = "a" O letra = "e" O letra = "i" O letra = "o" O letra = "u" Entonces
+        Escribir "La letra ingresada es una vocal."
+    Sino
+        Escribir "La letra ingresada no es una vocal."
+    FinSi
+	
+FinProceso
+
+---------------------------------------------------------------------------------------------------
+
+Proceso ejercicio14
+	Definir numero, divisor, raizCuadrada Como Entero
+
+    Escribir "Ingrese un número entre 1 y 10, excluyendo 9:"
+    Leer numero
+
+    Si numero = 9 Entonces
+        Escribir "El número 9 no es un número primo."
+    Sino
+        Si numero >= 1 Y numero <= 10 Entonces
+			
+            divisor <- 2
+            raizCuadrada <- Redon(Raiz(numero))
+            Mientras divisor <= raizCuadrada Y numero % divisor <> 0 Hacer
+                divisor <- divisor + 1
+            FinMientras
+            Si divisor > raizCuadrada O numero = 1 Entonces
+                Escribir "El número", numero, "es un número primo."
+            Sino
+                Escribir "El número", numero, "no es un número primo."
+            FinSi
+        Sino
+            Escribir "El número ingresado está fuera del rango válido."
+        FinSi
+    FinSi
+	
+FinProceso
+
+-------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio15
+	Definir centimetros, pulgadas, libras, kilogramos Como Real
+   
+    Escribir "Ingrese la cantidad en centímetros:"
+    Leer centimetros
+    Escribir "Ingrese la cantidad en libras:"
+    Leer libras
+  
+    pulgadas <- centimetros * 0.393701
+
+    kilogramos <- libras * 0.453592
+
+    Escribir "La cantidad en pulgadas es:", pulgadas
+    Escribir "La cantidad en kilogramos es:", kilogramos
+	
+FinProceso
+
+--------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio16
+	Definir numeroDia Como Entero
+
+    Escribir "Ingrese un número del 1 al 7:"
+    Leer numeroDia
+ 
+    Segun numeroDia Hacer
+        Caso 1:
+            Escribir "El número corresponde al día lunes."
+        Caso 2:
+            Escribir "El número corresponde al día martes."
+        Caso 3:
+            Escribir "El número corresponde al día miércoles."
+        Caso 4:
+            Escribir "El número corresponde al día jueves."
+        Caso 5:
+            Escribir "El número corresponde al día viernes."
+        Caso 6:
+            Escribir "El número corresponde al día sábado."
+        Caso 7:
+            Escribir "El número corresponde al día domingo."
+        De Otro Modo:
+            Escribir "El número ingresado no corresponde a un día de la semana."
+    FinSegun
+	
+FinProceso
+
+--------------------------------------------------------------------------------------------------
+
+Proceso ejercicio17
+	Definir hora, minutos, segundos Como Entero
+    Definir nuevaHora, nuevosMinutos, nuevosSegundos Como Entero
+
+    Escribir "Ingrese la hora en formato HH:MM:SS:"
+    Leer hora
+    Leer minutos
+    Leer segundos
+
+    nuevosSegundos <- segundos + 1
+
+    Si nuevosSegundos >= 60 Entonces
+        nuevosSegundos <- 0
+        nuevosMinutos <- minutos + 1
+        
+        Si nuevosMinutos >= 60 Entonces
+            nuevosMinutos <- 0
+            nuevaHora <- hora + 1
+            
+            Si nuevaHora >= 24 Entonces
+                nuevaHora <- 0
+            FinSi
+        Sino
+            nuevaHora <- hora
+        FinSi
+    Sino
+        nuevosMinutos <- minutos
+        nuevaHora <- hora
+    FinSi
+
+    Escribir "La hora dentro de un segundo es:", nuevaHora, ":", nuevosMinutos, ":", nuevosSegundos
+    
+FinProceso
+
+----------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio18
+	Definir PRECIO_1_9, PRECIO_10_99, PRECIO_100_499, PRECIO_500_PLUS Como Real
+    Definir GANANCIA_VENDEDOR Como Real
+    
+     PRECIO_1_9 <- 10
+     PRECIO_10_99 <- 8
+     PRECIO_100_499 <- 7
+     PRECIO_500_PLUS <- 6
+     GANANCIA_VENDEDOR <- 0.0825  
+
+    Definir cantidadCDs Como Entero
+    Definir precioTotalCliente, gananciaVendedor Como Real
+   
+    Escribir "Ingrese la cantidad de CDs a vender:"
+    Leer cantidadCDs
+ 
+    Si cantidadCDs >= 1 Y cantidadCDs <= 9 Entonces
+        precioTotalCliente <- cantidadCDs * PRECIO_1_9
+    Sino
+        Si cantidadCDs >= 10 Y cantidadCDs <= 99 Entonces
+            precioTotalCliente <- cantidadCDs * PRECIO_10_99
+        Sino
+            Si cantidadCDs >= 100 Y cantidadCDs <= 499 Entonces
+                precioTotalCliente <- cantidadCDs * PRECIO_100_499
+            Sino
+                precioTotalCliente <- cantidadCDs * PRECIO_500_PLUS
+            FinSi
+        FinSi
+    FinSi
+ 
+    gananciaVendedor <- precioTotalCliente * GANANCIA_VENDEDOR
+
+    Escribir "El precio total para el cliente es:", precioTotalCliente
+    Escribir "La ganancia para el vendedor es:", gananciaVendedor
+	
+FinProceso
+
+-------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio19
+	 SALARIO_CAJERO <- 56
+     SALARIO_SERVIDOR <- 64
+     SALARIO_PREPARADOR <- 80
+     SALARIO_MANTENIMIENTO <- 48
+    
+    Definir idEmpleado, diasTrabajados Como Entero
+    Definir salarioTotal Como Real
+      
+    Escribir "Ingrese el número identificador del empleado:"
+    Leer idEmpleado
+    Escribir "Ingrese la cantidad de días trabajados en la semana:"
+    Leer diasTrabajados
+
+    Segun idEmpleado Hacer
+        Caso 1:
+            salarioTotal <- SALARIO_CAJERO * diasTrabajados
+        Caso 2:
+            salarioTotal <- SALARIO_SERVIDOR * diasTrabajados
+        Caso 3:
+            salarioTotal <- SALARIO_PREPARADOR * diasTrabajados
+        Caso 4:
+            salarioTotal <- SALARIO_MANTENIMIENTO * diasTrabajados
+        De Otro Modo:
+            Escribir "Número de empleado incorrecto."
+    FinSegun
+ 
+    Escribir "El salario total a pagar al empleado es:", salarioTotal
+	
+FinProceso
+
+------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio20
+	Definir num1, num2, num3, num4, pares, mayor, media, suma Como Entero
+    Definir cuadradoSegundo Como Real
+
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Escribir "Ingrese el tercer número:"
+    Leer num3
+    Escribir "Ingrese el cuarto número:"
+    Leer num4
+    
+    pares <- 0
+    mayor <- num1
+  
+    Si num1 > mayor Entonces
+        mayor <- num1
+    FinSi
+    Si num1 % 2 = 0 Entonces
+        pares <- pares + 1
+    FinSi
+    Si num2 > mayor Entonces
+        mayor <- num2
+    FinSi
+    Si num2 % 2 = 0 Entonces
+        pares <- pares + 1
+    FinSi
+    Si num3 > mayor Entonces
+        mayor <- num3
+    FinSi
+    Si num3 % 2 = 0 Entonces
+        pares <- pares + 1
+    FinSi
+    Si num4 > mayor Entonces
+        mayor <- num4
+    FinSi
+    Si num4 % 2 = 0 Entonces
+        pares <- pares + 1
+    FinSi
+
+    Escribir "La cantidad de números pares es:", pares
+    Escribir "El mayor número es:", mayor
+
+    Si num3 % 2 = 0 Entonces
+        cuadradoSegundo <- num2 ^ 2
+        Escribir "El cuadrado del segundo número es:", cuadradoSegundo
+    FinSi
+    
+    Si num1 < num4 Entonces
+        media <- (num1 + num2 + num3 + num4) / 4
+        Escribir "La media de los 4 números es:", media
+    FinSi
+  
+    Si num2 > num3 Entonces
+        Si num3 >= 50 Y num3 <= 700 Entonces
+            suma <- num1 + num2 + num3 + num4
+            Escribir "La suma de los 4 números es:", suma
+        FinSi
+    FinSi
+	
+FinProceso
+
+-----------------------------------------------------------------------------------------------------
+
+Proceso ejercicio21
+	Definir numero, factorial Como Entero
+  
+    Escribir "Ingrese un número para calcular su factorial:"
+    Leer numero
+   
+    factorial <- 1
+   
+    Para i <- 1 Hasta numero Hacer
+        factorial <- factorial * i
+    FinPara
+  
+    Escribir "El factorial de", numero, "es:", factorial
+	
+FinProceso
+
+--------------------------------------------------------------------------
+
+Proceso ejercicio22
+	Definir n, suma Como Entero
+    
+    Escribir "Ingrese el valor de n:"
+    Leer n
+
+    suma <- (n * (n + 1)) / 2
+ 
+    Escribir "La suma de los", n, "primeros números naturales es:", suma
+	
+FinProceso
+
+------------------------------------------------------------------------------------------
+
+Proceso ejecicio23
+	Definir n, suma, i Como Entero
+    
+    Escribir "Ingrese el valor de n:"
+    Leer n
+  
+    suma <- 0
+    
+    Para i <- 1 Hasta n Con Paso 2 Hacer
+        suma <- suma + i
+    FinPara
+    
+    Escribir "La suma de los números impares menores o iguales a", n, "es:", suma
+    
+FinProceso
+
+------------------------------------------------------------------------------------------------
+
+Proceso ejercicio24
+	Definir suma, i Como Entero
+
+    suma <- 0
+    
+    Para i <- 2 Hasta 1000 Con Paso 2 Hacer
+        suma <- suma + i
+    FinPara
+   
+    Escribir "La suma de todos los números pares hasta 1000 es:", suma
+	
+FinProceso
+
+--------------------------------------------------------------------------------------
+
+Proceso ejercicio25
+	Definir numero, factorial Como Entero
+    
+    Escribir "Ingrese un número para calcular su factorial:"
+    Leer numero
+    
+    factorial <- 1
+    
+    Para i <- 1 Hasta numero Hacer
+        factorial <- factorial * i
+    FinPara
+    
+    Escribir "El factorial de", numero, "es:", factorial
+	
+FinProceso
+
+-----------------------------------------------------------------------------
+
+Proceso ejercicio26
+	Definir dividendo, divisor, cociente, resto Como Entero
+   
+    Escribir "Ingrese el dividendo:"
+    Leer dividendo
+    Escribir "Ingrese el divisor:"
+    Leer divisor
+    
+    cociente <- 0
+    resto <- dividendo
+    
+    Mientras resto >= divisor Hacer
+        resto <- resto - divisor
+        cociente <- cociente + 1
+    FinMientras
+    
+    Escribir "El cociente es:", cociente
+    Escribir "El resto es:", resto
+
+FinProceso
+
+-----------------------------------------------------------------------------
+
+Proceso ejercicio27
+	Definir suma, cantidadNumeros Como Real
+    Definir numero Como Entero
+   
+    suma <- 0
+    cantidadNumeros <- 0
+    
+    Escribir "Ingrese los números positivos (ingrese un número negativo para finalizar):"
+    Leer numero
+    
+    Mientras numero >= 0 Hacer
+        suma <- suma + numero
+        cantidadNumeros <- cantidadNumeros + 1
+        Escribir "Ingrese otro número positivo (o un número negativo para finalizar):"
+        Leer numero
+    FinMientras
+    
+    Si cantidadNumeros > 0 Entonces
+        media <- suma / cantidadNumeros
+        Escribir "La media de los números positivos ingresados es:", media
+    Sino
+        Escribir "No se ha ingresado ningún número positivo."
+    FinSi
+	
+FinProceso
+
+-----------------------------------------------------------------------------------------------------
+
+Proceso ejercicio28
+	Definir contador, suma Como Entero
+    
+    contador <- 1
+    suma <- 0
+    
+    Repetir
+        suma <- suma + contador
+        contador <- contador + 1
+		Hasta contador > 100
+		
+		Escribir "La suma de los primeros cien números es:", suma
+	
+FinProceso
+
+---------------------------------------------------------------------------------
+
+Proceso ejercicio29
+	Definir contador, suma Como Entero
+   
+    contador <- 1
+    suma <- 0
+    
+    Mientras contador <= 100 Hacer
+        suma <- suma + contador
+        contador <- contador + 1
+    FinMientras
+
+    Escribir "La suma de los primeros cien números es:", suma
+	
+FinProceso
+
+---------------------------------------------------------------------------
+
+Proceso ejercicio30
+	Definir suma Como Entero
+
+    suma <- 0
+    
+    Para contador <- 1 Hasta 100 Hacer
+        suma <- suma + contador
+    FinPara
+    
+    Escribir "La suma de los primeros cien números es:", suma
+	
+FinProceso
+
+----------------------------------------------------------------------------
+
+Proceso ejercicio31
+	Definir contador, sumaPares, sumaImpares, numero, mediaPares, mediaImpares Como Real
+    
+    contador <- 0
+    sumaPares <- 0
+    sumaImpares <- 0
+    
+    Mientras contador < 10 Hacer
+        Escribir "Ingrese un número:"
+        Leer numero
+        
+        Si numero % 2 = 0 Entonces
+            sumaPares <- sumaPares + numero
+        Sino
+            sumaImpares <- sumaImpares + numero
+        FinSi
+        
+        contador <- contador + 1
+    FinMientras
+    
+    mediaPares <- sumaPares / contador
+    mediaImpares <- sumaImpares / contador
+ 
+    Escribir "La media de los números pares es:", mediaPares
+    Escribir "La media de los números impares es:", mediaImpares
+    
+FinProceso
+
+-----------------------------------------------------------------------------------------------------
+
+Proceso ejercicio32
+	Definir provincia, ciudad, poblacion, poblacionMaxima Como Cadena
+    Definir maxPoblacion Como Entero
+    maxPoblacion <- 0
+
+    Para provincia <- 1 Hasta 3 Hacer
+        Para ciudad <- 1 Hasta 11 Hacer
+            Escribir "Ingrese la población de la ciudad ", ciudad, " de la provincia ", provincia, ":"
+            Leer poblacion
+			
+            Si poblacion > maxPoblacion Entonces
+                maxPoblacion <- poblacion
+                poblacionMaxima <- "Provincia " + provincia + ", Ciudad " + ciudad
+            FinSi
+        FinPara
+    FinPara
+ 
+    Escribir "La ciudad con la población más alta es:", poblacionMaxima, " con una población de ", maxPoblacion, " personas."
+	
+FinProceso
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio33
+	Definir opcion Como Caracter
+    
+    Repetir
+		
+        Escribir "¿Desea continuar con el programa? (S para continuar, cualquier otra tecla para salir):"
+        Leer opcion
+		Hasta que opcion <> "S" Y opcion <> "s"
+		
+		Escribir "¡Hasta luego!"
+FinProceso
+
+-----------------------------------------------------------------------------------------------------------------
+
+Proceso ejercicio34
+	Definir multiplicando, multiplicador, resultado Como Entero
+    
+    Para multiplicando <- 1 Hasta 9 Hacer
+        Escribir "Tabla de multiplicar del", multiplicando, ":"
+   
+        Para multiplicador <- 1 Hasta 10 Hacer
+            resultado <- multiplicando * multiplicador
+            Escribir multiplicando, " x ", multiplicador, " = ", resultado
+        FinPara
+        
+        Escribir "" 
+    FinPara
+	
+FinProceso
+
+-----------------------------------------------------------------------------------------
+
+Proceso ejercicio35
+	Definir numero, mayor, menor Como Entero
+    mayor <- -9999999 
+    menor <- 9999999 
+
+    Para contador <- 1 Hasta 20 Hacer
+        Escribir "Ingrese el número ", contador, ":"
+        Leer numero
+        
+        Si numero > mayor Entonces
+            mayor <- numero
+        FinSi
+        
+        Si numero < menor Entonces
+            menor <- numero
+        FinSi
+    FinPara
+ 
+    Escribir "El número mayor es:", mayor
+    Escribir "El número menor es:", menor
+	
+FinProceso
+
+--------------------------------------------------------------------------------------------------
+
+Proceso ejercicio36
+	Definir numTerminos, i, anterior, actual, siguiente Como Entero
+    
+    Escribir "Ingrese el número de términos de la serie de Fibonacci:"
+    Leer numTerminos
+
+    anterior <- 0
+    actual <- 1
+   
+    Escribir "Los primeros", numTerminos, " términos de la serie de Fibonacci son:"
+    Escribir anterior
+    Escribir actual
+    
+    Para i <- 3 Hasta numTerminos Hacer
+        siguiente <- anterior + actual
+        Escribir siguiente
+        anterior <- actual
+        actual <- siguiente
+    FinPara
+	
+FinProceso
+
+----------------------------------------------------------------------------------------------
+
+Proceso ejercicio37
+	Definir num1, num2, resto Como Entero
+    
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    
+    Mientras num2 <> 0 Hacer
+        resto <- num1 MOD num2
+        num1 <- num2
+        num2 <- resto
+    FinMientras
+
+    Escribir "El máximo común divisor (MCD) de los dos números es:", num1
+	
+FinProceso
+
+----------------------------------------------------------------------------------------------------
+
+Proceso ejercicio38
+	Definir numero, sumaDivisores, divisor Como Entero
+    
+    Escribir "Ingrese un número para verificar si es un número perfecto:"
+    Leer numero
+    
+    sumaDivisores <- 0
+    
+    Para divisor <- 1 Hasta numero / 2 Hacer
+        Si numero MOD divisor = 0 Entonces
+            sumaDivisores <- sumaDivisores + divisor
+        FinSi
+    FinPara
+    
+    Si sumaDivisores = numero Entonces
+        Escribir "El número", numero, "es un número perfecto."
+    Sino
+        Escribir "El número", numero, "no es un número perfecto."
+    FinSi
+	
+FinProceso
+
+------------------------------------------------------------------------------------
+
+Proceso ejercicio39
+	Definir termino, aproximacionPi, signo, denominador Como Real
+    Definir tolerancia Como Real
+    Definir i Como Entero
+ 
+    aproximacionPi <- 0
+    signo <- 1
+    denominador <- 1
+    
+    Escribir "Ingrese la tolerancia deseada para la aproximación de Pi:"
+    Leer tolerancia
+
+    i <- 0
+    Repetir
+        termino <- 4 / denominador * signo
+        aproximacionPi <- aproximacionPi + termino
+        signo <- signo * 1
+        denominador <- denominador + 2
+        i <- i + 1
+	Hasta Que  Abs(termino) < tolerancia
+	
+		Escribir "La aproximación de Pi es:", aproximacionPi
+	
+FinProceso
+
+-----------------------------------------------------------------------------------
+
+Proceso ejercicio40
+	Definir termino, aproximacionPi Como Real
+    Definir numTerminos Como Entero
+    Definir divisor1, divisor2, divisor3 Como Entero
+    
+    Escribir "Ingrese el número de términos para la aproximación de Pi:"
+    Leer numTerminos
+    
+    aproximacionPi <- 3
+    divisor1 <- 2
+    divisor2 <- 3
+    divisor3 <- 4
+    
+    Para i <- 1 Hasta numTerminos Hacer
+        termino <- 4 / (divisor1 * divisor2 * divisor3)
+        Si i MOD 2 = 1 Entonces
+            aproximacionPi <- aproximacionPi + termino
+        Sino
+            aproximacionPi <- aproximacionPi - termino
+        FinSi
+        
+        divisor1 <- divisor1 + 2
+        divisor2 <- divisor2 + 2
+        divisor3 <- divisor3 + 2
+    FinPara
+
+    Escribir "La aproximación de Pi es:", aproximacionPi
+	
+FinProceso
+
+	
