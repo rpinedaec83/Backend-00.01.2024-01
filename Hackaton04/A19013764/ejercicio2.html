@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potencia de un Número</title>
+</head>
+<body>
+    <label for="numeroInput">Número:</label>
+    <input type="number" id="numeroInput" placeholder="Ingrese el número"><br><br>
+
+    <label for="potenciaInput">Potencia:</label>
+    <input type="number" id="potenciaInput" placeholder="Ingrese la potencia"><br><br>
+
+    <button id="calcularBtn">Calcular Potencia</button>
+
+    <script>
+        const potenciaDeNumero = (numero, potencia) => Math.pow(numero, potencia);
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const numero = parseFloat(document.getElementById("numeroInput").value);
+            const potencia = parseFloat(document.getElementById("potenciaInput").value);
+
+            if (!isNaN(numero) && !isNaN(potencia)) {
+                const resultado = potenciaDeNumero(numero, potencia);
+                alert("El resultado de elevar " + numero + " a la potencia " + potencia + " es: " + resultado);
+            } else {
+                alert("Por favor, ingrese valores numéricos válidos para el número y la potencia.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    background-color: #87CEEB; /* Fondo de color celeste */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+select, button {
+    margin: 10px;
+    padding: 12px 24px; /* Aumentar el tamaño del padding para hacer más grande el botón y la lista */
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+    border-radius: 8px; /* Redondear los bordes */
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: all 0.3s ease; /* Agregar transición para el efecto 3D */
+}
+
+button:hover, select:hover {
+    background-color: #45a049;
+    transform: translate(0, -2px) scale(1.05); /* Aplicar un efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+}
