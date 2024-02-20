@@ -104,7 +104,7 @@ const promedio = (...args)=>{
 
 console.log(promedio(2,3,4,5,77,88,99))
 
-const w = (x, y) => x * y;
+const  = (x, y) => x * y;
 console.log(x(2, 4));
  
 
