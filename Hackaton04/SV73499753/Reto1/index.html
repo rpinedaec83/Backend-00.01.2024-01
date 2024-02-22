@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sumar()">Pregunta 1</button>
+    <button onclick="potencia()">Pregunta 2</button>
+    <br> <br> <br>
+    <form id="miFormulario">
+        <h3>SUMA DE CUBOS</h3>
+        <label for="valorA">A:</label>
+        <input type="number" id="valorA" name="valorA" required> <br>
+        <label for="valorB">B:</label>
+        <input type="number" id="valorB" name="valorB" required><br>
+        <label for="valorC">C:</label>
+        <input type="number" id="valorC" name="valorC" required><br> <br>
+        <button type="button" onclick="calcularSumaDeCubos()">Pregunta 3</button> <br> <br>
+    </form>
+    <form id="miFormulario2">
+        <H3>AREA DEL TRIANGULO</H3>
+        <label for="b">Base:</label>
+        <input type="number" id="b" name="b" required> <br>
+        <label for="valorB">Altura:</label>
+        <input type="number" id="h" name="h" required><br>
+        <button type="button" onclick="calcularAreaTri()">Pregunta 4 </button> <br> <br>
+    </form>
+    <form id="miFormulario3">
+        <H3>Operacion</H3>
+        <label for="n1">Numero 1</label>
+        <input type="number" id="n1" name="n1" required> <br>
+        <label for="op">Operacion:</label>
+        <input type="text" id="op" name="op" required><br>
+        <label for="n2">Numero2:</label>
+        <input type="number" id="n2" name="n2" required><br>
+        <button type="button" onclick="calcularOperacion()">Pregunta 5</button>
+    </form>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

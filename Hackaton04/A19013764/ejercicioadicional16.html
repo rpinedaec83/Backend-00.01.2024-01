@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva</title>
+</head>
+<body>
+    <label for="numeroInput">Número:</label>
+    <input type="number" id="numeroInput" placeholder="Ingrese un número"><br><br>
+
+    <button id="countdownBtn">Generar Cuenta Regresiva</button>
+
+    <script>
+        const countdown = (numero) => {
+            const resultado = [];
+            for (let i = numero; i >= 0; i--) {
+                resultado.push(i);
+            }
+            return resultado;
+        };
+
+        document.getElementById("countdownBtn").addEventListener("click", function() {
+            const numero = parseInt(document.getElementById("numeroInput").value);
+
+            const cuentaRegresiva = countdown(numero);
+            alert("La cuenta regresiva desde " + numero + " es: " + JSON.stringify(cuentaRegresiva));
+        });
+    </script>
+</body>
+</html>

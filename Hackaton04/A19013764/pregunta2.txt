@@ -1,0 +1,8 @@
+
+¿Hasta cuantos argumentos puedes declarar en una función?
+
+En JavaScript, no hay un límite explícito en cuanto al número de argumentos que puedes declarar en una
+ función. Sin embargo, es recomendable mantener el número de argumentos lo más bajo posible para 
+ evitar que la función sea difícil de entender. Si una función necesita muchos argumentos,
+  podría ser una señal de que necesita ser simplificada o dividida en funciones más pequeñas 
+  y específicas.

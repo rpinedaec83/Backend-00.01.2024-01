@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Dos Números</title>
+</head>
+<body>
+    <label for="numero1Input">Número 1:</label>
+    <input type="number" id="numero1Input" placeholder="Ingrese el primer número"><br><br>
+
+    <label for="numero2Input">Número 2:</label>
+    <input type="number" id="numero2Input" placeholder="Ingrese el segundo número"><br><br>
+
+    <button id="calcularBtn">Calcular Suma</button>
+
+    <script>
+        const sumaDeNumeros = (numero1, numero2) => numero1 + numero2;
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const numero1 = parseFloat(document.getElementById("numero1Input").value);
+            const numero2 = parseFloat(document.getElementById("numero2Input").value);
+
+            if (!isNaN(numero1) && !isNaN(numero2)) {
+                const resultado = sumaDeNumeros(numero1, numero2);
+                alert("La suma de " + numero1 + " y " + numero2 + " es: " + resultado);
+            } else {
+                alert("Por favor, ingrese valores numéricos válidos para los números.");
+            }
+        });
+    </script>
+</body>
+</html>

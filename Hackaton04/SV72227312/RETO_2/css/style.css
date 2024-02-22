@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #add8e6; /* Color celeste de fondo */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button {
+    padding: 15px 20px; /* Tamaño más grande para los botones */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    background-color: #008cba; /* Color de fondo */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #005f6b; /* Cambio de color al pasar el mouse */
+}
