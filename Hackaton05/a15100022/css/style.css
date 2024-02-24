@@ -1,0 +1,199 @@
+/* Estilos para la interfaz de usuario */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#main-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#resultadoIngreso {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+#estadoEquipo {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+ /* Estilos para la tabla flotante */
+ #tablaFlotante {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 400px;
+}
+
+#tablaFlotante h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+#tablaFlotante table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#tablaFlotante table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#tablaFlotante button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tablaFlotante button:hover {
+    background-color: #83c56e;
+}
+/* Estilos para la tabla principal */
+#tablaPrincipal {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#tablaPrincipal th, #tablaPrincipal td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#tablaPrincipal th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#cuerpoTablaPrincipal tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#cuerpoTablaPrincipal tr:hover {
+    background-color: #e0e0e0;
+}
+/* Estilos para el cuadro de diálogo */
+#cuadroDialogo {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 400px;
+}
+
+#cuadroDialogo h2 {
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+#cuadroDialogo textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#cuadroDialogo button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fondoOscurecido {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}#tablaFlotante, #fondoOscurecido, #cuadroDialogo {
+    display: none;
+}
