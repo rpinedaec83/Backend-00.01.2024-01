@@ -11,7 +11,7 @@ class empleado{
 }
 
 class celular{
-    constructor(sistemaoperativo, marca){
+    constructor(sistemaoperativo, marca, serie){
         this.sistemaoperativo = sistemaoperativo;
         this.marca = marca;
         this.abono = 0;
@@ -19,6 +19,7 @@ class celular{
         this.diagnostico = "";
         this.reparacion = 0;
         this.estado = "En Espera";
+        this.serie = serie;
     }
     
     imei(){
@@ -82,49 +83,7 @@ class reparacion{
 
 let arrEmpleados = [];
 let arrRepuestos = [];
-
-var $tableEmpleado = $('#tableEmpleado');
-$tableEmpleado.bootstrapTable()
-function agregarEmpleado(){ 
-    Swal.fire({
-        title: "Agregar Empleado",
-        html: `			
-        <div class="form-group">
-            <label for="name">Nombres</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="nombre"  placeholder="Ingresa Nombre del Empleado"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="name">Skills</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="skills"  placeholder="Ingresa Skills(-)"/>
-            </div>
-        </div>
-
-        `,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Salir`
-      }).then((result) => {
-        
-        if (result.isConfirmed) {
-            let nombre  = document.getElementById("nombre").value;
-            let skills = document.getElementById("skills").value.split("-");
-            let emp = new empleado(nombre, skills);
-            arrEmpleados.push(emp);
-            console.log(arrEmpleados)
-            
-            $tableEmpleado.bootstrapTable('load', arrEmpleados)
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-}
+let arrTelefonos = [];
 
 var $tableEmpleado = $('#tableEmpleado');
 $tableEmpleado.bootstrapTable()
@@ -205,6 +164,58 @@ function crearRepuesto(){
             console.log(arrRepuestos);
             
             $tableRepuesto.bootstrapTable('load', arrRepuestos)
+          Swal.fire("Saved!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
+      });
+}
+
+var $tableTelefono = $('#tableTelefono');
+$tableTelefono.bootstrapTable()
+function agregarTelefono(){
+    Swal.fire({
+        title: "Agregar Telofono",
+        html: `			
+        <div class="form-group">
+            <label for="name">Serie</label>
+                <div class="input-group">
+                
+                <input type="text" class="form-control" name="name" id="serie"  placeholder="Ingresa Serie del Telefono"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Marca</label>
+                <div class="input-group">
+                
+                <input type="text" class="form-control" name="name" id="marca"  placeholder="Ingresa Marca del Telefono"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Sistema Operativo</label>
+                <div class="input-group">
+                   
+                    <input type="text" class="form-control" id="sistemaope" name="descripcion" placeholder="Ingrese Sistema Operativo"/>
+            </div>
+        </div>
+
+        `,
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        denyButtonText: `Salir`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            let serie  = document.getElementById("serie").value;
+            let marca  = document.getElementById("marca").value;
+            let sistemaope  = document.getElementById("sistemaope").value;
+            let telefono = new celular(sistemaope, marca, serie);
+            arrTelefonos.push(telefono);
+            console.log(arrTelefonos)
+            
+            $tableTelefono.bootstrapTable('load', arrTelefonos)
           Swal.fire("Saved!", "", "success");
         } else if (result.isDenied) {
           Swal.fire("Changes are not saved", "", "info");
