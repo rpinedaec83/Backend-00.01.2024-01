@@ -39,15 +39,39 @@
     </table>
 
     <a href="#" onclick="agregarTelefono()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Agregar Telefono</a>
-    <table id="tableTelefono">
+    <table id="tableDiagnostico">
+      <thead>
+        <tr>
+          <th data-field="imei">Imei</th>
+          <th data-field="serie">Modelo</th>
+          <th data-field="marca">Marca</th>
+          <th data-field="descripcion">Descripcion Falla</th>
+          <th data-field="estado">Estado</th>
+          <th data-field="reparacion">Costo Reparacion</th>
+          <th data-field="abono">Abono</th>
+
+        </tr>
+      </thead>
+    </table>
+
+    <a href="#" onclick="repararTelefono()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Reparar</a>
+    <table id="tableTelefonoReparado">
         <thead>
           <tr>
-            <th data-field="serie">Serie</th>
+            <th data-field="imei">Imei</th>
+            <th data-field="serie">Modelo</th>
             <th data-field="marca">Marca</th>
-            <th data-field="sistemaoperativo">Sistema Operativo</th>
+            <th data-field="descripcion">Descripcion Falla</th>
+            <th data-field="estado">Estado</th>
+            <th data-field="reparacion">Costo Reparacion</th>
+            <th data-field="costoRepuestos">Costo Repuestos</th>
+            <th data-field="costoFinal">Costo Final</th>
           </tr>
         </thead>
     </table>
+    
+
+    
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"

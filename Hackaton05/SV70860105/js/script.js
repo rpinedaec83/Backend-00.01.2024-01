@@ -11,36 +11,29 @@ class empleado{
 }
 
 class celular{
-    constructor(sistemaoperativo, marca, serie){
+    constructor(imei, sistemaoperativo, marca, serie){
+        this.imei = imei;
         this.sistemaoperativo = sistemaoperativo;
         this.marca = marca;
         this.abono = 0;
         this.autorizacion = false;
-        this.diagnostico = "";
+        this.descripcion = "";
         this.reparacion = 0;
         this.estado = "En Espera";
         this.serie = serie;
+        this.costoRepuestos = 0;
+        this.costoFinal = 0;
+        this.repuestos = [];
     }
     
-    imei(){
-        let i = Math.floor(Math.random() * 5) + 1
-        console.log(i);
-        if(i == 5){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
     primerdiagnostico(descripcion, costoreparacion){
-        console.log("Se realizo el primer diagnostico");
-        this.diagnostico = descripcion;
+        this.descripcion = descripcion;
         this.reparacion = costoreparacion;
     }
 
     abonado(abono){
         if(abono>= this.reparacion/2){
+            this.autorizacion = true;
             return true;
         }
         else{
@@ -48,9 +41,25 @@ class celular{
         }
     }
     
-
-    cambiarestado(estado){
+    cambiarEstado(estado){
         this.estado = estado;
+    }
+
+    ponerRepuesto(repuesto){
+        this.repuestos.push(repuesto);
+        console.log("Se puso el repuesto " + repuesto.descripcion);
+    }
+
+    precioRepuestos(){
+        let costo = 0;
+        for(let index = 0; index < this.repuestos.length; index++){
+            costo += this.repuestos[index].precio;
+        }
+        this.costoRepuestos = costo;
+    }
+
+    precioFinal(){
+        this.costoFinal = this.costoRepuestos + this.reparacion;
     }
 }
 
@@ -61,29 +70,13 @@ class repuesto{
     }
 }
 
-class reparacion{
-    constructor(telefono){
-        this.telefono = telefono;
-        this.repuestos = [];
-    }
-    
-    repuesto(repuesto){
-        this.repuestos.push(repuesto);
-        console.log("Se puso el repuesto " + repuesto.descripcion);
-    }
 
-    costo(){
-        let costo = 0;
-        for(let index = 0; index < this.repuestos.length; index++){
-            costo += this.repuestos[index].precio;
-        }
-        return costo;
-    }
-}
 
 let arrEmpleados = [];
 let arrRepuestos = [];
 let arrTelefonos = [];
+let arrDiagnosticos = [];
+let arrTelefonosReparados = [];
 
 var $tableEmpleado = $('#tableEmpleado');
 $tableEmpleado.bootstrapTable()
@@ -161,7 +154,7 @@ function crearRepuesto(){
             let precio = parseFloat(document.getElementById("precio").value);
             let rep = new repuesto(rpto, precio);
             arrRepuestos.push(rep);
-            console.log(arrRepuestos);
+            
             
             $tableRepuesto.bootstrapTable('load', arrRepuestos)
           Swal.fire("Saved!", "", "success");
@@ -171,17 +164,28 @@ function crearRepuesto(){
       });
 }
 
-var $tableTelefono = $('#tableTelefono');
-$tableTelefono.bootstrapTable()
+
+var $tableDiagnostico = $('#tableDiagnostico');
+$tableDiagnostico.bootstrapTable()
+
+
 function agregarTelefono(){
     Swal.fire({
         title: "Agregar Telofono",
         html: `			
         <div class="form-group">
-            <label for="name">Serie</label>
+            <label for="name">Imei</label>
                 <div class="input-group">
                 
-                <input type="text" class="form-control" name="name" id="serie"  placeholder="Ingresa Serie del Telefono"/>
+                <input type="text" class="form-control" name="name" id="imei"  placeholder="Ingresa Imei del Telefono"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Modelo</label>
+                <div class="input-group">
+                
+                <input type="text" class="form-control" name="name" id="modelo"  placeholder="Ingresa Modelo del Telefono"/>
             </div>
         </div>
         <div class="form-group">
@@ -200,6 +204,7 @@ function agregarTelefono(){
             </div>
         </div>
 
+
         `,
         showDenyButton: true,
         showCancelButton: true,
@@ -208,20 +213,81 @@ function agregarTelefono(){
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            let serie  = document.getElementById("serie").value;
+            let imei = document.getElementById("imei").value;
+            let serie  = document.getElementById("modelo").value;
             let marca  = document.getElementById("marca").value;
             let sistemaope  = document.getElementById("sistemaope").value;
-            let telefono = new celular(sistemaope, marca, serie);
+            let telefono = new celular(imei, sistemaope, marca, serie);
+
+            for(let index = 0; index < arrTelefonos.length; index++){
+                if(imei == arrTelefonos[index].imei){
+                    return alert("TELEFONO BLOQUEADO");
+                }
+            }
+        
             arrTelefonos.push(telefono);
-            console.log(arrTelefonos)
+
+            telefono.primerdiagnostico("No enciende la pantalla", 100);
+            arrDiagnosticos.push(telefono);
+
             
-            $tableTelefono.bootstrapTable('load', arrTelefonos)
+            $tableDiagnostico.bootstrapTable('load', arrDiagnosticos);
           Swal.fire("Saved!", "", "success");
         } else if (result.isDenied) {
           Swal.fire("Changes are not saved", "", "info");
         }
       });
 }
+
+var $tableTelefonoReparado = $('#tableTelefonoReparado');
+$tableTelefonoReparado.bootstrapTable()
+
+function repararTelefono(){
+    let telefono = arrDiagnosticos.shift();
+    let abono = parseInt(prompt("Deposite el Abono Inicial : "));
+
+    if(telefono.abonado(abono)){
+    Swal.fire({
+        title: "Reparacion",
+        html: `			
+        <div class="form-group">
+            <label for="name">Repuesto</label>
+                <div class="input-group">
+                
+                <input type="text" class="form-control" name="name" id="repuesto"  placeholder="Ingresa Nombre del Repuesto a Utilizar"/>
+            </div>
+        </div>
+
+        `,
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        denyButtonText: `Salir`
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
+            let rpto  = arrRepuestos.find((r) => r.descripcion = document.getElementById("repuesto").value);
+            telefono.ponerRepuesto(rpto);
+            telefono.cambiarEstado("Cambio de " + rpto.descripcion);
+            telefono.precioRepuestos();
+            telefono.precioFinal();
+
+            arrTelefonosReparados.push(telefono);
+
+            $tableTelefonoReparado.bootstrapTable('load', arrTelefonosReparados);
+          Swal.fire("Saved!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Changes are not saved", "", "info");
+        }
+      });
+    }
+    else{
+        arrDiagnosticos.unshift(telefono);
+        alert("NO SE ABONO EL MONTO CORRESPONDIENTE");
+    }
+}
+    
+
 
 /*let empleado_1= new empleado("Alvaro", ["Android", "Apple"]);
 let celular_1 = new celular("Android", "Samsumg");
