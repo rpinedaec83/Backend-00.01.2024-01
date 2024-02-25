@@ -29,6 +29,7 @@ class celular{
     primerdiagnostico(descripcion, costoreparacion){
         this.descripcion = descripcion;
         this.reparacion = costoreparacion;
+        this.abono = this.reparacion/2;
     }
 
     abonado(abono){
@@ -47,7 +48,6 @@ class celular{
 
     ponerRepuesto(repuesto){
         this.repuestos.push(repuesto);
-        console.log("Se puso el repuesto " + repuesto.descripcion);
     }
 
     precioRepuestos(){
@@ -150,11 +150,11 @@ function crearRepuesto(){
       }).then((result) => {
         
         if (result.isConfirmed) {
-            let rpto  = document.getElementById("repuesto").value;
+            let descripcion  = document.getElementById("repuesto").value;
             let precio = parseFloat(document.getElementById("precio").value);
-            let rep = new repuesto(rpto, precio);
-            arrRepuestos.push(rep);
-            
+            let newrepuesto = new repuesto(descripcion, precio)
+            console.log(newrepuesto);
+            arrRepuestos.push(newrepuesto);
             
             $tableRepuesto.bootstrapTable('load', arrRepuestos)
           Swal.fire("Saved!", "", "success");
@@ -224,7 +224,7 @@ function agregarTelefono(){
                     return alert("TELEFONO BLOQUEADO");
                 }
             }
-        
+            
             arrTelefonos.push(telefono);
 
             telefono.primerdiagnostico("No enciende la pantalla", 100);
@@ -266,13 +266,16 @@ function repararTelefono(){
       }).then((result) => {
         
         if (result.isConfirmed) {
-            let rpto  = arrRepuestos.find((r) => r.descripcion = document.getElementById("repuesto").value);
+            let rpto  = arrRepuestos.find((r) => r.descripcion === document.getElementById("repuesto").value);
             telefono.ponerRepuesto(rpto);
             telefono.cambiarEstado("Cambio de " + rpto.descripcion);
             telefono.precioRepuestos();
             telefono.precioFinal();
 
-            arrTelefonosReparados.push(telefono);
+
+            console.log(arrRepuestos);
+            console.log(rpto);
+            arrTelefonosReparados.push(telefono);   
 
             $tableTelefonoReparado.bootstrapTable('load', arrTelefonosReparados);
           Swal.fire("Saved!", "", "success");
@@ -286,34 +289,5 @@ function repararTelefono(){
         alert("NO SE ABONO EL MONTO CORRESPONDIENTE");
     }
 }
-    
 
 
-/*let empleado_1= new empleado("Alvaro", ["Android", "Apple"]);
-let celular_1 = new celular("Android", "Samsumg");
-let rep_pantalla = new repuesto("Nueva Pantalla", 50);
-let rep_bateria = new repuesto("Nueva Bateria", 50);
-let rep_celular_1 = new reparacion(celular_1);
-
-if(celular_1.imei()){
-    console.log("REPARANDO");
-    if(empleado_1.skill(celular_1.sistemaoperativo)){
-        celular_1.primerdiagnostico("Pantalla Fallando", 100);
-        if(celular_1.abonado(50)){
-            console.log(celular_1.reparacion);
-            console.log("Se abono y procedera a reparar");
-            rep_celular_1.repuesto(rep_pantalla);
-            let costofinal = celular_1.reparacion + rep_celular_1.costo();
-            console.log(costofinal);
-        }
-        else{
-            console.log("No se abono la cantidad necesaria");
-        }
-    }
-    else{
-        console.log("Llamaremos a otro empleado");
-    }
-}
-else{
-    console.log("IMIE BLOQUEADO");
-}*/
