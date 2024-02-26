@@ -446,10 +446,16 @@ const repeat = (elemento="Texto!",repeticiones=1) => {
 //20. Escriba una función, .vreplace () que extienda el prototipo de cadena reemplazando todas 
 //las vocales en una cadena con una vocal especificada.
 //"apples and bananas".vreplace("u") ➞ "upplus und bununus"
-String.prototype.vreplace = (vocal) => {
+String.prototype.vreplace = function(vocal){
     vocal = prompt("Eliga lo que reemplazara a las vocales.");
     return this.replace(/[aeiou]/gi, vocal);
 };
+
+const reemplazarVocal = () =>{
+    const resultado = "apples and bananas".vreplace("u");
+    alert(resultado)
+}
+
 
 
 
