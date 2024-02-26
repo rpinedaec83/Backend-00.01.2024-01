@@ -9,90 +9,74 @@
 </head>
 
 <body>
-    <div id="main-container">
-        <h1>Sistema de Reparación de Celulares</h1>
 
-        <form id="formularioIngreso">
-            <label for="numeroSerie">Número de Serie:</label>
-            <input type="text" id="numeroSerie" required>
-            <button type="button" onclick="generarNumeroSerie()">Generar</button>
+    <form>
+        <h2>Servicio de Reparación</h2>
+        <label for="nombreCliente">Nombre del Cliente:</label>
+        <input type="text" id="nombreCliente" name="nombreCliente" required>
 
-            <label for="imei">IMEI:</label>
-            <input type="text" id="imei" required>
-            <button type="button" onclick="generarIMEI()">Generar</button>
-            <br><br>
+        <label for="Modelo">Modelo:</label>
+        <input type="text" id="Modelo" name="modelo" required>
 
-            <!-- Nuevos campos para autorización y abono del 50% -->
-            <label for="autorizacion">Autorización:</label>
-            <input type="checkbox" id="autorizacion" required>
-
-            <label for="abono">Abono del 50%:</label>
-            <input type="checkbox" id="abono" required>
-
-            <br><br>
-            <button type="button" onclick="validarIngreso()">Validar</button>
-            <button type="button" onclick="cancelarIngreso()">Cancelar</button>
-        </form>
-    </div>
-
-    <!-- Tabla flotante -->
-    <div id="tablaFlotante">
-        <h2>Equipo Validado</h2>
-        <table>
-            <tr>
-                <td>Número de Serie:</td>
-                <td id="tablaNumeroSerie"></td>
-            </tr>
-            <tr>
-                <td>IMEI:</td>
-                <td id="tablaIMEI"></td>
-            </tr>
-        </table>
-        <button onclick="mostrarCuadroDialogo()">Ingresar Diagnóstico</button>
-        <button type="button" onclick="cerrarTablaFlotante()">Cancelar</button>
-    </div>
-
-    <!-- Cuadro de diálogo para ingresar diagnóstico -->
-    <div id="fondoOscurecido"></div>
-    <div id="cuadroDialogo">
-        <h2>Ingresar Diagnóstico</h2>
-        <textarea id="diagnostico" rows="4" cols="50" placeholder="Ingrese el diagnóstico del equipo..."></textarea>
+        <label for="numeroSerieEquipo">Número de Serie del Equipo:</label>
+        <input type="text" id="numeroSerieEquipo" name="numeroSerieEquipo" required>
+        <button type="button" onclick="generarNumeroSerie()">Generar </button><br>
         <br>
+        <label for="IMEI">IMEI:</label>
+        <input type="text" id="IMEI" name="IMEI" required>
+        <button type="button" onclick="generarIMEI()">Generar </button><br><br>
 
-        <!-- Nuevos campos para repuestos y estado del equipo -->
-        <label for="repuestos">Repuestos:</label>
-        <input type="text" id="repuestos">
+        <button type="button" onclick="validar()">Validar</button>
+        <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
+       
+    </form>
+<br><br>
+    <table id="registroTable" border="1">
+        <tr>
+            <th>Nombre del cliente</th>
+            <th>Modelo</th>
+            <th>Nº de serie </th>
+            <th>IMEI</th>
+            <th>Fecha y Hora</th>
+            <th>Autorizacion</th>
+            <th>Abono el 50%</th>
+            <th>Diagnostico</th>
+            <th>Estado</th>
+            
+        </tr>
+        <!-- Aquí se mostrarán los datos registrados -->
+    </table>
+
+    <div id="formularioFlotante">
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico"></textarea>
+
+        <label for="tecnico">Técnico:</label>
+        <select id="tecnico">
+            <option value="tecnico1">Técnico 1</option>
+            <option value="tecnico2">Técnico 2</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
 
         <label for="estadoEquipo">Estado del Equipo:</label>
         <select id="estadoEquipo">
-            <option value="En Reparación">En Reparación</option>
-            <option value="Reparado">Reparado</option>
-            <option value="No Reparable">No Reparable</option>
+            <option value="proceso">En Proceso</option>
+            <option value="completado">Completado</option>
         </select>
 
         <br><br>
         <button onclick="guardarDiagnostico()">Guardar</button>
-        <button onclick="cerrarCuadroDialogo()">Cancelar</button>
+        <button id="btnCancelar" onclick="cancelarFormulario()">Cancelar</button>
     </div>
+   
 
-    <!-- Tabla principal para mostrar diagnósticos ingresados -->
-    <h2>Diagnósticos Ingresados</h2>
-    <table id="tablaPrincipal">
-        <thead>
-            <tr>
-                <th>Número de Serie</th>
-                <th>IMEI</th>
-                <th>Diagnóstico</th>
-                <th>Feha y Hora</th>
-                <th>Repuestos</th>
-                <th>Estado del Equipo</th>
-            </tr>
-        </thead>
-        <tbody id="cuerpoTablaPrincipal">
-            <!-- Aquí se mostrarán los diagnósticos ingresados -->
-        </tbody>
-    </table>
-    <script src="/Hackaton05/a15100022/js/script.js"></script>
+    <script src="/Hackaton05/a15100022/js/main.js"></script>
+
+
+
 </body>
+
+
+
 
 </html>

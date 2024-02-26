@@ -1,199 +1,118 @@
-/* Estilos para la interfaz de usuario */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    margin: 20px;
 }
-
-#main-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
 form {
-    margin-bottom: 20px;
+    max-width: 400px;
+    margin: auto;
 }
-
 label {
     display: block;
     margin-bottom: 8px;
-    color: #555;
 }
-
-input, textarea {
+input {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
-
 button {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+}
+button.cancel {
+    background-color: #ccc;
+    background-color: #4CAF50;
+}
+/**************************************************************************/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button.cancel {
+    background-color: #e74c3c;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-#resultadoIngreso {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    color: #555;
-}
-
-#estadoEquipo {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    color: #555;
-}
-
- /* Estilos para la tabla flotante */
- #tablaFlotante {
+ /* Estilo para el formulario flotante */
+ #formularioFlotante {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
-    border: 2px solid #007BFF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    border-radius: 10px;
-    width: 60%;
-    max-width: 400px;
 }
 
-#tablaFlotante h2 {
-    color: #007BFF;
-    margin-bottom: 15px;
+#formularioFlotante label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-#tablaFlotante table {
+#formularioFlotante textarea,
+#formularioFlotante select {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-#tablaFlotante table td {
-    padding: 10px;
-    border: 1px solid #ddd;
+#formularioFlotante button {
+    margin-right: 10px;
 }
 
-#tablaFlotante button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#tablaFlotante button:hover {
-    background-color: #83c56e;
-}
-/* Estilos para la tabla principal */
-#tablaPrincipal {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-#tablaPrincipal th, #tablaPrincipal td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-#tablaPrincipal th {
-    background-color: #007BFF;
-    color: #fff;
-}
-
-#cuerpoTablaPrincipal tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#cuerpoTablaPrincipal tr:hover {
-    background-color: #e0e0e0;
-}
-/* Estilos para el cuadro de diálogo */
-#cuadroDialogo {
-    display: none;
+.mensaje-notificacion {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #007BFF;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    border-radius: 10px;
-    width: 60%;
-    max-width: 400px;
-}
-
-#cuadroDialogo h2 {
-    color: #007BFF;
-    margin-bottom: 15px;
-}
-
-#cuadroDialogo textarea {
-    width: 100%;
+    top: 10px;
+    right: 10px;
     padding: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
+    background-color: #4CAF50;
+    color: white;
     border-radius: 5px;
-    resize: vertical;
-}
-
-#cuadroDialogo button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#fondoOscurecido {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}#tablaFlotante, #fondoOscurecido, #cuadroDialogo {
-    display: none;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
