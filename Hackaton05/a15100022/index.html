@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Hackaton05/a15100022/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <h2>Servicio de Reparación</h2>
+        <label for="nombreCliente">Nombre del Cliente:</label>
+        <input type="text" id="nombreCliente" name="nombreCliente" required>
+
+        <label for="Modelo">Modelo:</label>
+        <input type="text" id="Modelo" name="modelo" required>
+
+        <label for="numeroSerieEquipo">Número de Serie del Equipo:</label>
+        <input type="text" id="numeroSerieEquipo" name="numeroSerieEquipo" required>
+        <button type="button" onclick="generarNumeroSerie()">Generar </button><br>
+        <br>
+        <label for="IMEI">IMEI:</label>
+        <input type="text" id="IMEI" name="IMEI" required>
+        <button type="button" onclick="generarIMEI()">Generar </button><br><br>
+
+        <button type="button" onclick="validar()">Validar</button>
+        <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
+       
+    </form>
+<br><br>
+    <table id="registroTable" border="1">
+        <tr>
+            <th>Nombre del cliente</th>
+            <th>Modelo</th>
+            <th>Nº de serie </th>
+            <th>IMEI</th>
+            <th>Fecha y Hora</th>
+            <th>Autorizacion</th>
+            <th>Abono el 50%</th>
+            <th>Diagnostico</th>
+            <th>Estado</th>
+            
+        </tr>
+        <!-- Aquí se mostrarán los datos registrados -->
+    </table>
+
+    <div id="formularioFlotante">
+        <label for="diagnostico">Diagnóstico:</label>
+        <textarea id="diagnostico"></textarea>
+
+        <label for="tecnico">Técnico:</label>
+        <select id="tecnico">
+            <option value="tecnico1">Técnico 1</option>
+            <option value="tecnico2">Técnico 2</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+
+        <label for="estadoEquipo">Estado del Equipo:</label>
+        <select id="estadoEquipo">
+            <option value="proceso">En Proceso</option>
+            <option value="completado">Completado</option>
+        </select>
+
+        <br><br>
+        <button onclick="guardarDiagnostico()">Guardar</button>
+        <button id="btnCancelar" onclick="cancelarFormulario()">Cancelar</button>
+    </div>
+   
+
+    <script src="/Hackaton05/a15100022/js/main.js"></script>
+
+
+
+</body>
+
+
+
+
+</html>
