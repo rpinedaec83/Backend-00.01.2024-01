@@ -1,12 +1,51 @@
 import { compania } from './compania.js'
 import { obtenerValorLocalStorage, limpiarTodoLocalStorage } from './utilitarios.js'
 
+let accordionFiltro;
+
+const mostrarPanel = (nombrepanel) => {
+    const paneles = document.querySelectorAll('.panel');
+    paneles.forEach(p => {
+        if (!p.classList.contains(nombrepanel)) {
+            p.classList.add('visually-hidden');
+        } else {
+            p.classList.remove('visually-hidden');
+        }
+    });
+}
+
+const limpiarPanelVerificarImei = () => {
+    document.querySelector('#lblNroImeiConsultado').textContent = '';
+    document.querySelector('#lblMarcaConsultado').textContent = '';
+    document.querySelector('#lblModeloConsultado').textContent = '';
+    document.querySelector('#lblSOConsultado').textContent = '';
+    document.querySelector('#lblReportadoConsultado').textContent = '';
+    document.querySelector('#lblIncidenteConsultado').querySelector('ol').innerHTML = '';
+    document.querySelector('.pnlverificarimei').querySelector('.datocelular').classList.add('visually-hidden');
+    document.querySelector('.btndiagnostico').classList.add('visually-hidden');
+    document.querySelector('#txtNroIMEIConsultar').value = '';
+}
+
+const limpiarPanelTicketsGenerados = () => {
+    document.querySelector('.tblticketsgenerados').querySelector('tbody').innerHTML = '';
+    document.querySelector('.tblticketsgenerados').classList.add('visually-hidden');
+    document.querySelector('#txtNroImeiFiltro').value = '';
+    document.querySelector('#txtFecInicioFiltro').value = '';
+    document.querySelector('#txtFecFinFiltro').value = '';
+    accordionFiltro.hide();
+}
+
+// document.querySelector('.limpieza').addEventListener('click', () => {
+//     limpiarPanelTicketsGenerados();
+// });
+
 document.addEventListener("DOMContentLoaded", function(event) {
     const tecnicoLogueado = obtenerValorLocalStorage('tecnico_datos');
     const sucursalseleccionada = obtenerValorLocalStorage('sucursal_logueada');
     const nombreSucursal = compania.mostrarNombreSucursal(parseInt(sucursalseleccionada));
     document.querySelector('#lblSucursal').textContent = nombreSucursal;
     document.querySelector('#lblTecnicoLogueado').textContent = `Hola, ${tecnicoLogueado.nombre}`;
+    accordionFiltro = new bootstrap.Collapse(document.querySelector('#collapseOne'));
 });
 
 const linkCerrarSession = document.querySelector('#link-logout');
@@ -20,14 +59,18 @@ const linkRealizarDiagnostico = document.querySelector('#link-realizardiagnostic
 linkRealizarDiagnostico.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('.navbar-toggler').click();
-    document.querySelector('.pnlverificarimei').classList.remove('visually-hidden');
+    // document.querySelector('.pnlverificarimei').classList.remove('visually-hidden');
+    limpiarPanelVerificarImei();
+    mostrarPanel('pnlverificarimei');
 });
 
 const linkTicketsGenerados = document.querySelector('#link-ticketsgenerados');
 linkTicketsGenerados.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('.navbar-toggler').click();
-    document.querySelector('.pnlticketsgenerados').classList.remove('visually-hidden');
+    // document.querySelector('.pnlticketsgenerados').classList.remove('visually-hidden');
+    limpiarPanelTicketsGenerados();
+    mostrarPanel('pnlticketsgenerados');
 });
 
 const btnBuscarIMEI = document.querySelector('#btnBuscarIMEI');
@@ -64,4 +107,18 @@ const btnIrADiagnosticar = document.querySelector('#btnIrADiagnosticar');
 btnIrADiagnosticar.addEventListener('click', () => {
     document.querySelector('.pnlverificarimei').classList.add('visually-hidden');
     document.querySelector('.pnlregistrardiagnostico').classList.remove('visually-hidden');
+});
+
+const btnFiltrarTickets = document.querySelector('#btnFiltrarTickets');
+btnFiltrarTickets.addEventListener('click', () => {
+    document.querySelector('.accordion-button').click();
+    const datosTickets = compania.listarTickets();
+    if (datosTickets.length > 0) {
+        document.querySelector('.tblticketsgenerados').classList.remove('visually-hidden');
+        const htmldatostickets = datosTickets.map(t => `<tr><td>${t.codigo}</td><td>${t.fecha}</td><td>${t.estado}</td><td><div class="w-100 d-flex justify-content-center gap-1"><button class="btn btn-sm btn-warning"><i class="fa-solid fa-eye"></i></button><button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button></div></td></tr>`).join('');
+        document.querySelector('.tblticketsgenerados').querySelector('tbody').innerHTML = htmldatostickets;
+    } else {
+        document.querySelector('.tblticketsgenerados').classList.add('visually-hidden');
+        document.querySelector('.tblticketsgenerados').querySelector('tbody').innerHTML = '';
+    }
 });

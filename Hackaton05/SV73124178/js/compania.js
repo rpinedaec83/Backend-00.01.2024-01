@@ -17,12 +17,12 @@ class Compania {
     agregarSucursales() {
         const sucursal_1 = new Sucursal(1,'Chorrillos');
         this.sucursales.push(sucursal_1);
-        sucursal_1.tecnicos.push(new Tecnico(1,'Roberto Ramirez','ANDROID',4488));
-        sucursal_1.tecnicos.push(new Tecnico(2,'Gabriel Melendez','IOS',7566));
+        sucursal_1.tecnicos.push(new Tecnico(1,'Roberto Ramirez','ANDROID',1111));
+        sucursal_1.tecnicos.push(new Tecnico(2,'Gabriel Melendez','IOS',1111));
         const sucursal_2 = new Sucursal(2,'Miraflores');
         this.sucursales.push(sucursal_2);
-        sucursal_2.tecnicos.push(new Tecnico(3,'Melissa Lopez','ANDROID',2233));
-        sucursal_2.tecnicos.push(new Tecnico(4,'Manuel Segura','IOS',7755));
+        sucursal_2.tecnicos.push(new Tecnico(3,'Melissa Lopez','ANDROID',1111));
+        sucursal_2.tecnicos.push(new Tecnico(4,'Manuel Segura','IOS',1111));
     }
 
     agregarCelulares() {
@@ -34,7 +34,7 @@ class Compania {
     }
 
     agregarTickets() {
-        this.tickets.push(new Ticket(1,'25/12/2023 08:25:00','5sa4dv6s4d','Celular en buen estado.','INGRESADO',2,3));
+        this.tickets.push(new Ticket(256658,'25/12/2023 08:25:00','5sa4dv6s4d','Celular en buen estado.','INGRESADO',2,3));
     }
 
     buscarCelularXIMEI(codigoimei) {
