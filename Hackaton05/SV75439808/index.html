@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="header">SIS REPARACIÓN</h1>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#usuario">Usuarios</a></li>
+        <li><a href="#tecnico">Técnicos</a></li>
+        <li><a href="#verificacion">Verificación de datos</a></li>
+        <li><a href="#reportado">Celulares Reportados</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <title>Servicio de Reparación de Celulares</title>
+      <section class="admClient" id="client">
+        <div class="column">
+          <h4>Administración de Clientes</h4>
+          <p>
+            * Esta sección es para gestionar a los clientes que haigan el cargo
+            por repuestos en su reparación, abonado el 50% de la reparación y
+            presentado la autorización por escrito.
+          </p>
+          <div class="verificar">
+            <div class="container">
+              <label class="colu" for="numeroSerie"> Nombre: </label>
+              <input
+                class="colu"
+                type="text"
+                id="numeroSerie"
+                placeholder="4O9BSMV178564"
+              />
+            </div>
+            <div class="container">
+              <label class="colu" for="imei"> Apellido: </label>
+              <input
+                class="colu"
+                type="text"
+                id="imei"
+                placeholder="512364687125463"
+              />
+            </div>
+            <div class="container" id>
+              <label class="colu" for="model"> DNI: </label>
+              <input
+                class="colu"
+                type="text"
+                id="model"
+                placeholder="75192369"
+              />
+            </div>
+          </div>
+          <a onclick="addedClient()" class="btn btn-block btn-primary">
+            <span class="glyphicon glyphicon-qrcode"></span>Ingresar
+          </a>
+        </div>
+        <div class="column">
+          <table id="tableCliente">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+
+      <section class="verifyData" id="verificacion">
+        <div class="column">
+          <h4>Verificación de Datos</h4>
+          <p>
+            * Antes de continuar con el servicio, verifique que los datos se
+            encuentren en regla.
+          </p>
+          <div class="verificar">
+            <div class="container">
+              <label class="colu" for="search-input"> DNI: </label>
+              <input
+                type="number"
+                id="search-input"
+                placeholder="Buscar cliente"
+              />
+              <button id="search-button">Buscar</button>
+            </div>
+            <div class="container">
+              <label class="colu" for="numeroSerie">S/N:</label>
+              <input
+                class="colu"
+                type="text"
+                id="numeroSerie"
+                placeholder="4O9BSMV178564"
+              />
+            </div>
+            <div class="container">
+              <label class="colu" for="imei">IMEI:</label>
+              <input
+                class="colu"
+                type="number"
+                id="imei"
+                placeholder="512364687125463"
+              />
+            </div>
+            <div class="container" id>
+              <label class="colu" for="model">Marca:</label>
+              <select id="model">
+                <option selected value="">SAMSUNG</option>
+                <option value="">APPLE</option>
+                <option value="">XIAOMI</option>
+                <option value="">OPPO</option>
+                <option value="">MOTOROLA</option>
+                <option value="">HUAWEI</option>
+                <option value="">REALME</option>
+                <option value="">HONOR</option>
+                <option value="">MIUI</option>
+              </select>
+            </div>
+          </div>
+          <button class="btnVerify">Verificar</button>
+          <a onclick="add()" class="btn btn-block btn-primary"
+            ><span class="glyphicon glyphicon-qrcode"></span>Ingresar</a
+          >
+        </div>
+        <div class="column">
+          <table id="tableVerificar">
+            <thead>
+              <tr>
+                <th data-field="dni">DNI</th>
+                <th data-field="numeroSerie">S/N</th>
+                <th data-field="imei">IMEI</th>
+                <th data-field="marca">Marca</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+
+      <section class="phoneReported" id="reportado">
+        <div class="column">
+          <h4>Celulares Reportados</h4>
+          <p>
+            * Esta sección es para insertar todo los celulares que ha sido
+            reportado como robados.
+          </p>
+          <div class="verificar">
+            <div class="container">
+              <label class="colu" for="numeroSerie">S/N:</label>
+              <input
+                class="colu"
+                type="text"
+                id="numeroSerie"
+                placeholder="4O9BSMV178564"
+              />
+            </div>
+            <div class="container">
+              <label class="colu" for="imei">IMEI:</label>
+              <input
+                class="colu"
+                type="number"
+                id="imei"
+                placeholder="512364687125463"
+              />
+            </div>
+            <div class="container" id>
+              <label class="colu" for="model">Marca:</label>
+              <select id="model">
+                <option selected value="">SAMSUNG</option>
+                <option value="">APPLE</option>
+                <option value="">XIAOMI</option>
+                <option value="">OPPO</option>
+                <option value="">MOTOROLA</option>
+                <option value="">HUAWEI</option>
+                <option value="">REALME</option>
+                <option value="">HONOR</option>
+                <option value="">MIUI</option>
+              </select>
+            </div>
+          </div>
+          <a onclick="addedPhoneReported()" class="btn btn-block btn-primary"
+            ><span class="glyphicon glyphicon-qrcode"></span>Ingresar</a
+          >
+        </div>
+        <div class="column">
+          <table id="tableCelularReportado">
+            <thead>
+              <tr>
+                <th data-field="numeroSerie">S/N</th>
+                <th data-field="imei">IMEI</th>
+                <th data-field="marca">Marca</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+
+      <section class="admTechnical" id="tecnico">
+        <div class="column">
+          <h4>Administración de Técnicos</h4>
+          <p>
+            * Esta sección es para gestionar los técnicos, mostrar sus skills y
+            estación que pertenece.
+          </p>
+          <div class="verificar">
+            <div class="container">
+              <label class="colu" for="numeroSerie">Nombre:</label>
+              <input
+                class="colu"
+                type="text"
+                id="numeroSerie"
+                placeholder="Mark"
+              />
+            </div>
+            <div class="container">
+              <label class="colu" for="station">Estación:</label>
+              <select id="station">
+                <option value="CellFix Central">CellFix Central</option>
+                <option value="ReparaMovil Principal">
+                  ReparaMovil Principal
+                </option>
+                <option value="Centro de Reparación Celular">
+                  Centro de Reparación Celular
+                </option>
+                <option value="NúcleoCell">NúcleoCell</option>
+                <option value="PuntoCell Central">PuntoCell Central</option>
+                <option value="SolucionesMóviles Hub">
+                  SolucionesMóviles Hub
+                </option>
+                <option value="Centro de Servicio Celular">
+                  Centro de Servicio Celular
+                </option>
+                <option value="ReparacionesMobile Principal">
+                  ReparacionesMobile Principal
+                </option>
+                <option value="PuntoFix Central">PuntoFix Central</option>
+                <option value="CellCare Central">CellCare Central</option>
+                <option value="MóvilMaster Principal">
+                  MóvilMaster Principal
+                </option>
+                <option value="PuntoReparación Celular">
+                  PuntoReparación Celular
+                </option>
+                <option value="CentroCell Central">CentroCell Central</option>
+                <option value="FixTech Central">FixTech Central</option>
+                <option value="CentralMóvil Repair">CentralMóvil Repair</option>
+                <option value="MobileLab Principal">MobileLab Principal</option>
+                <option value="ReparaciónCell Central">
+                  ReparaciónCell Central
+                </option>
+                <option value="TechHub Celular">TechHub Celular</option>
+                <option value="MóvilDoctor Principal">
+                  MóvilDoctor Principal
+                </option>
+                <option value="RepairZone Central">RepairZone Central</option>
+              </select>
+            </div>
+            <div class="container" id>
+              <label class="colu" for="model">Skill:</label>
+              <select id="model">
+                <option selected value="">SAMSUNG</option>
+                <option value="">APPLE</option>
+                <option value="">XIAOMI</option>
+                <option value="">OPPO</option>
+                <option value="">MOTOROLA</option>
+                <option value="">HUAWEI</option>
+                <option value="">REALME</option>
+                <option value="">HONOR</option>
+                <option value="">MIUI</option>
+              </select>
+            </div>
+          </div>
+          <a onclick="addedTechnician()" class="btn btn-block btn-primary"
+            ><span class="glyphicon glyphicon-qrcode"></span>Ingresar</a
+          >
+        </div>
+        <div class="column">
+          <table id="tableTecnico">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Estación</th>
+                <th>SKILLS</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2024 SIS by Jhens. All rigths reserved.</p>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/e59191e4cc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/station.js"></script>
+  </body>
+</html>

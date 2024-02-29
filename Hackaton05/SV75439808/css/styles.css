@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  top: 0;
+}
+
+header {
+  background-color: aqua;
+  text-align: center;
+  padding: 8px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  min-width: 10vh;
+}
+
+p {
+  text-align: justify;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+title {
+  display: block;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+.btnAdd,
+.btnVerify {
+  border: none;
+  color: white;
+  padding: 6px 20px;
+  cursor: pointer;
+  background-color: #46a049;
+  border-radius: 5px;
+}
+
+.navbar {
+  text-align: center;
+  min-width: 10vh;
+
+  ul {
+    width: 100%; /* Añadida unidad de medida */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+}
+
+nav.navbar {
+  padding: 0;
+}
+
+main {
+  font-family: Arial;
+  padding: 19px;
+  background: #f1f1f1;
+  min-width: 70vh;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.header {
+  margin: 0px;
+  padding: 0px;
+}
+
+#model,
+#station {
+  border: none;
+}
+
+.container {
+  display: flex;
+  /* justify-content: end; */
+  align-items: center;
+}
+
+.verificar {
+  margin-bottom: 20px;
+  padding-right: 5px;
+}
+
+h4 {
+  text-align: center;
+}
+
+.colu {
+  padding: 0;
+  border: none;
+}
+
+.column {
+  flex: 1; /* Hace que ambas columnas tengan el mismo tamaño */
+  margin: 0 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background-color: #222;
+  min-width: 10vh;
+
+  p {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+  }
+}
