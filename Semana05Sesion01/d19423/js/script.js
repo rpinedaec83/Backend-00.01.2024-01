@@ -75,6 +75,7 @@ class Auto extends Vehiculo{
         this.llantas = llantas;
         this.combustible = combustible;
     }
+    
     cargarCombustible(galones){
         console.log(`El vehiculo ${this.modelo}  esta cargando ${galones} galones de ${this.combustible}`)
     }
@@ -92,3 +93,5 @@ console.log(auto1.modelo)
 
 vehiculo1.encender()
 auto1.encender("1234567890")
+
+

@@ -1,5 +1,10 @@
  /* Estilos para el formulario emergente */
- .popup {
+ body {
+    font-family: Arial, sans-serif;
+    
+    background-image: url(/Hackaton04/a15100022/img/img2.wallspic.com-2001_monolito-monolito-la_ciencia_ficcion-arte-cuerpo_de_agua-2560x1440.png);
+ }
+    .popup {
     display: none;
     position: fixed;
     top: 50%;
