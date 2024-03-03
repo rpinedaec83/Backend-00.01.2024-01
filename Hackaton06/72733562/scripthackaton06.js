@@ -1,10 +1,11 @@
-// scripthackaton06.js
 
 arrClientes = [];
 arrDispositivos = [];
 let dispositivoCreado;
 
+
 /*------------CLASS PERSONA------------*/
+
 class Persona {
     constructor(nombre, apellido, DNI) {
         this.nombre = nombre;
@@ -14,6 +15,7 @@ class Persona {
 }
 
 /*------------CLASS CLIENTE------------*/
+
 class Cliente extends Persona {
     constructor(nombre, apellido, DNI, numero, dispositivo) {
         super(nombre, apellido, DNI);
@@ -22,7 +24,8 @@ class Cliente extends Persona {
     }
 }
 
-/* SEPARADOR */
+//----------SEPARADOR - CLASS DISPOSITIVO----------//
+
 class Dispositivo {
     constructor(iMei, nroSerie, revision, pago, autorizacion, problema) {
         this.iMei = iMei;
@@ -41,11 +44,15 @@ class Dispositivo {
        
 }
 
-function revisarReporteRobo() { 
+function reportarRobo() 
+{ 
     return Math.random() > 0.5 ? true : false;
 }
 
-function CrearDispositivo() {
+//----------SEPARADOR - CREAR DISPOSITIVO----------//
+
+function CrearDispositivo() 
+{
     let imeiDispositivo = prompt("Ingrese el IMEI del dispositivo");
     let numeroSerie = prompt("Ingrese el numero de Serie del dispositivo");
     let pago = confirm("Desea confirmar el pago?");
@@ -55,7 +62,7 @@ function CrearDispositivo() {
     let reportado;
     let numeroAleatorio;
 
-    numeroAleatorio = revisarReporteRobo();
+    numeroAleatorio = reportarRobo();
 
     if (numeroAleatorio) {
         reportado = true;
@@ -65,7 +72,12 @@ function CrearDispositivo() {
         dispositivoCreado = new Dispositivo(imeiDispositivo, numeroSerie, revisionDispositivo, pago, autorizacion, problema);
         arrDispositivos.push(dispositivoCreado);
     }
+
+
+
 }
+
+//----------SEPARADOR - TECNICOS----------//
 
 let tecnicos = [
     {
@@ -82,57 +94,81 @@ let tecnicos = [
     }
 ];
 
+
+//----------SEPARADOR - SELECCIONAR TECNICO----------//
+
+
 function seleccionarTecnico() 
 {
-    let dispositivo = arrDispositivos[arrDispositivos.length - 1]; // Obtener el último dispositivo agregado
+    let dispositivo = arrDispositivos[arrDispositivos.length - 1];
 
     if (dispositivo.revision && dispositivo.pago && dispositivo.autorizacion) 
     {
         alert("Usted puede solicitar a un técnico.");
         
-    } else {
+    } 
+    else 
+    {
         alert("Usted no puede solicitar a un técnico.");
         return;
     }
 
 
 
-    if (arrDispositivos.length === 0) {
-        alert("No hay dispositivos disponibles para seleccionar un técnico.");
+    if (arrDispositivos.length === 0) 
+    {
+        alert("No hay dispositivos para seleccionar un técnico.");
         return;
     }
 
     let seleccion = prompt("A cual de los 2 desea seleccionar? escriba 1 o 2");
     
 
-    if (seleccion == 1) {
-        if (dispositivo.problema.includes("pantalla rota")) {
+    if (seleccion == 1) 
+    {
+        if (dispositivo.problema.includes("pantalla rota")) 
+        {
             dispositivo.diagnostico = "Su dispositivo tiene la pantalla rota, será reemplazada";
             alert("Su pantalla está rota");
             dispositivo.repuestos = "Pantalla Nueva";
             dispositivo.estado = "Telefono con nueva pantalla"
-        } else {
+        } 
+
+        else 
+        {
             alert("Usted no tiene la pantalla rota");
             dispositivo.diagnostico = "Su dispositivo no tenía fallos en la pantalla";
             dispositivo.repuestos = "No necesitó repuestos";
             dispositivo.estado = "Telefono normal"
         }
-    } else {
-        if (dispositivo.problema.includes("bateria")) {
+    } 
+
+    else 
+    {
+        if (dispositivo.problema.includes("bateria")) 
+        {
             dispositivo.diagnostico = "Su dispositivo tiene la batería dañada, será reemplazada";
             alert("Su dispositivo tiene su batería dañada");
             dispositivo.repuestos = "Bateria Nueva";
             dispositivo.estado = "Telefono con nueva batería"
-        } else {
+        } 
+        
+        else 
+        {
             alert("Usted no tiene la batería dañada.");
             dispositivo.diagnostico = "Su dispositivo no tenía fallos en la bateria";
-            dispositivo.repuestos = "No necesito repuestos";
+            dispositivo.repuestos = "No necesitó repuestos";
             dispositivo.estado = "Telefono normal"
         }
     }
 }
 
-function CrearCliente() {
+
+//----------SEPARADOR - CREAR CLIENTE----------//
+
+
+function CrearCliente() 
+{
     let nombreCliente = prompt("Ingrese el nombre del cliente");
     let apellidoCliente = prompt("Ingrese el apellido del cliente");
     let DNIcliente = prompt("Ingrese el DNI del cliente");
@@ -141,6 +177,8 @@ function CrearCliente() {
   
     let nuevoCliente = new Cliente(nombreCliente, apellidoCliente, DNIcliente, numeroDispositivoCliente, dispositivoCliente);
     arrClientes.push(nuevoCliente);
+
+
 }
 
 let tablatecnicos = document.getElementById("TablaHTMLTecnicos")
@@ -158,12 +196,13 @@ tecnicos.forEach(tecnico => {
     
 });
                   
-function CrearTabla() {
-    // Crear tabla
+function CrearTabla() 
+{
+    
     let tabla = document.createElement("table");
     tabla.setAttribute("border", "2");
 
-    // Crear encabezado de la tabla
+    
     let encabezado = tabla.createTHead();
     let filaEncabezado = encabezado.insertRow();
     filaEncabezado.innerHTML = `
@@ -181,15 +220,17 @@ function CrearTabla() {
         <th>Estado</th>
     `;
 
-    // Crear cuerpo de la tabla
+    
     let cuerpoTabla = tabla.createTBody();
 
-    // Iterar sobre los clientes y dispositivos
-    arrClientes.forEach(cliente => {
-        arrDispositivos.forEach(dispositivo => {
-            // Crear una fila para cada cliente y dispositivo
+    
+    arrClientes.forEach(cliente => 
+    {
+        arrDispositivos.forEach(dispositivo => 
+        {
+            
             let fila = cuerpoTabla.insertRow();
-            // Agregar contenido de las celdas directamente con innerHTML
+           
             fila.innerHTML = `
                 <td>${cliente.nombre}</td>
                 <td>${cliente.apellido}</td>
@@ -207,12 +248,66 @@ function CrearTabla() {
         });
     });
 
-    // Obtener el contenedor donde se mostrará la tabla
+    
     let tablaDiv = document.getElementById("tablaDiv");
 
-    // Limpiar el contenedor antes de agregar la tabla
+    
     tablaDiv.innerHTML = "";
 
-    // Agregar la tabla al contenedor
+    
     tablaDiv.appendChild(tabla);
 }
+
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    let storedClientes = localStorage.getItem("clientes");
+
+    let arrClientes
+    let arrDispositivos
+    
+
+    if (storedClientes !== null) 
+    {
+        arrClientes = JSON.parse(storedClientes);
+    } 
+    
+    else 
+    {
+        arrClientes = [];
+    }
+
+    let storedDispositivos = localStorage.getItem("dispositivos");
+    
+
+    if (storedDispositivos !== null) 
+    {
+        arrDispositivos = JSON.parse(storedDispositivos);
+    } 
+    
+    else 
+    {
+        arrDispositivos = [];
+    }
+
+    CrearTabla();
+});
+
+
+function guardarTabla() 
+{
+    
+    let clientesJSON = JSON.stringify(arrClientes);
+    let dispositivosJSON = JSON.stringify(arrDispositivos);
+
+    
+    localStorage.setItem('clientes', clientesJSON);
+    localStorage.setItem('dispositivos', dispositivosJSON);
+}
+
+function borrarTabla() 
+{
+    localStorage.removeItem('clientes');
+    localStorage.removeItem('dispositivos');
+    document.getElementById("tablaDiv").innerHTML = "";
+}
+
