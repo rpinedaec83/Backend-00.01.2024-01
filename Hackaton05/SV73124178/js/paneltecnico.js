@@ -1,4 +1,5 @@
 import { compania } from './compania.js'
+import { Ticket } from './ticket.js'
 import { obtenerValorLocalStorage, limpiarTodoLocalStorage } from './utilitarios.js'
 
 let accordionFiltro;
@@ -26,6 +27,13 @@ const limpiarPanelVerificarImei = () => {
     document.querySelector('#txtNroIMEIConsultar').value = '';
 }
 
+const limpiarPanelRegistrarDiagnostico = () => {
+    document.querySelector('#txtFechaTicketRegistro').value = '';
+    document.querySelector('#txtNroImeiRegistro').value = '';
+    document.querySelector('#txtNroImeiRegistro').disabled = false;
+    document.querySelector('#txtDiagnosticoRegistro').value = '';
+}
+
 const limpiarPanelTicketsGenerados = () => {
     document.querySelector('.tblticketsgenerados').querySelector('tbody').innerHTML = '';
     document.querySelector('.tblticketsgenerados').classList.add('visually-hidden');
@@ -39,12 +47,12 @@ const limpiarPanelTicketsGenerados = () => {
 //     limpiarPanelTicketsGenerados();
 // });
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     const tecnicoLogueado = obtenerValorLocalStorage('tecnico_datos');
     const sucursalseleccionada = obtenerValorLocalStorage('sucursal_logueada');
     const nombreSucursal = compania.mostrarNombreSucursal(parseInt(sucursalseleccionada));
     document.querySelector('#lblSucursal').textContent = nombreSucursal;
-    document.querySelector('#lblTecnicoLogueado').textContent = `Hola, ${tecnicoLogueado.nombre}`;
+    document.querySelector('#lblTecnicoLogueado').textContent = `Hola, ${tecnicoLogueado.nombre} ${tecnicoLogueado.apellido}`;
     accordionFiltro = new bootstrap.Collapse(document.querySelector('#collapseOne'));
 });
 
@@ -52,7 +60,7 @@ const linkCerrarSession = document.querySelector('#link-logout');
 linkCerrarSession.addEventListener('click', (e) => {
     e.preventDefault();
     limpiarTodoLocalStorage();
-    window.location.href = 'index.html';
+    window.location.href = '../../index.html';
 });
 
 const linkRealizarDiagnostico = document.querySelector('#link-realizardiagnostico');
@@ -84,7 +92,7 @@ btnBuscarIMEI.addEventListener('click', () => {
         document.querySelector('#lblMarcaConsultado').textContent = marca;
         document.querySelector('#lblModeloConsultado').textContent = modelo;
         document.querySelector('#lblSOConsultado').textContent = so;
-        document.querySelector('#lblReportadoConsultado').textContent = robado?'SI':'NO';
+        document.querySelector('#lblReportadoConsultado').textContent = robado ? 'SI' : 'NO';
         if (robado) {
             document.querySelector('.btndiagnostico').classList.add('visually-hidden');
             document.querySelector('#lblReportadoConsultado').classList.remove('text-bg-success');
@@ -107,6 +115,8 @@ const btnIrADiagnosticar = document.querySelector('#btnIrADiagnosticar');
 btnIrADiagnosticar.addEventListener('click', () => {
     document.querySelector('.pnlverificarimei').classList.add('visually-hidden');
     document.querySelector('.pnlregistrardiagnostico').classList.remove('visually-hidden');
+    document.querySelector('#txtNroImeiRegistro').value = document.querySelector('#lblNroImeiConsultado').textContent;
+    document.querySelector('#txtNroImeiRegistro').disabled = true;
 });
 
 const btnFiltrarTickets = document.querySelector('#btnFiltrarTickets');
@@ -121,4 +131,31 @@ btnFiltrarTickets.addEventListener('click', () => {
         document.querySelector('.tblticketsgenerados').classList.add('visually-hidden');
         document.querySelector('.tblticketsgenerados').querySelector('tbody').innerHTML = '';
     }
+});
+
+const btnGenerarTicket = document.querySelector('#btnGenerarTicket');
+btnGenerarTicket.addEventListener('click', (e) => {
+    e.preventDefault();
+    const codigogene = Math.floor(100000 + Math.random() * 900000);
+    const fecha = document.querySelector('#txtFechaTicketRegistro').value;
+    const imei = document.querySelector('#txtNroImeiRegistro').value;
+    const diagnostico = document.querySelector('#txtDiagnosticoRegistro').value;
+    const estado = 'INGRESADO';
+    const codsucursal = obtenerValorLocalStorage('sucursal_logueada');
+    const tecnico = obtenerValorLocalStorage('tecnico_datos');
+    
+    const ticketGenerado = new Ticket(codigogene,fecha,imei,diagnostico,estado,codsucursal,tecnico.codigo);
+    compania.tickets.push(ticketGenerado);
+
+    Swal.fire({
+        title: "Ticket Registrado!",
+        text: "Se registró el ticket correctamente!",
+        icon: "success"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            limpiarPanelRegistrarDiagnostico();
+            limpiarPanelVerificarImei();
+            mostrarPanel('pnlverificarimei');
+        }
+    });
 });

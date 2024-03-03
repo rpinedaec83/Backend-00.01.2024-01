@@ -23,5 +23,5 @@ btnLoguearSistema.addEventListener('click', () => {
     }
     guardarLocalStorage('tecnico_datos',tecnico);
     guardarLocalStorage('sucursal_logueada',codigosucursal);
-    window.location.href = 'panel.html';
+    window.location.href = 'paneltecnico.html';
 });
