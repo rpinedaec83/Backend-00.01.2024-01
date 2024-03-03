@@ -1,4 +1,6 @@
-class cliente{
+
+
+class Cliente{
     constructor(nombre, apellido, nroIdentificacion, nroTelefono, direccion, dispositivo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -10,7 +12,7 @@ class cliente{
     }
 }
 
-class empleado{
+class Empleado{
     constructor(dni, nombre, skills){
         this.nombre = nombre;
         this.dni = dni;
@@ -39,24 +41,24 @@ class Administrador {
             let sistemaoperativo = prompt("Ingresa el Sistema Operativo");
             let marca = prompt("Ingrese marca del Dispositivo");
             let descripcion = prompt("En que esta fallando el Dispositivo?")
-            let objCelular = new celular(imei, sistemaoperativo, marca, descripcion);
+            let objCelular = new Celular(imei, sistemaoperativo, marca, descripcion);
             let nombre = prompt("Escribe el nombre del cliente");
             let apellido = prompt("Escribe el apellido del clente");
             let nroIdentificacion = prompt("Escribe el DNI del cliente");
             let nroTelefono = prompt("Escribe el numero de telefono del cliente")
             let direccion = prompt("Escribe la direccion del cleinte");
-            let objCliente = new cliente(nombre, apellido, nroIdentificacion, nroTelefono, direccion, objCelular);
+            let objCliente = new Cliente(nombre, apellido, nroIdentificacion, nroTelefono, direccion, objCelular);
             arrClientes.push(objCliente);
         }
     }
 }
 
-class celular{
+class Celular{
     constructor(imei, sistemaoperativo, marca, descripcion){
         this.imei = imei;
         this.sistemaoperativo = sistemaoperativo;
         this.marca = marca;
-        this.abono = 0;
+        this.pago = false;
         this.descripcion = descripcion;
         this.diagnostico = "";
         this.reparacion = 0;
@@ -69,22 +71,13 @@ class celular{
     iniciarDiagnostico(){
         this.diagnostico = prompt("Cual es el diagnostico del dispositivo");
         this.estado = "En Diagnostico";
+        this.reparacion = Math.floor(Math.random() * (70 - 50 + 1)) + 70
     }
 
-    abonado(abono){
-        if(abono>= this.reparacion/2){
-            this.autorizacion = true;
-            return true;
-        }
-        else{
-            return false;
-        }
+    abonar(){
+        this.pago = true;
     }
-    
-    cambiarEstado(estado){
-        this.estado = estado;
-    }
-
+   
     ponerRepuesto(repuesto){
         this.repuestos.push(repuesto);
     }
@@ -102,7 +95,7 @@ class celular{
     }
 }
 
-class repuesto{
+class Repuesto{
     constructor(descripcion, precio){
         this.descripcion = descripcion;
         this.precio = precio;
@@ -159,7 +152,7 @@ function agregarEmpleado(){
             let dni  = document.getElementById("dni").value;
             let nombre  = document.getElementById("nombre").value;
             let skills = document.getElementById("skills").value.split("-");
-            let emp = new empleado(dni, nombre, skills);
+            let emp = new Empleado(dni, nombre, skills);
             arrEmpleados.push(emp);
             
             guardarData("empleados", arrEmpleados);
@@ -204,7 +197,7 @@ function crearRepuesto(){
         if (result.isConfirmed) {
             let descripcion  = document.getElementById("repuesto").value;
             let precio = parseFloat(document.getElementById("precio").value);
-            let newrepuesto = new repuesto(descripcion, precio)
+            let newrepuesto = new Repuesto(descripcion, precio)
             
             arrRepuestos.push(newrepuesto);
 
@@ -231,13 +224,11 @@ function agregarTelefono(){
         arrTelefonos.push(element.dispositivo);
     });
     
+    guardarData("telefonos", arrTelefonos);
+
     $tableTelefono.bootstrapTable('load', arrTelefonos);
 
 }
-
-
-
-
 
 
 
@@ -252,7 +243,7 @@ function init() {
         jsonEmpleados = [];
     }
     jsonEmpleados.forEach(element => {
-        arrEmpleados.push(new empleado(
+        arrEmpleados.push(new Empleado(
             element.dni,
             element.nombre,
             element.skills
@@ -269,7 +260,7 @@ function init() {
         jsonRepuestos = [];
     }
     jsonRepuestos.forEach(element => {
-        arrRepuestos.push(new repuesto(
+        arrRepuestos.push(new Repuesto(
             element.descripcion,
             element.precio
         ));
@@ -286,11 +277,29 @@ function init() {
         jsonClientes = [];
     }
     jsonClientes.forEach(element => {
-        arrClientes.push(element);
-        arrTelefonos.push(element.dispositivo
-        );
-    });   
+        arrClientes.push(new Cliente(
+            element.nombre,
+            element.apellido,
+            element.nroIdentificacion,
+            element.nroTelefono,
+            element.direccion,
+            element.dispositivo
+        ));
+    });
 
+
+    let jsonTelefonos = null;
+    let localDataTelef = localStorage.getItem("telefonos");
+    if (localDataTelef !== null && localDataTelef !== "null") {
+        jsonTelefonos = JSON.parse(localDataTelef);
+    }
+    else {
+        jsonTelefonos = [];
+    }
+    jsonTelefonos.forEach(element => {
+        arrTelefonos.push(element);
+    });
+    
     $tableTelefono.bootstrapTable('load', arrTelefonos);
     
 }
@@ -306,21 +315,41 @@ function guardarData(nombre, data){
 
 $tableTelefono.on('click-row.bs.table', function (row, $element, field) {
 
-    alert("Click");
-    /*console.log($element);
-    if (confirm(`Desea modificar el estado del dispositivo ${$element.iMei}???`)) {
+    if (confirm(`Desea modificar el estado del dispositivo ${$element.imei}???`)) {
+        let objDispositivo = buscarDispositivo($element.imei);
+        
+        objDispositivo.abonar();
+        objDispositivo.iniciarDiagnostico();
 
-        let objDispositivo = buscarDispositivo($element.iMei);
-        if (objDispositivo.revisarReporteRobo()) {
-            alert("El dispositivo esta reportado como robado")
-        } else {
-            console.log("No esta robado")
-            objDispositivo.recibirPago();
-            objDispositivo.iniciarDiagnostico()
+        for(let index = 0; index < arrTelefonos.length; index++){
+            if(arrTelefonos[index].imei === $element.imei){
+                arrTelefonos[index] = objDispositivo;
+            }
+        }
+    
+        for(let index = 0; index < arrClientes.length; index++){
+            if(arrClientes[index].dispositivo.imei === $element.imei){
+                arrClientes[index].dispositivo = objDispositivo;
+            }
+        }
 
+    }
+
+    guardarData("clientes", arrClientes);
+    guardarData("telefonos", arrTelefonos);
+
+    $tableTelefono.bootstrapTable('load', arrTelefonos);
+})
+
+function buscarDispositivo(imei) {
+
+    for (let index = 0; index < arrTelefonos.length; index++) {
+        const element = arrTelefonos[index];
+        if (element.imei === imei) {
+            return element;
         }
     }
-    $table.bootstrapTable('load', arrDispositivos)*/
-})
+}
+
 
 let adm01 = new Administrador("Adrian", "Prado", 70860105, "T1");
