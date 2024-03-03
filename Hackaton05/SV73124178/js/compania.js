@@ -30,17 +30,19 @@ class Compania {
     agregarCelulares() {
         this.celulares.push(new Celular('sz45dxvc54','Motorola','G8 Power','ANDROID',true,[
             {fecha: '2024-02-12', incidente: 'Celular fue hurtado en transporte público.'}
-        ]));
-        this.celulares.push(new Celular('5sa4dv6s4d','Samsung','S4 Lite','ANDROID',false,[]));
-        this.celulares.push(new Celular('5s64db46vs','Iphone','12 pro max','IOS',false,[]));
+        ],3));
+        this.celulares.push(new Celular('5sa4dv6s4d','Samsung','S4 Lite','ANDROID',false,[],1));
+        this.celulares.push(new Celular('5s64db46vs','Iphone','12 pro max','IOS',false,[],2));
     }
 
     agregarTickets() {
-        this.tickets.push(new Ticket(256658,'2023-12-25','5sa4dv6s4d','Celular en buen estado.','INGRESADO',2,3));
+        this.tickets.push(new Ticket(256658,'2023-12-25','5sa4dv6s4d','Celular en buen estado.','INGRESADO',2,3,1));
     }
 
     agregarUsuarios() {
         this.usuarios.push(new Usuario(1,'Marco','Alarcón','73124178',1234));
+        this.usuarios.push(new Usuario(2,'Irma','Serrano','09491713',1234));
+        this.usuarios.push(new Usuario(3,'Roberto','Gomez','09828856',1234));
     }
 
     buscarCelularXIMEI(codigoimei) {
@@ -67,6 +69,11 @@ class Compania {
     loguearUsuario(nrodocumento,claveusuario) {
         const usuario = this.usuarios.find(usu => usu.nrodocumento == nrodocumento && usu.clave == claveusuario);
         return usuario;
+    }
+
+    consultarMisTickets(codcliente) {
+        const tickets = this.tickets.filter(t => t.codcliente == codcliente);
+        return tickets;
     }
 
     listarSucursales() {
