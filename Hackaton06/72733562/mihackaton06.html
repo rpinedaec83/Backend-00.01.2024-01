@@ -7,78 +7,21 @@
 </head>
 <body>
     <h2>Bienvenido a la página</h2>
-<div>
-    <button id="botonDispositivo"onclick="CrearDispositivo();">Agregar Dispositivo</button>
-    <button id="botonCliente" onclick="CrearCliente();">Agregar Cliente</button>
-    <button id="botonLista" onclick="enviarALista();">Enviar a la lista</button>
-</div>
+    <div>
+        <button id="botonDispositivo" onclick="CrearDispositivo();">Agregar Dispositivo</button>
+        <button id="botonCliente" onclick="CrearCliente();">Agregar Cliente</button>
+        <button id="botonTabla" onclick="CrearTabla();">Crear Tabla</button>
+        <button id="botonTecnico" onclick="seleccionarTecnico();">Seleccionar Técnico</button>
+    </div>
 
+    <div id="tablaDiv">
+        <!-- Aquí se mostrará la tabla -->
+    </div>
 
-<div>
-    <table border="4px">
-
-    <tr>
-    <th>Nombre del cliente</th>
-    <th>Apellido del cliente</th>
-    <th>DNI del cliente</th>
-    <th>IMEI</th>
-    <th>numero de serie</th>
-    <th>numero del telefono</th>
-    <th>autorizacion reparo</th>
-    <th>abono hecho</th>
-    <th>numero reportado</th>
-    </tr>
-
-    <tr>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-    </tr>
-
+    <table border="4px" id="TablaHTMLTecnicos">
+        <!-- Aquí se mostrará la tabla -->
     </table>
-
-</div>
-
-
-<div>
-    <table ID="TablaHTMLTecnicos" border="4px">
-
-    <tr>
-    <th>Nombre del cliente</th>
-    <th>Apellido del cliente</th>
-    <th>DNI del cliente</th>
-    <th>IMEI</th>
-    <th>numero de serie</th>
-    <th>numero del telefono</th>
-    <th>autorizacion reparo</th>
-    <th>abono hecho</th>
-    <th>numero reportado</th>
-    </tr>
-
-    <tr>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-        <td style="text-align: center;">adios</td>
-        <td style="text-align: center;">hola</td>
-    </tr>
-
-    </table>
-
-</div>
     
     <script src="scripthackaton06.js"></script>
-
-
 </body>
 </html>
