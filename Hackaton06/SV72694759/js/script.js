@@ -88,4 +88,3 @@ reparacion1.finalizarReparacion();
 // Guardar en WebStorage
 const reparacionData = JSON.stringify(reparacion1);
 localStorage.setItem("reparacion", reparacionData);
-  
