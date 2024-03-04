@@ -86,5 +86,5 @@ reparacion1.agregarRepuesto(new Repuesto("Pantalla nueva"));
 reparacion1.finalizarReparacion();
 
 // Guardar en WebStorage
-const reparacionData = JSON.stringify(reparacion1);
+//const reparacionData = JSON.stringify(reparacion1);//
 localStorage.setItem("reparacion", reparacionData);
