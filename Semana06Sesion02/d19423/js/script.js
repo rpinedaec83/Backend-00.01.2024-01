@@ -14,6 +14,7 @@ class Dispositivo {
         this.repuestos = null;
         this.estado = "";
     }
+//convertimos un objeto a string
     toJson() {
         return JSON.stringify({ iMei: this.iMei, nroSerie: this.nroSerie });
     }
@@ -133,6 +134,8 @@ document.getElementById("borrarData").addEventListener("click", borrarData);
 function recibirDispositivo() {
     admin.recibirDispositivo();
     //guarda la data en el localstorage
+
+
     guardarData("cliente", arrCliente);
     console.log(arrCliente)
     arrCliente.forEach(element => {
@@ -195,9 +198,9 @@ function init() {
 var $table = $('#tblDispositivos');
 
 // evento cuando se termina de cargar la pagina web
-document.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
-    init();
+document.addEventListener("DOMContentLoaded", (event) => 
+{
+    ();
 });
 
 //evento cuando hacemos click en una fila de la tabla
