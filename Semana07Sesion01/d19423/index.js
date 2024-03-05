@@ -1,2 +1,6 @@
-console.log("Inicio del programa");
-console.log("Otra linea de nuevo")
+let http = require('http');
+
+http.createServer(function (req, res) {
+  //res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('<h1>Hola desde NodeJs!</h1>');
+}).listen(8080);
