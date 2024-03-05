@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Servicio Técnico de Teléfonos</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Servicio Técnico de Teléfonos</h1>
+        <form id="formulario">
+            <label for="telSerial">Número de Serie:</label>
+            <input type="text" id="telSerial" >
+            <br>
+            <label for="telIMEI">IMEI:</label>
+            <input type="text" id="telIMEI" >
+            <br>
+            <label for="diagnostico">Diagnóstico:</label>
+            <textarea id="diagnostico" rows="4" ></textarea>
+            <br>
+            <label for="Autorizacion">Autorización del Usuario:</label>
+            <input type="checkbox" id="Autorizacion" >
+            <br>
+            <label for="Rep">Abono del 50%:</label>
+            <input type="checkbox" id="Rep" >
+            <br>
+            <div class="selec">
+            <label for="tec">Skills del Técnico:</label>
+            <select class="tec" multiple>
+                <option value="Software">Software</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Samsung">Samsung</option>
+                <option value="iPhone">iPhone</option>
+                <option value="LG">LG</option>
+            </select>
+        </div>
+            <br>
+            <label for="spareParts">Repuestos:</label>
+            <input type="text" id="spareParts">
+            <br>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+        <div id="status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
