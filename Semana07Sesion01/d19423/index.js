@@ -40,6 +40,7 @@ var formidable = require('formidable');
 const absolute = path.join(__dirname, 'img')
 
 http.createServer(function (req, res) {
+
   if (req.url == '/fileupload') {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
@@ -62,3 +63,4 @@ http.createServer(function (req, res) {
     return res.end();
   }
 }).listen(8080);
+
