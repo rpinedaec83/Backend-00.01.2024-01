@@ -1,293 +1,95 @@
-
-class empleado{
-    constructor(nombre, skills){
-        this.nombre = nombre;
-        this.skills = skills;
-    }
-
-    skill(marca){
-        return this.skills.includes(marca);
-    }
-}
-
-class celular{
-    constructor(imei, sistemaoperativo, marca, serie){
+class Telefono {
+    constructor(numeroSerie, imei, marca, reportado) {
+        this.numeroSerie = numeroSerie;
         this.imei = imei;
-        this.sistemaoperativo = sistemaoperativo;
         this.marca = marca;
-        this.abono = 0;
+        this.reportado = reportado;
+        this.diagnostico = null;
         this.autorizacion = false;
-        this.descripcion = "";
-        this.reparacion = 0;
-        this.estado = "En Espera";
-        this.serie = serie;
-        this.costoRepuestos = 0;
-        this.costoFinal = 0;
-        this.repuestos = [];
-    }
-    
-    primerdiagnostico(descripcion, costoreparacion){
-        this.descripcion = descripcion;
-        this.reparacion = costoreparacion;
-        this.abono = this.reparacion/2;
+        this.abono = 0;
+        this.reparacion = {
+            repuestos: [],
+            estado: 'En revisión',
+            estacionTrabajo: 'Estación de revisión'
+        };
     }
 
-    abonado(abono){
-        if(abono>= this.reparacion/2){
+    asignarDiagnostico(diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    darAutorizacion(abono) {
+        const mensajes = document.getElementById("mensajes");
+
+        if (this.autorizacion) {
+            mensajes.textContent = "El usuario ya ha dado autorización.";
+            return;
+        }
+
+        if (abono >= 0.5 * this.reparacionCosto()) {
+            this.abono = abono;
             this.autorizacion = true;
-            return true;
+            mensajes.textContent = "Autorización recibida. El servicio puede continuar.";
+        } else {
+            mensajes.textContent = "El abono no cumple con el 50% requerido.";
         }
-        else{
-            return false;
-        }
-    }
-    
-    cambiarEstado(estado){
-        this.estado = estado;
     }
 
-    ponerRepuesto(repuesto){
-        this.repuestos.push(repuesto);
+    reparacionCosto() {
+        // Lógica para calcular el costo de la reparación basado en diagnósticos, repuestos, etc.
+        // Retorna el costo total estimado de la reparación.
+        return 100; // Ejemplo: costo fijo de $100
     }
 
-    precioRepuestos(){
-        let costo = 0;
-        for(let index = 0; index < this.repuestos.length; index++){
-            costo += this.repuestos[index].precio;
+    guardarEnWebStorage() {
+        // Convertir el objeto a una cadena JSON y almacenarlo en el Web Storage (sessionStorage)
+        sessionStorage.setItem(this.numeroSerie, JSON.stringify(this));
+    }
+
+    static cargarDesdeWebStorage(numeroSerie) {
+        // Obtener el objeto almacenado en el Web Storage y convertirlo de nuevo a un objeto
+        const storedTelefono = sessionStorage.getItem(numeroSerie);
+        if (storedTelefono) {
+            const telefonoObj = JSON.parse(storedTelefono);
+            const telefono = new Telefono(
+                telefonoObj.numeroSerie,
+                telefonoObj.imei,
+                telefonoObj.marca,
+                telefonoObj.reportado
+            );
+            // Restaurar el resto de las propiedades
+            telefono.diagnostico = telefonoObj.diagnostico;
+            telefono.autorizacion = telefonoObj.autorizacion;
+            telefono.abono = telefonoObj.abono;
+            telefono.reparacion = telefonoObj.reparacion;
+            return telefono;
         }
-        this.costoRepuestos = costo;
-    }
-
-    precioFinal(){
-        this.costoFinal = this.costoRepuestos + this.reparacion;
+        return null;
     }
 }
 
-class repuesto{
-    constructor(descripcion, precio){
-        this.descripcion = descripcion;
-        this.precio = precio;
+function agregarTelefono() {
+    const numeroSerie = document.getElementById("numeroSerie").value;
+    const telefonoExistente = Telefono.cargarDesdeWebStorage(numeroSerie);
+
+    if (telefonoExistente) {
+        alert("¡Atención! Este teléfono ya está registrado.");
+        return;
     }
-}
 
+    const imei = document.getElementById("imei").value;
+    const marca = document.getElementById("marca").value;
+    const reportado = document.getElementById("reportado").value === "si";
 
+    const telefono = new Telefono(numeroSerie, imei, marca, reportado);
 
-let arrEmpleados = [];
-let arrRepuestos = [];
-let arrTelefonos = [];
-let arrDiagnosticos = [];
-let arrTelefonosReparados = [];
-
-var $tableEmpleado = $('#tableEmpleado');
-$tableEmpleado.bootstrapTable()
-function agregarEmpleado(){ 
-    Swal.fire({
-        title: "Agregar Empleado",
-        html: `			
-        <div class="form-group">
-            <label for="name">Nombres</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="nombre"  placeholder="Ingresa Nombre del Empleado"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="name">Skills</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="skills"  placeholder="Ingresa Skills(-)"/>
-            </div>
-        </div>
-
-        `,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Salir`
-      }).then((result) => {
-        
-        if (result.isConfirmed) {
-            let nombre  = document.getElementById("nombre").value;
-            let skills = document.getElementById("skills").value.split("-");
-            let emp = new empleado(nombre, skills);
-            arrEmpleados.push(emp);
-            console.log(arrEmpleados)
-            
-            $tableEmpleado.bootstrapTable('load', arrEmpleados)
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-}
-
-var $tableRepuesto = $('#tableRepuesto');
-$tableRepuesto.bootstrapTable()
-function crearRepuesto(){
-    Swal.fire({
-        title: "Crear Repuesto",
-        html: `			
-        <div class="form-group">
-            <label for="name">Descripcion</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="repuesto"  placeholder="Ingresa Nombre del Repuesto"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="name">Precio</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="precio"  placeholder="Ingresar Precio"/>
-            </div>
-        </div>
-
-        `,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Salir`
-      }).then((result) => {
-        
-        if (result.isConfirmed) {
-            let descripcion  = document.getElementById("repuesto").value;
-            let precio = parseFloat(document.getElementById("precio").value);
-            let newrepuesto = new repuesto(descripcion, precio)
-            console.log(newrepuesto);
-            arrRepuestos.push(newrepuesto);
-            
-            $tableRepuesto.bootstrapTable('load', arrRepuestos)
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-}
-
-
-var $tableDiagnostico = $('#tableDiagnostico');
-$tableDiagnostico.bootstrapTable()
-
-
-function agregarTelefono(){
-    Swal.fire({
-        title: "Agregar Telofono",
-        html: `			
-        <div class="form-group">
-            <label for="name">Imei</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="imei"  placeholder="Ingresa Imei del Telefono"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="name">Modelo</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="modelo"  placeholder="Ingresa Modelo del Telefono"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="name">Marca</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="marca"  placeholder="Ingresa Marca del Telefono"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Sistema Operativo</label>
-                <div class="input-group">
-                   
-                    <input type="text" class="form-control" id="sistemaope" name="descripcion" placeholder="Ingrese Sistema Operativo"/>
-            </div>
-        </div>
-
-
-        `,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Salir`
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            let imei = document.getElementById("imei").value;
-            let serie  = document.getElementById("modelo").value;
-            let marca  = document.getElementById("marca").value;
-            let sistemaope  = document.getElementById("sistemaope").value;
-            let telefono = new celular(imei, sistemaope, marca, serie);
-
-            for(let index = 0; index < arrTelefonos.length; index++){
-                if(imei == arrTelefonos[index].imei){
-                    return alert("TELEFONO BLOQUEADO");
-                }
-            }
-            
-            arrTelefonos.push(telefono);
-
-            telefono.primerdiagnostico("No enciende la pantalla", 100);
-            arrDiagnosticos.push(telefono);
-
-            
-            $tableDiagnostico.bootstrapTable('load', arrDiagnosticos);
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
-}
-
-var $tableTelefonoReparado = $('#tableTelefonoReparado');
-$tableTelefonoReparado.bootstrapTable()
-
-function repararTelefono(){
-    let telefono = arrDiagnosticos.shift();
-    let abono = parseInt(prompt("Deposite el Abono Inicial : "));
-
-    if(telefono.abonado(abono)){
-    Swal.fire({
-        title: "Reparacion",
-        html: `			
-        <div class="form-group">
-            <label for="name">Repuesto</label>
-                <div class="input-group">
-                
-                <input type="text" class="form-control" name="name" id="repuesto"  placeholder="Ingresa Nombre del Repuesto a Utilizar"/>
-            </div>
-        </div>
-
-        `,
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Salir`
-      }).then((result) => {
-        
-        if (result.isConfirmed) {
-            let rpto  = arrRepuestos.find((r) => r.descripcion === document.getElementById("repuesto").value);
-            telefono.ponerRepuesto(rpto);
-            telefono.cambiarEstado("Cambio de " + rpto.descripcion);
-            telefono.precioRepuestos();
-            telefono.precioFinal();
-
-
-            console.log(arrRepuestos);
-            console.log(rpto);
-            arrTelefonosReparados.push(telefono);   
-
-            $tableTelefonoReparado.bootstrapTable('load', arrTelefonosReparados);
-          Swal.fire("Saved!", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Changes are not saved", "", "info");
-        }
-      });
+    if (telefono.reportado) {
+        alert("¡Atención! Este teléfono está reportado. Se llamará a la policía.");
+        return;
     }
-    else{
-        arrDiagnosticos.unshift(telefono);
-        alert("NO SE ABONO EL MONTO CORRESPONDIENTE");
-    }
+
+    // Resto del código sin cambios
+
+    // Guardar el teléfono en el Web Storage (sessionStorage)
+    telefono.guardarEnWebStorage();
 }
-
-

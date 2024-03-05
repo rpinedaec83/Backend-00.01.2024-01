@@ -1,263 +1,95 @@
-const telefonos = [];
-const empleados = [];
-const asignaciones = [];
-const historialPrimeraRevision = [];
-const trabajosTerminados= [];
-
-function abrirFormulario(formId) {
-    const formularios = document.getElementsByClassName('formulario');
-    for (const formulario of formularios) {
-        formulario.style.display = 'none';
+class Telefono {
+    constructor(numeroSerie, imei, marca, reportado) {
+        this.numeroSerie = numeroSerie;
+        this.imei = imei;
+        this.marca = marca;
+        this.reportado = reportado;
+        this.diagnostico = null;
+        this.autorizacion = false;
+        this.abono = 0;
+        this.reparacion = {
+            repuestos: [],
+            estado: 'En revisión',
+            estacionTrabajo: 'Estación de revisión'
+        };
     }
 
-    const formularioActual = document.getElementById(formId);
-    formularioActual.style.display = 'block';
-
-    if (formId === 'asignarTelefonoForm') {
-        cargarEmpleadosEnSelect();
-        cargarTelefonosEnSelect();
-    }
-    if (formId === 'primeraRevisionForm'){
-        cargarAsignacionesEnSelect();
-    }
-}
-
-function registrarTelefono() {
-    const numSerie = document.getElementById('numSerie').value;
-    const imei = document.getElementById('imei').value;
-
-    if (!numSerie || !imei) {
-        alert('Por favor, complete todos los campos.');
-        return;
+    asignarDiagnostico(diagnostico) {
+        this.diagnostico = diagnostico;
     }
 
-    const telefonoExistente = telefonos.find(tel => tel.numSerie === numSerie || tel.imei === imei);
-    if (telefonoExistente) {
-        alert('Este teléfono ya está registrado.');
-        return;
-    }
+    darAutorizacion(abono) {
+        const mensajes = document.getElementById("mensajes");
 
-    const nuevoTelefono = { numSerie, imei };
-    telefonos.push(nuevoTelefono);
-    actualizarTablaTelefonos();
-    alert('Teléfono registrado con éxito.');
-
-    limpiarCamposTelefonoForm();
-}
-
-function registrarEmpleado() {
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const direccion = document.getElementById('direccion').value;
-    const contacto = document.getElementById('contacto').value;
-    const correo = document.getElementById('correo').value;
-
-    if (!nombre || !apellido || !direccion || !contacto || !correo) {
-        alert('Por favor, complete todos los campos.');
-        return;
-    }
-
-    const nuevoEmpleado = { nombre, apellido, direccion, contacto, correo };
-    empleados.push(nuevoEmpleado);
-    actualizarTablaEmpleados();
-    alert('Empleado registrado con éxito.');
-
-    limpiarCamposEmpleadoForm();
-}
-
-function asignarTelefono() {
-    const empleadoSelect = document.getElementById('empleadoSelect');
-    const telefonoSelect = document.getElementById('telefonoSelect');
-
-    if (empleadoSelect.value === '' || telefonoSelect.value === '') {
-        alert('Por favor, complete todos los campos.');
-        return;
-    }
-
-    const numSerieImei = telefonoSelect.value.split(' - ');
-    const numSerie = numSerieImei[0];
-    const imei = numSerieImei[1];
-
-    const telefonoAAsignar = telefonos.find(tel => tel.numSerie === numSerie && tel.imei === imei);
-    if (!telefonoAAsignar) {
-        alert('El teléfono no está registrado.');
-        return;
-    }
-
-    const nombreApellidoEmpleado = empleadoSelect.value.split(' ');
-    const empleadoAsignado = empleados.find(emp => emp.nombre === nombreApellidoEmpleado[0] && emp.apellido === nombreApellidoEmpleado[1]);
-    if (!empleadoAsignado) {
-        alert('Seleccione un empleado válido.');
-        return;
-    }
-
-    const asignacion = { empleado: `${empleadoAsignado.nombre} ${empleadoAsignado.apellido}`, numSerie, imei };
-    asignaciones.push(asignacion);
-    actualizarTablaAsignaciones();
-    alert(`Teléfono asignado a ${empleadoAsignado.nombre} ${empleadoAsignado.apellido}.`);
-
-    limpiarCamposAsignarTelefonoForm();
-}
-
-function cargarEmpleadosEnSelect() {
-    const empleadoSelect = document.getElementById('empleadoSelect');
-    empleadoSelect.innerHTML = '';
-
-    for (const empleado of empleados) {
-        const option = document.createElement('option');
-        option.value = `${empleado.nombre} ${empleado.apellido}`;
-        option.text = `${empleado.nombre} ${empleado.apellido}`;
-        empleadoSelect.appendChild(option);
-    }
-}
-
-function cargarTelefonosEnSelect() {
-    const telefonoSelect = document.getElementById('telefonoSelect');
-    telefonoSelect.innerHTML = '';
-
-    for (const telefono of telefonos) {
-        const option = document.createElement('option');
-        option.value = `${telefono.numSerie} - ${telefono.imei}`;
-        option.text = `${telefono.numSerie} - ${telefono.imei}`;
-        telefonoSelect.appendChild(option);
-    }
-}
-
-
-function cargarAsignacionesEnSelect() {
-    const asignacionPrimeraRevisionSelect = document.getElementById('asignacionSelect');
-    asignacionPrimeraRevisionSelect.innerHTML = '';
-
-    for (const asignacion of asignaciones) {
-        const option = document.createElement('option');
-        option.value = `${asignacion.empleado} - ${asignacion.imei}`;
-        option.text = `${asignacion.empleado} - ${asignacion.imei}`;
-        asignacionPrimeraRevisionSelect.appendChild(option);
-    }
-}
-
-function registrarPrimeraRevision(asignacionSelect, comentario, abonoRealizado) {
-    const empleadoImei = asignacionSelect.value.split(' - ');
-    const empleado = empleadoImei[0];
-    const imei = empleadoImei[1];
-
-    const asignacion = asignaciones.find(asig => asig.empleado === empleado && asig.imei === imei);
-    if (!asignacion) {
-        alert('Seleccione una asignación válida.');
-        return;
-    }
-
-    const primeraRevision = { empleado, imei, comentario, abonoRealizado };
-    historialPrimeraRevision.push(primeraRevision);
-    actualizarTablaHistorialPrimeraRevision();
-    alert('Primera revisión registrada con éxito.');
-}
-
-function actualizarTablaHistorialPrimeraRevision() {
-    const historialPrimeraRevisionTable = document.getElementById('historialPrimeraRevisionTable').getElementsByTagName('tbody')[0];
-    historialPrimeraRevisionTable.innerHTML = '';
-
-    for (const revision of historialPrimeraRevision) {
-        const row = historialPrimeraRevisionTable.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-        const cell4 = row.insertCell(3);
-        const cell5 = row.insertCell(4);
-
-        cell1.textContent = revision.empleado;
-        cell2.textContent = revision.imei;
-        cell3.textContent = revision.comentario;
-        cell4.textContent = revision.abonoRealizado ? 'Sí' : 'No';
-        cell5.innerHTML = '<button onclick="terminarReparacion()">Terminar Reparación</button>';
-    }
-}
-
-function terminarReparacion(numSerie, imei) {
-    const asignacionTerminada = asignaciones.find(asignacion => asignacion.numSerie === numSerie && asignacion.imei === imei);
-
-    if (asignacionTerminada) {
-        const nombreEmpleado = asignacionTerminada.empleado;
-
-        const trabajoExistente = trabajosTerminados.find(trabajo => trabajo.numSerie === numSerie && trabajo.imei === imei);
-
-        if (!trabajoExistente) {
-            const trabajoTerminado = { empleado: nombreEmpleado, numSerie, imei, estado: 'Arreglado' };
-            trabajosTerminados.push(trabajoTerminado);
-            actualizarTablaTrabajosTerminados();
-            alert('Reparación terminada y registrada con éxito.');
-        } else {
-            alert('Este trabajo ya ha sido registrado como terminado anteriormente.');
+        if (this.autorizacion) {
+            mensajes.textContent = "El usuario ya ha dado autorización.";
+            return;
         }
-    } else {
-        alert('No se encontró la asignación correspondiente para terminar la reparación.');
+
+        if (abono >= 0.5 * this.reparacionCosto()) {
+            this.abono = abono;
+            this.autorizacion = true;
+            mensajes.textContent = "Autorización recibida. El servicio puede continuar.";
+        } else {
+            mensajes.textContent = "El abono no cumple con el 50% requerido.";
+        }
+    }
+
+    reparacionCosto() {
+        // Lógica para calcular el costo de la reparación basado en diagnósticos, repuestos, etc.
+        // Retorna el costo total estimado de la reparación.
+        return 100; // Ejemplo: costo fijo de $100
+    }
+
+    guardarEnWebStorage() {
+        // Convertir el objeto a una cadena JSON y almacenarlo en el Web Storage (sessionStorage)
+        sessionStorage.setItem(this.numeroSerie, JSON.stringify(this));
+    }
+
+    static cargarDesdeWebStorage(numeroSerie) {
+        // Obtener el objeto almacenado en el Web Storage y convertirlo de nuevo a un objeto
+        const storedTelefono = sessionStorage.getItem(numeroSerie);
+        if (storedTelefono) {
+            const telefonoObj = JSON.parse(storedTelefono);
+            const telefono = new Telefono(
+                telefonoObj.numeroSerie,
+                telefonoObj.imei,
+                telefonoObj.marca,
+                telefonoObj.reportado
+            );
+            // Restaurar el resto de las propiedades
+            telefono.diagnostico = telefonoObj.diagnostico;
+            telefono.autorizacion = telefonoObj.autorizacion;
+            telefono.abono = telefonoObj.abono;
+            telefono.reparacion = telefonoObj.reparacion;
+            return telefono;
+        }
+        return null;
     }
 }
 
-function actualizarTablaTelefonos() {
-    const telefonosTable = document.getElementById('telefonosTable').getElementsByTagName('tbody')[0];
-    telefonosTable.innerHTML = '';
+function agregarTelefono() {
+    const numeroSerie = document.getElementById("numeroSerie").value;
+    const telefonoExistente = Telefono.cargarDesdeWebStorage(numeroSerie);
 
-    for (const telefono of telefonos) {
-        const row = telefonosTable.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-
-        cell1.textContent = telefono.numSerie;
-        cell2.textContent = telefono.imei;
+    if (telefonoExistente) {
+        alert("¡Atención! Este teléfono ya está registrado.");
+        return;
     }
-}
 
-function actualizarTablaEmpleados() {
-    const empleadosTable = document.getElementById('empleadosTable').getElementsByTagName('tbody')[0];
-    empleadosTable.innerHTML = '';
+    const imei = document.getElementById("imei").value;
+    const marca = document.getElementById("marca").value;
+    const reportado = document.getElementById("reportado").value === "si";
 
-    for (const empleado of empleados) {
-        const row = empleadosTable.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-        const cell4 = row.insertCell(3);
-        const cell5 = row.insertCell(4);
+    const telefono = new Telefono(numeroSerie, imei, marca, reportado);
 
-        cell1.textContent = empleado.nombre;
-        cell2.textContent = empleado.apellido;
-        cell3.textContent = empleado.direccion;
-        cell4.textContent = empleado.contacto;
-        cell5.textContent = empleado.correo;
+    if (telefono.reportado) {
+        alert("¡Atención! Este teléfono está reportado. Se llamará a la policía.");
+        return;
     }
-}
 
-function actualizarTablaAsignaciones() {
-    const asignacionesTable = document.getElementById('asignacionesTable').getElementsByTagName('tbody')[0];
-    asignacionesTable.innerHTML = '';
+    // Resto del código sin cambios
 
-    for (const asignacion of asignaciones) {
-        const row = asignacionesTable.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-
-        cell1.textContent = asignacion.empleado;
-        cell2.textContent = asignacion.numSerie;
-        cell3.textContent = asignacion.imei;
-    }
-}
-
-function limpiarCamposTelefonoForm() {
-    document.getElementById('numSerie').value = '';
-    document.getElementById('imei').value = '';
-}
-
-function limpiarCamposEmpleadoForm() {
-    document.getElementById('nombre').value = '';
-    document.getElementById('apellido').value = '';
-    document.getElementById('direccion').value = '';
-    document.getElementById('contacto').value = '';
-    document.getElementById('correo').value = '';
-}
-
-function limpiarCamposAsignarTelefonoForm() {
-    document.getElementById('empleadoSelect').value = '';
-    document.getElementById('telefonoSelect').value = '';
+    // Guardar el teléfono en el Web Storage (sessionStorage)
+    telefono.guardarEnWebStorage();
 }
