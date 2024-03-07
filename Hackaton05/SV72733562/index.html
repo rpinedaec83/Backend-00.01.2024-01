@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de clientes, técnicos y teléfonos</title>
+</head>
+<body>
+    <h1>Gestión de clientes, técnicos y teléfonos</h1>
+
+    <h2>Registrar nuevo cliente:</h2>
+    <form onsubmit="agregarCliente(event)">
+        <label for="firstName">Nombre:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+        <button type="submit">Registrar cliente</button>
+    </form>
+
+    <h2>Registrar nuevo técnico:</h2>
+    <form onsubmit="agregarTecnico(event)">
+        <label for="nombreTecnico">Nombre:</label>
+        <input type="text" id="nombreTecnico" name="nombreTecnico" required>
+        <label for="skillsTecnico">Skills:</label>
+        <input type="text" id="skillsTecnico" name="skillsTecnico" required>
+        <button type="submit">Registrar técnico</button>
+    </form>
+
+    <h2>Registrar nuevo teléfono:</h2>
+    <form onsubmit="agregarTelefono(event)">
+        <label for="numeroSerieTelefono">Número de serie:</label>
+        <input type="text" id="numeroSerieTelefono" name="numeroSerieTelefono" required>
+        <label for="imeiTelefono">IMEI:</label>
+        <input type="text" id="imeiTelefono" name="imeiTelefono" required>
+        <label for="marcaTelefono">Marca:</label>
+        <input type="text" id="marcaTelefono" name="marcaTelefono" required>
+        <label for="problemaTelefono">Problema:</label>
+        <input type="text" id="problemaTelefono" name="problemaTelefono" required>
+        <button type="submit">Registrar teléfono</button>
+    </form>
+
+    <h2>Acciones adicionales para teléfonos:</h2>
+    <div id="accionesTelefonos">
+        <button onclick="reportarTelefono()">Reportar Teléfono</button>
+        <button onclick="autorizarReparo()">Autorizar Reparo</button>
+        <button onclick="abonarReparo()">Abonar Reparo</button>
+        <button onclick="repararTelefono()">Reparar Teléfono</button>
+    </div>
+
+    <div id="resultados"></div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

@@ -71,6 +71,8 @@ $tableEncuestador.bootstrapTable()
 
 var $tableEncuestado = $('#tableEncuestado');
 $tableEncuestado.bootstrapTable()
+
+
 function crearEncuestador(){
     Swal.fire({
         title: "Agregar Encuestador",

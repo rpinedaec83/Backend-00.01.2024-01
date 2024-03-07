@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparaciones de Celulares</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Reparaciones de Celulares</h1>
+    <div>
+      <label for="numeroSerie">Número de Serie:</label>
+      <input type="text" id="numeroSerie">
+      <br>
+      <label for="IMEI">IMEI:</label>
+      <input type="text" id="IMEI">
+      <button onclick="verificarIMEI()">Revisar IMEI</button>
+      <br>
+      <div id="mensajeIMEI"></div>
+      <button onclick="realizarPrimeraRevision()" disabled>Primera Revisión</button>
+      <button onclick="mostrarRepuestos()" disabled>Agregar Repuestos</button>
+      <button onclick="seleccionarTecnico()" disabled>Seleccionar Técnico</button>
+      <button onclick="obtenerAutorizacion()" disabled>Obtener Autorización</button>
+      <button onclick="realizarAbono()" disabled>Realizar Abono</button>
+      <button onclick="completarReparacion()" disabled>Completar Reparación</button>
+    </div>
+    <div id="informacionReparacion"></div>
+  </div>
+
+  <script>
+    // Clase para representar un celular
+    class Celular {
+      constructor(numeroSerie, IMEI) {
+        this.numeroSerie = numeroSerie;
+        this.IMEI = IMEI;
+        this.diagnostico = "";
+        this.autorizacion = false;
+        this.abono = false;
+        this.reparado = false;
+        this.tecnico = "";
+        this.repuestos = [];
+      }
+    }
+
+    // Definir técnicos y sus especializaciones
+    const tecnicos = [
+      { nombre: "Juan", especializacion: ["Android", "Cambio de pantalla"] },
+      { nombre: "María", especializacion: ["Apple", "Cambio de batería"] },
+      { nombre: "Pedro", especializacion: ["Android", "Cambio de batería"] },
+      { nombre: "Laura", especializacion: ["Apple", "Cambio de pantalla"] },
+      { nombre: "Carlos", especializacion: ["Samsung", "Reparación de placa"] }
+    ];
+
+    let celular;
+
+    // Función para verificar el IMEI
+    function verificarIMEI() {
+      const imei = document.getElementById('IMEI').value;
+
+      // Verificar si el IMEI está reportado
+      // (Simulación: aquí se compararía con una base de datos real)
+      const estaReportado = false; // Simulación
+
+      if (estaReportado) {
+        document.getElementById('mensajeIMEI').innerText = "IMEI reportado. No se puede continuar.";
+      } else {
+        document.getElementById('mensajeIMEI').innerText = "IMEI limpio. Puede continuar.";
+        celular = new Celular(document.getElementById('numeroSerie').value, imei);
+        document.querySelector('button[onclick="realizarPrimeraRevision()"]').disabled = false;
+
+        // Almacenar en LocalStorage
+        localStorage.setItem('celular', JSON.stringify(celular));
+      }
+    }
+
+    // Función para realizar la primera revisión
+    function realizarPrimeraRevision() {
+      const diagnostico = prompt("Ingrese el diagnóstico:");
+
+      if (diagnostico) {
+        celular.diagnostico = diagnostico;
+        mostrarInformacionReparacion();
+        document.querySelector('button[onclick="mostrarRepuestos()"]').disabled = false;
+      }
+    }
+
+    // Función para mostrar los repuestos disponibles
+    function mostrarRepuestos() {
+      const repuestosInput = `
+        <label for="repuesto">Repuesto:</label>
+        <input type="text" id="repuesto" placeholder="Ingrese un repuesto">
+        <button onclick="agregarRepuesto()">Agregar Repuesto</button>
+        <br>
+      `;
+
+      document.getElementById('informacionReparacion').innerHTML += repuestosInput;
+      document.querySelector('button[onclick="seleccionarTecnico()"]').disabled = false;
+    }
+
+    // Función para agregar un repuesto a la lista del celular
+    function agregarRepuesto() {
+      const repuestoInput = document.getElementById('repuesto');
+      const repuesto = repuestoInput.value.trim();
+
+      if (repuesto) {
+        celular.repuestos.push(repuesto);
+        repuestoInput.value = ''; // Limpiar el input
+        mostrarInformacionReparacion();
+      }
+    }
+
+    // Función para seleccionar un técnico
+    function seleccionarTecnico() {
+      let opciones = '<option value="">Seleccione un técnico</option>';
+
+      tecnicos.forEach(tecnico => {
+        opciones += `<option value="${tecnico.nombre}">${tecnico.nombre} - ${tecnico.especializacion.join(", ")}</option>`;
+      });
+
+      const seleccionTecnico = `
+        <label for="tecnico">Técnico:</label>
+        <select id="tecnico">${opciones}</select>
+      `;
+
+      document.getElementById('informacionReparacion').innerHTML += seleccionTecnico;
+      document.querySelector('button[onclick="obtenerAutorizacion()"]').disabled = false;
+    }
+
+    // Función para obtener la autorización del usuario
+    function obtenerAutorizacion() {
+      // Aquí se solicitaría la autorización al usuario, simulado con un prompt
+      const autorizacion = prompt("Ingrese 'OK' para autorizar la reparación:");
+
+      if (autorizacion && autorizacion.toUpperCase() === 'OK') {
+        celular.autorizacion = true;
+        document.querySelector('button[onclick="realizarAbono()"]').disabled = false;
+
+        // Almacenar en LocalStorage
+        localStorage.setItem('celular', JSON.stringify(celular));
+      }
+    }
+
+    // Función para realizar el abono
+    function realizarAbono() {
+      // Aquí se realizaría el abono del 50%, simulado con un prompt
+      const abono = prompt("Ingrese el abono del 50%:");
+
+      if (abono && parseFloat(abono) > 0) {
+        celular.abono = true;
+        document.querySelector('button[onclick="completarReparacion()"]').disabled = false;
+
+        // Almacenar en LocalStorage
+        localStorage.setItem('celular', JSON.stringify(celular));
+      }
+    }
+
+    // Función para completar la reparación
+    function completarReparacion() {
+      celular.reparado = true;
+      mostrarInformacionReparacion();
+
+      // Almacenar en LocalStorage
+      localStorage.setItem('celular', JSON.stringify(celular));
+    }
+
+    // Función para mostrar la información de la reparación
+    function mostrarInformacionReparacion() {
+      const informacionReparacion = `
+        <h2>Información de Reparación</h2>
+        <p>Número de Serie: ${celular.numeroSerie}</p>
+        <p>IMEI: ${celular.IMEI}</p>
+        <p>Diagnóstico: ${celular.diagnostico}</p>
+        <p>Autorización: ${celular.autorizacion ? 'Sí' : 'No'}</p>
+        <p>Abono: ${celular.abono ? 'Realizado' : 'Pendiente'}</p>
+        <p>Repuestos: ${celular.repuestos.join(', ')}</p>
+        <p>Reparado: ${celular.reparado ? 'Sí' : 'No'}</p>
+      `;
+
+      document.getElementById('informacionReparacion').innerHTML = informacionReparacion;
+    }
+
+    // Recuperar información del LocalStorage al cargar la página
+    window.onload = function() {
+      const celularGuardado = localStorage.getItem('celular');
+      if (celularGuardado) {
+        celular = JSON.parse(celularGuardado);
+        mostrarInformacionReparacion();
+      }
+    };
+  </script>
+</body>
+</html>

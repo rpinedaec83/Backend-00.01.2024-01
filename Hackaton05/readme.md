@@ -27,7 +27,7 @@ Tomar en cuenta los siguientes casos de uso:
 - Un telefono primero debe pasar por una primera revision y se debe guardar el primer diagnostico
 - Se debe tener la autorizacion escrita del usuario y el abono del 50% de la reparacion para que acceda al servicio
 - Los tecnicos pueden tener uno o varios skills que se adecuen a la marca de telefono que se necesita acceder al servicio
-- Los repuestos se agegaran a la reparacion de telefono
+- Los repuestos se agregaran a la reparacion de telefono
 - Se debe mostrar el estado del equipo en sus diferentes estaciones de trabajo 
 
 

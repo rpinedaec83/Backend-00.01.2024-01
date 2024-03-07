@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparaciones de Celulares</title>
+</head>
+<body>
+  <h1>Reparaciones de Celulares</h1>
+  <div>
+    <label for="numeroSerie">Número de Serie:</label>
+    <input type="text" id="numeroSerie">
+    <br>
+    <label for="IMEI">IMEI:</label>
+    <input type="text" id="IMEI">
+    <button onclick="verificarIMEI()">Verificar IMEI</button>
+    <br>
+    <label for="marca">Marca:</label>
+    <select id="marca" onchange="actualizarModelos()">
+      <option value="Samsung">Samsung</option>
+      <option value="Apple">Apple</option>
+      <option value="Huawei">Huawei</option>
+      <!-- Otras marcas -->
+    </select>
+    <button onclick="agregarMarcaModelo()">Agregar Marca y Modelo</button>
+    <br>
+    <label for="modelo">Modelo:</label>
+    <select id="modelo"></select>
+    <br>
+    <label for="tecnico">Técnico:</label>
+    <select id="tecnico">
+      <option value="">Seleccione un técnico</option>
+    </select>
+    <br>
+    <button onclick="toggleRepuestos()">Seleccionar Repuestos</button>
+    <select id="repuestos" multiple style="display: none;">
+      <option value="Pantalla">Pantalla</option>
+      <option value="Batería">Batería</option>
+      <option value="Cámara">Cámara</option>
+      <option value="Altavoz">Altavoz</option>
+      <option value="Micrófono">Micrófono</option>
+      <!-- Otras opciones -->
+    </select>
+    <button onclick="agregarRepuesto()">Agregar Repuesto</button>
+    <br>
+    <button onclick="realizarPrimeraRevision()">Realizar Primera Revisión</button>
+    <button onclick="autorizarReparacion()">Autorizar Reparación</button>
+    <button onclick="realizarAbono()">Realizar Abono</button>
+    <button onclick="mostrarDatosYFecha()">Mostrar Datos y Fecha Estimada de Entrega</button>
+    <button onclick="completarReparacion()">Completar Reparación</button>
+  </div>
+  <div id="estadoTelefono"></div>
+
+  <script>
+    class Celular {
+      constructor() {
+        this.numeroSerie = "";
+        this.IMEI = "";
+        this.marca = "";
+        this.modelo = "";
+        this.diagnostico = null;
+        this.autorizacion = false;
+        this.abono = false;
+        this.reparado = false;
+        this.tecnico = "";
+        this.repuestos = [];
+      }
+
+      primeraRevision(diagnostico) {
+        this.diagnostico = diagnostico;
+      }
+
+      obtenerEstado() {
+        if (!this.autorizacion) {
+          return "Esperando autorización del usuario";
+        } else if (!this.abono) {
+          return "Esperando abono del 50% de la reparación";
+        } else if (!this.reparado) {
+          return "En proceso de reparación";
+        } else {
+          return "Reparación completada";
+        }
+      }
+    }
+
+    const celular = new Celular();
+
+    // Base de datos ficticia de IMEI reportados
+    const imeiReportados = generarIMEIsFicticios(20);
+
+    // Lista de técnicos con sus habilidades
+    const tecnicos = [
+      { nombre: "Juan", habilidades: ["Android", "Reparación de pantallas"] },
+      { nombre: "María", habilidades: ["Apple", "Reparación de placas"] },
+      { nombre: "Pedro", habilidades: ["Android", "Apple"] },
+      { nombre: "Laura", habilidades: ["Reparación de pantallas", "Reparación de placas"] },
+      { nombre: "Carlos", habilidades: ["Samsung", "Huawei"] },
+      { nombre: "Ana", habilidades: ["Apple", "Reparación de pantallas", "Reparación de placas"] },
+      { nombre: "Pablo", habilidades: ["Android", "Samsung", "Reparación de placas"] },
+      { nombre: "Luisa", habilidades: ["Huawei", "Reparación de pantallas"] }
+    ];
+
+    // Lista de repuestos
+    const repuestos = [
+      "Pantalla", "Batería", "Cámara", "Altavoz", "Micrófono", 
+      "Conector de carga", "Botón de encendido", "Botón de volumen", 
+      "Antena", "Carcasa", "Circuito integrado", "Sensor de proximidad", 
+      "Vibrador", "Tarjeta SIM", "Tarjeta SD", "Cable flex"
+    ];
+
+    // Función para generar IMEIs ficticios
+    function generarIMEIsFicticios(cantidad) {
+      const imeis = [];
+      for (let i = 0; i < cantidad; i++) {
+        const imei = generarIMEIAleatorio();
+        imeis.push(imei);
+      }
+      return imeis;
+    }
+
+    // Función para generar IMEI aleatorio
+    function generarIMEIAleatorio() {
+      let imei = "";
+      for (let i = 0; i < 15; i++) {
+        imei += Math.floor(Math.random() * 10);
+      }
+      return imei;
+    }
+
+    // Función para actualizar la lista de técnicos
+    function actualizarListaTecnicos() {
+      const tecnicoSelect = document.getElementById('tecnico');
+      tecnicoSelect.innerHTML = '<option value="">Seleccione un técnico</option>';
+
+      tecnicos.forEach(tecnico => {
+        const option = document.createElement('option');
+        option.value = tecnico.nombre;
+        option.textContent = `${tecnico.nombre} - ${tecnico.habilidades.join(", ")}`;
+        tecnicoSelect.appendChild(option);
+      });
+    }
+
+    function realizarPrimeraRevision() {
+      const diagnostico = prompt("Ingrese el diagnóstico:");
+      celular.primeraRevision(diagnostico);
+      mostrarEstadoTelefono();
+    }
+
+    function autorizarReparacion() {
+      celular.autorizacion = true;
+      celular.tecnico = document.getElementById('tecnico').value;
+      mostrarEstadoTelefono();
+    }
+
+    function realizarAbono() {
+      celular.abono = true;
+      mostrarEstadoTelefono();
+    }
+
+    function completarReparacion() {
+      celular.reparado = true;
+      reiniciarCampos();
+      mostrarEstadoTelefono();
+    }
+
+    function reiniciarCampos() {
+      celular.numeroSerie = "";
+      celular.IMEI = "";
+      celular.marca = "";
+      celular.modelo = "";
+      celular.diagnostico = null;
+      celular.autorizacion = false;
+      celular.abono = false;
+      celular.reparado = false;
+      celular.tecnico = "";
+      celular.repuestos = [];
+
+      document.getElementById('numeroSerie').value = "";
+      document.getElementById('IMEI').value = "";
+      document.getElementById('marca').value = "";
+      document.getElementById('modelo').value = "";
+      document.getElementById('tecnico').value = "";
+      document.getElementById('repuestos').selectedIndex = -1;
+    }
+
+    const estadoTelefonoElement = document.getElementById('estadoTelefono');
+
+    function mostrarEstadoTelefono() {
+      estadoTelefonoElement.textContent = `Estado del teléfono: ${celular.obtenerEstado()} - Técnico asignado: ${celular.tecnico} - Diagnóstico: ${celular.diagnostico} - Repuestos: ${celular.repuestos.join(", ")}`;
+    }
+
+    function agregarMarcaModelo() {
+      const marca = prompt("Ingrese la marca:");
+      const modelo = prompt("Ingrese el modelo:");
+      const marcaSelect = document.getElementById('marca');
+      const modeloSelect = document.getElementById('modelo');
+
+      // Agregar la nueva marca al select de marcas
+      const nuevaMarcaOption = document.createElement('option');
+      nuevaMarcaOption.value = marca;
+      nuevaMarcaOption.textContent = marca;
+      marcaSelect.appendChild(nuevaMarcaOption);
+
+      // Agregar el nuevo modelo al select de modelos
+      const nuevoModeloOption = document.createElement('option');
+      nuevoModeloOption.value = modelo;
+      nuevoModeloOption.textContent = modelo;
+      modeloSelect.appendChild(nuevoModeloOption);
+
+      // Actualizar la lista de modelos
+      actualizarModelos();
+    }
+
+    function actualizarModelos() {
+      const marcaSelect = document.getElementById('marca');
+      const modeloSelect = document.getElementById('modelo');
+      const marcaSeleccionada = marcaSelect.value;
+
+      // Limpiar los modelos existentes
+      while (modeloSelect.firstChild) {
+        modeloSelect.removeChild(modeloSelect.firstChild);
+      }
+
+      // Agregar modelos según la marca seleccionada
+      switch (marcaSeleccionada) {
+        case 'Samsung':
+          agregarModelo('Galaxy S10');
+          agregarModelo('Galaxy S20');
+          break;
+        case 'Apple':
+          agregarModelo('iPhone 11');
+          agregarModelo('iPhone 12');
+          break;
+        case 'Huawei':
+          agregarModelo('P40');
+          agregarModelo('Mate 40');
+          break;
+        // Agregar más casos según sea necesario
+      }
+    }
+
+    function agregarModelo(modelo) {
+      const modeloSelect = document.getElementById('modelo');
+      const nuevoModeloOption = document.createElement('option');
+      nuevoModeloOption.value = modelo;
+      nuevoModeloOption.textContent = modelo;
+      modeloSelect.appendChild(nuevoModeloOption);
+    }
+
+    function verificarIMEI() {
+      const imei = document.getElementById('IMEI').value;
+
+      // Verificar si el IMEI está en la lista de IMEI reportados
+      if (imeiReportados.includes(imei)) {
+        alert("Este IMEI ha sido reportado como robado. No se puede continuar.");
+      } else {
+        alert("Este IMEI está limpio. Puede continuar con la reparación.");
+        // Aquí podrías continuar con la siguiente etapa del proceso
+      }
+    }
+
+    function toggleRepuestos() {
+      const repuestosSelect = document.getElementById('repuestos');
+      repuestosSelect.style.display = repuestosSelect.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function agregarRepuesto() {
+      const repuestosSelect = document.getElementById('repuestos');
+      const seleccionados = Array.from(repuestosSelect.selectedOptions).map(option => option.value);
+      celular.repuestos = celular.repuestos.concat(seleccionados);
+      mostrarEstadoTelefono();
+    }
+
+    function mostrarDatosYFecha() {
+      const cuadroDialogo = document.createElement('div');
+      cuadroDialogo.innerHTML = `
+        <h2>Datos de la Reparación</h2>
+        <p><strong>Número de Serie:</strong> ${document.getElementById('numeroSerie').value}</p>
+        <p><strong>IMEI:</strong> ${document.getElementById('IMEI').value}</p>
+        <p><strong>Marca:</strong> ${document.getElementById('marca').value}</p>
+        <p><strong>Modelo:</strong> ${document.getElementById('modelo').value}</p>
+        <p><strong>Diagnóstico:</strong> ${celular.diagnostico}</p>
+        <p><strong>Técnico:</strong> ${celular.tecnico}</p>
+        <p><strong>Repuestos:</strong> ${celular.repuestos.join(", ")}</p>
+        <p><strong>Fecha estimada de entrega:</strong> ${obtenerFechaEstimada()}</p>
+      `;
+      document.body.appendChild(cuadroDialogo);
+    }
+
+    // Función para obtener la fecha estimada de entrega (7 días después de la autorización)
+    function obtenerFechaEstimada() {
+      const fechaAutorizacion = new Date();
+      fechaAutorizacion.setDate(fechaAutorizacion.getDate() + 7);
+      return fechaAutorizacion.toLocaleDateString();
+    }
+
+    // Actualizar la lista de técnicos al cargar la página
+    window.onload = function() {
+      actualizarListaTecnicos();
+    };
+  </script>
+</body>
+</html>
