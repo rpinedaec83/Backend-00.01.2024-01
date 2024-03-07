@@ -126,6 +126,7 @@ let admin = new Administrador("Roberto", "Pineda", "CE 001575291", "Principal")
 
 // eventos de los botones
 document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
+document.getElementById("testDatabase").addEventListener("click", LoadDatabase);
 document.getElementById("borrarData").addEventListener("click", borrarData);
 
 

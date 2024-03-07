@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Hackaton06/a15100022/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="formularioReparacion">
+        <h2>Servicio de Reparación</h2> 
+        <label for="nombreCliente">Nombre del Cliente:</label>
+        <input type="text" id="nombreCliente" name="nombreCliente" required>
+
+        <label for="Modelo">Modelo:</label>
+        <input type="text" id="Modelo" name="modelo" required>
+
+        <label for="numeroSerieEquipo">Número de Serie del Equipo:</label>
+        <input type="text" id="numeroSerieEquipo" name="numeroSerieEquipo" required>
+        <button type="button" onclick="generarNumeroSerie()">Generar </button><br>
+        <br>
+        <label for="imei">IMEI:</label>
+        <input type="text" id="imei" name="imei" required>
+        <button type="button" onclick="generarImei()">Generar </button><br><br>
+
+        <button type="button" onclick="validar()">Validar y Continuar</button>
+        <button type="button" class="cancel" onclick="cancelar()">Cancelar</button>
+        
+        
+
+    </form>
+
+    <br><br>
+    <table id="registroTable" border="1">
+        <tr>
+            <th>Nombre del cliente</th>
+            <th>Modelo</th>
+            <th>Nº de serie </th>
+            <th>IMEI</th>
+            <th>Fecha y Hora</th>
+            <th>Autorizacion</th>
+            <th>Abono el 50%</th>
+            <th onclick="editarCampo('Diagnostico')">Diagnostico</th>
+            <th onclick="editarCampo('Estado')">Estado</th>
+            <th >Asignar tecnico</th>
+
+
+        </tr>
+        <!-- Aquí se mostrarán los datos registrados -->
+    </table>
+
+   
+    <script src="/Hackaton06/a15100022/js/script.js"></script>
+
+
+
+</body>
+
+
+
+
+</html>
