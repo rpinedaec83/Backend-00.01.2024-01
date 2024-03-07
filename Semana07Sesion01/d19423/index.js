@@ -40,6 +40,33 @@ var formidable = require('formidable');
 const absolute = path.join(__dirname, 'img')
 
 http.createServer(function (req, res) {
+<<<<<<< HEAD
   //res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('<h1>Hola desde NodeJs!</h1>');
 }).listen(8080);
+=======
+
+  if (req.url == '/fileupload') {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+      var oldpath = files.filetoupload.filepath;
+      
+      var newpath = absolute +'/'+ files.filetoupload.originalFilename;
+        console.log(oldpath);
+      fs.rename(oldpath, newpath, function (err) {
+        if (err) throw err;
+        res.write('File uploaded and moved!');
+        res.end();
+      });
+ });
+  } else {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
+    res.write('<input type="file" name="filetoupload"><br>');
+    res.write('<input type="submit">');
+    res.write('</form>');
+    return res.end();
+  }
+}).listen(8080);
+
+>>>>>>> fuentes/main

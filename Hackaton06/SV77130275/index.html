@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sistema de reparacion de dispositivos basico</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <h1>REPARACION DE TELEFONOS</h1>
+    <form id="formulario">
+        <label for="numeroSerie">Numero de Serie:</label>
+        <input type="text" id="numeroSerie" required><br>
+        <br>
+        <label for="imei">IMEI:</label>
+        <input type="text" id="imei" maxlength="15"><br>
+        <br>
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" required><br>
+        <br>
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" required><br>
+        <br>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" required><br>
+        <br>
+        <label for="diagnostico">Diagnostico:</label>
+        <input type="text" id="diagnostico" required><br>
+        <br>
+        <label for="reparacion">Reparacion:</label>
+        <input type="text" id="reparacion" required><br>
+        <br>
+
+        <button type="button" onclick="llenarDatosTelefono()">Agregar Telefono</button><br>
+        <br>
+    </form>
+
+    <table id="tablaTelefono" border ="1">
+        <tr>
+            <th>Numero de serie</th>
+            <th>IMEI</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Estado</th>
+            <th>Diagnostico</th>
+            <th>Reparacion</th>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
