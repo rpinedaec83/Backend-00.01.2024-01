@@ -1,9 +1,9 @@
-//20. Hacer un algoritmo en Pseint que que lea 4 números enteros positivos y verifique y realice las siguientes operaciones:
-//¿Cuántos números son Pares?
-//¿Cuál es el mayor de todos?
+//20. Hacer un algoritmo en Pseint que que lea 4 nï¿½meros enteros positivos y verifique y realice las siguientes operaciones:
+//ï¿½Cuï¿½ntos nï¿½meros son Pares?
+//ï¿½Cuï¿½l es el mayor de todos?
 //Si el tercero es par, calcular el cuadrado del segundo.
-//Si el primero es menor que el cuarto, calcular la media de los 4 números.
-//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números.
+//Si el primero es menor que el cuarto, calcular la media de los 4 nï¿½meros.
+//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condiciï¿½n, calcular la suma de los 4 nï¿½meros.
 
 SubProceso cant_pares <- ObtenerPares (arreglo, cant)
 	cant_pares <- 0
@@ -60,27 +60,27 @@ Proceso ejercicio12
 	Definir cant_pares Como Entero
 	Definir variable Como Real
 	
-	//Indica la cantidad de número a leer
+	//Indica la cantidad de nï¿½mero a leer
 	cant <- 4
 	pos_mayor <- 1
 	
 	Dimension lista[cant]
 	
-	Escribir "Ingrese los " cant " números:"
+	Escribir "Ingrese los " cant " nï¿½meros:"
 	Para i <- 1 Hasta cant Hacer
 		Leer variable
 		lista[i] <- variable
 	FinPara
 	
-	//¿Cuántos números son Pares?
-	Escribir "¿Cuántos números son Pares?"
-	Escribir "La cantidad de números pares es: " ObtenerPares(lista,cant)
+	//ï¿½Cuï¿½ntos nï¿½meros son Pares?
+	Escribir "ï¿½Cuï¿½ntos nï¿½meros son Pares?"
+	Escribir "La cantidad de nï¿½meros pares es: " ObtenerPares(lista,cant)
 	Escribir " "
 	
-	//¿Cuál es el mayor de todos?
-	Escribir "¿Cuál es el mayor de todos?"
+	//ï¿½Cuï¿½l es el mayor de todos?
+	Escribir "ï¿½Cuï¿½l es el mayor de todos?"
 	pos_mayor <- ObtenerMayor(lista, cant)
-	Escribir "El número mayor es " lista[pos_mayor]
+	Escribir "El nï¿½mero mayor es " lista[pos_mayor]
 	Escribir " "
 	
 	//Si el tercero es par, calcular el cuadrado del segundo.
@@ -88,42 +88,42 @@ Proceso ejercicio12
 	tercero_par <- TerceroPar(lista,3)
 	Segun tercero_par Hacer
 		-1:
-			Escribir "El tercer número ingresado " lista[3] " es par"
-			Escribir "El segundo número ingresado " lista[2] " es negativo, no es posible obtener su raíz cuadrada"
+			Escribir "El tercer nï¿½mero ingresado " lista[3] " es par"
+			Escribir "El segundo nï¿½mero ingresado " lista[2] " es negativo, no es posible obtener su raï¿½z cuadrada"
 		-2: 
-			Escribir "El tercer número ingresado " lista[3] " NO es par"
+			Escribir "El tercer nï¿½mero ingresado " lista[3] " NO es par"
 		De Otro Modo:
-			Escribir "El tercer número ingresado " lista[3] " es par"
-			Escribir "El cuadrado del segundo número " lista[2] " es :" tercero_par
+			Escribir "El tercer nï¿½mero ingresado " lista[3] " es par"
+			Escribir "El cuadrado del segundo nï¿½mero " lista[2] " es :" tercero_par
 	FinSegun
 	Escribir " "
 	
-	//Si el primero es menor que el cuarto, calcular la media de los 4 números.
-	Escribir "Si el primero es menor que el cuarto, calcular la media de los 4 números"
+	//Si el primero es menor que el cuarto, calcular la media de los 4 nï¿½meros.
+	Escribir "Si el primero es menor que el cuarto, calcular la media de los 4 nï¿½meros"
 	Si lista[1] < lista[4] Entonces
-		Escribir "El primer número " lista[1] " es menor que el cuarto número " lista[4]
+		Escribir "El primer nï¿½mero " lista[1] " es menor que el cuarto nï¿½mero " lista[4]
 		promedio <- PrimeroMenorCuarto (lista, cant, 1, 4)
-		Escribir "El promedio de los " cant " número es: " promedio 
+		Escribir "El promedio de los " cant " nï¿½mero es: " promedio 
 	SiNo
-		Escribir "El primer número" lista[1] " no es menor que el cuarto número " lista[4]
+		Escribir "El primer nï¿½mero" lista[1] " no es menor que el cuarto nï¿½mero " lista[4]
 	FinSi
 	Escribir " "
 	
-	//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números.
-	Escribir "Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números"
+	//Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condiciï¿½n, calcular la suma de los 4 nï¿½meros.
+	Escribir "Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condiciï¿½n, calcular la suma de los 4 nï¿½meros"
 	suma <- 0
 	Si lista[2] > lista[3] Entonces
-		Escribir "El segundo número " lista[2] " es mayor que el tercer número " lista[3]
+		Escribir "El segundo nï¿½mero " lista[2] " es mayor que el tercer nï¿½mero " lista[3]
 		Si lista[3] >= 50 & lista[3] <= 700
 			suma <- SumarLista(lista,4)
-			Escribir "El tercer número " lista[3] " se encuentra entre 50 y 700"
+			Escribir "El tercer nï¿½mero " lista[3] " se encuentra entre 50 y 700"
 			suma <- SumarLista(lista,cant)
-			Escribir "La suma de los " cant " números es " suma
+			Escribir "La suma de los " cant " nï¿½meros es " suma
 		SiNo
-			Escribir "El tercer número " lista[3] " NO se encuentra entre 50 y 700"
+			Escribir "El tercer nï¿½mero " lista[3] " NO se encuentra entre 50 y 700"
 		FinSi
 	SiNo
-		Escribir "El segundo número " lista[2] " no es mayor que el tercer número " lista[3]
+		Escribir "El segundo nï¿½mero " lista[2] " no es mayor que el tercer nï¿½mero " lista[3]
 	FinSi
 	
 	

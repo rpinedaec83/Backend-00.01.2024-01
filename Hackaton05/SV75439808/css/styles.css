@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  top: 0;
+}
+
+header {
+  background-color: aqua;
+  text-align: center;
+  padding: 8px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  min-width: 10vh;
+}
+
+p {
+  text-align: justify;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.center {
+  text-align: center;
+}
+
+title {
+  display: block;
+  font-weight: bold;
+  font-family: "Victor Mono";
+  font-size: 30px;
+  color: gold;
+  text-align: center;
+}
+
+.btnAdd,
+.btnVerify {
+  border: none;
+  color: white;
+  padding: 6px 20px;
+  cursor: pointer;
+  background-color: #46a049;
+  border-radius: 5px;
+}
+
+.navbar {
+  text-align: center;
+  min-width: 10vh;
+
+  ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+}
+
+nav.navbar {
+  padding: 0;
+}
+
+main {
+  font-family: Arial;
+  padding: 19px;
+  background-color: #f0f3f5;
+}
+
+.subSection {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.header {
+  margin: 0px;
+  padding: 0px;
+}
+
+#model,
+#station,
+#brand {
+  border: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.verificar {
+  margin-bottom: 20px;
+}
+
+h4 {
+  text-align: center;
+}
+
+label,
+input {
+  padding: 0;
+  border: none;
+}
+
+section {
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.column1 {
+  flex: 1;
+  margin: 0 20px;
+  a button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.column2 {
+  flex: 1;
+  margin: 0;
+}
+
+.pVrify {
+  text-align: center;
+}
+
+div.container {
+  padding-left: 0;
+  justify-content: left;
+}
+
+.btnverify {
+  margin-right: 7px;
+}
+
+.isa1 {
+  flex: 0.6;
+  padding: 20px 0px 20px 0px;
+}
+
+.xy,
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  .btnVerify {
+    margin-right: 7px;
+  }
+}
+
+.isa2 {
+  flex: 1;
+  th {
+    text-align: center;
+  }
+}
+
+.is {
+  th {
+    text-align: center;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.noExpand {
+  padding: 20px 0px 25px 0px;
+  display: block;
+  .subSection {
+    margin-top: 0px;
+  }
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+footer {
+  background-color: #222;
+  min-width: 10vh;
+
+  p {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  span {
+    margin-right: 4px;
+  }
+}

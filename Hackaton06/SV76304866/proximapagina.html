@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VERIFICACIÓN DEL DISPOSITIVO</title>
+  <link rel="stylesheet" type="text/css" href="proximapagina.css">
+</head>
+<body>
+  <header id="estado">
+    <div><button type="submit">Ver estado de dispositivos</button></div>
+  </header>
+  
+  <div class="container">
+    <h1>VERIFICACIÓN DEL DISPOSITIVO</h1>
+    <div class="form-container">
+      <label for="imei-input">IMEI:</label>
+      <input type="text" id="imei-input" required>
+      <button id="verify-button">Verificar</button>
+    </div>
+    <div id="results-dialog" class="results-dialog"></div>
+  </div>
+  
+  <div id="tickets-dialog">
+    <h2>Tickets guardados</h2>
+    <ul id="tickets-list"></ul>
+  </div>
+  
+  <script src="proximapagina.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
+
+
+
