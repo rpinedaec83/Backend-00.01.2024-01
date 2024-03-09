@@ -125,8 +125,8 @@ let arrCliente = [];
 let admin = new Administrador("Roberto", "Pineda", "CE 001575291", "Principal")
 
 // eventos de los botones
-document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
-document.getElementById("borrarData").addEventListener("click", borrarData);
+//document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
+//document.getElementById("borrarData").addEventListener("click", borrarData);
 
 
 // callback del evento del boton recibirDispositivo
@@ -192,7 +192,7 @@ function init() {
 
 }
 
-var $table = $('#tblDispositivos');
+//var $table = $('#tblDispositivos');
 
 // evento cuando se termina de cargar la pagina web
 document.addEventListener("DOMContentLoaded", (event) => {
