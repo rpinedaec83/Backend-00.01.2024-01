@@ -106,6 +106,84 @@ app.get('/listaPokemons', (req, res) =>{
     
 })
 
+app.get('/pokemonHabilidades', (req, res)=>{
+
+  let pokemon = req.query.poke;
+
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+  };
+  
+  axios.request(config)
+  .then((response) => {
+    
+    console.log(response.data.abilities);
+    let habilidades = response.data.abilities;
+    let data = [];
+    habilidades.forEach(element => {
+      data.push(element.ability.name);
+    });
+    res.send(JSON.stringify(data));
+  })
+  .catch((error) => {
+    console.log(error);
+})
+})
+
+app.get('/rickandmorty', (req, res)=> {
+
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: `https://rickandmortyapi.com/api/character/${id}`,
+    headers: { }
+  };
+  
+  axios.request(config)
+  .then((response) => {
+      
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+})
+
+app.get('/pjrickandmorty', (req, res)=> {
+
+  let id = req.query.pj;
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: `https://rickandmortyapi.com/api/character/${id}`,
+    headers: { }
+  };
+  
+  axios.request(config)
+  .then((response) => {
+      console.log(JSON.stringify(response.data));
+      res.send(`<table>
+      <tr>
+          <th>Dato</th>
+          <th>Valor</th>
+      </tr>
+      <tr>
+          <td>Nombre</td>
+          <td>${response.data.name}</td>
+      </tr>
+      <tr>
+          <td>Icono</td>
+          <td><img src="${response.data.image}"></td>
+      </tr>
+    </table>`);
+      })
+    .catch((error) => {
+    console.log(error);
+    })
+})
+
+
 //listener de la aplicacion
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
