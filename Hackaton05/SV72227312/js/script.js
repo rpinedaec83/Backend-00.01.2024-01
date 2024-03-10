@@ -187,7 +187,7 @@ function asignarImeiYReportar(a) {
     // Generar un número aleatorio entre 1 y 4
     let aleatorio = Math.floor(Math.random() * 2) + 1;
     
-    // Si el número aleatorio es 4, marcar el IMEI como reportado
+    // Si el número aleatorio es 2, marcar el IMEI como reportado
     if(aleatorio === 2) {
         Celular.estado = true;
         arrayReportados.push(a);

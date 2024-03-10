@@ -1,0 +1,8 @@
+p {
+    text-align: center;
+    padding: 20px; /* Añade un espacio interno al recuadro */
+    border-radius: 10px; /* Añade esquinas redondeadas al recuadro */
+    color: rgb(0, 0, 0); /* Establece el color del texto en blanco */
+    font-size: 36px; 
+  }
+

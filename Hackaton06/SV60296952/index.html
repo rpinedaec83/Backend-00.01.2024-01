@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PachaQTec</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+    <h1>Gestión de Reparaciones de Celulares IDAT</h1>
+
+    <div>
+        <label for="numeroSerie">Número de Serie:</label>
+        <input type="text" id="numeroSerie"><br>
+
+        <label for="imei">IMEI:</label>
+        <input type="text" id="imei"><br>
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca"><br>
+
+        <label for="reportado">Reportado:</label>
+        <select id="reportado">
+            <option value="si">Sí</option>
+            <option value="no" selected>No</option>
+        </select><br>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <input type="text" id="diagnostico"><br> 
+
+        <button onclick="agregarTelefono()">Agregar Teléfono</button>
+    </div>
+
+    <h2>Estado del Equipo</h2>
+    <table id="estadoEquipoTable">
+        <thead>
+            <tr>
+                <th>Número de Serie</th>
+                <th>IMEI</th>
+                <th>Marca</th>
+                <th>Reportado</th>
+                <th>Diagnóstico</th>
+            </tr>
+        </thead>
+        <tbody id="estadoEquipoBody">
+            
+        </tbody>
+    </table>
+
+    <script src="main.js"></script>
+    <br>
+    <div class="cc-profile-image"><a href="https://www.idat.edu.pe/escuela-de-coding" target="_blank"><img src="img/555666.jpg" alt="img"/></a></div>
+    <br>
+</html>
