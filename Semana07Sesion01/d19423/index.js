@@ -40,6 +40,11 @@ var formidable = require('formidable');
 const absolute = path.join(__dirname, 'img')
 
 http.createServer(function (req, res) {
+<<<<<<< HEAD
+  // res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('<h1>Hola desde NodeJs!</h1>');
+}).listen(8080);
+=======
 
   if (req.url == '/fileupload') {
     var form = new formidable.IncomingForm();
@@ -64,3 +69,4 @@ http.createServer(function (req, res) {
   }
 }).listen(8080);
 
+>>>>>>> fuentes/main
