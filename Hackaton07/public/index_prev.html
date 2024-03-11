@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mañana será mas bonito</h1>
+    <p id="github"></p>
+    <p id="nasa"></p>
+    <p id="weather"></p>
+  </body>
+  <script>
+    // const text = document.querySelector(`.data`);
+    const txtgithub = document.getElementById("github");
+    const getUsername = async () => {
+      const resGithub = await fetch("/api/github/jamzdeveloper");
+      if (resGithub.ok) {
+        const datagithub = await resGithub.json();
+        console.log(datagithub);
+        txtgithub.textContent=datagithub.login.toString()
+      }
+    };
+
+    const txtweather = document.getElementById("weather");
+    const getOpenWeather = async () => {
+      const resWeather = await fetch("/api/openweather/-12.174619/-76.9919097");
+      if (resWeather.ok) {
+        const dataweather = await resWeather.json();
+        console.log(dataweather);
+        txtweather.textContent=dataweather.weather[0].description.toString()
+      }
+    };
+
+    const txtnasa = document.getElementById("nasa");
+    const getPlanet = async () => {
+      const resNasa = await fetch("/api/nasa/planetary");
+      if (resNasa.ok) {
+        const data2 = await resNasa.json();
+        console.log(data2);
+        txtnasa.textContent=data2.copyright.toString()
+      }
+    };
+
+
+    getUsername();
+    getOpenWeather();
+    getPlanet();
+
+
+  </script>
+
+</html>

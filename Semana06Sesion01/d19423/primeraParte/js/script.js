@@ -1,5 +1,5 @@
 let strJson = `{"nombre":"Roberto","apellidos":"Pineda","edad":40,"peso":82.55,"estadoCivil":false,"hijos":null,"hobbies":["Aeromodelismo","Gunpla"],"padres":[{"nombre":"Rene","apellido":"Pineda"},{"nombre":"Miriam","apellido":"Lopez"}]}`;
-
+console.log(typeof(strJson));
 let objJson = JSON.parse(strJson);
 console.log(objJson);
 

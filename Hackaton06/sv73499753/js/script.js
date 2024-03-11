@@ -1,6 +1,4 @@
 console.log("Inicio del Programa")
-
-
 //creamos la clase Dispositivo
 class Dispositivo {
     constructor(iMei, nroSerie) {
@@ -18,11 +16,11 @@ class Dispositivo {
         return JSON.stringify({ iMei: this.iMei, nroSerie: this.nroSerie });
     }
     revisarReporteRobo() {
-        //retorna aleatoriamente si esta robado o no
+        
         return Math.random() > 0.5 ? true : false;
     }
     iniciarDiagnostico() {
-        // si el pago y la autorizacion es correcta procede al diagnostico
+        
         if (this.autorizacion && this.pago) {
             this.diagnostico = prompt("Escribe el Diagnostico");
             this.estado = "En Diagnostico";
@@ -32,13 +30,13 @@ class Dispositivo {
         }
     }
     recibirPago() {
-        // no implementado completo pero pone el pago en true
+       
         this.pago = true;
     }
 
 }
 
-// definimos la clase persona
+ 
 class Persona {
     constructor(nombre, apellido, nroIdentificacion) {
         this.nombre = nombre;
@@ -47,7 +45,7 @@ class Persona {
     }
 }
 
-// definimos la clase cliente a partir de persona
+ 
 class Cliente extends Persona {
     constructor(nombre, apellido, nroIdentificacion, nroTelefono, direccion, dispositivo) {
         super(nombre, apellido, nroIdentificacion);
@@ -73,7 +71,7 @@ class Cliente extends Persona {
 }
 
 
-// definimos la clase tecnico a partir de persona
+ 
 class Tecnico extends Persona {
     constructor(nombre, apellido, nroIdentificacion, skills) {
         super(nombre, apellido, nroIdentificacion);
@@ -89,7 +87,7 @@ class Tecnico extends Persona {
     }
 }
 
-// definimos la clase administrador a partir de persona
+ 
 class Administrador extends Persona {
     constructor(nombre, apellido, nroIdentificacion, tienda) {
         super(nombre, apellido, nroIdentificacion);
@@ -103,7 +101,7 @@ class Administrador extends Persona {
             tienda: this.tienda
         })
     }
-    // recibe el dispositivo y crea al clente
+   
     recibirDispositivo() {
         let imei = prompt("Ingresa el IMEI");
         let nroSerie = prompt("Ingresa el numero de Serie");
@@ -124,32 +122,32 @@ let arrCliente = [];
 
 let admin = new Administrador("Roberto", "Pineda", "CE 001575291", "Principal")
 
-// eventos de los botones
+ 
 document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
 document.getElementById("borrarData").addEventListener("click", borrarData);
 
 
-// callback del evento del boton recibirDispositivo
+ 
 function recibirDispositivo() {
     admin.recibirDispositivo();
-    //guarda la data en el localstorage
+  
     guardarData("cliente", arrCliente);
     console.log(arrCliente)
     arrCliente.forEach(element => {
         arrDispositivos.push(element.dispositivo)
     });
-    // cargamos la info en la taba
+   
     $table.bootstrapTable('load', arrDispositivos)
 }
 
 function guardarData(nombre, data) {
-    //cargar la info en el localstorage
+  
     localStorage.setItem(nombre, JSON.stringify(data));
 }
 
 function borrarData() {
 
-    // borramos la data del localstorage
+ 
     guardarData("cliente", null);
     arrCliente = [];
     arrDispositivos = [];
@@ -157,7 +155,7 @@ function borrarData() {
     $table.bootstrapTable('load', arrDispositivos)
 }
 
-// inicializar los objetos desde la informacion que esta en el localstorage
+ 
 function init() {
     let jsonCliente = null;
     let localData = localStorage.getItem("cliente");
@@ -194,13 +192,13 @@ function init() {
 
 var $table = $('#tblDispositivos');
 
-// evento cuando se termina de cargar la pagina web
+ 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
     init();
 });
 
-//evento cuando hacemos click en una fila de la tabla
+ 
 $table.on('click-row.bs.table', function (row, $element, field) {
 
     console.log($element);
@@ -219,7 +217,7 @@ $table.on('click-row.bs.table', function (row, $element, field) {
     $table.bootstrapTable('load', arrDispositivos)
 })
 
-// busca un dispositivo desde el array
+ 
 
 function buscarDispositivo(imei) {
 
@@ -231,3 +229,26 @@ function buscarDispositivo(imei) {
 
     }
 }
+function mostrarDataAlmacenada() {
+    let datosAlmacenadosDiv = document.getElementById('datosAlmacenados');
+    datosAlmacenadosDiv.innerHTML = ""; // Limpiar el contenido previo
+
+    // Obtener la información del cliente almacenada en el localStorage
+    let localData = localStorage.getItem("cliente");
+
+    if (localData !== null && localData !== "null") {
+        let jsonCliente = JSON.parse(localData);
+
+        jsonCliente.forEach(element => {
+            datosAlmacenadosDiv.innerHTML += "<p>Nombre: " + element.nombre + "</p>";
+            datosAlmacenadosDiv.innerHTML += "<p>Apellido: " + element.apellido + "</p>";
+            datosAlmacenadosDiv.innerHTML += "<p>Número de Identificación: " + element.nroIdentificacion + "</p>";
+            // Agrega más líneas según necesites para mostrar otros datos
+            datosAlmacenadosDiv.innerHTML += "<hr>"; // Separador entre clientes
+            datosAlmacenadosDiv.innerHTML += "<>"; // Separador entre clientes
+        });
+    } else {
+        datosAlmacenadosDiv.innerHTML = "<p>No hay datos almacenados en el localStorage.</p>";
+    }
+}
+mostrarDataAlmacenada();

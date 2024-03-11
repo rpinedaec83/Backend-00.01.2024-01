@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <a href="#" onclick="agregarEmpleado()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Agregar Empleado</a>
+    <table id="tableEmpleado">
+        <thead>
+          <tr>
+            <th data-field="dni">DNI</th>
+            <th data-field="nombre">Nombre</th>
+            <th data-field="skills">Skills</th>
+          </tr>
+        </thead>  
+    </table>
+
+    <a href="#" onclick="crearRepuesto()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Crear Repuesto</a>
+    <table id="tableRepuesto">
+        <thead>
+          <tr>
+            <th data-field="descripcion">Repuesto</th>
+            <th data-field="precio">Precio</th>
+          </tr>
+        </thead>
+    </table>
+
+    <a href="#" onclick="agregarTelefono()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Agregar Telefono </a>
+    <table id="tableTelefono">
+      <thead>
+        <tr>
+          <th data-field="imei">Imei</th>
+          <th data-field="marca">Marca</th>
+          <th data-field="descripcion">Descripcion Falla</th>
+          <th data-field="estado">Estado</th>
+          <th data-field="reparacion">Costo Reparacion</th>
+          <th data-field="pago">Pago Inicial</th>
+          <th data-field="repuestos">Repuestos</th>
+
+        </tr>
+      </thead>
+    </table>
+
+    
+    
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/e59191e4cc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

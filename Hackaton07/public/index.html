@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hackaton 07</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://docs.github.com/_next/static/css/298f0cf381eab452.css" data-n-g="">
+    <script src="./js/script.js"></script>
+   
+</head>
+<body>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <div class="container">
+    <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Hackaton 07 - Programar un API Gateway que nos ayude a consultar la siguiente lista de API's:</h3>
+          </div>   
+          <ul class="list-group" id="listaAPI">
+            <li class="list-group-item">
+                  <div class="row toggle" id="dropdown-detail-1" data-toggle="detail-1">
+                      <div class="col-xs-10">
+                          <div>
+                            <code class="text-bold f5">Github</code>
+                              <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                              <span><wbr>localhost:4000<wbr>/api<wbr>/github<wbr>/{owner}</span>
+                          </div>
+                      </div>
+                      <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+                  </div>
+                  <div id="detail-1">
+                      <hr></hr>
+                      <div class="container">
+                          <div class="fluid-row">
+                              <div class="col-xs-6 hljs language-json" id="github">
+                                
+                              </div>                              
+                          </div>
+                      </div>
+                  </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row toggle" id="dropdown-detail-2" data-toggle="detail-2">
+                    <div class="col-xs-10">
+                        <div>
+                          <code class="text-bold f5">Clima</code>
+                            <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                            <span><wbr>localhost:4000<wbr>/api<wbr>/openweather<wbr>/{lat}<wbr>/{lon}</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+                </div>
+                <div id="detail-2">
+                    <hr></hr>
+                    <div class="container">
+                        <div class="fluid-row">
+                            <div class="col-xs-6 hljs language-json" id="weather">
+                              
+                            </div>                              
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row toggle" id="dropdown-detail-3" data-toggle="detail-3">
+                  <div class="col-xs-10">
+                      <div>
+                        <code class="text-bold f5">Exchange</code>
+                          <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                          <span><wbr>localhost:4000<wbr>/api<wbr>/exchange<wbr>/{BASE}<wbr>/{base}<wbr>/{target}</span>
+                      </div>
+                  </div>
+                  <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+              </div>
+              <div id="detail-3">
+                  <hr></hr>
+                  <div class="container">
+                      <div class="fluid-row">
+                          <div class="col-xs-6 hljs language-json" id="exchange">
+                            
+                          </div>                              
+                      </div>
+                  </div>
+              </div>
+          </li>            
+          <li class="list-group-item">
+            <div class="row toggle" id="dropdown-detail-4" data-toggle="detail-4">
+                <div class="col-xs-10">
+                    <div>
+                      <code class="text-bold f5">Pokemon</code>
+                        <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                        <span><wbr>localhost:4000<wbr>/api<wbr>/pokemon<wbr>/{limit}</span>
+                    </div>
+                </div>
+                <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+            </div>
+            <div id="detail-4">
+                <hr></hr>
+                <div class="container">
+                    <div class="fluid-row">
+                        <div class="col-xs-6 hljs language-json" id="pokemon">
+                          
+                        </div>                              
+                    </div>
+                </div>
+            </div>
+        </li>            
+        <li class="list-group-item">
+          <div class="row toggle" id="dropdown-detail-5" data-toggle="detail-5">
+              <div class="col-xs-10">
+                  <div>
+                    <code class="text-bold f5">Pokemon Ability</code>
+                      <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                      <span><wbr>localhost:4000<wbr>/api<wbr>/pokemon<wbr>/ability<wbr>/{id}</span>
+                  </div>
+              </div>
+              <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+          </div>
+          <div id="detail-5">
+              <hr></hr>
+              <div class="container">
+                  <div class="fluid-row">
+                      <div class="col-xs-6 hljs language-json" id="pokemonAbility">
+                        
+                      </div>                              
+                  </div>
+              </div>
+          </div>
+      </li>       
+      <li class="list-group-item">
+        <div class="row toggle" id="dropdown-detail-6" data-toggle="detail-6">
+            <div class="col-xs-10">
+                <div>
+                  <code class="text-bold f5">Rick and Morty</code>
+                    <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                    <span><wbr>localhost:4000<wbr>/api<wbr>/rickandmorty<wbr>/chacarter</span>
+                </div>
+            </div>
+            <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+        </div>
+        <div id="detail-6">
+            <hr></hr>
+            <div class="container">
+                <div class="fluid-row">
+                    <div class="col-xs-6 hljs language-json" id="rickandmorty">
+                      
+                    </div>                              
+                </div>
+            </div>
+        </div>
+    </li>       
+    <li class="list-group-item">
+      <div class="row toggle" id="dropdown-detail-7" data-toggle="detail-7">
+          <div class="col-xs-10">
+              <div>
+                <code class="text-bold f5">Rick and Morty by Id</code>
+                  <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                  <span><wbr>localhost:4000<wbr>/api<wbr>/rickandmorty<wbr>/chacarter<wbr>/{id}</span>
+              </div>
+          </div>
+          <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+      </div>
+      <div id="detail-7">
+          <hr></hr>
+          <div class="container">
+              <div class="fluid-row">
+                  <div class="col-xs-6 hljs language-json" id="rickandmortybyid">
+                    
+                  </div>                              
+              </div>
+          </div>
+      </div>
+    </li>       
+    <li class="list-group-item">
+      <div class="row toggle" id="dropdown-detail-8" data-toggle="detail-8">
+          <div class="col-xs-10">
+              <div>
+                <code class="text-bold f5">Cocktail</code>
+                  <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                  <span><wbr>localhost:4000<wbr>/api<wbr>/cocktail</span>
+              </div>
+          </div>
+          <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+      </div>
+      <div id="detail-8">
+          <hr></hr>
+          <div class="container">
+              <div class="fluid-row">
+                  <div class="col-xs-6 hljs language-json" id="cocktail">
+                    
+                  </div>                              
+              </div>
+          </div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row toggle" id="dropdown-detail-9" data-toggle="detail-9">
+          <div class="col-xs-10">
+              <div>
+                <code class="text-bold f5">Store</code>
+                  <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                  <span><wbr>localhost:4000<wbr>/api<wbr>/store</span>
+              </div>
+          </div>
+          <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+      </div>
+      <div id="detail-9">
+          <hr></hr>
+          <div class="container">
+              <div class="fluid-row">
+                  <div class="col-xs-6 hljs language-json" id="store">
+                    
+                  </div>                              
+              </div>
+          </div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row toggle" id="dropdown-detail-10" data-toggle="detail-10">
+          <div class="col-xs-10">
+              <div>
+                <code class="text-bold f5">Photo</code>
+                  <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                  <span><wbr>localhost:4000<wbr>/api<wbr>/photo<wbr>/{id}</span>
+              </div>
+          </div>
+          <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+      </div>
+      <div id="detail-10">
+          <hr></hr>
+          <div class="container">
+              <div class="fluid-row">
+                  <div class="col-xs-6 hljs language-json" id="photo">
+                    
+                  </div>                              
+              </div>
+          </div>
+      </div>
+    </li>
+            <li class="list-group-item">
+              <div class="row toggle" id="dropdown-detail-99" data-toggle="detail-99">
+                  <div class="col-xs-10">
+                      <div>
+                        <code class="text-bold f5">NASA</code>
+                          <span class="IssueLabel IssueLabel--big color-bg-accent-emphasis color-fg-on-emphasis text-uppercase mr-2">get</span>
+                          <span><wbr>localhost:4000<wbr>/api<wbr>/nasa<wbr>/mars</span>
+                      </div>
+                  </div>
+                  <div class="col-xs-2"><i class="fa fa-chevron-down pull-right"></i></div>
+              </div>
+              <div id="detail-99">
+                  <hr></hr>
+                  <div class="container">
+                      <div class="fluid-row">
+                          <div class="col-xs-6 hljs language-json" id="nasa">
+                            
+                          </div>                              
+                      </div>
+                  </div>
+              </div>
+          </li>            
+          </ul>
+    </div>
+  </div>
+</body>
+
+<script>
+  function createUl(obj){
+    const objeto = JSON.parse(obj);
+    
+    // Iniciar una cadena HTML para añadirle contenido
+    let html = "<ul>";
+        
+    // Iterar sobre el objeto y añadir cada par llave: valor al HTML
+      for (const llave in objeto) {
+          if (objeto.hasOwnProperty(llave)) {
+            objeto[llave] = JSON.stringify(objeto[llave]);
+            html += `<li>${llave}: ${objeto[llave]}</li>`;
+          }
+       }
+        
+    // Cerrar la etiqueta ul
+    html += "</ul>";
+    return html;
+  }
+</script>
+
+<script>
+    const getUsername = async () => {
+      const resGithub = await fetch("/api/github/helmutpacheco");
+      if (resGithub.ok) {
+        const datagithub = await resGithub.json();
+        console.log(datagithub);        
+        html = createUl(JSON.stringify(datagithub));
+        document.getElementById("github").innerHTML = html;
+      }
+    };
+
+    const getOpenWeather = async () => {
+      const resWeather = await fetch("/api/openweather/-12.174619/-76.9919097");
+      if (resWeather.ok) {
+        const dataweather = await resWeather.json();
+        console.log(dataweather);
+        html = createUl(JSON.stringify(dataweather));
+        document.getElementById("weather").innerHTML = html;
+      }
+    };
+
+    const getExchangeRate = async () => {
+      const resExchange = await fetch("/api/exchange/USD/PEN");
+      if (resExchange.ok) {
+        const dataExchange = await resExchange.json();
+        console.log(dataExchange);
+        html = createUl(JSON.stringify(dataExchange));
+        document.getElementById("exchange").innerHTML = html;
+      }
+    };
+
+    const getPokemon = async () => {
+      const resPokemon = await fetch("/api/pokemon/100");
+      if (resPokemon.ok) {
+        const dataPokemon = await resPokemon.json();
+        console.log(dataPokemon);
+        html = createUl(JSON.stringify(dataPokemon));
+        document.getElementById("pokemon").innerHTML = html;
+      }
+    };
+
+    const getPokemonAbility = async () => {
+      const resPokemonAbility = await fetch("/api/pokemon/ability/1");
+      if (resPokemonAbility.ok) {
+        const dataPokemonAbility = await resPokemonAbility.json();
+        console.log(dataPokemonAbility);
+        html = createUl(JSON.stringify(dataPokemonAbility));
+        document.getElementById("pokemonAbility").innerHTML = html;
+      }
+    };
+
+    const getRickandMorty = async () => {
+      const resRickandMorty = await fetch("/api/rickandmorty/character");
+      if (resRickandMorty.ok) {
+        const dataRickandMorty = await resRickandMorty.json();
+        console.log(dataRickandMorty);
+        html = createUl(JSON.stringify(dataRickandMorty.results));
+        document.getElementById("rickandmorty").innerHTML = html;
+      }
+    };
+
+    const getRickandMortybyId = async () => {
+      const resRickandMorty = await fetch("/api/rickandmorty/character/2");
+      if (resRickandMorty.ok) {
+        const dataRickandMorty = await resRickandMorty.json();
+        console.log(dataRickandMorty);
+        html = createUl(JSON.stringify(dataRickandMorty));
+        document.getElementById("rickandmortybyid").innerHTML = html;
+      }
+    };
+
+    const getCocktail = async () => {
+      const resCocktail = await fetch("/api/cocktail");
+      if (resCocktail.ok) {
+        const dataCocktail = await resCocktail.json();
+        console.log(dataCocktail);
+        html = createUl(JSON.stringify(dataCocktail.drinks));
+        document.getElementById("cocktail").innerHTML = html;
+      }
+    };
+
+    const getStore = async () => {
+      const resStore = await fetch("/api/store");
+      if (resStore.ok) {
+        const dataStore = await resStore.json();
+        console.log(dataStore);
+        html = createUl(JSON.stringify(dataStore));
+        document.getElementById("store").innerHTML = html;
+      }
+    };
+
+    const getPhoto = async () => {
+      const resPhoto = await fetch("/api/photo");
+      if (resPhoto.ok) {
+        const dataPhoto = await resPhoto.json();
+        console.log(dataPhoto);
+        html = createUl(JSON.stringify(dataPhoto));
+        document.getElementById("photo").innerHTML = html;
+      }
+    };
+
+    const getPlanet = async () => {
+      const resNasa = await fetch("/api/nasa/mars");
+      if (resNasa.ok) {
+        const dataPlanet = await resNasa.json();
+        console.log(dataPlanet);
+        html = createUl(JSON.stringify(dataPlanet));
+        document.getElementById("nasa").innerHTML = html;
+      }
+    };
+
+
+
+    getUsername();
+    getOpenWeather();
+    getExchangeRate();
+    getPokemon();
+    getPokemonAbility();
+    getRickandMorty();
+    getRickandMortybyId();
+    getCocktail();
+    getStore();
+    getPhoto();
+
+    getPlanet();
+  </script>
+
+</html>
+
+
+
+
+
