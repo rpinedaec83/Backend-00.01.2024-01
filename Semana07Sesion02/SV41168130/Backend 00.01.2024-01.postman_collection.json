@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "e1d2afc2-ef6a-4f0e-a323-e69ec3470314",
+		"name": "Backend 00.01.2024-01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24238005"
+	},
+	"item": [
+		{
+			"name": "climaAPI",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "73d70d2c28msh7f79106bce6c25ep19a96ajsn943644966186",
+						"type": "text"
+					},
+					{
+						"key": "X-RapidAPI-Host",
+						"value": "the-weather-api.p.rapidapi.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://the-weather-api.p.rapidapi.com/api/weather/lima",
+					"protocol": "https",
+					"host": [
+						"the-weather-api",
+						"p",
+						"rapidapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"weather",
+						"lima"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
