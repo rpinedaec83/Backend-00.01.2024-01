@@ -1,7 +1,6 @@
 {
   "name": "sv45213867",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -17,5 +16,6 @@
     "axion": "^0.1.0",
     "axios": "^1.6.7",
     "express": "^4.18.3"
-  }
+  },
+  "description": ""
 }
