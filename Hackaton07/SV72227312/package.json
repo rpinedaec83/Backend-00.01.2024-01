@@ -1,0 +1,23 @@
+{
+  "name": "72227312",
+  "version": "1.0.0",
+  "description": "\"Hackathon_07\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "henry.gomez2904@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "pexels": "^1.4.0",
+    "pokeapi-js-wrapper": "^1.2.3",
+    "rickmortyapi": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
