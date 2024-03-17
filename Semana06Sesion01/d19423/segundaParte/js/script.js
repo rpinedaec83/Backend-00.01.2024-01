@@ -61,6 +61,7 @@ divImagen.appendChild(imagen);
 
 
 document.getElementById("otraOpcion").addEventListener("click", funcOtraOpcion);
+
 document.getElementById("otraOpcion").addEventListener("mouseover", funcOtraOpcion2);
 
 function funcOtraOpcion(){

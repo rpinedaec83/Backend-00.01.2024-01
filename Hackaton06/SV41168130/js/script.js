@@ -103,7 +103,7 @@ class Administrador extends Persona {
             tienda: this.tienda
         })
     }
-    // recibe el dispositivo y crea al clente
+    // recibe el dispositivo y crea al cliente
     recibirDispositivo() {
         let imei = prompt("Ingresa el IMEI");
         let nroSerie = prompt("Ingresa el numero de Serie");
@@ -112,7 +112,7 @@ class Administrador extends Persona {
         let apellido = prompt("Escribe el apellido del clente");
         let nroIdentificacion = prompt("Escribe el DNI del cliente");
         let nroTelefono = prompt("Escribe el numero de telefono del cliente")
-        let direccion = prompt("Escribe la direccion decl cleinte");
+        let direccion = prompt("Escribe la direccion del cliente");
         let cliente = new Cliente(nombre, apellido, nroIdentificacion, nroTelefono, direccion, objDispositivo);
         arrCliente.push(cliente);
     }
@@ -125,8 +125,8 @@ let arrCliente = [];
 let admin = new Administrador("Roberto", "Pineda", "CE 001575291", "Principal")
 
 // eventos de los botones
-//document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
-//document.getElementById("borrarData").addEventListener("click", borrarData);
+document.getElementById("recibirDispositivo").addEventListener("click", recibirDispositivo);
+document.getElementById("borrarData").addEventListener("click", borrarData);
 
 
 // callback del evento del boton recibirDispositivo
@@ -134,9 +134,10 @@ function recibirDispositivo() {
     admin.recibirDispositivo();
     //guarda la data en el localstorage
     guardarData("cliente", arrCliente);
-    console.log(arrCliente)
+    console.log(arrCliente);
+    arrDispositivos = [];
     arrCliente.forEach(element => {
-        arrDispositivos.push(element.dispositivo)
+        arrDispositivos.push(element.dispositivo);             
     });
     // cargamos la info en la taba
     $table.bootstrapTable('load', arrDispositivos)
@@ -192,7 +193,7 @@ function init() {
 
 }
 
-//var $table = $('#tblDispositivos');
+var $table = $('#tblDispositivos');
 
 // evento cuando se termina de cargar la pagina web
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -204,7 +205,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 $table.on('click-row.bs.table', function (row, $element, field) {
 
     console.log($element);
-    if (confirm(`Desea modificar el estado del dispositivo ${$element.iMei}???`)) {
+    if (confirm(`Desea modificar el estado del dispositivo ${$element.iMei}?`)) {
 
         let objDispositivo = buscarDispositivo($element.iMei);
         if (objDispositivo.revisarReporteRobo()) {
@@ -231,3 +232,63 @@ function buscarDispositivo(imei) {
 
     }
 }
+
+
+// class Database {
+//     keyPhone = "celulares";
+   
+//     constructor(keyPhone){
+//       this.keyPhone=keyPhone;
+//     }
+//     onePhone(emei) {
+//       let celulares = localStorage.getItem(this.keyPhone);
+//       celulares = JSON.parse(celulares);
+   
+//       const existPhone = celulares.find((cel) => (cel.emei = emei));
+//       return existPhone;
+//     }
+//     allPhone() {
+//       const celulares = localStorage.getItem(this.keyPhone);
+//       return JSON.parse(celulares);
+//     }
+//     saveOnePhone(celular) {
+//       let celulares = localStorage.getItem(this.keyPhone);
+//       celulares = JSON.parse(celulares);
+//       celulares.push(celular);
+   
+//       localStorage.setItem(this.keyPhone, JSON.stringify(celulares));
+//     }
+   
+//     saveAllPhone(celulares) {
+//       localStorage.setItem(this.keyPhone, JSON.stringify(celulares));
+//     }
+   
+//     updateOnePhone(emei, celular) {
+//       const exitsPhone = this.onePhone(emei);
+//       if (exitsPhone) {
+//         const celulares = this.allPhone();
+   
+//         const newData = celulares.map((e) => {
+//           return {
+//             ...e,
+//             ...celular,
+//           };
+//         });
+   
+//         localStorage.setItem(this.keyPhone, JSON.stringify(newData));
+//       }
+//     }
+   
+//     deleteAllPhone() {
+//       localStorage.removeItem(this.keyPhone);
+//     }
+//   }
+
+//   function LoadDatabase(){
+//     let data = new Database("cliente");
+//     console.log("carga");
+//     console.log(data.allPhone());
+//   }
+
+//   // eventos de los botones
+// document.getElementById("testDatabase").addEventListener("click", LoadDatabase);
