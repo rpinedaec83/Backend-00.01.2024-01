@@ -1,136 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Reparación de Celulares</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Prueba de Servicio de Reparación de Teléfonos</title>
 </head>
 <body>
-    <h1>Sistema de Reparación de Celulares</h1>
+    <h1>Servicio de Reparación de Teléfonos</h1>
+    <form id="formularioTelefono">
+        Número de Serie: <input type="text" id="numeroSerie" required><br>
+        IMEI: <input type="text" id="imei" required><br>
+        Marca: <input type="text" id="marca" required><br>
+        Reportado: <select id="reportado"><option value="si">Sí</option><option value="no">No</option></select><br>
+        Primer Diagnóstico: <input type="text" id="primerDiagnostico" required><br>
+        Técnico: <input type="text" id="tecnico" required><br>
+        Abono: <input type="number" id="abono" required><br>
+        <button type="button" onclick="agregarTelefono()">Agregar Teléfono</button>
+    </form>
 
-    <button onclick="abrirFormulario('telefonoForm')">Telefonos</button>
-    <button onclick="abrirFormulario('empleadoForm')">Empleados</button>
-    <button onclick="abrirFormulario('asignarTelefonoForm')">Asignamiento de Telefonos</button>
-    <button onclick="abrirFormulario('primeraRevisionForm')">Primera Revision</button>
+    <div id="mensajes"></div>
 
-    <div id="telefonoForm" class="formulario">
-        <h2>Registro de Teléfonos</h2>
-        <label>Número de Telefono: </label>
-        <input type="text" id="numSerie">
-        <br>
-        <label>Número de IMEI: </label>
-        <input type="text" id="imei">
-        <br>
-        <button onclick="registrarTelefono(document.getElementById('numSerie').value, document.getElementById('imei').value)">Registrar Teléfono</button>
+    <div id="estadoEquipo">
+        <h2>Estado del Equipo</h2>
+        <pre id="estadoEquipoResultado"></pre>
     </div>
 
-    <div id="empleadoForm" class="formulario">
-      <h2>Registro de Empleados</h2>
-      <label>Nombre: </label>
-      <input type="text" id="nombre" required>
-      <br>
-      <label>Apellido: </label>
-      <input type="text" id="apellido" required>
-      <br>
-      <label>Dirección: </label>
-      <input type="text" id="direccion" required>
-      <br>
-      <label>Número de Contacto: </label>
-      <input type="text" id="contacto" required>
-      <br>
-      <label>Correo: </label>
-      <input type="text" id="correo" required>
-      <br>
-      <button onclick="registrarEmpleado(
-                          document.getElementById('nombre').value, 
-                          document.getElementById('apellido').value, 
-                          document.getElementById('direccion').value, 
-                          document.getElementById('contacto').value, 
-                          document.getElementById('correo').value)">Registrar Empleado</button>
-  </div>
-  
-    <div id="asignarTelefonoForm" class="formulario">
-        <h2>Asignamiento de Telefonos</h2>
-        <label>Empleado: </label>
-        <select id="empleadoSelect"></select>
-        <br>
-        <label>Teléfono: </label>
-        <select id="telefonoSelect"></select>
-        <br>
-        <button onclick="asignarTelefono(document.getElementById('empleadoSelect'), document.getElementById('telefonoSelect'))">Asignar Teléfono</button>
+    <div id="historialReparaciones">
+        <h2>Historial de Reparaciones</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Número de Serie</th>
+                    <th>IMEI</th>
+                    <th>Marca</th>
+                    <th>Diagnóstico</th>
+                    <th>Estado de Reparación</th>
+                    <th>Abono</th>
+                </tr>
+            </thead>
+            <tbody id="historialReparacionesBody"></tbody>
+        </table>
     </div>
-
-    <div id="primeraRevisionForm" class="formulario">
-      <h2>Historial Primera Revisión</h2>
-      <label>Asignación: </label>
-      <select id="asignacionSelect"></select>
-      <br>
-      <label>Comentario: </label>
-      <textarea id="comentario"></textarea>
-      <br>
-      <label>¿Abono realizado?</label>
-      <input type="checkbox" id="abonoRealizado">
-      <br>
-      <button onclick="registrarPrimeraRevision(document.getElementById('asignacionSelect'), 
-                                                document.getElementById('comentario').value, 
-                                                document.getElementById('abonoRealizado').checked)">
-          Registrar Primera Revisión
-      </button>
-    </div>
-    <h2>Listado de Teléfonos</h2>
-    <table id="telefonosTable">
-        <thead>
-            <tr>
-                <th>Número de Serie</th>
-                <th>Número de IMEI</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <h2>Listado de Empleados</h2>
-    <table id="empleadosTable">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Dirección</th>
-                <th>Número de Contacto</th>
-                <th>Correo</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <h2>Listado de Asignaciones</h2>
-    <table id="asignacionesTable">
-        <thead>
-            <tr>
-                <th>Empleado</th>
-                <th>Número de Serie</th>
-                <th>Número de IMEI</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+        <!-- Resto del contenido -->
     
-    <div>
-      <h2>Historial de Primera Revisión</h2>
-      <table id="historialPrimeraRevisionTable">
-          <thead>
-              <tr>
-                  <th>Empleado</th>
-                  <th>IMEI</th>
-                  <th>Comentario</th>
-                  <th>Abono Realizado</th>
-                  <th>Terminar</th>
-              </tr>
-          </thead>
-          </tbody>
-      </table>
-  </div>
-  
-    <script src="js/script.js"></script>
+        <script src="js/script.js" defer></script>
 </body>
 </html>
