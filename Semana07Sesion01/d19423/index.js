@@ -1,24 +1,25 @@
-// let http = require('http');
-// let myFecha = require("./fecha");
-// var url = require('url');
-// var fs = require('fs');
+  let http = require('http');
+  let myFecha = require("./fecha");
+  var url = require('url');
+  var fs = require('fs');
 
 
 
 
-// http.createServer(function (ini, fin) {
-//   //res.writeHead(200, {'Content-Type': 'text/plain'});
-//   console.log(ini.url);
-//   let usuario = {};
-//   var q = url.parse(ini.url, true).query;
-//   fs.readFile('./usuario.json','utf8', function(err, data) {
-//     usuario = JSON.parse(data);
+  http.createServer(function (ini, fin) {
+     res.writeHead(200, {'Content-Type': 'text/plain'});
+    console.log(ini.url);
+    let usuario = {};
+    var q = url.parse(ini.url, true).query;
+    console.log(q)
+    fs.readFile('./usuario.json','utf8', function(err, data) {
+      usuario = JSON.parse(data);
    
-//     console.log(usuario.peso)
-//     fin.end('<h1>Hola '+q.nombre +' '+ q.apellido+' desde NodeJs! '+ usuario.edad +'</h1>');
+      console.log(usuario.peso)
+      fin.end('<h1>Hola '+q.nombre +' '+ q.apellido+' desde NodeJs! '+ usuario.edad +'</h1>');
   
 
-//     usuario.nombre = q.nombre;
+      usuario.nombre = q.nombre;
 
 //     fs.writeFile('./usuario.json', JSON.stringify(usuario), function (err) {
 //       if (err) throw err;
@@ -50,17 +51,12 @@ http.createServer(function (req, res) {
         console.log(oldpath);
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
-        res.write('File uploaded and moved!');
-        res.end();
+        console.log('Replaced!');
       });
- });
-  } else {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
-    res.write('<input type="file" name="filetoupload"><br>');
-    res.write('<input type="submit">');
-    res.write('</form>');
-    return res.end();
-  }
-}).listen(8080);
 
+    });
+  
+
+  }).listen(9000);
+
+>>>>>>> fuentes/main
