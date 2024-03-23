@@ -31,7 +31,7 @@ where id = 1;
 create table Especie(
 	id serial not null primary key,
 	descripcion varchar(50) not null,
-	activo bool default false,
+	activo bool default true,
 	usuarioCreacion int not null,
 	fechaCreacion TIMESTAMP default CURRENT_TIMESTAMP not null,
 	usuarioModificacion int null,
