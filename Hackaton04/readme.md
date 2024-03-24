@@ -19,7 +19,7 @@ EL PROBLEMA:
 
 En este caso, definiremos una serie de problemas para resolverlos utilizando el lenguaje javascript, definiremos algoritmos por cada problema.
 
-1. Crea una función que retorne la suma de dos números.  
+1. Crea una función que retorne la suma de dos números.
 
 2. Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el número a potenciar.
 
@@ -37,6 +37,7 @@ una operación matemática (+,-,/,x,%), y si la operación no es correcta que en
 PREGUNTAS:
 
 -  ¿Cómo defines una función?
+Para definir una función en JavaScript, puedes utilizar la palabra clave function
 -  ¿Hasta cuantos argumentos puedes declarar en una función?
 
 Reto 2:

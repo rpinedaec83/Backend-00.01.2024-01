@@ -1,0 +1,95 @@
+class Telefono {
+    constructor(numeroSerie, imei, marca) {
+        this.numeroSerie = numeroSerie;
+        this.imei = imei;
+        this.marca = marca;
+        this.reportado = false;
+    }
+
+    marcarComoReportado() {
+        this.reportado = true;
+    }
+}
+
+class Reparacion {
+    constructor(telefono, diagnosticoInicial) {
+        this.telefono = telefono;
+        this.diagnosticoInicial = diagnosticoInicial;
+        //this.costoReparacion = costoReparacion;
+        this.autorizacion = false;
+        this.abono = false;
+        this.repuestos = [];
+        this.estado = 'En espera de autorización';
+    }
+
+    solicitarAutorizacion() {
+        // Lógica para solicitar autorización
+        this.estado = 'Esperando autorización';
+    }
+
+    recibirAutorizacion(autorizacion) {
+        this.autorizacion = autorizacion;
+        if (autorizacion) {
+            this.estado = 'En reparación';
+        } else {
+            this.estado = 'Reparación no autorizada';
+        }
+    }
+
+    recibirAbono(abono, costoReparacion) {
+        this.abono = abono;
+        if (abono >= 0.5 * costoReparacion) {
+            this.estado = 'Reparación autorizada';
+        }  else {
+            this.estado = 'Abono insuficiente';
+        }
+    }
+
+    agregarRepuesto(repuesto) {
+        this.repuestos.push(repuesto);
+    }
+}
+
+class Tecnico {
+    constructor(nombre, skills) {
+        this.nombre = nombre;
+        this.skills = skills;
+    }
+}
+
+class EstacionDeTrabajo {
+    constructor(nombre) {
+        this.nombre = nombre;
+        this.reparacionesEnProceso = [];
+    }
+
+    asignarReparacion(reparacion) {
+        this.reparacionesEnProceso.push(reparacion);
+        reparacion.estado = `En proceso en ${this.nombre}`;
+    }
+
+    mostrarEstadoReparaciones() {
+        console.log(`Estado de las reparaciones en ${this.nombre}:`);
+        this.reparacionesEnProceso.forEach(reparacion => {
+            console.log(`${reparacion.telefono.numeroSerie}: ${reparacion.estado}`);
+        });
+    }
+}
+
+// Ejemplo de uso
+
+const telefono1 = new Telefono('123', '456', 'Samsung');
+const reparacion1 = new Reparacion(telefono1, 'Pantalla rota', 400);
+
+const tecnico1 = new Tecnico('Junior', ['Samsung']);
+const estacion1 = new EstacionDeTrabajo('Estación 1');
+
+if (!telefono1.reportado) {
+    reparacion1.solicitarAutorizacion();
+    reparacion1.recibirAutorizacion(true);
+    reparacion1.recibirAbono(); 
+    reparacion1.agregarRepuesto('Pantalla nueva');
+    estacion1.asignarReparacion(reparacion1);
+}
+
+estacion1.mostrarEstadoReparaciones();

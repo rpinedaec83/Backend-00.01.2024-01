@@ -32,6 +32,7 @@ let text = "<ul>";
 for (let i = 0; i < fLen; i++) {
   text += "<li>" + fruits[i] + "</li>";
 }
+
 text += "</ul>";
 document.getElementById("demo1").innerHTML = text;
 text = "<ul>";
@@ -176,5 +177,3 @@ const q4 = ["Oct", "Nov", "May"];
 const year = [...q1, ...q2, ...q3, ...q4];
 
 console.log(year)
-
-

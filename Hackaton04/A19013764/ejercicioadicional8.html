@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayores Números</title>
+</head>
+<body>
+    <label for="matricesInput">Matrices:</label>
+    <input type="text" id="matricesInput" placeholder="Ingrese las matrices como arreglos anidados"><br><br>
+
+    <button id="buscarBtn">Buscar Mayores Números</button>
+
+    <script>
+        const findLargestNums = (matrices) => {
+            return matrices.map(matriz => Math.max(...matriz));
+        };
+
+        document.getElementById("buscarBtn").addEventListener("click", function() {
+            const matricesString = document.getElementById("matricesInput").value;
+            const matrices = JSON.parse(matricesString);
+
+            const resultado = findLargestNums(matrices);
+            alert("Los mayores números de cada matriz son: " + resultado);
+        });
+    </script>
+</body>
+</html>

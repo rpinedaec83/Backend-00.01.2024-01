@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Triángulo</title>
+</head>
+<body>
+    <label for="baseInput">Base del Triángulo:</label>
+    <input type="number" id="baseInput" placeholder="Ingrese la base del triángulo"><br><br>
+
+    <label for="alturaInput">Altura del Triángulo:</label>
+    <input type="number" id="alturaInput" placeholder="Ingrese la altura del triángulo"><br><br>
+
+    <button id="calcularBtn">Calcular Área del Triángulo</button>
+
+    <script>
+        const calcularAreaTriangulo = (base, altura) => (base * altura) / 2;
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const base = parseFloat(document.getElementById("baseInput").value);
+            const altura = parseFloat(document.getElementById("alturaInput").value);
+
+            if (!isNaN(base) && !isNaN(altura)) {
+                const area = calcularAreaTriangulo(base, altura);
+                alert("El área del triángulo con base " + base + " y altura " + altura + " es: " + area);
+            } else {
+                alert("Por favor, ingrese valores numéricos válidos para la base y la altura del triángulo.");
+            }
+        });
+    </script>
+</body>
+</html>

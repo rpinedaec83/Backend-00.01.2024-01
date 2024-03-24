@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres de Estudiantes</title>
+</head>
+<body>
+    <label for="estudiantesInput">Estudiantes:</label>
+    <input type="text" id="estudiantesInput" placeholder='Ingrese la matriz de objetos JSON'><br><br>
+
+    <button id="obtenerNombresBtn">Obtener Nombres de Estudiantes</button>
+
+    <script>
+        const getStudentNames = (estudiantes) => {
+            return estudiantes.map(estudiante => estudiante.name);
+        };
+
+        document.getElementById("obtenerNombresBtn").addEventListener("click", function() {
+            const estudiantesString = document.getElementById("estudiantesInput").value;
+            const estudiantes = JSON.parse(estudiantesString);
+
+            const nombresEstudiantes = getStudentNames(estudiantes);
+            alert("Los nombres de los estudiantes son: " + JSON.stringify(nombresEstudiantes));
+        });
+    </script>
+</body>
+</html>
+<!-- ejemplo para test
+     [
+  { "name": "Steve" },
+  { "name": "Mike" },
+  { "name": "John" }
+] -->

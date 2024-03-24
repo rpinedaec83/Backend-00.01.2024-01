@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript y HTTP</title>
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h2>
+                        Hackaton 05!
+                    </h2>                    
+                    <p>Se necesita crear un sistema que maneje las reparaciones de celulares en un local con varias sucursales</p>
+                    <p>Tomar en cuenta los siguientes casos de uso: <br>
+                    <ul>                      
+                      <li>El telefono ingresado debe tener numero de serie e IMEI que no esten reportados para acceder al servicio</li>
+                      <li>Un telefono primero debe pasar por una primera revision y se debe guardar el primer diagnostico.</li>
+                      <li>Se debe tener la autorizacion escrita del usuario y el abono del 50% de la reparacion para que acceda al servicio</li>
+                      <li>Los tecnicos pueden tener uno o varios skills que se adecuen a la marca de telefono que se necesita acceder al servicio</li>
+                      <li>Los repuestos se agegaran a la reparacion de telefono</li>
+                      <li>Se debe mostrar el estado del equipo en sus diferentes estaciones de trabajo</li>
+                    </ul>
+                    <br>                                        
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" onclick="registrarDevice()" class="btn btn-block btn-primary"><span class="glyphicon glyphicon-qrcode"></span> Registrar Dispositivo</a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <table id="tableDevice">      
+      <thead>
+        <tr>
+          <th data-field="marca">Marca</th>
+          <th data-field="modelo">Modelo</th>
+          <th data-field="tipo">Tipo</th>
+          <th data-field="imei">Imei</th>
+          <th data-field="sistemaOperativo">Sistema Operativo</th>      
+          <th data-field="diagnostico">Realizar Diagnostico</th>      
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <table id="tableDiagnosis">
+      <thead>
+        <tr>
+          <th data-field="id">Id</th>
+          <th data-field="descripcion">Descripcion</th>
+          <th data-field="technician">Técnico asignado</th>
+          <th data-field="estado">Estado</th>          
+        </tr>
+      </thead>
+    </table>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/e59191e4cc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

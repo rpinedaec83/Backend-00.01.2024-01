@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <label for="numero1Input">Número 1:</label>
+    <input type="number" id="numero1Input" placeholder="Ingrese el primer número"><br><br>
+
+    <label for="operacionInput">Operación:</label>
+    <input type="text" id="operacionInput" placeholder="Ingrese la operación matemática"><br><br>
+
+    <label for="numero2Input">Número 2:</label>
+    <input type="number" id="numero2Input" placeholder="Ingrese el segundo número"><br><br>
+
+    <button id="calcularBtn">Calcular</button>
+
+    <script>
+        const calculator = (numero1, operacion, numero2) => {
+            switch (operacion) {
+                case "+":
+                    return numero1 + numero2;
+                case "-":
+                    return numero1 - numero2;
+                case "/":
+                    return numero1 / numero2;
+                case "x":
+                    return numero1 * numero2;
+                case "%":
+                    return numero1 % numero2;
+                default:
+                    return "El parámetro no es reconocido";
+            }
+        };
+
+        document.getElementById("calcularBtn").addEventListener("click", function() {
+            const numero1 = parseFloat(document.getElementById("numero1Input").value);
+            const operacion = document.getElementById("operacionInput").value.trim();
+            const numero2 = parseFloat(document.getElementById("numero2Input").value);
+
+            const resultado = calculator(numero1, operacion, numero2);
+            alert("El resultado de la operación es: " + resultado);
+        });
+    </script>
+</body>
+</html>
